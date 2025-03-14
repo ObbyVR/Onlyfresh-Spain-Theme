@@ -38,7 +38,7 @@
       {%- if primary_image -%}
         <div class="rocket-fresh-product-card__inner">
           <a
-            href="{{ card_product.url  }}"
+            href="{{ card_product.url | within: collection }}"
             class="rocket-fresh-product-card__image-wrapper {% if second_image and show_secondary_image %}rocket-fresh-product-card__image--hover {% endif %} "
           >
             {{
@@ -199,7 +199,7 @@
           <div class="rocket-fresh-product-card__information-heading">
             <h3 class="card__heading body-s-regular">
               <a
-                href="{{ card_product.url }}"
+                href="{{ card_product.url | within: collection }}"
                 id="CardLink-{{ section_id }}-{{ card_product.id }}"
                 class="full-unstyled-link {{ text_font_class }}"
                 aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
