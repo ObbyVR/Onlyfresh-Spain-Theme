@@ -1,0 +1,84 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
+{{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+{% liquid
+  assign section_settings = section.settings
+%}
+{% style %}
+  #shopify-section-{{ section.id }} .section-{{ section.id }}-padding {
+      padding-top: {{ section_settings.padding_top_mb }}px;
+      padding-bottom: {{ section_settings.padding_bottom_mb }}px;
+  }
+
+  @media (min-width: 1024px) {
+      #shopify-section-{{ section.id }} .section-{{ section.id }}-padding {
+          padding-top: {{ section_settings.padding_top }}px;
+          padding-bottom: {{ section_settings.padding_bottom }}px;
+      }
+  }
+{% endstyle %}
+{% render 'quick-order-list', product: product, show_image: false, show_remove: false %}
+{% schema %}
+{
+  "name": "Quick order",
+  "limit": 1,
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding Top on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding Bottom on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quick order"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,262 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+  @media screen and (min-width: 960px) {
+      .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+      .section-{{ section.id }}-padding .product-calculadora {
+          background-image: url('{{ section.settings.image | image_url: width: '2000' }}');
+      }
+  }
+{%- endstyle -%}
+<div class="popup-container" id="popup-calculator">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Chiudi popup">&times;</button>
+    <div class="section-{{ section.id }}-padding {% if product.tags contains 'accessorios' %}d-none{% endif %}">
+      <div class="product-calculadora">
+        <div class="calculadora-container">
+          {%- if section.settings.title != blank -%}
+            <div class="calculadora-heading">
+              <h3 class="hidden-mb">{{ section.settings.title }}</h3>
+              <h3 class="hidden-desktop">{{ section.settings.title_mb }}</h3>
+            </div>
+          {%- endif -%}
+
+          {% if product.tags contains 'kitten' %}
+            {% render 'racionamiento-kitten' %}
+          {% elsif product.tags contains 'puppy' %}
+            {% render 'racionamiento-puppy' %}
+          {% elsif product.tags contains 'Para gatos' %}
+            {% render 'racionamiento-gato' %}
+          {% elsif product.tags contains 'Para perros' %}
+            {% render 'racionamiento' %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const popup = document.getElementById('popup-calculator');
+      const toggleButton = document.querySelector('[data-toggle="popup"]');
+      const closeButton = popup.querySelector('.popup-close');
+
+      // Mostra il popup al click sul link
+      toggleButton.addEventListener('click', function (e) {
+          e.preventDefault(); // Previene il comportamento di default del link
+          popup.classList.add('active');
+      });
+
+      // Nasconde il popup al click sulla X
+      closeButton.addEventListener('click', function () {
+          popup.classList.remove('active');
+      });
+
+      // Nasconde il popup al click fuori dal contenuto
+      popup.addEventListener('click', function (e) {
+          if (e.target === popup) {
+              popup.classList.remove('active');
+          }
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Fresh - Calcular Product",
+  "class": "section-fresh-calcular-product",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Calculadora de raciones"
+    },
+    {
+      "type": "text",
+      "id": "title_mb",
+      "label": "Title mobile",
+      "default": "Calcula el racionamiento"
+    },
+    {
+      "type": "header",
+      "content": "Radio First"
+    },
+    {
+      "type": "text",
+      "id": "heading_first",
+      "label": "Heading",
+      "default": "¿Cuál es tu objetivo?"
+    },
+    {
+      "type": "text",
+      "id": "first_value_1",
+      "label": "Value 1",
+      "default": "Mantenimiento"
+    },
+    {
+      "type": "text",
+      "id": "first_value_2",
+      "label": "Value 2",
+      "default": "Dieta Light"
+    },
+    {
+      "type": "text",
+      "id": "first_value_3",
+      "label": "Value 3",
+      "default": "Perdida de peso"
+    },
+    {
+      "type": "header",
+      "content": "Radio Second"
+    },
+    {
+      "type": "text",
+      "id": "heading_second",
+      "label": "Heading",
+      "default": "¿Cuál es el nivel de actividad de tu mascota?"
+    },
+    {
+      "type": "text",
+      "id": "second_value_1",
+      "label": "Value 1",
+      "default": "Normal"
+    },
+    {
+      "type": "text",
+      "id": "second_value_2",
+      "label": "Value 2",
+      "default": "Moderada"
+    },
+    {
+      "type": "text",
+      "id": "second_value_3",
+      "label": "Value 3",
+      "default": "Alta"
+    },
+    {
+      "type": "text",
+      "id": "second_value_4",
+      "label": "Value 4",
+      "default": "Extrema"
+    },
+    {
+      "type": "header",
+      "content": "Select"
+    },
+    {
+      "type": "text",
+      "id": "select_2",
+      "label": "Select label 2",
+      "default": "Indica su peso"
+    },
+    {
+      "type": "text",
+      "id": "select_3",
+      "label": "Select label 3",
+      "default": "Indica su peso"
+    },
+    {
+      "type": "text",
+      "id": "select_4",
+      "label": "Select label 4",
+      "default": "Nº de comidas diarias"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label_step",
+      "label": "Button label step",
+      "default": "Siguente"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Calcular racionamiento"
+    },
+    {
+      "type": "text",
+      "id": "button_label_mb",
+      "label": "Button label mobile",
+      "default": "Calcular"
+    },
+    {
+      "type": "text",
+      "id": "button_label_reset",
+      "label": "Button label reset",
+      "default": "Volver a calcular"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom mobile",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresh - Calcular Product"
+    }
+  ]
+}
+{% endschema %}

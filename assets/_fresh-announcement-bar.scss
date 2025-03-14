@@ -1,0 +1,122 @@
+.announcement-bar-section {
+  overflow: hidden;
+  height: 38px;
+  transition: height 0.1s ease-in;
+
+  .utility-bar.gradient {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 26px;
+
+    .utility-bar-content {
+      padding-left: 0;
+      padding-right: 26px;
+      display: flex;
+      text-align: center;
+      width: 100%
+    }
+  }
+
+  .announcement-bar,
+  .announcement-bar__announcement {
+    display: block;
+    width: auto;
+    color: inherit;
+
+    .slider-button--next,
+    .slider-button--prev {
+      display: none;
+    }
+  }
+
+  .announcement-bar__message {
+    font-family: "Baskerville";
+    padding: 10px 0;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: inherit;
+    font-weight: 400;
+
+    > span {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+
+    .infor {
+      display: inline;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  .announcement-bar__link {
+    color: inherit;
+    display: block;
+    padding: 0;
+    width: auto;    
+  }
+
+  .announcement-bar.slideshow,
+  .announcement-bar-slider {
+    width: 100%;
+  }
+
+  .announcement-bar .slideshow__autoplay {
+    justify-content: unset
+  }
+
+  .utility-bar-icon__close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+body.is-sticky .announcement-bar-section,
+.announcement-bar-section.closed-announcement-bar {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin-bottom: 0;
+  transition: height 0.15s ease-out;
+}
+
+@media (min-width: 990px) {
+  .announcement-bar-section {
+    height: 40px;
+
+    .utility-bar.gradient {
+      padding: 0 24px;
+
+      .utility-bar-content {
+        padding-left: 0;
+        padding-right: 24px;
+      }
+    }
+
+    .announcement-bar__message {
+      padding: 11px 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .announcement-bar-section {
+    .utility-bar.gradient {
+      .utility-bar-content {
+        padding-left: 52px;
+      }
+    }
+  }
+}

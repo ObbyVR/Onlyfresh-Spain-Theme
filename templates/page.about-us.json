@@ -1,0 +1,381 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hero_banner_NfzYPb": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_RFTCH3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4305.png",
+            "image_mb": "shopify://shop_images/mbRectangle_4305.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "",
+            "color_text_title": "#111010",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 28,
+            "font_size_title_mb": 22,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 16,
+            "description": "",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 28,
+            "font_size_content_mb": 22,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "link-s",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_RFTCH3"
+      ],
+      "settings": {
+        "enable_slider": false,
+        "enable_pagination": false,
+        "color_pagination_desktop": "#BDBDBD",
+        "color_pagination_mobile": "#F3F5F7",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 50,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 0,
+        "content_padding_bottom": 0,
+        "content_padding_top_mb": 0,
+        "content_padding_bottom_mb": 0,
+        "content_padding_left": 0,
+        "content_padding_right": 0,
+        "content_padding_left_mb": 0,
+        "content_padding_right_mb": 0
+      }
+    },
+    "fresh_rich_text_HzUU8e": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_e8W6NK": {
+          "type": "title",
+          "settings": {
+            "heading": "Nuestra historia",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 32
+          }
+        },
+        "content_eAG7An": {
+          "type": "content",
+          "settings": {
+            "text": "<p> dolor sit amet consectetur. Hendrerit eget habitant vulputate nunc adipiscing tincidunt eu sit volutpat. Eros in amet mi dignissim. Eleifend mauris faucibus mauris vivamus nec platea. Nulla feugiat mauris odio aliquet id pellentesque enim enim. Vestibulum venenatis vulputate mi libero rhoncus faucibus habitant. Aliquam pharetra lobortis vitae sagittis maecenas ut. Dictum blandit posuere pellentesque bibendum suscipit non id elementum. Vitae dolor tristique nec ante facilisis pellentesque fusce donec. Aenean imperdiet aliquam nulla sapien pulvinar imperdiet vitae.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 18,
+            "font_size_content_mb": 16
+          }
+        },
+        "button_Dtw4Fb": {
+          "type": "button",
+          "settings": {
+            "rocket_button_label_1": "Descubre nuestras tiendas",
+            "rocket_button_url_1": "shopify://pages/about-us",
+            "rocket_button_label_2": "",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "",
+            "rocket_button_url_3": "",
+            "font_size_button": 14,
+            "font_size_button_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "title_e8W6NK",
+        "content_eAG7An",
+        "button_Dtw4Fb"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "content_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_text": "#191919",
+        "color_text_button": "#ffffff",
+        "bg_color_button": "#111010",
+        "max_width": 55,
+        "max_width_mb": 100,
+        "padding_top": 80,
+        "padding_bottom": 96,
+        "padding_top_mb": 24,
+        "padding_bottom_mb": 40
+      }
+    },
+    "fresh_image_text_e9gPEj": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_her6iG": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/Frame_5317.png",
+            "image_mb": "shopify://shop_images/mbFrame_5317.png"
+          }
+        },
+        "media_Qk8bT6": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/Frame_5318.png",
+            "image_mb": "shopify://shop_images/mbFrame_5318.png"
+          }
+        }
+      },
+      "block_order": [
+        "media_her6iG",
+        "media_Qk8bT6"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#ffffff",
+        "color_text_button": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 16,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 24,
+        "padding_left": 76,
+        "padding_right": 52,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    },
+    "fresh_image_text_QaWeGK": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "content_Wg9ND8": {
+          "type": "content",
+          "settings": {
+            "text": "<p>dolor sit amet consectetur. Nec feugiat ullamcorper scelerisque sit in iaculis consectetur viverra tempus. Et semper eget ultrices adipiscing tortor vitae enim lacus proin. Nunc et id sit eget cras pretium quisque. Non faucibus mauris urna convallis in aenean consectetur mauris.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 20,
+            "font_size_content_mb": 16
+          }
+        },
+        "media_pa8wxV": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/Frame_5319.png",
+            "image_mb": "shopify://shop_images/mbFrame_5319.png"
+          }
+        },
+        "media_fdqrRd": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/Frame_5320.png",
+            "image_mb": "shopify://shop_images/mbFrame_5320.png"
+          }
+        }
+      },
+      "block_order": [
+        "content_Wg9ND8",
+        "media_pa8wxV",
+        "media_fdqrRd"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#191919",
+        "color_text_button": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 96,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 7,
+        "padding_left": 76,
+        "padding_right": 76,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    },
+    "fresh_key_points_xyk4aF": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_6XALVa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 01",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Test sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_r7WkNL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 02",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Test sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_BJnFkV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 03",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Test sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_FGPX8n": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 04",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Test sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "block_6XALVa",
+        "block_r7WkNL",
+        "block_BJnFkV",
+        "block_FGPX8n"
+      ],
+      "settings": {
+        "key_point_icon": true,
+        "title": "Nuestros valores",
+        "title_mobile": "Nuestros valores",
+        "size_heading": 36,
+        "size_heading_mb": 36,
+        "margin_heading": 40,
+        "margin_heading_mb": 40,
+        "content": "",
+        "content_mb": "",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 14,
+        "padding_top_title": 10,
+        "padding_top_title_mb": 10,
+        "padding_top": 74,
+        "padding_bottom": 74,
+        "padding_top_mb": 61,
+        "padding_bottom_mb": 61,
+        "color_content": "#ffffff",
+        "bg_color_section": "#000000"
+      }
+    },
+    "video_hjHqiy": {
+      "type": "video",
+      "settings": {
+        "desktop_content_position": "right",
+        "width_content": 995,
+        "heading": "",
+        "font_size_heading": 16,
+        "font_size_heading_mb": 16,
+        "content": "Test sit amet consectetur. Ante at elit quam purus eget auctor viverra at pharetra. Sapien eleifend elementum ut massa at congue vitae dictum. Lacus habitant mattis ut consectetur. Ut non vestibulum congue vitae a vitae. Amet ultricies proin pellentesque lectus sagittis accumsan faucibus. Venenatis at habitant in quam et consequat bibendum. Quis non elementum sit feugiat pharetra dictum aliquet a pellentesque. Vel dignissim pharetra id ornare. Molestie molestie vel tincidunt etiam suspendisse nisi in eu cras.",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/Rectangle_4308.png",
+        "description": "",
+        "color_scheme": "",
+        "padding_top": 56,
+        "padding_bottom": 96,
+        "padding_top_mb": 56,
+        "padding_bottom_mb": 0,
+        "padding_left": 56,
+        "padding_right": 56,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_NfzYPb",
+    "fresh_rich_text_HzUU8e",
+    "fresh_image_text_e9gPEj",
+    "fresh_image_text_QaWeGK",
+    "fresh_key_points_xyk4aF",
+    "video_hjHqiy"
+  ]
+}

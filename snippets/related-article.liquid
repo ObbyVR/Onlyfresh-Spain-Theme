@@ -1,0 +1,93 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .related-blog {
+      background-color: {{ section.settings.bg_color }};
+      margin-top: 56px;
+  }
+
+  @media (min-width: 960px) {
+    .related-blog {
+      padding: 90px 0;
+      margin-top: 80px;
+  }
+  .related-blog .article-template__related  {
+    max-width: 1354px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+  }
+{% endstyle %}
+
+<div class="related-blog">
+  <div
+    class="article-template__related{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    <div class="blog-articles--header">
+      {%- if section.settings.heading_related != blank -%}
+        <h2
+          class="heading"
+        >
+          {{ section.settings.heading_related }}
+        </h2>
+      {%- endif -%}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="blog-articles--button btn">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+    <div
+      class="blog-articles swiper"
+    >
+      <div class="swiper-wrapper">
+        {%- assign count = 0 -%}
+        {%- for a in blog.articles -%}
+          {%- if article.handle != a.handle -%}
+            {%- assign count = count | plus: 1 -%}
+            {%- if count > section.settings.blogs_to_show -%}
+              {%- break -%}
+            {%- endif -%}
+            <div
+              class="swiper-slide blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {%- render 'article-card',
+                article: a,
+                media_height: 'adapt',
+                media_aspect_ratio: a.image.aspect_ratio,
+                show_image: true,
+                show_date: false,
+                show_author: false,
+                show_categories: true,
+                show_excerpt: false
+              -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const swiper = new Swiper('.blog-articles.swiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    centeredSlides: true,
+    initialSlide: 1,
+    breakpoints: {
+      960: {
+        initialSlide: 0,
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 12,
+      },
+    },
+  });
+</script>

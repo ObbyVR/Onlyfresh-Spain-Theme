@@ -1,0 +1,101 @@
+
+
+{% assign mod_data = mod_data | default: false %}
+
+{% if mod_data %}
+  {%- assign _section = mod_data -%}
+  {%- assign section_inverse = _section.inverse -%}
+  {%- assign section_title_top = _section.title_top -%}
+  {%- assign section_text_top = _section.text_top -%}
+  {%- assign section_text_class = _section.text_class -%}
+  {%- assign section_image_in_class = _section.image_in_class -%}
+  {%- assign section_title_class = _section.title_class -%}
+  {%- assign section_color_title = _section.color_title -%}
+  {%- assign section_size_title = _section.size_title -%}
+  {%- assign section_background-color = _section.background-color -%}
+  {%- assign section_box_alignment = _section.box_alignment -%}
+  {%- assign section_container_class = _section.container_class -%}
+     <div class="image_text_advanced_subhero-cta">
+    	<div class="container image_text_advanced_subhero-cta__container" >
+              <div class="image_text__inner">
+          
+        
+        {% for i in (1..1) %}
+          {%- assign hidden = false -%}
+          {%- assign background_key = 'background_' | append: i -%}
+          {%- assign color_key = 'color_' | append: i -%}
+          {%- assign shadow_key = 'shadow_' | append: i -%}
+          {%- assign image_key = 'image_' | append: i -%}
+          {%- assign image_in_key = 'image_in_' | append: i -%}
+          {%- assign text_key = 'text_' | append: i -%}
+          {%- assign title_key = 'title_badge_' | append: i -%}
+          {%- assign title_top_key = 'title_top_' | append: i -%}
+          {%- assign url_key = 'url_' | append: i -%}
+
+          {%- assign background = _section[background_key] -%}
+          {%- assign color = _section[color_key] -%}
+          {%- assign shadow = _section[shadow_key] -%}
+          {%- assign image = _section[image_key] -%}
+          {%- assign image_in = _section[image_in_key] -%}
+          {%- assign text = _section[text_key] -%}
+          {%- assign title = _section[title_key] -%}
+          {%- assign title_top = _section[title_top_key] -%}
+          {%- assign url = _section[url_key] -%}
+
+          {% if title_top != blank %}
+<h2 class="title_marcas {{ section_title_class }} ">{{- title_top -}}</h2>
+             <p>{{- section_text_top -}}</p>
+        {% endif %}
+
+
+        <div class="image_text__block f image_text_advanced{% if section_inverse %}-inverse{% endif %} {{ section_container_class }}" style=" margin: 0 auto;">
+
+            {% if image != blank %}
+              <div class="image_text__image image-side" {% if section_background-color %}style="background-color:{{ section_background-color }}{% endif %}">
+                <figure>
+                <img src="{{- image | img_url: '1024x' -}}" alt="{{- image.alt | default: text -}}">
+                </figure>
+            </div><!-- /.marcas__image -->
+            {% endif %}
+            <div class="image_text__content {{ section_text_class }}--{{ forloop.index }} {% if shadow %}shadow{% endif %}" style="background-color: {{ background }}; color: {{ color }};">
+
+            {% if title != blank %}  
+              <div class="image_text_title">                   
+                <h3 class="{{ section_title_class }}" {% if section_size_title %}style="font-size:{{ section_size_title }}vw{% endif %}">
+                  {{- title | newline_to_br -}}
+                </h3>
+              </div>
+            {% endif %}
+                
+            {% if text != blank and image_in == blank %}
+                <p class="{{ section_text_class }}">
+                  {{- text | newline_to_br -}}
+                </p>
+            {% endif %}
+              
+              {% if image_in != blank and text != blank %}
+              <div class="image_text__image {{ section_image_in_class }}">
+                <div class="text-block"> 
+                <p class="{{ section_text_class }}">
+                  {{- text | newline_to_br -}}
+                </p>
+                </div>
+                <div class="image-block">
+                <figure>
+                <img src="{{- image_in | img_url: '1024x' -}}" alt="{{- image_in.alt | default: text -}}">
+                </figure>
+                </div>
+            </div><!-- /.marcas__image -->
+            {% endif %}
+              </div><!-- /.marcas__content -->
+
+          </div><!-- /.subhero-cta__block -->
+
+        {% endfor %}                 
+          </div><!-- /.subhero-cta__inner -->
+
+    </div><!-- /.container -->
+        </div><!-- /.subhero-cta -->
+{% endif %}
+
+ 

@@ -1,0 +1,52 @@
+.lading-sale-page {
+	.main-page-title {
+		display: none;
+	}
+
+	.rocket-stl .rocket-stl__wrapper .rocket-stl__wrapper__dot .rocket-stl__wrapper__dot__summary {
+		width: 20px;
+    	height: 20px;
+		border: 2.5px solid rgba(200,200,200,.4);
+
+		&:before {
+			width: 15px;
+			height: 15px;
+		}
+
+		@media(min-width: 768px) {
+			width: 32px;
+    		height: 32px;
+			border: 4px solid rgba(200,200,200,.4);
+
+			&:before {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+
+	.color-.product-slider {
+	  margin-top: -2px;
+	}
+
+	.vis-hero_banner.layout_1 {
+		@media(min-width: 768px) {
+			margin-top: 3px;
+		}
+	}
+}
+
+.fresh-product-grid {
+	.grid.product-grid.product-grid--4-column {
+		margin: 0;
+		row-gap: 41px;
+    	column-gap: 7px;
+		padding: 0;
+
+		@media(min-width: 768px) {
+			padding: 0 16px;
+			column-gap: 16px;
+			row-gap: 40px;
+		}
+	}
+}

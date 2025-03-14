@@ -1,0 +1,830 @@
+
+<div class="razas-dropdown-container">
+
+    <div class="left-column">
+  <div class="sfondo-carcteristicas">
+    <h1 class="title-caracteristicas">Caracteristicas</h1>
+
+    <div class="container-caracteristicas">
+
+        <div class="icon-caracteristicas">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/dog.png"class="iconcaracteristicas">
+        </div>
+
+        <div class="container-info-caracteristicas">
+
+            <div class="caract_tamano">Altura a la cruz</div>
+            <div class="container-sexo"> <div class="macho">Macho: </div> <div class="size">{{ section.settings.tamacho }}</div></div><br>
+            <div class="container-sexo"> <div class="hembra">Hembra: </div> <div class="size">{{ section.settings.tahembra }}</div></div>
+
+    </div>
+
+    </div>
+
+    <div class="container-caracteristicas">
+
+        <div class="icon-caracteristicas">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/weight.png"class="iconcaracteristicas">
+        </div>
+
+        <div class="container-info-caracteristicas">
+
+            <div class="caract_tamano">Peso</div>
+            <div class="container-sexo"> <div class="macho">Macho: </div> <div class="size">{{ section.settings.pemacho }}</div></div><br>
+            <div class="container-sexo"> <div class="hembra">Hembra: </div> <div class="size">{{ section.settings.pehembra }}</div></div>
+
+    </div>
+
+    </div>
+
+    <div class="container-caracteristicas">
+
+        <div class="icon-caracteristicas">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/esperanza.png"class="iconcaracteristicas">
+        </div>
+
+        <div class="container-info-caracteristicas">
+
+            <div class="caract_tamano">Esperanza de vida</div>
+            <div class="container-sexo"> <div class="macho">{{ section.settings.edevida }}</div></div>
+
+    </div>
+
+    </div>
+
+    <div class="container-caracteristicas">
+
+        <div class="icon-caracteristicas">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/pelaje.png"class="iconcaracteristicas">
+        </div>
+
+        <div class="container-info-caracteristicas">
+
+            <div class="caract_tamano">Pelaje</div>
+            <div class="container-sexo"> <div class="macho">{{ section.settings.pelaje }}</div> </div>
+
+    </div>
+
+    </div>
+
+    <div class="container-caracteristicas">
+
+        <div class="icon-caracteristicas">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/color.png"class="iconcaracteristicas">
+        </div>
+
+        <div class="container-info-caracteristicas">
+
+            <div class="caract_tamano">Color</div>
+            <div class="container-sexo"> <div class="macho">{{ section.settings.colorpelo }}</div> </div>
+            
+
+    </div>
+
+    </div>
+
+    <div class="container-caracteristicas">
+
+        <div class="icon-caracteristicas">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/alimentacion.png"class="iconcaracteristicas">
+        </div>
+
+        <div class="container-info-caracteristicas">
+
+            <div class="caract_tamano">Alimentacion</div>
+            <div class="container-sexo"> <div class="macho">{{ section.settings.alimentacion }}</div> </div>
+            
+
+    </div>
+
+    </div>
+
+    <div class="patologias">
+        
+        <div class="container-patologias">
+            <div class="patologias-first">
+            <div class="icon-caracteristicas2">
+                <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/patologias.png"class="iconcaracteristicas">
+            </div>
+    
+            <div class="container-info-caracteristicas2">
+</div>
+                
+                <div class="caract_tamano">Higiene</div>
+        </div><div class="container-sexo"> <div class="macho">{{ section.settings.enfermedades }}</div> </div></div>
+        
+    </div>
+    
+
+
+</div>
+    </div>
+  <div class="right-column">
+  <div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
+    <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
+      <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
+        <div
+          class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          style="text-align: {{ section.settings.heading_alignment }};"
+        >
+          {%- if section.settings.caption != blank -%}
+            <p class="caption-with-letter-spacing">
+              {{ section.settings.caption | escape }}
+            </p>
+          {% endif %}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
+              {{ section.settings.heading }}
+            </h2>
+          {%- else -%}
+            <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
+          {% endif %}
+        </div>
+        <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {%- if section.settings.image != blank -%}
+            <div class="grid__item collapsible-content__grid-item">
+              <div
+                class="collapsible-content__media collapsible-content__media--{{ section.settings.image_ratio }} media global-media-settings gradient"
+                {% if section.settings.image_ratio == 'adapt' %}
+                  style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
+                {% endif %}
+              >
+                {%- liquid
+                  assign padding_multiplier = 1
+                  if section.settings.layout == 'section'
+                    assign padding_multiplier = 2
+                  endif
+                  assign desktop_tablet_padding = 100 | times: padding_multiplier | append: 'px'
+                  assign mobile_padding = 30 | times: padding_multiplier | append: 'px'
+                -%}
+                {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ desktop_tablet_padding }}) / 2),
+                  (min-width: 750px) calc((100vw - {{ desktop_tablet_padding }}) / 2),
+                  calc(100vw - {{ mobile_padding }})
+                {%- endcapture -%}
+                {{
+                  section.settings.image
+                  | image_url: width: 3200
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: sizes,
+                    widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                }}
+              </div>
+            </div>
+          {% endif %}
+          <div class="grid__item">
+            {%- for block in section.blocks -%}
+              <div
+                class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <details
+                  id="Details-{{ block.id }}-{{ section.id }}"
+                  {% if section.settings.open_first_collapsible_row and forloop.first %}
+                    open
+                  {% endif %}
+                >
+                  <summary id="Summary-{{ block.id }}-{{ section.id }}">
+                    {% render 'icon-accordion', icon: block.settings.icon %}
+                    <h3 class="accordion__title inline-richtext h4">
+                      {{ block.settings.heading | default: block.settings.page.title }}
+                    </h3>
+                    {% render 'icon-caret' %}
+                  </summary>
+                  <div
+                    class="accordion__content rte"
+                    id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
+                    role="region"
+                    aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
+                  >
+                    {{ block.settings.row_content }}
+                    {{ block.settings.page.content }}
+                  </div>
+                </details>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  
+</div>
+
+<style>
+  .fresh-image__text .fresh-block_banner--media {
+        width: 35%;
+    }
+      .fresh-image__text .fresh-image-text__wrapper {
+        width: 65%;
+    }
+  .fresh-image__text .fresh-image-text__wrapper.right {
+        order: 2;
+        padding-left: 85px;
+        padding-right: 85px;
+    }
+ .razas-dropdown-container {
+    display: inline-flex
+;
+    width: 100%;
+    margin: auto;
+    padding: 0rem 5rem;
+}
+  .accordion {
+    border-bottom: 1px solid;
+}
+  
+  .left-column {
+    max-width: 35%;
+}
+ .right-column {
+    width: 65%;
+    padding: 0rem 5rem;
+}
+  h1.title-caracteristicas {
+    font-size: 2rem;
+}
+  h3.accordion__title.inline-richtext.h4 {
+    font-size: 1.8rem;
+    line-height: 5rem;
+}
+  .accordion__content.rte {
+    padding-bottom: 3rem;
+}
+.sfondo-carcteristicas {
+    background: #fecd51;
+    border-radius: 2rem;
+    max-width:100%;
+    margin: auto;
+    display: inline-flex;
+    padding: 2rem 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+.iconcaracteristicas {
+    width: 5rem;
+    padding: 0rem 1rem;
+}
+
+.patologias {
+    width: 100%;
+}
+.patologias-first {
+    display: inline-flex
+;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.container-patologias {
+column-gap: 2rem;
+max-width: 100%;
+width: 100%;
+background: #ffeab8;
+border-radius: 1rem;
+flex-direction: column;
+padding: -6rem;
+padding: 1rem;
+box-sizing: border-box;
+}
+.container-caracteristicas {
+    display: inline-flex;
+  align-items: center;
+    min-width: 100%;
+    width: 100%;
+}
+.container-sexo {
+    display: inline-flex
+;
+    column-gap: 9px;
+}
+.caract_tamano {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+  main#MainContent {
+    max-width: 1900px;
+    margin: auto;
+}
+  h2.rich-text__heading.fresh-image-text__heading.rte.inline-richtext.rocket-font-fgrotesk {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+  img.fresh-block_banner--img.fresh-block_banner--img_des {
+    border-radius: 2rem;
+}
+
+h1 {
+    padding: 0rem;
+    margin: 0rem 0rem 0rem 0rem;
+}
+  .macho,.hembra {
+    font-size: 1.rem;
+}
+
+  @media only screen and (max-width: 600px) {
+    .fresh-image__text .fresh-block_banner--media {
+        width: 100%;
+    }
+      .fresh-image__text .fresh-image-text__wrapper {
+        width: 100%;
+    }
+  .fresh-image__text .fresh-image-text__wrapper.right {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+.razas-dropdown-container {
+        display: inline-flex
+;
+        width: 100%;
+        margin: auto;
+        padding: 0rem 25px;
+        flex-direction: column !important;
+    }
+
+    .left-column {
+    max-width: 100%;
+}
+    .right-column {
+    width: 100%;
+    padding: 0rem .5rem;
+      margin-top: 2rem;
+}
+    h3.accordion__title.inline-richtext.h4 {
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+}
+    h2.rich-text__heading.fresh-image-text__heading.rte.inline-richtext.rocket-font-fgrotesk {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+    .fresh-image__text {
+    display: flex;
+    gap: 16px;
+}
+    img.fresh-block_banner--img.fresh-block_banner--img_mb {
+    border-radius: 1rem;
+}
+    .sfondo-carcteristicas {
+    padding: 1.5rem 1.5rem;
+}
+    .fresh-image__text.bottom {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+  }
+    
+
+</style>
+
+{% schema %}
+{
+  "name": "prova",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "t:sections.collapsible_content.settings.caption.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.collapsible_content.settings.heading.label",
+      "default": "Collapsible content"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:sections.collapsible_content.settings.heading_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.collapsible_content.settings.layout.label",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.collapsible_content.settings.layout.options__1.label"
+        },
+        {
+          "value": "row",
+          "label": "t:sections.collapsible_content.settings.layout.options__2.label"
+        },
+        {
+          "value": "section",
+          "label": "t:sections.collapsible_content.settings.layout.options__3.label"
+        }
+      ],
+      "default": "none"
+    },
+
+    {
+      "type": "color_scheme",
+      "id": "container_color_scheme",
+      "label": "t:sections.collapsible_content.settings.container_color_scheme.label",
+      "info": "t:sections.collapsible_content.settings.container_color_scheme.info",
+      "default": "background-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "default": false,
+      "label": "t:sections.collapsible_content.settings.open_first_collapsible_row.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.collapsible_content.settings.header.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.collapsible_content.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.collapsible_content.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.collapsible_content.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.collapsible_content.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.collapsible_content.settings.image_ratio.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.collapsible_content.settings.desktop_layout.options__1.label"
+        },
+        {
+          "value": "image_second",
+          "label": "t:sections.collapsible_content.settings.desktop_layout.options__2.label"
+        }
+      ],
+      "default": "image_second",
+      "label": "t:sections.collapsible_content.settings.desktop_layout.label",
+      "info": "t:sections.collapsible_content.settings.desktop_layout.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tamacho",
+      "label": "Tamaño macho",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tahembra",
+      "label": "Tamaño hembra",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pemacho",
+      "label": "Peso macho",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pehembra",
+      "label": "Peso hembra",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "edevida",
+      "label": "Esperanza de vida",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pelaje",
+      "label": "Pelaje",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "colorpelo",
+      "label": "Color",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "alimentacion",
+      "label": "Alimentación",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "enfermedades",
+      "label": "Enfermedades",
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collapsible_row",
+      "name": "t:sections.collapsible_content.blocks.collapsible_row.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Collapsible row",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.label",
+          "info": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.info"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__1.label"
+            },
+            {
+              "value": "apple",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__2.label"
+            },
+            {
+              "value": "banana",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__3.label"
+            },
+            {
+              "value": "bottle",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__4.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__5.label"
+            },
+            {
+              "value": "carrot",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__6.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__7.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__8.label"
+            },
+            {
+              "value": "clipboard",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__9.label"
+            },
+            {
+              "value": "dairy",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__10.label"
+            },
+            {
+              "value": "dairy_free",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__11.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__12.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__13.label"
+            },
+            {
+              "value": "fire",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__14.label"
+            },
+            {
+              "value": "gluten_free",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__15.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__16.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__17.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__18.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__19.label"
+            },
+            {
+              "value": "lightning_bolt",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__20.label"
+            },
+            {
+              "value": "lipstick",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__21.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__22.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__23.label"
+            },
+            {
+              "value": "nut_free",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__24.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__25.label"
+            },
+            {
+              "value": "paw_print",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__26.label"
+            },
+            {
+              "value": "pepper",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__27.label"
+            },
+            {
+              "value": "perfume",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__28.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__29.label"
+            },
+            {
+              "value": "plant",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__30.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__31.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__32.label"
+            },
+            {
+              "value": "recycle",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__33.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__34.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__35.label"
+            },
+            {
+              "value": "serving_dish",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__36.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__37.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__38.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__39.label"
+            },
+            {
+              "value": "snowflake",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__40.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__41.label"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__42.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__43.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__44.label"
+            }
+          ],
+          "default": "check_mark",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.row_content.label"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.page.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Prova",
+      "blocks": [
+        {
+          "type": "collapsible_row"
+        },
+        {
+          "type": "collapsible_row"
+        },
+        {
+          "type": "collapsible_row"
+        },
+        {
+          "type": "collapsible_row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

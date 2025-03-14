@@ -1,0 +1,100 @@
+<nav class="fresh-footer__menu">
+  <ul class="list-menu" role="list">
+    {%- for link in section.settings.footer_menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <div class="footer__menu-heading" onclick="toggleDropdown(this)">
+            {{- link.title | escape -}}
+          </div>
+          <ul class="footer__submenu list-menu" style="display: none;">
+            {%- for childlink in link.links -%}
+              <li>
+                <a href="{{ childlink.url }}" class="footer__menu-item" title="{{ childlink.title | escape }}">
+                  {{ childlink.title | escape }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- else -%}<br>
+          <a href="{{ link.url }}" class="footer__menu-heading" title="{{- link.title | escape -}}">
+            {{- link.title | escape -}}
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+
+<style>
+  /* Stile per il menu */
+  .fresh-footer__menu {
+    font-family: Poppins;
+  }
+
+  .list-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-menu li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__menu-heading {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .footer__submenu {
+    padding-left: 20px;
+    display: none;
+  }
+
+  .footer__submenu a {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .footer__submenu a:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    /* Abilita i sottomenu sempre visibili su schermi più grandi */
+    .footer__submenu {
+      display: block !important;
+    }
+
+    .footer__menu-heading {
+      cursor: default;
+    }}
+    @media only screen and (max-width: 600px) {
+    .fresh-footer__menu .list-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    column-gap: 60px;
+    row-gap: 0px;
+    flex-direction: column;
+}
+  }
+</style>
+
+<script>
+  function toggleDropdown(element) {
+    // Ottieni il sottomenu successivo
+    var submenu = element.nextElementSibling;
+
+    // Cambia la visibilità del sottomenu
+    if (submenu.style.display === "none" || submenu.style.display === "") {
+      submenu.style.display = "block";
+    } else {
+      submenu.style.display = "none";
+    }
+  }
+</script>

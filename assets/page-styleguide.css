@@ -1,0 +1,107 @@
+.page-styleguide .typography-wrapper,
+.page-styleguide .color-wrapper,
+.page-styleguide .button-wrapper,
+.page-styleguide .tab-wrapper,
+.page-styleguide .field-wrapper {
+  padding: 0 0 56px 0;
+}
+.page-styleguide .typography-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.page-styleguide .typography-wrapper .typography-wrapper-item {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));   
+  gap: 16px;
+  @media (min-width: 1024px) {
+    gap: 48px;
+  }
+}
+.page-styleguide .typography-wrapper .typography-wrapper-item .styleguide-heading {
+  margin: 0;
+}
+.page-styleguide .styleguide-heading {
+  width: 100%;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 32px 0 32px 0;
+}
+
+.page-styleguide .color-wrapper .color-type {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.page-styleguide .color-wrapper .color-type .color-title {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  min-width: 141px;
+}
+.page-styleguide .color-wrapper .color-type .color-item {
+  width: 140px;
+  height: 40px;
+  border-radius: 8px;
+  display: block;
+}
+.page-styleguide .color-wrapper .color-type .color-item-title {
+  text-align: right;
+  margin-top: 8px;
+  width: 100%;
+  display: block;
+}
+.page-styleguide .button-wrapper .button-wrapper-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+.page-styleguide .button-wrapper .button-wrapper-items button {
+  max-width: 252px;
+  width: 100%;
+}
+
+.page-styleguide .field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+
+h1.h1-mobile {
+  font-size: 36px;
+  line-height: 38px;
+}
+
+h2.h2-mobile {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h3.h3-mobile {
+  font-size: 24px;
+  line-height: 1;
+}
+
+h4.h4-mobile {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+h5.h5-mobile {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+h6.h6-mobile {
+  font-size: 16px;
+  line-height: 24px;
+}

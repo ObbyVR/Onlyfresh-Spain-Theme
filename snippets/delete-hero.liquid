@@ -1,0 +1,224 @@
+{% assign mod_data = mod_data | default: false %}
+
+{% if mod_data and mod_data.blocks.size > 0 %}
+  <div class="hero-carousel slider-principal" data-module="hero">
+		{% for block in mod_data.blocks %}
+			{%- assign _section = block.settings -%}
+			{%- assign section_box_alignment = _section.box_alignment -%}
+			{%- assign section_box_alignment_vertical = _section.box_alignment_vertical -%}
+			{%- assign section_image_desktop = _section.image_desktop -%}
+			{%- assign section_image_tablet = _section.image_tablet | default: section_image_desktop -%}
+			{%- assign section_image_mobile = _section.image_mobile | default: section_image_desktop -%}
+			{%- assign section_bg_color = _section.bg_color -%}
+			{%- assign section_background_opacity = _section.background_opacity -%}
+    
+			{%- assign section_text_1 = _section.text_1 -%}
+			{%- assign section_font_size_1 = _section.font_size_1 -%}
+			{%- assign section_font_weight_1 = _section.font_weight_1 -%}
+			{%- assign section_text_2 = _section.text_2 -%}
+			{%- assign section_font_size_2 = _section.font_size_2 -%}
+			{%- assign section_font_weight_2 = _section.font_weight_2 -%}
+			{%- assign section_text_3 = _section.text_3 -%}
+			{%- assign section_font_size_3 = _section.font_size_3 -%}
+			{%- assign section_font_weight_3 = _section.font_weight_3 -%}
+			{%- assign section_border_3 = _section.border_3 -%}
+			{%- assign section_btn_text = _section.btn_text -%}
+			{%- assign section_btn_url = _section.btn_url -%}
+    		{%- assign section_btn_color = _section.btn_color -%}
+   			{%- assign section_btn_border_radius = _section.btn_border_radius -%}
+	 
+			{%- assign section_btn_box_class = _section.btn_box_class -%}
+	  		{%- assign section_btn_text_1 = _section.btn_text_1 -%}
+			{%- assign section_btn_url_1 = _section.btn_url_1 -%}
+    		{%- assign section_btn_color_1 = _section.btn_color_1 -%}
+   			{%- assign section_btn_border_radius_1 = _section.btn_border_radius_1 -%}
+            {%- assign section_btn_class_1 = _section.btn_class_1 -%}
+    
+			{%- assign section_text_below = _section.text_below -%}
+  		 	{%- assign section_text_below_color = _section.text_below_color -%}
+    		{%- assign section_text_out = _section.text_out -%}
+  		    {%- assign section_main_class = _section.main_class -%} 
+  			{%- assign section_conteiner_class = _section.conteiner_class -%}  
+    		{%- assign section_content_class = _section.content_class -%}  
+      		{%- assign section_sub_text_class = _section.sub_text_class -%}
+      		{%- assign section_btn_class = _section.btn_class -%}
+			{%- assign section_text_out_class = _section.text_out_class -%}
+ 		    {%- assign section_text_out_color = _section.text_out_color -%}
+  	        {%- assign section_text_out_weight = _section.text_out_weight -%}
+    		{%- assign section_text_out_alignment = _section.text_out_alignment -%}
+    
+    
+			{%- assign opacity = section_background_opacity | divided_by: 100.00 | append: ')' | prepend: ',' -%}
+			{%- assign color_overlay = section_bg_color | color_to_rgb | replace: 'rgb', 'rgba' | replace: ')', opacity  -%}
+       
+    		{%- assign section_image_class = _section.image_class -%}
+    
+  			{%- assign section_image_subject = _section.image_subject -%}
+        	{%- assign section_image_subject_2 = _section.image_subject_2 -%}
+
+
+			{% assign bgset = '' %}
+
+			{% if section_image_desktop != blank %}
+				{% assign desktop_image = section_image_desktop %}
+				{% assign tablet_image = section_image_tablet | default: desktop_image %}
+				{% assign mobile_image = section_image_mobile | default: desktop_image %}
+
+				{% capture bgset %}
+					data-bgset="{% render 'srcset', desktop: desktop_image, mobile: mobile_image %}"
+					data-sizes="auto"
+				{% endcapture %}
+			{% endif %}
+
+			<div class="hero hero--{{ mod_data.id }} hero--{{ mod_data.id }}--{{ forloop.index }} relative {{ section_main_class }}">
+				{% if section_image_desktop != blank %}
+					{% if section_btn_text == blank %}
+            {% if section_btn_url != blank and section_btn_text == blank %}  <a href="{{- section_btn_url -}}" style="z-index:999;">{% endif %}{% endif %}<div class="hero__image fill {{ section_image_class }}">
+						<img
+							class="lazyload block-m block-md block-l"
+							data-src="{{- section_image_desktop | img_url: '1024x' -}}"
+							data-srcset="{% render 'srcset', desktop: section_image_desktop %}"
+							alt="{{- section_image_desktop.alt -}}"
+							>
+
+						<img
+							class="lazyload block-s"
+							data-src="{{- section_image_tablet | img_url: '1024x' -}}"
+							data-srcset="{% render 'srcset', desktop: section_image_tablet %}"
+							alt="{{- section_image_tablet.alt -}}"
+							>
+
+						<img
+							class="lazyload hidden-s hidden-m hidden-md hidden-l"
+							data-src="{{- section_image_mobile | img_url: '1024x' -}}"
+							data-srcset="{% render 'srcset', desktop: section_image_mobile %}"
+							alt="{{- section_image_mobile.alt -}}"
+							>
+					</div> {% if section_btn_url != blank and section_btn_text == blank %}</a>{% endif %}<!-- /.hero__image -->
+				{% endif %}
+              
+         
+                {% if section_image_subject_2 != blank %}
+					<div class="hero__image_subject fill subject-2 {{ section_image_class }}">
+						<img
+							class="lazyload img-subject img-subject-2"
+							data-src="{{- section_image_subject_2 | img_url: '1024x' -}}"
+							data-srcset="{% render 'srcset', desktop: section_image_subject_2 %}"
+							alt="{{- section_image_subject_2.alt -}}"
+							>
+
+			
+					</div><!-- /.hero__image -->
+				{% endif %}   
+
+				{% if section_text_1 != blank or section_text_2 != blank or section_text_3 != blank or section_btn_text != blank %}
+					<div class="container relative {{ section_conteiner_class }}">
+						<div class="hero__inner {{ section_box_alignment }} {{ section_box_alignment_vertical }}">
+						{% if section_btn_text == blank %}
+                          <a href="{{- section_btn_url -}}" class="{{ section_box_alignment }} {{ section_box_alignment_vertical }}" style="z-index:999;width: 100%;">{% endif %}	
+                          <div class="hero__content  {{ section_content_class }}" style="{% if section_btn_text == blank %}z-index:9999;{% endif %}background-color: {{ color_overlay }};">
+
+								{% for i in (1..4) %}
+									{% assign title_key = 'title_' | append: i %}
+                         		    {% assign text_key = 'text_' | append: i %}
+									{% assign size_key = 'font_size_' | append: i %}
+									{% assign mobile_size_key = 'font_size_' | append: i | append: '_mobile' %}
+									{% assign weight_key = 'font_weight_' | append: i %}
+									{% assign border_key = 'border_' | append: i %}
+                         		    {% assign text_class_key = 'text_class_' | append: i %}
+                            	    {% assign text_color_key = 'text_color_' | append: i %}
+                            		{% assign background_color_key = 'background_color_' | append: i %}
+
+									{% assign title = _section[title_key] %}
+                              		{% assign text = _section[text_key] %}
+									{% assign size = _section[size_key] %}
+                         		    {% assign text_class = _section[text_class_key] %}
+                           			{% assign text_color = _section[text_color_key] %}
+									{% assign mobile_size = _section[mobile_size_key] %}
+									{% assign weight = _section[weight_key] %}
+                         		    {% assign background_color = _section[background_color_key] %}
+
+									<style type="text/css" media="screen">
+										{% if section_content_class != blank %}.{{ section_content_class }}{% endif %} .hero__entry--{{ forloop.index }} {% if section_text_class_1 != blank %}.{{ section_text_class_1 }}--{{ forloop.index }}{% endif %} {
+								   {% if size != blank %}font-size: {{ size }}vw;{% endif %}
+                                   {% if weight != blank %}font-weight: {{ weight }};{% endif %}
+                                   {% if background_color != blank %}background-color: {{ background_color }};{% endif %}
+                                   
+										}
+
+										@media (max-width: 767px) {
+										.hero--{{ mod_data.id }} .hero__entry--{{ forloop.index }} .{{ text_class }} .{{ text_class }}--{{ forloop.index }} {
+												font-size: {{ mobile_size }}vw;
+											}
+										}
+
+									
+									</style>
+ 
+									{% if i == 3 %}
+										{% assign border = _section[border_key] %}
+									{% endif %}
+
+                               
+									{% if text != blank %}
+                             			{% if title != blank %}<h2 class="hero__title">{{- title | newline_to_br -}}</h2>{% endif %}
+										<p class="hero__entry hero__entry--{{ forloop.index }} {{ text_class }} {{ text_class }}{% if text_class != blank %}--{{ forloop.index }}{% endif %} {% if border %}border{% endif %}" style="{% if background_color %}background-color: {{ background_color }}{% endif %};{% if text_color != blank %}color: {{ text_color }};{% endif %}font-weight: {{ weight }}; font-size: {{ size }}vw;">
+											{{- text | newline_to_br -}}
+										</p>
+									{% endif %}
+								{% endfor %}
+
+							     {% if section_image_subject != blank %}
+					<div class="hero__image_subject {{ section_image_class }}">
+						<img
+							class="lazyload img-subject"
+							data-src="{{- section_image_subject | img_url: '1024x' -}}"
+							data-srcset="{% render 'srcset', desktop: section_image_subject %}"
+							alt="{{- section_image_subject.alt -}}"
+							>
+
+			
+                      </div><!-- /.hero__image -->
+				{% endif %}     
+							  {% if section_btn_text != blank and section_btn_url != blank %}
+                                <div class="button_group_hero {{ section_btn_box_class }}">{% endif %}
+							
+                                {% if section_btn_text != blank and section_btn_url != blank %}
+									<a href="{{- section_btn_url -}}" class="{{ section_btn_class }} hero__btn" style="{% if section_btn_text != blank and section_btn_url != blank and section_btn_url_1 == blank %}max-width:60%;width:60%;{% elsif section_btn_text != blank and section_btn_url != blank and section_btn_url_1 != blank %}max-width:45%;display:inline-flex;{% endif %}{% if section_btn_color %}background-color:{{ section_btn_color }};{% endif %}{% if section_btn_border_radius %}border-radius:{{ section_btn_border_radius }};{% endif %}">
+									{{- section_btn_text -}}
+									</a><!-- /.hero__btn -->
+								{% endif %}
+							  
+								{% if section_btn_text_1 != blank and section_btn_url_1 != blank %}
+									<a href="{{- section_btn_url_1 -}}" class="{{ section_btn_class_1 }} hero__btn" style="{% if section_btn_text_1 != blank and section_btn_url_1 != blank %}max-width:45%;display:inline-flex;{% endif %}{% if section_btn_color_1 %}background-color:{{ section_btn_color_1 }};{% endif %}{% if section_btn_border_radius_1 %}border-radius:{{ section_btn_border_radius_1 }};{% endif %}">
+									{{- section_btn_text_1 -}}
+									</a><!-- /.hero__btn 1 -->
+								{% endif %}
+
+							   {% if section_btn_text != blank and section_btn_url != blank %}</div>{% endif %}
+								{% if section_text_below != blank %}
+									<p class="hero__text  {{ section_sub_text_class }}" style="{% if section_text_below_color %}color:{{- section_text_below_color -}};{% endif %}margin-bottom:0;margin-top:10px;max-width:100%;">
+										{{- section_text_below -}}
+									</p>
+								{% endif %}    
+							</div>
+                          {% if section_btn_text == blank %}</a>{% endif %}<!-- /.hero__content -->
+
+                          {% if section_text_out != blank %}
+                          <div class="box_text_out" style="width:40%;">
+						<p class="hero__text {{ section_text_out_class }} {% if section_text_out_alignment != blank %}{{ section_text_out_alignment }}{% endif %}" style="max-width:100%;{% if section_text_out_color != blank %}color:{{ section_text_out_color }};{% endif %}{% if section_text_out_weight != blank %}font-weight:{{ section_text_out_weight }};{% endif %}">
+                          {{- section_text_out -}}
+                        </p>
+                          </div>
+                          {% endif %}
+                          
+						</div><!-- /.hero__inner -->
+					</div><!-- /.container -->
+         
+              
+				{% endif %}
+			</div><!-- /.hero -->
+		{% endfor %}
+  </div>
+{% endif %}
+

@@ -1,0 +1,324 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} product form id.
+  - section_id: {String} id of section to which this snippet belongs.
+  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+
+  Usage:
+  {% render 'rocket-buy-buttons-mobile', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+{% endcomment %}
+
+<div class="main-product-sticky-form" {{ block.shopify_attributes }}>
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+    -%}
+
+    <product-form
+      class="product-form rocket-buy-buttons-mobile"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+    >
+      <div class="product-form__error-message-wrapper" role="alert" hidden></div>
+
+      {% assign form_id = product_form_id | append: '-sticky' %}
+
+      {%- form 'product',
+        product,
+        id: form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+        <div class="sticky-size-options">
+          {% if product.options_with_values.size > 1 %}
+            {%- for option in product.options_with_values -%}
+              {% assign option_name = option.name | downcase %}
+              {% if option_name == 'size' or option_name == 'talla' or option_name == 'tamaño' %}
+                {%- assign size_option_index = forloop.index0 -%}
+                {%- for variant in product.variants -%}
+                  {%- assign size_value = variant.options[size_option_index] -%}
+                  {%- assign color_value = '' -%}
+                  {%- for value in variant.options -%}
+                    {%- if forloop.index0 != size_option_index -%}
+                      {%- assign color_value = value -%}
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  <span
+                    class="sticky-option{% if variant.available == false %} sold-out{% endif %}"
+                    value="{{ variant.id }}"
+                    title="{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% else %}{% if variant.inventory_quantity == 0 %}{{ 'products.product.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}{% endif %}"
+                    description="{{ 'products.product.unavailable' | t }}"
+                    color_id="{{color_value}}"
+                  >
+                    <span class="sticky-title">{{ color_value }} - {{ size_value }}</span>
+                    <p class="sticky-price">{{ variant.price | money }}</p>
+                  </span>
+                {%- endfor -%}
+              {% endif %}
+            {%- endfor -%}
+          {% else %}
+            {% for variant in product.variants %}
+              <span
+                class="sticky-option{% if variant.available == false %} sold-out{% endif %}"
+                value="{{ variant.id }}"
+                title="{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}"
+                description="{{ 'products.product.unavailable' | t }}"
+              >
+                {% if product.tags contains 'promo-2x1' %}
+                  {% if variant.option1 contains '0.8' -%}
+                    <span class="badge-variant-promo">2x1</span>
+                  {% elsif variant.option1 contains '0.3' -%}
+                    <span class="badge-variant-promo">2x1</span>
+                  {% endif %}
+                {% endif %}
+                <span class="sticky-title">{{ variant.option1 }}</span>
+                <p class="sticky-price">{{ variant.price | money }}</p>
+              </span>
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        <div class="product-form__variant-picker">
+          <div class="sticky-select">
+            <div class="sticky-select__trigger">selecciona el formato</div>
+          </div>
+        </div>
+
+        <div class="product-form__quantity-picker">
+          <label for="quantity-select" class="quantity-label"> Cantidad </label>
+          <div class="quantity-controls">
+            <button type="button" class="quantity-btn" onclick="decreaseQuantity()">-</button>
+            <input type="text" name="quantity" id="quantity-input" value="1" min="1" readonly>
+            <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
+          </div>
+        </div>
+
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          disabled
+          class="product-variant-id sticky-mobile"
+        >
+
+        {%- if gift_card_recipient_feature_active -%}
+          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+
+        <div class="product-form__buttons">
+          <button
+            id="ProductStickySubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form-mobile__submit button button--full-width button--primary"
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+          </button>
+        </div>
+      {%- endform -%}
+    </product-form>
+  {%- else -%}
+    <div class="product-form">
+      <div class="product-form__buttons form">
+        <button
+          type="submit"
+          name="add"
+          class="product-form__submit button button--full-width button--primary"
+          disabled
+        >
+          {{ 'products.product.sold_out' | t }}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+<div class="main-product-sticky-form-overlay"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollingMessage = document.getElementById("scrollingMessage");
+    const variantOptions = document.querySelectorAll(".sticky-option");
+
+    variantOptions.forEach(option => {
+      option.addEventListener("click", function () {
+        if (scrollingMessage) {
+          scrollingMessage.style.display = "none";
+        }
+      });
+    });
+  });
+
+  function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity-input');
+    var currentValue = parseInt(quantityInput.value);
+    if (currentValue < 500) {
+      quantityInput.value = currentValue + 1;
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity-input');
+    var currentValue = parseInt(quantityInput.value);
+    if (currentValue > 1) {
+      quantityInput.value = currentValue - 1;
+    }
+  }
+</script>
+
+<style>
+          .scrolling-message {
+              overflow: hidden;
+              white-space: nowrap;
+              box-sizing: border-box;
+              width: 100%;
+              background: #f9f9f9;
+              padding: 10px;
+              border: 1px solid #ccc;
+              position: relative;
+          }
+
+          .scroll-container {
+              display: inline-block;
+              white-space: nowrap;
+              animation: scroll 200s linear infinite;
+          }
+
+          .scroll-container span {
+              display: inline-block;
+              padding-right: 30px; /* Spazio tra i messaggi */
+          }
+
+          @keyframes scroll {
+              0% {
+                  transform: translateX(0%);
+              }
+              100% {
+                  transform: translateX(-100%);
+              }
+          }
+    div#scrollContainer {
+      background: #c7ffc1;
+      padding: .3rem;
+  }
+</style>
+<style>
+      .product-form__quantity-picker {
+      margin-top: 15px;
+    }
+
+    .quantity-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .quantity-select {
+        width: 100%;
+        padding: 0px 0px 8px 0px;
+        font-size: 16px;
+        border: none;
+        background-color: white;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .quantity-select:focus {
+      outline: none;
+      border-color: #999;
+    }
+      .main-product-sticky-form .rocket-buy-buttons-mobile .product-form__variant-picker{
+        width:33.3%;
+        border-right:1px solid #000;
+      }
+      .main-product-sticky-form .rocket-buy-buttons-mobile .product-form__buttons {
+        width: 34%;
+    }
+
+      .product-form__quantity-picker {
+        max-width:33%;
+        margin: 0px;
+        border-top: 1px solid #000;
+        background: white;
+        min-height: 3.36rem;
+    }
+    label.quantity-label {
+        font-size: .6rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0rem;
+    }
+
+
+
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -8px;
+    }
+
+    .quantity-btn {
+        background-color: white;
+        border: none;
+        padding: 0px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 24px;
+        color: black;
+        height: 35px;
+        text-align: center;
+    }
+
+
+    #quantity-input {
+        width: 50%;
+        height: 35px;
+        text-align: center;
+        font-size: 16px;
+        border: 0px solid #ddd;
+        margin: 0 0px;
+    }
+      .quantity-btn:hover {
+
+        border: none;
+    }
+         .main-product-sticky-form .rocket-buy-buttons-mobile .sticky-size-options .sticky-option {
+            font-size: .9rem;
+            line-height: 1.1rem;
+            height: 3.6rem;
+            font-family: Poppins;
+            border-top: 1px solid;
+            margin: 0rem;
+           padding-top:.7rem;
+
+        }
+
+       .main-product-sticky-form .rocket-buy-buttons-mobile .sticky-size-options.active {
+        display: inline-flex;
+
+    }
+      .main-product-sticky-form .rocket-buy-buttons-mobile .sticky-size-options .sticky-option {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    iframe#chat-button {
+      margin-bottom: 2rem!important;
+      margin-right: 0rem;
+  }
+</style>

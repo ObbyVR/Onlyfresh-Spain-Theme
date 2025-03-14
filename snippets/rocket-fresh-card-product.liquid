@@ -1,0 +1,403 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+  - section_id: {String} The ID of the section that contains this card.
+
+  Usage:
+  {% render 'rocket-fresh-product-card' %}
+{% endcomment %}
+
+{%- if card_product and card_product != empty -%}
+  {%- if primary_image == null -%}
+    {%- assign primary_image = card_product.featured_media -%}
+  {%- endif -%}
+  {%- if second_image == null -%}
+    {%- assign second_image = card_product.media[1] -%}
+  {%- endif -%}
+  {%- assign show_quick_add = true -%}
+
+  <product-card class="rocket-fresh-product-card {{ type }} {{ type_section }} {% if collection_page %}{{ image_type }}{% endif %} {% if video != null %}rocket-fresh-product-card__video{% endif %}">
+    <div class="rocket-fresh-product-card__overlay"></div>
+
+    <div
+      class="
+        rocket-fresh-product-card__wrapper
+        {% if card_product.metafields.rocket.badge and collection_page %}
+          rocket-fresh-product-card__wrapper--badge
+        {% endif %}
+      "
+      style="
+        {% if card_product.tags contains 'Bajo contenido en cereales' or card_product.tags contains 'Sin cereales' or card_product.tags contains 'Hipoalergénico' %}
+          justify-content: center;
+        {% endif %}
+      "
+    >
+      {%- if primary_image -%}
+        <div class="rocket-fresh-product-card__inner">
+          <a
+            href="{{ card_product.url  }}"
+            class="rocket-fresh-product-card__image-wrapper {% if second_image and show_secondary_image %}rocket-fresh-product-card__image--hover {% endif %} "
+          >
+            {{
+              primary_image
+              | image_url: width: primary_image.width
+              | image_tag:
+                loading: 'lazy',
+                alt: card_product.title,
+                width: primary_image.width,
+                height: primary_image.height,
+                class: 'rocket-fresh-product-card__image motion-reduce'
+            }}
+            {% if second_image and show_secondary_image %}
+              {{
+                second_image
+                | image_url: width: second_image.width
+                | image_tag:
+                  loading: 'eager',
+                  alt: card_product.title,
+                  width: second_image.width,
+                  height: second_image.height,
+                  class: 'rocket-fresh-product-card__image motion-reduce'
+              }}
+            {% endif %}
+          </a>
+          {%- render 'tag-label', card_product: card_product -%}
+
+          <div
+            onclick="event.stopPropagation();return false;"
+            class="rocket-fresh-product-card__btn-cart {% if card_product.has_only_default_variant %}visually-hidden{% endif %}"
+            data-product-id="{{ card_product.id }}"
+            data-section-id="{{ section_id }}"
+          >
+            <svg
+              class="rocket-fresh-product-card__btn-cart--icon"
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M4.4077 9.5V5.33395H0.25V4.64935H4.4077V0.5H5.0756V4.64935H9.25V5.33395H5.0756V9.5H4.4077Z" fill="#000000"/>
+            </svg>
+          </div>
+          {%- if show_quick_add -%}
+            {% render 'rocket-fresh-variant-swiper',
+              card_product: card_product,
+              section_id: section_id,
+              using_svg: false,
+              vendor: vendor
+            %}
+          {%- endif -%}
+        </div>
+      {% endif %}
+
+      <div class="icon-star">
+        {% for i in (1..sensitive) %}
+          {% render 'icon-star' %}
+        {% endfor %}
+      </div>
+
+      <div class="tags-card-collection">
+        {% assign has_tag = false %}
+        {% for tag in card_product.tags %}
+          {% if tag contains 'Bajo contenido en cereales' %}
+            <span
+              class="{{ tag }} rocket-fresh-product-media-gallery__tag--label tag-label {{ tagClass }}"
+              style="color: white; background-color: #68b651; border-radius: 30px;"
+            >
+              Low grain
+            </span>
+            {% assign has_tag = true %}
+          {% elsif tag contains 'Sin cereales' %}
+            <span
+              class="{{ tag }} rocket-fresh-product-media-gallery__tag--label tag-label {{ tagClass }}"
+              style="color: white; background-color: #6388c7;"
+            >
+              Grain free
+            </span>
+            {% assign has_tag = true %}
+          {% elsif tag contains 'Hipoalergénico' %}
+            <span
+              class="{{ tag }} rocket-fresh-product-media-gallery__tag--label tag-label {{ tagClass }}"
+              style="color: black; background-color: #f1f1f1; order:2; border-radius: 30px;"
+            >
+              Hipoalergénico
+            </span>
+            {% assign has_tag = true %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless has_tag %}
+          <span
+            class="rocket-fresh-product-media-gallery__tag--label tag-label"
+            style="color: black; background-color: #f1f1f1; border-radius: 30px; opacity: 0;height:auto;"
+          >
+            Vuoto
+          </span>
+        {% endunless %}
+      </div>
+
+      <div class="novedad">
+        {% assign has_tag = false %}
+        {% for tag in card_product.tags %}
+          {% if tag contains 'Novedad' %}
+            <span
+              class="novedad-badge"
+              style="color: white; background-color: #68b651; border-radius: 30px;"
+            >
+              Novedad
+            </span>
+            {% assign has_tag = true %}
+
+          {% else %}
+            {% assign has_tag = true %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless has_tag %}
+          <span
+            class="rocket-fresh-product-media-gallery__tag--label tag-label"
+            style="color: black; background-color: #f1f1f1; border-radius: 30px; opacity: 0;height:auto;"
+          >
+            Vuoto
+          </span>
+        {% endunless %}
+      </div>
+
+      <div class="novedad promo">
+        {% assign has_tag = false %}
+        {% for tag in card_product.tags %}
+          {% if tag contains 'promo-2x1' %}
+            <span
+              class="novedad-badge promo-badge"
+              style="color: white; background-color: #000; border-radius: 30px;"
+            >
+              Promo 2x1
+            </span>
+            {% assign has_tag = true %}
+
+          {% else %}
+            {% assign has_tag = true %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless has_tag %}
+          <span
+            class="rocket-fresh-product-media-gallery__tag--label tag-label"
+            style="color: black; background-color: #f1f1f1; border-radius: 30px; opacity: 0;height:auto;"
+          >
+            Vuoto
+          </span>
+        {% endunless %}
+      </div>
+
+      <div class="rocket-fresh-product-card__content">
+        <div class="rocket-fresh-product-card__information {% if card_product.metafields.rocket.badge %}rocket-fresh-product-card__information--badge{% endif %}">
+          <div class="rocket-fresh-product-card__information-heading">
+            <h3 class="card__heading body-s-regular">
+              <a
+                href="{{ card_product.url }}"
+                id="CardLink-{{ section_id }}-{{ card_product.id }}"
+                class="full-unstyled-link {{ text_font_class }}"
+                aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+              >
+                {{ card_product.title | escape }}
+              </a>
+            </h3>
+          </div>
+          <script>
+                        // SCRIPT PER RIDURRE TITOLO, DA ELIMINARE
+            document.addEventListener("DOMContentLoaded", function() {
+              // Trova il titolo del prodotto all'interno del link
+              var productTitleElement = document.querySelector('#CardLink-{{ section_id }}-{{ card_product.id }}');
+
+              if (productTitleElement) {
+                // Ottieni il nome del prodotto
+                var productTitle = productTitleElement.textContent;
+
+                // Verifica se il nome contiene un trattino e rimuovi tutto dopo
+                var newTitle = productTitle.split('-')[0].trim();
+
+                // Aggiorna il titolo del prodotto senza il testo dopo il trattino
+                productTitleElement.textContent = newTitle;
+              }
+            });
+          </script>
+          {% assign sensitive = card_product.metafields.custom.sensitive %}
+          {% assign sub_title = card_product.metafields.custom.sub_title %}
+          {% if sensitive != blank or sub_title != blank %}
+            <div class="sensitive">
+              <span class="title">
+                {%- if sub_title != blank -%}
+                  {{ sub_title.value }}
+                {%- else -%}
+                  {{ 'products.product.volume_pricing.sensitive' | t }}
+                {%- endif -%}
+              </span>
+
+              <div class="price-card-collection">
+                {% render 'rocket-fresh-price',
+                  product: card_product,
+                  price_class: '',
+                  show_compare_at_price: true,
+                  text_font_class: text_font_class,
+                  use_variant: true
+                %}
+                {%- if card_product.quantity_price_breaks_configured? -%}
+                  <div class="card__information-volume-pricing-notew">
+                    <span class="captioq">{{ 'products.product.volume_pricing.note' | t }}</span>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="card-information">
+            {% comment %} <span class="caption-large light">{{ block.settings.description | escape }}</span> {% endcomment %}
+            <a href="{{ card_product.url }}" class="rocket-fresh-product-card__information-color">
+              {% assign option_count = 0 %}
+              {% assign max_options = 12 %}
+              {% for option in card_product.options_with_values %}
+                {% assign option_name = option.name | downcase %}
+              {% endfor %}
+            </a>
+            {%- if section.settings.show_vendor -%}
+              <div class="caption-with-letter-spacing light rocket-fresh-product-card__vendor">
+                {{ card_product.vendor }}
+              </div>
+            {%- endif -%}
+            {% for tag in card_product.tags %}
+              {%- if tag == settings.product_tag_outside -%}
+                {%- assign tag_color = settings.product_tag_outside_color -%}
+                <span
+                  class="rocket-fresh-product-media-gallery__tag--text tag-text body-caption"
+                  style="--tag-color: {{ tag_color }};"
+                >
+                  {{- tag -}}
+                </span>
+                {%- break -%}
+              {%- endif -%}
+            {% endfor %}
+            <div class="product-card-notification"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="btn-add-cart-complete"
+        onclick="this.closest('product-card').querySelector('.rocket-fresh-product-card__btn-cart').click()"
+      >
+        {{ 'products.product.add_to_cart' | t }}
+      </div>
+    </div>
+  </product-card>
+{%- else -%}
+  <product-card class="card-wrapper product-card-wrapper underline-links-hover">
+    <div
+      class="
+        card card--{{ settings.card_style }}
+        {% if extend_height %} card--extend-height{% endif %}
+        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+      "
+      style="--ratio-percent: 100%;"
+    >
+      <div
+        class="card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio"
+        style="--ratio-percent: 100%;"
+      >
+        <div class="card__media">
+          <div class="media media--transparent">
+            {%- if placeholder_image -%}
+              {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- else -%}
+              {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading  body-s-regular card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
+            <a role="link" aria-disabled="true" class="full-unstyled-link">
+              {{ 'onboarding.product_title' | t }}
+            </a>
+          </h3>
+          <div class="card-information">
+            {%- if show_vendor -%}
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
+            {%- endif -%}
+            {% render 'price', show_compare_at_price: true, text_font_class: text_font_class %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </product-card>
+{%- endif -%}
+
+<style>
+    .variant-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top:10px;
+    }
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .legend {
+      font-size:1rem;
+      color:#000;
+    }
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input {
+      color: #000000;
+      border-radius:5px;
+      background: #ffffff;
+    }
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label {
+      padding: 2px 1.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #000000;
+      border-radius:5px;
+      text-align:center;
+      background-color: var(--color-secondary-bright);
+    }
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label span {
+      font-weight:400;
+    }
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label:hover {
+      background-color: #000000;
+      color:#fff;
+    }
+     .rocket-fresh-product-card__inner:hover .rocket-fresh-product-card__quick-add {
+      box-shadow: 1px 1px 30px 5px #52525221;
+      border-radius:10px;
+     }
+    .novedad {
+      position: absolute;
+      top:0px;
+      margin-top: 3%;
+      margin-left: 2%;
+  }
+    .novedad.promo {
+      position: absolute;
+      top:3px;
+      right: 2%;
+      left: unset;
+  }
+    span.novedad-badge {
+      padding: 6% 20%;
+      background: #ffbb00 !important;
+      color:black!important;
+      font-weight:bold;
+      font-size:12px;
+  }
+  span.promo-badge {
+    padding:6px 10px;
+    background-color:#ff2900 !important;
+    color:white!important;
+  }
+    .rocket-fresh-product-card__wrapper {
+      position: relative;
+  }
+</style>

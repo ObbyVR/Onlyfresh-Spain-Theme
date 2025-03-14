@@ -1,0 +1,347 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb}}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb}}px;
+    color: rgb(var(--color-foreground))
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .rocket-icon-text__link {
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+  }
+
+  .rocket-icon-text__link:hover {
+    text-decoration: underline;
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="rocket-icon-text__container">
+    {%- for block in section.blocks -%}
+      {% if block.type == "custom" %}
+        {% if block.settings.custom_text %}
+          <div class="rocket-icon-text__item">
+            {{ block.settings.custom_text }}
+          </div>
+        {% endif %}
+      {% endif %}
+    {%- endfor -%}
+
+    <div class="footer-icons">
+      {%- for block in section.blocks -%}
+        {% if block.type == "icon_text" %}
+          {%- if block.settings.image != blank or block.settings.title != blank -%}
+            <div class="rocket-icon-text__item">
+              {%- if block.settings.image != blank or block.settings.url != blank -%}
+                <a href="{{ block.settings.url }}" target="_blank" rel="noopener noreferrer" class="rocket-icon-text__link">
+                  <div class="rocket-icon-text__icon">
+                    {{ block.settings.image | image_url: width: 256 | image_tag: loading: 'lazy' }}
+                  </div>
+                </a>
+              {%- endif -%}
+              {% if block.settings.title != blank or block.settings.description != blank %}
+                <div class="icon-text__text">
+                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener noreferrer" class="rocket-icon-text__link">
+                    {% if block.settings.title %}
+                      <h3 class="text-lb">{{ block.settings.title }}</h3>
+                    {% endif %}
+                    {% if block.settings.description %}
+                      <p class="text-m">{{ block.settings.description }}</p>
+                    {% endif %}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          {%- endif -%}
+        {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon with text",
+  "class": "section rocket-icon-text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding Top on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding Bottom on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_text",
+      "name": "Icon with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description"
+        },
+        {
+          "type": "url",
+          "label": "Link URL",
+          "id": "url"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "name": "Custom",
+      "settings": [
+        {
+          "type": "textarea",
+          "label": "Custom text",
+          "id": "custom_text"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rocket icon with text",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %} VERSIONE ORIGINALE
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb}}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb}}px;
+    color: rgb(var(--color-foreground))
+  }
+
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="rocket-icon-text__container">
+    {%- for block in section.blocks -%}
+      {% if block.type == "icon_text" %}
+        {%- if block.settings.image != blank or block.settings.title != blank -%}
+          <div class="rocket-icon-text__item">
+            {%- if block.settings.image != blank -%}
+              <div class="rocket-icon-text__icon">
+                {{ block.settings.image | image_url: width: 56 | image_tag: loading: 'lazy' }}
+              </div>
+            {%- endif -%}
+            {% if block.settings.title != blank or block.settings.description != blank %}
+              <div class="icon-text__text">
+                {% if block.settings.title %}
+                  <h3 class="text-lb">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.description %}
+                  <p class="text-m">{{ block.settings.description }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {%- endif -%}
+      {% elsif block.type == "custom" %}
+        {% if block.settings.custom_text %}
+          <div class="rocket-icon-text__item">
+            {{ block.settings.custom_text }}
+          </div>
+        {% endif %}
+      {% else %}
+        {% if block.settings.image %}
+          <div class="rocket-icon-text__item">
+            {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy' }}
+          </div>
+        {% endif %}
+
+      {% endif %}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon with text",
+  "class": "section rocket-icon-text",
+
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding Top on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding Bottom on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_text",
+      "name": "Icon with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "name": "Custom",
+      "settings": [
+        {
+          "type": "textarea",
+          "label": "Custom text",
+          "id": "custom_text"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rocket icon with text",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+{% endcomment %}

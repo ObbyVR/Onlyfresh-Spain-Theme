@@ -1,0 +1,352 @@
+{% liquid
+  assign section_settings = section.settings
+%}
+
+{% style %}
+  .section-{{ section.id }} {
+      padding-top: {{ section_settings.padding_top_mb }}px;
+      padding-bottom: {{ section_settings.padding_bottom_mb }}px;
+  }
+
+  .section-{{ section.id }} h2.title {
+    font-size: {{ section.settings.size_heading_mb }}px;
+    margin-bottom: {{ section.settings.margin_heading_mb }}px;
+  }
+
+  .section-{{ section.id }} .heading__content {
+    font-size: {{ section.settings.size_content_mb }}px;
+    margin-bottom: {{ section.settings.margin_content_mb }}px;
+  }
+
+  @media (min-width: 768px) {
+    .section-{{ section.id }} {
+          padding-top: {{ section_settings.padding_top }}px;
+          padding-bottom: {{ section_settings.padding_bottom }}px;
+    }
+    .section-{{ section.id }} h2.title {
+        font-size: {{ section.settings.size_heading }}px;
+        margin-bottom: {{ section.settings.margin_heading }}px;
+    }
+    .section-{{ section.id }} .heading__content {
+        font-size: {{ section.settings.size_content }}px;
+        margin-bottom: {{ section.settings.margin_content }}px;
+    }
+  }
+{% endstyle %}
+{% liquid
+  if product.metafields.custom.social_media.value == blank
+    assign social_media = section.blocks
+    assign size = social_media.size
+    if size > 0
+      assign check = true
+    endif
+  else
+    assign section_object = product.metafields.custom.social_media.value
+    assign social_media = section_object
+    if social_media != blank
+      assign check = true
+    endif
+  endif
+%}
+{%- if check -%}
+  <div class="section-{{ section.id }}">
+    <div class="social-medias">
+      <div class="title-wrapper {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext">{{ section.settings.title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.content != blank -%}
+          <div class="heading__content">
+            {{ section.settings.content }}
+          </div>
+        {%- endif -%}
+      </div>
+      <social-slider id="section-{{ section.id }}--fresh-social" class="swiper" data-id="{{ section.id }}">
+        <div class="fresh-social-wrapper swiper-wrapper wrapper-{{ section.blocks.size }}-items">
+          {% for block in social_media %}
+            {% if product.metafields.custom.social_media.value == blank %}
+              <div class="fresh-social-item swiper-slide">
+                <div class="fresh-social-item--media">
+                  {% if block.settings.image != blank or block.settings.image_mb != blank %}
+                    <div class="fresh-social-item--image">
+                      <a
+                        {% if block.settings.link_url == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.link_url }}"
+                        {% endif %}
+                      >
+                        {% if block.settings.image != blank %}
+                          {{
+                            block.settings.image
+                            | image_url: width: block.settings.image.width, height: block.settings.image.height
+                            | image_tag:
+                              width: block.settings.image.width,
+                              height: block.settings.image.height,
+                              loading: 'lazy',
+                              alt: 'image-key-point-item',
+                              class: 'fresh-social-item--img hidden-mb'
+                          }}
+                        {% endif %}
+                        {% if block.settings.image_mb != blank %}
+                          {{
+                            block.settings.image_mb
+                            | image_url: width: block.settings.image_mb.width, height: block.settings.image_mb.height
+                            | image_tag:
+                              width: block.settings.image_mb.width,
+                              height: block.settings.image_mb.height,
+                              loading: 'lazy',
+                              alt: 'image-key-point-item',
+                              class: 'fresh-social-item--img hidden-pc'
+                          }}
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% else %}
+              {%- liquid
+                assign image = block.image.value
+                assign image_mb = block.image_mobile.value
+                assign url = block.link
+              -%}
+              <div class="fresh-social-item swiper-slide">
+                <div class="fresh-social-item--media">
+                  {% if image != blank or image_mb != blank %}
+                    <div class="fresh-social-item--image">
+                      <a
+                        {% if url == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ url }}"
+                        {% endif %}
+                      >
+                        {% if image != blank %}
+                          {{
+                            image
+                            | image_url: width: image.width, height: image.height
+                            | image_tag:
+                              width: image.width,
+                              height: image.height,
+                              loading: 'lazy',
+                              alt: 'image-key-point-item',
+                              class: 'fresh-social-item--img hidden-mb'
+                          }}
+                        {% endif %}
+                        {% if image_mb != blank %}
+                          {{
+                            image_mb
+                            | image_url: width: image_mb.width, height: image_mb.height
+                            | image_tag:
+                              width: image_mb.width,
+                              height: image_mb.height,
+                              loading: 'lazy',
+                              alt: 'image-key-point-item',
+                              class: 'fresh-social-item--img hidden-pc'
+                          }}
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <!-- If we need navigation buttons -->
+        <div class="section-{{section.id}}-swiper-button-prev button button-prev">
+          <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 1L1 6.5L6 12" stroke="currentColor"/>
+          </svg>
+        </div>
+        <div class="section-{{section.id}}-swiper-button-next button button-next">
+          <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999998 12L6 6.5L1 1" stroke="currentColor"/>
+          </svg>
+        </div>
+      </social-slider>
+    </div>
+  </div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Fresh - Social media",
+  "tag": "section",
+  "class": "section section-social-medias",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.featured-collection.settings.title.label",
+      "default": "How to use it"
+    },
+    {
+      "type": "range",
+      "id": "size_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "size_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading mobile",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "margin_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "margin_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom mobile",
+      "default": 14
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content_mb",
+      "label": "Content mobile"
+    },
+    {
+      "type": "range",
+      "id": "size_content",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size content",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_content_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size content mobile",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "margin_content",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Content margin bottom",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "margin_content_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Content margin bottom mobile",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Top padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Bottom padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Media"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mb",
+          "label": "Image on mobile"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresh - Social media"
+    }
+  ]
+}
+{% endschema %}

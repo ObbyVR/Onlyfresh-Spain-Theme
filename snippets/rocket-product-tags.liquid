@@ -1,0 +1,30 @@
+<div class="rocket-fresh-product-card__tag product__tags">
+  
+    {% for tag in card_product.tags %}
+      {% if tag contains 'Bajo contenido en cereales' %}
+      
+        <span
+          class="{{ tag }} rocket-fresh-product-media-gallery__tag--label tag-label {{ tagClass }}"
+          style="color: white; background-color: #bad844"
+        >
+          Low grain
+        </span>
+        {% elsif tag contains 'Sin cereales' %}
+        <span
+          class="{{ tag }} rocket-fresh-product-media-gallery__tag--label tag-label {{ tagClass }}"
+          style="color: white; background-color: #a1bdf3;"
+        >
+          Grain free
+        </span>
+        {% elsif tag contains 'Hipoalergénico' %}
+        <span
+          class="{{ tag }} rocket-fresh-product-media-gallery__tag--label tag-label {{ tagClass }}"
+          style="color: black; background-color: #f1f1f1; order: 2;"
+        >
+          Hipoalergénico
+        </span>
+      {% endif %}
+    {% endfor %}
+
+</div>
+

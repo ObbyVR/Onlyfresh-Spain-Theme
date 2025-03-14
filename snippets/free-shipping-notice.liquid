@@ -1,0 +1,76 @@
+{%- comment -%}
+  Parameters:
+  - align_start {Boolean} - Align progress bar and text to the start.
+  - bar_position {String} - Progress bar position 'top' or 'bottom' (optional, default is 'bottom').
+
+  Usage:
+  {% render 'free-shipping-notice', text_start: true %}
+{%- endcomment -%}
+
+{%- liquid
+    assign minimums_array = settings.free_shipping_minimum | newline_to_br | strip_newlines | split: '<br />'
+    assign current_min = nil
+    assign show_notice = false
+  
+    for min in minimums_array
+      assign parts = min | split: ':'
+  
+      if parts.size == 2 and parts[0] == cart.currency.iso_code
+        assign current_min = parts
+        break
+      elsif parts.size == 3 and parts[0] == localization.country.iso_code and parts[1] == cart.currency.iso_code
+        assign current_min = parts
+        break
+      endif
+    endfor
+  
+    if current_min != nil
+      assign minimum_value = current_min | last
+      assign show_notice = true
+    endif
+  
+    assign free_shipping_minimum = minimum_value | times: 100
+  -%}
+  <div id="free-shipping-notice" class="free-shipping-notice">
+    {%- if show_notice and cart != empty -%}
+      <div class="free-shipping-container">
+        <div class="block{% unless align_start %} mx-auto{% endunless %} text-theme-heading" data-minimum="{{ free_shipping_minimum }}">
+          {%- if bar_position == 'top' -%}
+            <div class="free-shipping-notice__bar  mb-3" style="--progress: {{ cart.total_price | times: 1.0 | divided_by: minimum_value | at_most: 100 }}%"></div>
+          {%- endif -%}
+  
+          <div class="free-shipping-notice__heading body-s-regular">
+            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_5273_23364)">
+              <path d="M9.83469 8.5478C9.83469 8.91407 9.53226 9.2165 9.16599 9.2165H1.68159C1.31532 9.2165 1.01289 8.91407 1.01289 8.5478C1.01289 8.18153 1.31532 7.8791 1.68159 7.8791H9.16599C9.53226 7.8791 9.83469 8.18153 9.83469 8.5478Z" fill="#5C5C5C" stroke="#F7F7F7" stroke-width="0.225"/>
+              <path d="M9.16609 10.0217C9.53235 10.0217 9.83479 10.3241 9.83479 10.6904C9.83479 11.0566 9.53235 11.3591 9.16609 11.3591H2.21089C1.84462 11.3591 1.54219 11.0566 1.54219 10.6904C1.54219 10.3241 1.84462 10.0217 2.21089 10.0217H9.16609Z" fill="#5C5C5C" stroke="#F7F7F7" stroke-width="0.225"/>
+              <path d="M9.16647 12.1633C9.53274 12.1633 9.83517 12.4657 9.83517 12.832C9.83517 13.1982 9.53274 13.5007 9.16647 13.5007H3.29487C2.9286 13.5007 2.62617 13.1982 2.62617 12.832C2.62617 12.4657 2.9286 12.1633 3.29487 12.1633H9.16647Z" fill="#5C5C5C" stroke="#F7F7F7" stroke-width="0.225"/>
+              <path d="M25.481 11.9547L25.481 11.9548L25.4849 11.9561C25.7341 12.0392 25.9144 12.2939 25.9624 12.589V18.729C25.9624 19.0724 25.6576 19.3977 25.2937 19.3977H23.1769H23.1032L23.0738 19.4652C22.663 20.4075 21.7456 21.0105 20.7325 21.0105C19.7207 21.0105 18.802 20.3835 18.3908 19.4643L18.361 19.3977H18.2881H11.3833H11.3096L11.2802 19.4652C10.8694 20.4075 9.952 21.0105 8.93889 21.0105C7.92714 21.0105 7.00842 20.3835 6.59718 19.4643L6.5674 19.3977H6.49449H4.37769C4.01142 19.3977 3.70899 19.0953 3.70899 18.729V14.9742C3.70899 14.6079 4.01142 14.3055 4.37769 14.3055C4.74396 14.3055 5.04639 14.6079 5.04639 14.9742V17.9478V18.0603H5.15889H6.31809H6.41181L6.42874 17.9681C6.64564 16.7872 7.68229 15.9183 8.91369 15.9183C10.1188 15.9183 11.1575 16.7865 11.3991 17.9703L11.4174 18.0603H11.5093H18.1117H18.2054L18.2223 17.9681C18.4392 16.7872 19.4759 15.9183 20.7073 15.9183C21.9124 15.9183 22.9511 16.7865 23.1927 17.9703L23.211 18.0603H23.3029H24.4621H24.5746V17.9478V13.1094V13.0313L24.5014 13.004L20.7214 11.5928L20.7215 11.5927L20.7177 11.5915C20.5937 11.5501 20.487 11.4671 20.3981 11.3341C20.398 11.3339 20.3978 11.3336 20.3977 11.3334L17.677 7.12631L17.6437 7.0749H17.5825H4.35249C3.98622 7.0749 3.68379 6.77247 3.68379 6.4062C3.68379 6.03993 3.98622 5.7375 4.35249 5.7375H18.0109C18.2261 5.7375 18.4423 5.8453 18.5721 6.03963C18.5722 6.03982 18.5724 6.04001 18.5725 6.0402L21.3941 10.3985L21.4142 10.4297L21.449 10.4427L25.481 11.9547ZM20.7073 19.6479C21.3742 19.6479 21.9034 19.1187 21.9034 18.4518C21.9034 17.7849 21.3742 17.2557 20.7073 17.2557C20.0404 17.2557 19.5112 17.7849 19.5112 18.4518C19.5112 19.1187 20.0404 19.6479 20.7073 19.6479ZM8.91369 19.6479C9.58062 19.6479 10.1098 19.1187 10.1098 18.4518C10.1098 17.7849 9.58062 17.2557 8.91369 17.2557C8.24676 17.2557 7.71759 17.7849 7.71759 18.4518C7.71759 19.1187 8.24676 19.6479 8.91369 19.6479Z" fill="#5C5C5C" stroke="#F7F7F7" stroke-width="0.225"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_5273_23364">
+              <rect width="25.2" height="23.2092" fill="white" transform="translate(0.900391 1.89551)"/>
+              </clipPath>
+              </defs>
+            </svg>              
+            {%- if cart.total_price >= free_shipping_minimum -%}
+              <span>{{ 'sections.cart.free_shipping' | t }}</span>
+            {%- else -%}
+              {%- liquid
+                capture deficit
+                  assign pric_deficit = cart.total_price | minus: free_shipping_minimum | abs
+                  render 'price-as-money', price: pric_deficit, show_money_with_currency: false
+                endcapture
+              -%}
+              {{- 'sections.cart.free_shipping_deficit_html' | t: amount: deficit -}}
+            {%- endif -%}
+          </div>
+  
+          {%- unless bar_position == 'top' -%}
+            <div class="free-shipping-notice__bar  mt-3" style="--progress: {{ cart.total_price | times: 1.0 | divided_by: minimum_value | at_most: 100 }}%"></div>
+          {%- endunless -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+  

@@ -1,0 +1,42 @@
+{% assign minimum_order_amount = 59  %}
+{% assign remaining_amount_cents = minimum_order_amount | minus: cart.total_price %}
+
+{% if cart.total_price < minimum_order_amount %}
+  <div class="cart-message">
+    <p>
+      {% assign remaining_amount = remaining_amount_cents %}
+      Manca ancora {{ remaining_amount | money }} per raggiungere i {{ minimum_order_amount | divided_by: 10 | money }} e completare il tuo ordine!
+    </p>
+  </div>
+{% endif %}
+
+<style>
+  .cart-message {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+</style>
+
+
+<style>
+  .cart-message {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}

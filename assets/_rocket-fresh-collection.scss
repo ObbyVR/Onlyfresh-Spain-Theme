@@ -1,0 +1,117 @@
+.rocket-collection-breadcrumb {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+    align-items: center;
+    gap: 3px;
+    padding-bottom: 8px;
+
+    .rocket-collection-breadcrumb__home__title {
+        margin: 0;
+    }
+
+    .breadcrumbs__item {
+        display: inline;
+        line-height: 14px;
+        
+        .breadcrumbs__link, a {
+            font-size: 11px;
+            line-height: 18px;
+            font-weight: 300;
+            color: #111010;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+
+    span {
+        font-size: 11px;
+        line-height: 18px;
+        font-weight: 300;
+        color: #111010;
+        text-transform: uppercase;
+    }
+}
+
+@media(min-width: 768px) {
+    .rocket-collection-breadcrumb {
+        .breadcrumbs__item {
+            display: inline;
+            line-height: 14px;
+            
+            .breadcrumbs__link, a {
+                font-size: 11px;
+                line-height: 18px;
+                text-transform: uppercase;
+            }
+        }
+    
+        span {
+            text-transform: uppercase;
+            font-size: 11px;
+            line-height: 18px;
+        }
+    }
+}
+
+.collection {
+    .pagination_count {
+        color: var(--grey);
+    }
+
+    .product-grid#product-grid {
+        row-gap: 32px;
+        column-gap: 7px;
+
+        @media(min-width: 768px){
+            row-gap: 40px;
+            column-gap: 16px;
+        }
+    }
+
+    .pagination-wrapper {
+        .pagination {
+            .pagination__list {
+                li {
+                    width: 30px;
+                    height: 30px;
+                    flex: unset;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+
+                    &:first-child {
+                        margin-right: 7px;
+                    }
+
+                    &:last-child {
+                        margin-left: 2px;
+                    }
+
+                    .pagination__item-arrow {
+                        height: 30px;
+                    }
+                    .pagination__item {
+                        font-family: Poppins;
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 22px;
+                        height: 22px;
+                        color: #8D8D8D;
+
+                        &.pagination__item--current {
+                            cursor: default;
+                            font-weight: 500;
+                            color: #111010;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

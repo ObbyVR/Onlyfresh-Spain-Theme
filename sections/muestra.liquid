@@ -1,0 +1,306 @@
+<div class="muestragratis">
+  <div class="container-muestras">
+ <div class="testomuestras" ><div class="lineatitulo1">¿Quieres probar nuestros productos?</div> <div class="lineatitulo2">¡Solicita tu muestra gratuita ahora!</div> </div> 
+<div class="testomuestrasbutton" ><button id="toggle-muestra-carousel" style="display: none;">¡La quiero!</button></div>
+  </div>
+
+<div id="muestra-carousel-container" style="display: none;">
+<div class="container-button">
+    <button id="muestras-perros" class="muestrasbutton">Para Perros</button>
+    <button id="muestras-gatos" class="muestrasbutton">Para Gatos</button>
+  </div>
+  <div id="muestras-perros-container" class="muestra-carousel" style="display: none; overflow-x: auto; white-space: nowrap;">
+    {% for product in collections.muestras-para-perros.products %}
+      <div class="muestra-item" style="display: inline-block; text-align: center; margin: 0 10px;">
+        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" style="max-width: 200px;">
+         <p style="word-wrap: break-word; white-space: normal;" class="title-muestra">{{ product.title }}</p>
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <button type="submit" class="add-muestra-btn" data-product-id="{{ product.id }}">Añadir al carrito</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+  <div id="muestras-gatos-container" class="muestra-carousel" style="display: none; overflow-x: auto; white-space: nowrap;">
+    {% for product in collections.muestras-para-gatos.products %}
+      <div class="muestra-item" style="display: inline-block; text-align: center; margin: 0 10px;">
+        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" style="max-width: 200px;">
+        <p style="word-wrap: break-word; white-space: normal;" class="title-muestra">{{ product.title }}</p>
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <button type="submit" class="add-muestra-btn" data-product-id="{{ product.id }}">Añadir al carrito</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-muestra-carousel');
+    const carouselContainer = document.getElementById('muestra-carousel-container');
+    const perrosButton = document.getElementById('muestras-perros');
+    const gatosButton = document.getElementById('muestras-gatos');
+    const perrosContainer = document.getElementById('muestras-perros-container');
+    const gatosContainer = document.getElementById('muestras-gatos-container');
+
+    function checkMuestraInCart() {
+      fetch('/cart.js')
+        .then(response => response.json())
+        .then(cart => {
+          const muestraItems = cart.items.filter(item => item.product_title.toLowerCase().includes('muestra'));
+
+          if (muestraItems.length === 0) {
+            toggleButton.style.display = 'block';
+            toggleButton.textContent = '¡La quiero!';
+          } else {
+            toggleButton.style.display = 'block';
+            toggleButton.textContent = 'Cambiar Muestra';
+            carouselContainer.style.display = 'none';
+          }
+        });
+    }
+
+    toggleButton.addEventListener('click', function() {
+      if (toggleButton.textContent === 'Cambiar Muestra') {
+        fetch('/cart.js')
+          .then(response => response.json())
+          .then(cart => {
+            const muestraItems = cart.items.filter(item => item.product_title.toLowerCase().includes('muestra'));
+            if (muestraItems.length > 0) {
+              const muestraKey = muestraItems[0].key;
+              fetch(`/cart/change.js`, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  id: muestraKey,
+                  quantity: 0
+                })
+              }).then(() => {
+                alert('La muestra anterior ha sido eliminada. Por favor, selecciona una nueva.');
+                carouselContainer.style.display = 'block';
+                checkMuestraInCart();
+              });
+            }
+          });
+      } else {
+        carouselContainer.style.display = carouselContainer.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+
+    perrosButton.addEventListener('click', function() {
+      perrosContainer.style.display = 'block';
+      gatosContainer.style.display = 'none';
+    });
+
+    gatosButton.addEventListener('click', function() {
+      gatosContainer.style.display = 'block';
+      perrosContainer.style.display = 'none';
+    });
+
+    document.querySelectorAll('.add-muestra-btn').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        document.querySelectorAll('.add-muestra-btn').forEach(btn => {
+          btn.disabled = true;
+        });
+
+        const form = this.closest('form');
+        form.submit();
+      });
+    });
+
+    checkMuestraInCart();
+
+    const cartContainer = document.querySelector('#CartContainer');
+    if (cartContainer) {
+      const observer = new MutationObserver(() => {
+        checkMuestraInCart();
+      });
+
+      observer.observe(cartContainer, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    document.addEventListener('cart:updated', checkMuestraInCart);
+  });
+</script>
+
+
+
+<style>
+  #muestra-carousel-container {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+
+  .muestra-carousel {
+    display: flex;
+    overflow-x: scroll;
+    gap: 15px;
+  }
+
+  .muestra-item {
+    text-align: center;
+    flex: 0 0 auto;
+    width: 150px;
+  }
+
+  .muestra-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .add-muestra-btn {
+    margin-top: 10px;
+    padding: 2px 15px;
+    background-color: #fffff;
+    color: #00000;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 2rem;
+}
+
+  .add-muestra-btn:hover {
+    background-color: #00000;
+    color: #fffff;
+  }
+
+  .muestragratis {
+    background: #000000;
+    max-width: 1200px;
+    width:90%;
+    margin: auto;
+    padding: 3rem;
+    text-align: left;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+  .container-muestras {
+    display: inline-flex
+;
+}
+ .testomuestras {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+  .testomuestrasbutton {
+    width: 30%;
+    display: inline-flex;
+    justify-content: center;
+}
+  .container-muestras {
+    width: 100%;
+}
+  .container-button {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+  button#toggle-muestra-carousel {
+    background: white;
+    color: black;
+    padding: 1rem 2rem;
+}
+ 
+  .muestrasbutton {
+    width: 100%;
+    border-radius: 0px;
+    background:white;
+    color:black;
+}
+  .muestrasbutton:hover,.muestrasbutton:active {
+    background:black;
+    color:white;
+  }
+  p.title-muestra {
+    font-size: .7rem;
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    max-height: 2rem;
+}
+  .muestra-carousel {
+    padding: 1rem 0rem;
+}
+  .lineatitulo1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+  @media only screen and (max-width: 600px) {
+  .muestragratis {
+    padding: 1rem;
+}
+    .lineatitulo1 {
+    font-size: .9rem;
+      margin-bottom:.3rem;
+}
+    button#toggle-muestra-carousel {
+    background: white;
+    color: black;
+    padding: 0rem 1rem;
+    height: 2.3rem;
+}
+    .testomuestras {
+    display: inline-flex;
+    width: 65%;
+    flex-direction: column;
+    text-align: center;
+}
+    .testomuestrasbutton {
+    width: 35%;
+    }
+    .container-muestras {
+    display: inline-flex;
+    align-items: center;
+}
+    .muestrasbutton {
+    height: 2.3rem;
+}
+        button#toggle-muestra-carousel {;
+        height: fit-content;
+          min-height: 2.3rem;
+                  line-height: .9rem;
+    }
+    #muestra-carousel-container {
+    padding: .5rem;
+}
+    .lineatitulo2 {
+    font-size: 0.8rem;
+}
+    .muestra-item {
+    margin: 0px!important;
+}
+    
+}
+</style>
+
+{% schema %}
+  {
+    "name": "Fresh - muestra",
+    "settings": [],
+    "presets": [
+    {
+      "name": "Fresh - muestra",
+  }]}
+
+  
+{% endschema %}

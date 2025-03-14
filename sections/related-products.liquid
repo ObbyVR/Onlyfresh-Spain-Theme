@@ -1,0 +1,215 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb}}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb}}px;
+    color: rgb(var(--color-foreground))
+  }
+
+  .section-{{ section.id }}-padding h2.title {
+    font-size: {{ section.settings.size_heading_mb }}px;
+    margin-bottom: {{ section.settings.margin_heading_mb }}px;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .section-{{ section.id }}-padding h2.title {
+      font-size: {{ section.settings.size_heading }}px;
+      margin-bottom: {{ section.settings.margin_heading }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="fresh-slider-content">
+<div class="fresh-slider-content__inner">
+<div class="fresh-slider-content__body ">
+  <product-recommendations
+    data-column-mobile="2.25"
+    data-column-desktop="4.47"
+    data-column-space="16"
+    class="related-products  section-{{ section.id }}-padding isolate"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
+  >
+    {%- assign collection = recommendations -%}
+    {%- if section.settings.collection != blank -%}
+      {%- assign collection = section.settings.collection -%}
+    {% endif %}
+
+    {% if recommendations.performed and collection.products_count > 0 %}
+      <div class="product-slider swiper">
+        <div class="collection__title title-wrapper title-wrapper--no-top-margin">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="title inline-richtext">
+              {{ section.settings.heading }}
+            </h2>
+          {%- endif -%}
+        </div>
+        <div class="swiper-wrapper">
+          {% for recommendation in collection.products %}
+            <div class="swiper-slide">
+              {% render 'rocket-fresh-card-product',
+                card_product: recommendation,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_quick_add: section.settings.enable_quick_add,
+                section_id: section.id,
+                product_slider: true
+              %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="related-products-button-prev swiper-button-prev swiper-button">
+          <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 1L1 6.5L6 12" stroke="currentColor"/>
+          </svg>
+        </div>
+        <div class=" related-products-button-next swiper-button-next swiper-button">
+          <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999998 12L6 6.5L1 1" stroke="currentColor"/>
+          </svg>
+        </div>
+      </div>
+    {% endif %}
+  </product-recommendations>
+</div>
+            </div>        
+            </div>
+{% schema %}
+{
+  "name": "t:sections.related-products.name",
+  "tag": "section",
+  "class": "section section-related-product",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.related-products.settings.paragraph__1.content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "You may also like",
+      "label": "t:sections.related-products.settings.heading.label"
+    },
+    {
+      "type": "range",
+      "id": "size_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "size_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading mobile",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "margin_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "margin_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom mobile",
+      "default": 14
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.related-products.settings.products_to_show.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.related-products.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.related-products.settings.show_vendor.label"
+    },
+
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding Top on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding Bottom on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    }
+  ]
+}
+{% endschema %}

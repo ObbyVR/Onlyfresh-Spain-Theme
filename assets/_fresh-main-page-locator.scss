@@ -1,0 +1,353 @@
+.main-page-locator {
+	.page-width {
+		max-width: 1440px;
+		padding-left: 20px;
+		padding-right: 20px;
+		@media (min-width: 1280px) {
+			padding-left: 75px;
+			padding-right: 75px;
+		}
+	}
+	h1.main-page-title {
+        font-family: Baskerville;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0;
+        color: #2C2A29;
+		display: none;
+        letter-spacing: 0.4px;
+		@media (min-width: 768px) {
+			font-size: 36px;
+			line-height: 44px;
+			display: block;
+            margin-bottom: 18px;
+		}
+	}
+}
+body {
+	.shopify-app-block {
+		.bootstrap-storeifyapps {
+			max-width: 1440px;
+			padding-left: 20px;
+			padding-right: 20px;
+            padding-bottom: 6px;
+			@media (min-width: 1280px) {
+				padding-left: 75px;
+				padding-right: 73px;
+                padding-bottom: 51px;
+			}
+		}
+	}
+	.bootstrap-storeifyapps {
+		.container-fluid:first-of-type {
+			display: none;
+		}
+		.container-fluid {
+			padding: 0;
+		}
+		.storeify-sear-box {
+			width: 100%;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+		}
+		#frm-storelocator-search {
+			.row {
+				&:before,
+				&:after {
+					display: none;
+				}
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column-reverse;
+				gap: 34px;
+				margin: 0;
+				.storeify-stl-col1 {
+					padding: 0;
+				}
+				.storeifyapps-storelocator-equal {
+					margin-top: 0;
+					width: 100%;
+				}
+				.map-tab-ggmap {
+					width: 100%;
+					margin: 0;
+					display: block !important;
+					min-height: 300px;
+					height: 300px !important;
+					#map {
+						height: 300px !important;
+					}
+				}
+				@media (min-width: 768px) {
+					flex-wrap: nowrap;
+					flex-direction: row;
+					.storeifyapps-storelocator-equal {
+						width: 300px;
+					}
+					.map-tab-ggmap {
+						flex: 1;
+						min-height: 626px;
+						#map {
+							min-height: 626px;
+						}
+					}
+				}
+				@media (min-width: 1024px) {
+					.storeifyapps-storelocator-equal {
+						width: 425px;
+					}
+					.map-tab-ggmap {
+						max-width: 680px;
+						margin-top: -52px;
+					}
+				}
+				@media (min-width: 1441px) {
+					.storeifyapps-storelocator-equal {
+						width: 31%;
+					}
+					.map-tab-ggmap {
+						max-width: 49.42%;
+					}
+				}
+			}
+		}
+		.search-address-box {
+			&:before {
+				content: "Seleccione la ciudad";
+				margin-bottom: 11px;
+				display: block;
+				color: #111010;
+                font-family: Poppins;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 22px;
+                letter-spacing: -0.09px;
+			}
+			.gr-search-slt {
+				float: none;
+				width: 100%;
+				max-width: 425px;
+			}
+			@media (max-width: 767px) {
+				padding: 0 1px;
+			}
+		}
+		.storelocator-search {
+			padding: 0;
+			border: 0;
+		}
+		.chose-search-slt,
+		.seach-action-box,
+		.results-slt .title,
+		.linkdetailstore, 
+		.getdirectionstore,
+		.material-icons-outlined,
+		.map-tab-mobile-bnt,
+		#getbylocal,
+		.search-radius-box {
+			display: none !important;
+		}
+		.form-control-storeify {
+			width: 100%;
+			width: 100% !important;
+			font-family: Poppins;
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 22px;
+			letter-spacing: 0;
+			padding: 7px 10px;
+			color: #86868B;
+			border: 1px solid #111010;
+			border-radius: 6;
+			height: 42px !important;
+			line-height: 42px !important;
+            @media (min-width: 768px) {
+                padding: 7px 16px;
+            }
+		}
+		#results-slt {
+			margin-top: 24px;
+			background: #F3F5F7;
+			padding: 0;
+			#main-slider-storelocator {
+				padding: 24px 15px 25px 26px;
+				overflow: hidden;
+				overflow-y: auto;
+				height: auto !important;
+				max-height: 505px;
+				border: 0;
+				@media (min-width: 768px) {
+					max-height: 464px;
+					padding: 24px 28px;
+				}
+			}
+			@media (max-width: 767px) {
+				margin-left: -20px;
+				width: calc(100% + 40px);
+			}
+		}
+		.item {
+			width: 100% !important;
+			float: none;
+			border: 0;
+			border-radius: 0;
+			padding: 0;
+		}
+		.inner-item {
+			padding: 21px 27px 20px 25px;
+			background: #fff;
+			border-radius: 0;
+			& + .inner-item {
+				margin-top: 12px;
+			}
+		}
+		.thumbnail {
+			margin-bottom: 0 !important;
+			background-color: transparent;
+			& + .thumbnail {
+				margin-top: 12px;
+			}
+			
+		}
+		.store-name {
+            font-family: Poppins;
+            font-weight: 500;
+            line-height: 22px;
+			font-size: 14px !important;
+			margin: 0 0 9px !important;
+			display: block;
+			padding-bottom: 7px;
+			border-bottom: 1px solid #F3F5F7;
+			color: #111010;
+			letter-spacing: -0.09px;
+			strong {
+				font-weight: 500;
+			}
+			@media (min-width: 768px) {
+				margin: 0 0 9px !important;
+			}
+		}
+		.item-content {
+			.address,
+			.item-phone {
+				margin: 0;
+				line-height: 20px;
+				a {
+					color: #111010;
+                    font-family: Poppins;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 22px;
+				}
+			}
+            .item-phone {
+                margin-top: 8px;
+            }
+		}
+		.map-tab-result {
+			display: block !important;
+		}
+		.gm-style-iw {
+			padding: 10px 20px !important;
+		}
+		.gm-style {
+			.gm-style-iw-c {
+				outline: none !important;
+			}
+			.gm-ui-hover-effect {
+				top: 0 !important;
+				right: 16px !important;
+			}
+		}
+		.store-marker {
+			.row {
+				flex-wrap: wrap !important;
+				flex-direction: row !important;
+				gap: 0 !important;
+				.store-name {
+					letter-spacing: -.09px;
+                    font-family: Poppins;
+                    font-weight: 500;
+                    line-height: 22px;
+                    font-size: 14px !important;
+					color: #111010;
+					padding-left: 0;
+				}
+				.store-name + .col-md-12 {
+					margin-top: 0;
+					padding-left: 0;
+				}
+				> * {
+                    color: #111010;
+                    font-family: Poppins;
+					font-size: 14px !important;
+                    font-weight: 300;
+                    line-height: 22px;
+					display: block;
+					p {
+						margin: 0;
+                        &.marker-phone {
+                            margin-top: 8px;
+                        }
+					}
+				}
+				.marker-phone {
+					a {
+						color: #111010;
+                        font-family: Poppins;
+                        font-size: 14px !important;
+                        font-weight: 300;
+                        line-height: 22px;
+						outline: none !important;
+						box-shadow: none !important;
+					}
+				}
+			}
+		}
+		@media (max-width: 992px)  {
+			.map_container {
+				border: 0;
+				height: 100% !important;
+				margin: 0 !important;
+			}
+		}
+		@media (max-width: 767px)  {
+			.map_container {
+				border: 0;
+			}
+		}
+	}
+	#main-slider-storelocator::-webkit-scrollbar-track {
+		-webkit-box-shadow: none;
+		border-radius: 0;
+		background-color: #BABABA;
+	}
+	#main-slider-storelocator::-webkit-scrollbar-thumb {
+		border-radius: 0;
+		-webkit-box-shadow: none;
+		background-color: #2C2A29;
+	}
+	#main-slider-storelocator::-webkit-scrollbar {
+		width: 2px;
+		background-color: #BABABA;
+	}
+}
+body .bootstrap-storeifyapps .form-control-storeify::-ms-input-placeholder {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #86868B;
+}
+
+body .bootstrap-storeifyapps .form-control-storeify::placeholder {
+	font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #86868B;
+}

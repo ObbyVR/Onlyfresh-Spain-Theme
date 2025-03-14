@@ -1,0 +1,403 @@
+{% liquid
+  assign heading = section.settings.heading
+  assign heading_color = section.settings.heading_color
+
+  assign image = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+
+  assign policy = section.settings.policy
+  assign policy_content = section.settings.policy_content
+
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+%}
+
+{% style %}
+  {% if heading_color != blank %}
+      #fresh-register-{{ section.id }} .fresh-register__heading h2 {
+          color: {{ heading_color }}
+      }
+  {% endif %}
+  #fresh-register-{{ section.id }} {
+      padding-top: {{ padding_top_mobile }}px;
+      padding-bottom: {{ padding_bottom_mobile }}px;
+  }
+  .error-fill {
+    outline-color: red !important;
+    color: red !important;
+  }
+  @media (min-width: 1024px) {
+      #fresh-register-{{ section.id }} {
+          padding-top: {{ padding_top }}px;
+          padding-bottom: {{ padding_bottom }}px;
+      }
+  }
+  .bitlogin-root,
+  .bitlogin-root + div {
+    display: none !important;
+  }
+{% endstyle %}
+
+<div id="fresh-register-{{ section.id }}" class="fresh-register">
+  <div class="fresh-register__inner">
+    <div class="fresh-register__main">
+     
+      <div class="fresh-register__body">
+        <custom-form class="fresh-register__form">
+           {% if heading != blank %}
+        <div class="fresh-register__heading">
+          <h2>{{ heading }}</h2>
+        </div>
+      {%- endif -%}
+          {%- form 'create_customer', novalidate: 'novalidate' -%}
+            {%- if form.errors -%}
+              <div class="form-error">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+
+            <div class="field" style="margin-top: 0;">
+              <label class="field__label" for="RegisterForm-FirstName">
+                {{ 'customer.register.first_name' | t }}
+              </label>
+              <input
+                type="text"
+                name="customer[first_name]"
+                data-name="name"
+                id="RegisterForm-FirstName"
+                {% if form.first_name %}
+                  value="{{ form.first_name }}"
+                {% endif %}
+                autocomplete="given-name"
+                class="field__input"
+                placeholder="{{ 'customer.register.first_name' | t }}"
+                required
+              >
+            </div>
+            <div class="field">
+              <label class="field__label" for="RegisterForm-email">
+                {{ 'customer.register.email' | t }}
+              </label>
+              <input
+                type="email"
+                name="customer[email]"
+                data-name="email"
+                id="RegisterForm-email"
+                {% if form.email %}
+                  value="{{ form.email }}"
+                {% endif %}
+                spellcheck="false"
+                autocapitalize="off"
+                autocomplete="email"
+                aria-required="true"
+                {% if form.errors contains 'email' %}
+                  aria-invalid="true"
+                  aria-describedby="RegisterForm-email-error"
+                {% endif %}
+                placeholder="{{ 'customer.register.email' | t }}"
+                class="field__input"
+                required
+              >
+            </div>
+            <div class="field">
+              <label class="field__label" for="RegisterForm-phone">
+                {{ 'customer.register.phone' | t }}
+              </label>
+              <input
+                type="number"
+                name="customer[note][phone]"
+                data-name="phone"
+                id="RegisterForm-phone"
+                {% if form.note.phone %}
+                  value="{{ form.note.phone }}"
+                {% endif %}
+                spellcheck="false"
+                autocapitalize="off"
+                autocomplete="phone"
+                aria-required="true"
+                placeholder="{{ 'customer.register.phone' | t }}"
+                class="field__input"
+              >
+            </div>
+            <div class="field">
+              <label class="field__label" for="RegisterForm-password">
+                {{ 'customer.register.password' | t }}
+              </label>
+              <toggle-password>
+                <input
+                  type="password"
+                  name="customer[password]"
+                  data-name="password"
+                  id="RegisterForm-passwor-confirm"
+                  aria-required="true"
+                  {% if form.errors contains 'password' %}
+                    aria-invalid="true"
+                    aria-describedby="RegisterForm-password-error"
+                  {% endif %}
+                  placeholder="{{ 'customer.register.password' | t }}"
+                  class="field__input"
+                  required
+                >
+                <span class="eye ">
+                  {% render 'icon-eye' %}
+                </span>
+              </toggle-password>
+            </div>
+            <div class="field">
+              <label class="field__label" for="RegisterForm-password-confirm">
+                {{ 'customer.register.password_confirm' | t }}
+              </label>
+              <toggle-password>
+                <input
+                  type="password"
+                  data-name="password_confirmation"
+                  name="customer[password_confirmation]"
+                  id="RegisterForm-password-confirm"
+                  aria-required="true"
+                  {% if form.errors contains 'password' %}
+                    aria-invalid="true"
+                    aria-describedby="RegisterForm-password-error"
+                  {% endif %}
+                  placeholder="{{ 'customer.register.password_confirm' | t }}"
+                  class="field__input"
+                  required
+                >
+                <span class="eye ">
+                  {% render 'icon-eye' %}
+                </span>
+              </toggle-password>
+            </div>
+
+            <div class="marketing-field">
+              <input
+                class="registerForm-marketing"
+                type="checkbox"
+                data-name="marketing"
+                id="customer[accepts_marketing]"
+                name="customer[accepts_marketing]"
+                required
+              >
+              <label class="fake__label" for="customer[accepts_marketing]"></label>
+              <label class="form__label radio__label" for="customer[accepts_marketing]">
+                {{ 'customer.register.marketing' | t }}
+              </label>
+
+              <div class="form__message hidden"></div>
+            </div>
+            {% if policy %}
+              <div class="field field-policy">
+                <input
+                  required
+                  type="checkbox"
+                  id="registerForm-policy"
+                  name="customer[{{ 'templates.contact.form.comment' | t }}]"
+                  value="customer[{{ 'templates.contact.form.comment' | t }}]"
+                >
+                <label class="fake__label" for="registerForm-policy"></label>
+                <label class="form__label radio__label" for="registerForm-policy">
+                  {{ policy_content }}
+                </label>
+              </div>
+            {% endif %}
+
+            <div class="register__button">
+              <button class="button" data-name="submit" type="submit" onclick="checkErrorForm()">
+                {{ 'customer.register.submit' | t }}
+              </button>
+            </div>
+          {%- endform -%}
+
+          <div class="social-login">
+            <span class="social-login__title">{{ 'customer.register.social_login.title' | t }}</span>
+            <button id="fake-login-gmail">
+              {% render 'icon-google-login' %}
+              {{ 'customer.register.social_login.gmail' | t }}
+            </button>
+            <button id="fake-login-facebook">
+              {% render 'icon-facebook-login' %}
+              {{ 'customer.register.social_login.facebook' | t }}
+            </button>
+          </div>
+          <div class="register-login-redirect">
+            <span class="register-login-redirect__title">{{ 'customer.register.register_redirect' | t }}</span>
+            <a class="register-login-redirect__link" href="{{ routes.account_login_url }}">
+              {{ 'customer.login_page.title' | t }}
+            </a>
+          </div>
+        </custom-form>
+
+        {% if image != blank or image_mobile != blank %}
+          <div class="fresh-register__media">
+            {% if image != blank %}
+              <div class="content-desktop">
+                {{
+                  image
+                  | image_url: width: image.width, height: image.height
+                  | image_tag: width: image.width, height: image.height, loading: 'lazy', alt: image.alt
+                }}
+              </div>
+            {% endif %}
+            {% if image_mobile != blank %}
+              <div class="content-mobile">
+                {{
+                  image_mobile
+                  | image_url: width: image_mobile.width, height: image_mobile.height
+                  | image_tag:
+                    width: image_mobile.width,
+                    height: image_mobile.height,
+                    loading: 'lazy',
+                    alt: image_mobile.alt
+                }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function checkErrorForm() {
+    let valEmail = document.getElementById('RegisterForm-email'),
+      emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+      valPhone = document.getElementById('RegisterForm-phone'),
+      phonePattern = /^[0-9]+$/,
+      valPassword = document.getElementById('RegisterForm-passwor-confirm'),
+      confPassword = document.getElementById('RegisterForm-password-confirm');
+    if (!emailPattern.test(valEmail.value)) {
+      valEmail.classList.add('error-fill');
+    } else {
+      valEmail.classList.remove('error-fill');
+    }
+    if (!phonePattern.test(valPhone.value)) {
+      valPhone.classList.add('error-fill');
+    } else {
+      valPhone.classList.remove('error-fill');
+    }
+    if (confPassword.value === valPassword.value) {
+      confPassword.classList.remove('error-fill');
+    } else {
+      confPassword.classList.add('error-fill');
+    }
+  }
+</script>
+<script src="{{ 'account.js' | asset_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttonfakeGGLogin = document.querySelector('#fake-login-gmail');
+    const buttonfakeFBLogin = document.querySelector('#fake-login-facebook');
+
+    buttonfakeGGLogin.onclick = function () {
+      setTimeout(function () {
+        const buttonGGLogin = document.querySelector('#google-login');
+        buttonGGLogin.click();
+      }, 1000);
+    };
+
+    buttonfakeFBLogin.onclick = function () {
+      setTimeout(function () {
+        const buttonFBLogin = document.querySelector('#facebook-login');
+        buttonFBLogin.click();
+      }, 1000);
+    };
+  });
+</script>
+{% schema %}
+{
+  "name": "Fresh - Register",
+  "tag": "section",
+  "class": "section-fresh-register",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "checkbox",
+      "id": "policy",
+      "label": "Enable Policy",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "policy_content",
+      "label": "Policy"
+    },
+    {
+      "type": "header",
+      "content": "padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top mobile",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom mobile",
+      "default": 20
+    }
+  ]
+}
+{% endschema %}

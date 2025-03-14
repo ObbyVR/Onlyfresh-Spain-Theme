@@ -1,0 +1,182 @@
+.blog-articles {
+  display: grid;
+  grid-gap: 3.2rem;
+  column-gap: var(--grid-mobile-horizontal-spacing);
+  row-gap: 38px;
+}
+
+.blog-articles .card-wrapper {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .blog-articles {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 39px;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1),
+  .blog-articles--collage > *:nth-child(3n + 2):last-child {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .card,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .card {
+    text-align: center;
+  }
+
+  .blog-articles--collage
+    > *:nth-child(3n + 1)
+    .article-card__image--small
+    .ratio::before,
+  .blog-articles--collage
+    > *:nth-child(3n + 2):last-child
+    .article-card__image--small
+    .ratio::before {
+    padding-bottom: 22rem;
+  }
+
+  .blog-articles--collage
+    > *:nth-child(3n + 1)
+    .article-card__image--medium
+    .ratio::before,
+  .blog-articles--collage
+    > *:nth-child(3n + 2):last-child
+    .article-card__image--medium
+    .ratio::before {
+    padding-bottom: 44rem;
+  }
+
+  .blog-articles--collage
+    > *:nth-child(3n + 1)
+    .article-card__image--large
+    .ratio::before,
+  .blog-articles--collage
+    > *:nth-child(3n + 2):last-child
+    .article-card__image--large
+    .ratio::before {
+    padding-bottom: 66rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .blog-articles:not(.blog-articles--collage) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .blog-articles--collage
+    > *:nth-child(3n + 1)
+    .article-card__image--small
+    .ratio
+    .ratio::before,
+  .blog-articles--collage
+    > *:nth-child(3n + 2):last-child
+    .article-card__image--small
+    .ratio
+    .ratio::before {
+    padding-bottom: 27.5rem;
+  }
+
+  .blog-articles--collage
+    > *:nth-child(3n + 1)
+    .article-card__image--medium
+    .ratio::before,
+  .blog-articles--collage
+    > *:nth-child(3n + 2):last-child
+    .article-card__image--medium
+    .ratio::before {
+    padding-bottom: 55rem;
+  }
+
+  .blog-articles--collage
+    > *:nth-child(3n + 1)
+    .article-card__image--large
+    .ratio::before,
+  .blog-articles--collage
+    > *:nth-child(3n + 2):last-child
+    .article-card__image--large
+    .ratio::before {
+    padding-bottom: 82.5rem;
+  }
+}
+
+/* Custom code */
+.blog-articles--header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+.blog-articles--header .heading {
+  margin: 0 !important;
+}
+@media (min-width: 1024px) {
+  .blog-articles--header {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+@media (max-width: 959px) {
+  .related-blog {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.blog-articles--button {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 300px;
+  padding: 0 47px;
+  text-decoration: unset;
+}
+.article-template img {
+  border-radius: 16px;
+}
+.article-template h1.article-template__title {
+  font-family: "Baskerville";
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: #111010;
+}
+.article-template .article-template__content h2 span {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #111010;
+}
+.article-template .article-template__content h3 span {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #111010;
+}
+.article-template .article-template__content p span {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #111010;
+}
+.article-template .article-template__content blockquote {
+  font-family: "Baskerville";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #111010;
+  padding: 0;
+  margin: 40px 0;
+  background: transparent;
+}

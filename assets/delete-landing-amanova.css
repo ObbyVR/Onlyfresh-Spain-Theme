@@ -1,0 +1,817 @@
+
+/* Landing Amanova */
+
+div#shopify-section-hero-landing-amanova .hero__content {
+
+  max-width: 80%;
+
+}
+
+a.hero-btn-landing-amanova.gotham.hero__btn {
+  color: white;
+  background: black;
+  max-width: 36%;
+  font-size: 1vw;
+}
+
+.amanova-page .header__search,
+.template-page--descubre-amanova-perros .header__search,
+.template-page--descubre-amanova-gatos .header__search,
+.amanova-page .header__search-icon,
+.template-page--descubre-amanova-perros .header__search-icon,
+.template-page--descubre-amanova-gatos .header__search-icon {
+
+  display: none;
+
+}
+
+.amanova-page ul.f.jce.aic,
+.template-page--descubre-amanova-perros ul.f.jce.aic,
+.template-page--descubre-amanova-gatos ul.f.jce.aic {
+
+  justify-content: flex-end
+}
+
+.amanova-page .header__icons,
+.template-page--descubre-amanova-perros .header__icons,
+.template-page--descubre-amanova-gatos .header__icons,
+.template-page--descubre-optimanova .header__icons {
+
+  width: 100%;
+
+}
+
+.amanova-page .header__icons ul.f.jce.aic,
+.template-page--descubre-amanova-perros .header__icons ul.f.jce.aic,
+.template-page--descubre-amanova-gatos .header__icons ul.f.jce.aic {
+
+  max-width: 370px;
+
+}
+
+div#shopify-section-hero-landing-amanova .container {
+
+  max-width: 60%;
+  margin: 0 auto 0 4vw;
+}
+
+@media(max-width:1300px) {
+  a.hero-btn-landing-amanova.gotham.hero__btn {
+
+    max-width: 50% !important;
+
+  }
+}
+
+@media(max-width:1024px) {
+  a.hero-btn-landing-amanova.gotham.hero__btn {
+
+    max-width: 80%;
+
+  }
+
+  div#shopify-section-hero-landing-amanova .flickity-viewport {
+
+    min-height: 400px;
+
+  }
+
+  div#shopify-section-hero-landing-amanova .container {
+
+    margin: 0 auto 0 0;
+  }
+  div#shopify-section-hero-landing-amanova .hero__btn {
+    font-size: 1.5vw !important;
+
+  }
+
+  div#shopify-section-hero-landing-amanova .hero__content:last-child {
+    max-width: 80%;
+    margin: auto auto auto 0;
+  }
+}
+
+@media(max-width:768px) and (min-width:451px) {
+  div#shopify-section-hero-landing-amanova .flickity-viewport,
+  div#shopify-section-hero-amanova-perros .flickity-viewport {
+
+    height: 300px !important;
+  }
+
+  div#shopify-section-hero-landing-amanova .container {
+
+    margin: 0 auto;
+  }
+}
+
+@media(max-width:768px) {
+  a.hero-btn-landing-amanova.gotham.hero__btn {
+
+    max-width: 65%;
+    padding: 15px 5px;
+    font-size: 3.5vw !important;
+  }
+
+  div#shopify-section-hero-landing-amanova .hero__content:last-child {
+    max-width: 100%;
+  }
+
+  div#shopify-section-hero-landing-amanova .hero__btn {
+
+    font-size: 2vw !important;
+
+  }
+}
+
+@media(max-width:450px) {
+  .hero__image img {
+
+    object-position: 95% 30%;
+
+  }
+
+  .template-page--descubre-amanova-perros .hero__image img {
+
+    object-position: 15% 30%;
+
+  }
+
+  div#shopify-section-hero-landing-amanova .container {
+
+    margin: auto;
+    max-width: 100%;
+
+  }
+  div#shopify-section-hero-landing-amanova .flickity-viewport,
+  div#shopify-section-hero-amanova-perros .flickity-viewport,
+  div#shopify-section-hero-amanova-gatos .flickity-viewport {
+
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .hero--hero-landing-amanova .hero__entry--1.hero-landing-text.hero-landing-text--1 {
+
+    font-size: 7.5vw !important;
+
+  }
+  div#shopify-section-hero-landing-amanova .hero__btn {
+
+    font-size: 3vw !important;
+
+  }
+
+  div#shopify-section-hero-landing-amanova .flickity-slider,
+  div#shopify-section-hero-amanova-perros .flickity-slider {
+
+    transform: translateX(0) !important;
+    width: 100%;
+
+  }
+}
+/* Image Text advanced */
+
+div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse {
+
+  text-align: left;
+
+}
+
+div#shopify-section-image-text-advanced-landing .image_text__block.f.image_text_advanced-inverse .image_text__content {
+
+  padding: 0 100px;
+  justify-content: center;
+}
+
+div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse figure {
+
+  padding-left: 0;
+
+}
+
+div#shopify-section-image-text-advanced-landing-1 .image_text_advanced figure {
+
+  padding-right: 0;
+
+}
+
+
+div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse .image_text__image {
+
+  width: 50%;
+
+}
+
+.image_text__block.f.image_text_advanced-inverse .image_text__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div#shopify-section-image-text-advanced-landing .image_text_title h3 {
+
+  font-size: 1.8vw !important;
+
+}
+
+p.image-text-landing-text.gotham.aos-init.aos-animate {
+
+  font-size: 1.2vw !important;
+
+}
+
+div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container {
+
+  margin: 0 auto;
+
+}
+
+
+
+@media(max-width:1400px) {
+  div#shopify-section-image-text-advanced-landing .image_text__block.f.image_text_advanced-inverse .image_text__content {
+
+    padding: 40px;
+  }
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.4vw;
+
+  }
+}
+
+@media(max-width:1024px) {
+  div#shopify-section-image-text-advanced-landing .image_text__block.f.image_text_advanced-inverse .image_text__content {
+
+    padding: 30px;
+  }
+
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse .image_text__image {
+
+    width: 100%;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_title h3 {
+
+    font-size: 2.2vw !important;
+
+  }
+
+  p.image-text-landing-text.gotham.aos-init.aos-animate,
+  .image-text-landing-title.gotham.aos-init.aos-animate {
+
+    font-size: 1.8vw !important;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.6vw;
+
+  }
+
+
+}
+@media(min-width:769px) {
+  .template-index .slider-principal .flickity-viewport {
+    aspect-ratio: 1080 / 341;
+  }
+}
+
+
+@media(max-width:1024px) {
+  .image-block {
+    width: 75% !important;
+    margin-left: -100px;
+    margin-top: 80px;
+    justify-content: flex-start !important;
+  }
+}
+
+@media(max-width:768px) {
+  div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse {
+
+    flex-direction: row-reverse;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text__block.f.image_text_advanced {
+    flex-direction: row !important;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse .image_text__image {
+
+    width: 100%;
+
+  }
+
+  p.image-text-landing-text.gotham.aos-init.aos-animate {
+
+    font-size: 1.6vw !important;
+    text-align: left !important;
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.8vw !important;
+    text-align: left !important;
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text__block.f.image_text_advanced-inverse .image_text__content {
+
+    padding: 20px;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_title h3 {
+
+    font-size: 2vw !important;
+
+  }
+}
+
+@media(max-width:600px) {
+  div#shopify-section-image-text-advanced-landing .image_text_title h3 {
+    font-size: 4vw !important;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 3vw !important;
+    text-align: center !important;
+  }
+  p.image-text-landing-text.gotham.aos-init.aos-animate {
+    font-size: 3.7vw !important;
+    text-align: center !important;
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text__block.f.image_text_advanced {
+
+    flex-direction: column !important;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse {
+
+    flex-direction: column;
+  }
+}
+@media(max-width:450px) {
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 3.5vw !important;
+  }
+}
+/* Simple Text */
+
+div#shopify-section-simple-text .hero-carousel .flickity-viewport {
+
+  min-height: 300px;
+
+}
+
+p.image-text__entry.block-text-landing-amanova {
+  font-size: 2vw;
+  margin: 40px auto 60px;
+}
+
+
+div#shopify-section-simple-text .hero-carousel .flickity-page-dots .dot {
+
+  display: none !important;
+
+}
+
+div#shopify-section-simple-text .image-text__content,
+div#shopify-section-simple-text-1 .image-text__content,
+div#shopify-section-simple-text-2 .image-text__content,
+div#shopify-section-simple-text-3 .image-text__content {
+
+  max-width: 1200px;
+
+}
+
+@media(max-width:1600px) {
+  div#shopify-section-simple-text .image-text__content,
+  div#shopify-section-simple-text-1 .image-text__content,
+  div#shopify-section-simple-text-2 .image-text__content,
+  div#shopify-section-simple-text-3 .image-text__content {
+
+    max-width: 900px;
+
+  }
+}
+
+@media(max-width:1024px) {
+  p.image-text__entry.block-text-landing-amanova {
+
+    font-size: 3.4vw;
+    margin: 20px 20px 35px;
+  }
+}
+
+@media(max-width:768px) {
+  p.image-text__entry.block-text-landing-amanova {
+
+    margin: 40px auto !important;
+
+  }
+
+  div#shopify-section-simple-text-2 .image-text__content,
+  div#shopify-section-simple-text-3 .image-text__content {
+
+    padding: 10px 20px;
+
+  }
+}
+
+
+@media(max-width:600px) {
+  p.image-text__entry.block-text-landing-amanova {
+
+    font-size: 4.4vw;
+    padding: 0;
+  }
+
+  h2.image-text__title.block-text-landing-amanova.miller.title.title--lines {
+    font-size: 6.6vw !important;
+    margin-bottom: 20px;
+  }
+  div#shopify-section-simple-text .image-text__content,
+  div#shopify-section-simple-text-1 .image-text__content,
+  div#shopify-section-simple-text-2 .image-text__content,
+  div#shopify-section-simple-text-3 .image-text__content {
+    max-width: 90%;
+  }
+}
+/* Simple text with lines */
+
+div#shopify-section-simple-text-4 .image-text__content {
+
+  width: 100%
+}
+
+div#shopify-section-simple-text-4 .image-text__content h2 {
+
+  max-width: 80%;
+
+}
+.title {
+
+  align-items: center;
+
+}
+.title--lines::before,
+.title--lines::after {
+
+  margin-top: 0;
+
+}
+
+@media(max-width:1500px) {
+
+  p.image-text__entry.block-text-landing-amanova {
+
+    margin: auto;
+    padding-top: 0;
+  }
+}
+@media(max-width:600px) {
+  p.image-text__entry.block-text-landing-amanova {
+
+    margin: 20px;
+
+  }
+
+  div#shopify-section-simple-text-4 .image-text__content h2 {
+
+    font-size: 6vw !important;
+    margin: 0 auto 30px;
+
+  }
+}
+/* Conoce Amanova */
+
+#shopify-section-conoce-amanova .stamps {
+
+  margin: 0;
+
+}
+
+@media(max-width:500px) {
+  #shopify-section-conoce-amanova .stamps {
+
+    padding: 20px;
+
+  }
+
+}
+
+/* Image text advanced landing */
+
+.image-block {
+  width: 60%;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+}
+
+.image-block figure {
+  width: 25%;
+}
+
+.text-block {
+  width: 75%;
+}
+
+.image_text__image.image-in {
+  display: inline-flex;
+  width: 100%;
+}
+
+div#shopify-section-image-text-advanced-landing-1 .image-block {
+
+  margin-top: 5%;
+
+}
+h3.image-text-landing-title.miller {
+
+  font-size: 2vw !important;
+
+}
+
+div#shopify-section-image-text-advanced-landing-1 .image_text__content {
+
+  padding: 4.6vw 4.6vw 0;
+  height: 100%
+}
+
+div#shopify-section-image-text-advanced-landing-1 {
+
+  margin-bottom: 10vw;
+
+}
+
+div#shopify-section-image-text-advanced-landing-1 img {
+
+  padding: 10%
+}
+
+div#shopify-section-image-text-advanced-landing-1 .image_text_advanced_subhero-cta__container,
+div#shopify-section-image-text-advanced-landing-1 .image_text__inner {
+
+  display: flex;
+
+}
+@media(max-width:1600px) {
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.2vw !important;
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image_text__content {
+
+    padding: 3vw 4vw 0;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image_text__content p {
+
+    margin-bottom: 20px;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image-block {
+
+    margin-top: 10%;
+
+  }
+}
+
+
+@media(max-width:1400px) {
+  div#shopify-section-image-text-advanced-landing-1 .image_text__content p,
+  div#shopify-section-image-text-advanced-landing .image_text__content p {
+
+    margin-bottom: 20px;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.2vw !important;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_title {
+
+    margin-top: 0;
+
+  }
+  .image-block {
+
+    width: 55%;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image-block {
+
+    margin-top: 12%;
+
+  }
+}
+
+@media(max-width:1200px) {
+  div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse .image_text__image {
+
+    width: 80%;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced-inverse .image_text__image,
+  div#shopify-section-image-text-advanced .image_text_advanced .image_text__image,
+  div#shopify-section-image-text-advanced .image_text_advanced-inverse .image_text__image {
+
+    width: 80%
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced .image_text__image {
+
+    width: 60%;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced .image_text__image.image-in {
+
+    width: 100%;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text__image.image-side {
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image-block {
+    margin-top: 200px;
+    width: 50%;
+    margin-left: -13%;
+    justify-content: flex-start;
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.4vw !important;
+
+  }
+}
+
+
+@media(max-width:1024px) {
+
+  .image-text-landing-text.gotham.aos-init.aos-animate {
+
+    text-align: right !important;
+
+  }
+
+  .image-text-landing-title.gotham.aos-init.aos-animate {
+
+    font-size: 2vw !important;
+    text-align: right !important;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced-inverse .image_text__image {
+
+    width: 100%;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image-block {
+
+    margin-top: 15%;
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image-block figure {
+
+    width: 18%;
+
+  }
+}
+
+@media(max-width:768px) {
+  .text-block {
+
+    margin: auto;
+
+  }
+
+
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.6vw !important;
+
+  }
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 1.6vw !important;
+
+  }
+
+}
+@media(max-width:600px) {
+  h3.image-text-landing-title.miller.aos-init.aos-animate {
+
+    text-align: center;
+    font-size: 5.6vw !important;
+
+  }
+
+  .image-block {
+    display: none;
+
+  }
+
+  .text-block {
+
+    width: 100%;
+    padding: 0 20px 20px;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing-1 .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 4vw !important;
+
+  }
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 2.6vw !important;
+
+  }
+  div#shopify-section-image-text-advanced-landing-1 .image_text__image.image-side {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media(max-width:450px) {
+
+  div#shopify-section-image-text-advanced-landing .image_text_advanced_subhero-cta__container .image_text__content p {
+
+    font-size: 3.5vw !important;
+
+  }
+}
+
+/* Categories carousel */
+
+.amanova-page div#shopify-section-categories-carousel {
+
+  max-width: 100%;
+  padding: 0;
+
+}
+
+.amanova-page div#shopify-section-categories-carousel p {
+
+  font-size: 1vw;
+
+}
+
+@media(max-width:1024px) {
+
+  .amanova-page div#shopify-section-categories-carousel p {
+
+    font-size: 1.4vw;
+
+  }
+
+}
+
+
+@media(max-width:768px) {
+
+  .amanova-page div#shopify-section-categories-carousel p {
+
+    font-size: 2vw;
+
+  }
+
+}
+
+
+@media(max-width:600px) {
+
+  .amanova-page div#shopify-section-categories-carousel p {
+
+    font-size: 2.6vw;
+
+  }
+
+}
+/* Fine landing amanova */

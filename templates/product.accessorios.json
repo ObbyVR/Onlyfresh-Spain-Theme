@@ -1,0 +1,758 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb_fHtnHD": {
+          "type": "breadcrumb",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "yotpo_product_reviews_ugc_star_rating_BAQRUX": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.sub_title.value }}",
+            "text_style": "uppercase"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "show_tags_fTgzcE": {
+          "type": "show_tags",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "enable_calcular": true,
+            "label_calcular": "Calcular formato",
+            "link_calcular": "#shopify-section-template--22202822525262__fresh_calcular_product_yK3Vn4"
+          }
+        },
+        "custom_liquid_ygcP4p": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"subscriptions_app_embed_block\"></div>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "icon_with_text_bqXz9A": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "truck",
+            "heading_1": "Recíbelo en España en 24-48H",
+            "heading_1_mb": "",
+            "icon_2": "map_pin",
+            "heading_2": "",
+            "heading_2_mb": "",
+            "icon_3": "none",
+            "heading_3": "",
+            "heading_3_mb": ""
+          }
+        },
+        "pickup_NBNpde": {
+          "type": "pickup",
+          "settings": {}
+        },
+        "collapsible_tab_jtBMXx": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Descripción",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.description | metafield_tag }}"
+          }
+        },
+        "collapsible_tab_8zDd7M": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Ingredientes",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.ingredientes | metafield_tag }}"
+          }
+        },
+        "collapsible_tab_U6NRWk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Más información",
+            "icon": "none",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb_fHtnHD",
+        "title",
+        "yotpo_product_reviews_ugc_star_rating_BAQRUX",
+        "vendor",
+        "description",
+        "show_tags_fTgzcE",
+        "variant_picker",
+        "custom_liquid_ygcP4p",
+        "buy_buttons",
+        "icon_with_text_bqXz9A",
+        "pickup_NBNpde",
+        "collapsible_tab_jtBMXx",
+        "collapsible_tab_8zDd7M",
+        "collapsible_tab_U6NRWk"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "enable_video_autoplay": true,
+        "padding_top": 40,
+        "padding_bottom": 12,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 17
+      }
+    },
+    "quick_order_list_dbebey": {
+      "type": "quick-order-list",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mb": 24,
+        "padding_bottom_mb": 24
+      }
+    },
+    "fresh_slider_information_3EtybB": {
+      "type": "fresh-slider-information",
+      "blocks": {
+        "block_mDFEAx": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/spoon-bowl-full-seeds.png",
+            "image_mobile": "shopify://shop_images/spoon-bowl-full-seeds.png",
+            "title": "Quinoa",
+            "description": "<p>Un \"súper alimento\" que ayudará a prevenir el estreñimiento y a mejorar la digestión</p>"
+          }
+        },
+        "block_Nt3hrY": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/fotos_ingredientes.png",
+            "image_mobile": "shopify://shop_images/fotos_ingredientes_03ae1bcc-979f-4786-9d58-087a8ceaa590.png",
+            "title": "Espirulina",
+            "description": "<p>Repleto de vitaminas y minerales y compuesto de aminoácidos y ácidos grasos esenciales.</p>"
+          }
+        },
+        "block_QDiCmm": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "image_mobile": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "title": "Arándanos",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_Xq8thU": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "image_mobile": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "title": "Jengibre",
+            "description": "<p>Reduce la inflamación, el colesterol y ayuda a mantener niveles saludables de azúcar en la sangre.</p>"
+          }
+        },
+        "block_TaUtWh": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/banner-descubre_hero_2.png",
+            "image_mobile": "shopify://shop_images/banner-descub3.png",
+            "title": "Catgo",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_qCrNrF": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Frame_6028.png",
+            "image_mobile": "shopify://shop_images/Rectangle_4310.png",
+            "title": "Cat Cat",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_zbcfdR": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Frame_6028_e256c7da-c336-479c-b44e-5096c0e1569d.png",
+            "image_mobile": "shopify://shop_images/Frame_6028_1ad6ad94-b4b2-4068-b4cb-d015e43ef812.png",
+            "title": "Doggo",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_FFE933": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/mbRectangle_4274.png",
+            "image_mobile": "shopify://shop_images/mbRectangle_4274.png",
+            "title": "Three Dog",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_DpHtVf": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "image_mobile": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "title": "Arándanos",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_hXajPw": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/mbFrame_5317.png",
+            "image_mobile": "shopify://shop_images/mbFrame_5317.png",
+            "title": "Beneficios",
+            "description": "<p>Un \"súper alimento\" que ayudará a prevenir el estreñimiento y a mejorar la digestión</p>"
+          }
+        },
+        "block_QH8fq7": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "image_mobile": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "title": "Jengibre",
+            "description": "<p>Reduce la inflamación, el colesterol y ayuda a mantener niveles saludables de azúcar en la sangre.</p>"
+          }
+        },
+        "block_nmBnNU": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/unsplash_N04FIfHhv_k_bd90a581-6de9-4836-a8d8-7a1b6ab207e8.png",
+            "image_mobile": "shopify://shop_images/unsplash_N04FIfHhv_k_bd90a581-6de9-4836-a8d8-7a1b6ab207e8.png",
+            "title": "Espirulina",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_mDFEAx",
+        "block_Nt3hrY",
+        "block_QDiCmm",
+        "block_Xq8thU",
+        "block_TaUtWh",
+        "block_qCrNrF",
+        "block_zbcfdR",
+        "block_FFE933",
+        "block_DpHtVf",
+        "block_hXajPw",
+        "block_QH8fq7",
+        "block_nmBnNU"
+      ],
+      "disabled": true,
+      "settings": {
+        "horizontal_alignment": "center",
+        "horizontal_alignment_mobile": "center",
+        "heading": "Ingredientes especiales",
+        "heading_mobile": "Ingredientes especiales",
+        "heading_color": "#000000",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 52,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
+      }
+    },
+    "fresh_benefit_DbkmB3": {
+      "type": "fresh-benefit",
+      "blocks": {
+        "benefit_BrdN68": {
+          "type": "benefit",
+          "disabled": true,
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        },
+        "benefit_FLEHTL": {
+          "type": "benefit",
+          "disabled": true,
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        },
+        "benefit_mjJCV9": {
+          "type": "benefit",
+          "disabled": true,
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_BrdN68",
+        "benefit_FLEHTL",
+        "benefit_mjJCV9"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Beneficios",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 76,
+        "padding_right": 63,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Productos relacionados",
+        "size_heading": 36,
+        "size_heading_mb": 24,
+        "margin_heading": 25,
+        "margin_heading_mb": 16,
+        "collection": "comida-para-perros",
+        "products_to_show": 8,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "padding_top": 36,
+        "padding_bottom": 28,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "fresh_shop_the_look_7pDJB6": {
+      "type": "fresh-shop-the-look",
+      "settings": {
+        "heading": "Shop de look",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 32,
+        "margin_heading_mb": 18,
+        "collection": "accessories",
+        "products_to_show": 4,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "fresh_key_points_tQHPVN": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_WTAMc8": {
+          "type": "block",
+          "settings": {
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "",
+            "font_size_text_decription": 28,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_gdiGtJ": {
+          "type": "block",
+          "settings": {
+            "link_url": "/",
+            "link_label": "Slow Fashion. Spanish Style.",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#000000",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam scelerisque utis pellentesque phasellus turpis facilisi turpis ut pharetra. Commodo egestas non pulvinar quisque aliquet pulvinar. </p>",
+            "font_size_text_decription": 11,
+            "font_size_text_decription_mb": 11,
+            "color_decription_text": "#5c5c5c"
+          }
+        },
+        "block_eYjddQ": {
+          "type": "block",
+          "settings": {
+            "link_url": "",
+            "link_label": "Making a material difference",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#000000",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam scelerisque utis pellentesque phasellus turpis facilisi turpis ut pharetra. Commodo egestas non pulvinar quisque aliquet pulvinar. </p>",
+            "font_size_text_decription": 11,
+            "font_size_text_decription_mb": 11,
+            "color_decription_text": "#5c5c5c"
+          }
+        },
+        "block_CBqEL9": {
+          "type": "block",
+          "settings": {
+            "link_url": "",
+            "link_label": "Handmade heritage",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#000000",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam scelerisque utis pellentesque phasellus turpis facilisi turpis ut pharetra. Commodo egestas non pulvinar quisque aliquet pulvinar. </p>",
+            "font_size_text_decription": 11,
+            "font_size_text_decription_mb": 11,
+            "color_decription_text": "#5c5c5c"
+          }
+        }
+      },
+      "block_order": [
+        "block_WTAMc8",
+        "block_gdiGtJ",
+        "block_eYjddQ",
+        "block_CBqEL9"
+      ],
+      "disabled": true,
+      "settings": {
+        "key_point_icon": true,
+        "title": "Sustainability is a journey",
+        "title_mobile": "Features del producto",
+        "size_heading": 32,
+        "size_heading_mb": 28,
+        "margin_heading": 9,
+        "margin_heading_mb": 4,
+        "content": "Lorem ipsum dolor sit amet consectetur. Enim maecenas condimentum semper risus urna consequat amet libero.",
+        "content_mb": "Lorem ipsum dolor sit amet consectetur. Enim maecenas condimentum semper risus amet libero.",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 32,
+        "padding_top_title": 10,
+        "padding_top_title_mb": 10,
+        "padding_top": 100,
+        "padding_bottom": 97,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "color_content": "#ffffff",
+        "bg_color_section": "#000000"
+      }
+    },
+    "1717640627f04f45ee": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "image-with-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-0",
+        "image-with-text-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-0": {
+          "type": "column",
+          "settings": {
+            "title": "Free Shipping",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "title": "Hassle-Free Exchanges",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-0",
+        "column-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "fresh_product_recently_kVwVVJ": {
+      "type": "fresh-product-recently",
+      "disabled": true,
+      "settings": {
+        "title": "Recently viewed",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 44,
+        "margin_heading_mb": 14,
+        "products_to_show": 9,
+        "columns_desktop": 4,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "fresh_custom_banner_product_m9AGCQ": {
+      "type": "fresh-custom-banner-product",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52
+      }
+    },
+    "1729162391d47ac902": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_ugc_reviews_rDACqp": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_ugc_reviews_rDACqp"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "fresh_social_media_jgTAQc": {
+      "type": "fresh-social-media",
+      "blocks": {
+        "block_xMM9gh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/d68c1523-6514-453c-949f-512eb093ed2d.jpg",
+            "image_mb": "shopify://shop_images/d68c1523-6514-453c-949f-512eb093ed2d.jpg",
+            "link_url": "shopify://collections/cachorros"
+          }
+        },
+        "block_Nmj67H": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/e564f6ec-b1bb-4774-97a4-55536744f335.jpg",
+            "image_mb": "shopify://shop_images/e564f6ec-b1bb-4774-97a4-55536744f335.jpg",
+            "link_url": ""
+          }
+        },
+        "block_FKEPqj": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/b7dd2ba3-7570-42e8-8724-46bf28f354f8.jpg",
+            "image_mb": "shopify://shop_images/b7dd2ba3-7570-42e8-8724-46bf28f354f8.jpg",
+            "link_url": ""
+          }
+        },
+        "block_mbjWVH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/3a35daf1-f9a4-4306-99be-010837e3ed54.jpg",
+            "image_mb": "shopify://shop_images/3a35daf1-f9a4-4306-99be-010837e3ed54.jpg",
+            "link_url": ""
+          }
+        },
+        "block_wjQwb4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/fbd2095b-f5bb-4307-b3d6-4a96345eebb6.jpg",
+            "image_mb": "shopify://shop_images/fbd2095b-f5bb-4307-b3d6-4a96345eebb6.jpg",
+            "link_url": ""
+          }
+        },
+        "block_6hEtFa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/86314aa3-050c-4c8c-90e0-bc90f404a124.jpg",
+            "image_mb": "shopify://shop_images/e86098d5-6f1f-4327-9fef-ed8787700bd7.jpg",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_xMM9gh",
+        "block_Nmj67H",
+        "block_FKEPqj",
+        "block_mbjWVH",
+        "block_wjQwb4",
+        "block_6hEtFa"
+      ],
+      "settings": {
+        "title": "Nos encanta hacerlos felices",
+        "size_heading": 36,
+        "size_heading_mb": 32,
+        "margin_heading": 7,
+        "margin_heading_mb": 7,
+        "content": "Te mostramos a nuestros mejores clientes en acción",
+        "content_mb": "",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 35,
+        "margin_content_mb": 24,
+        "padding_top": 31,
+        "padding_bottom": 79,
+        "padding_top_mb": 9,
+        "padding_bottom_mb": 60
+      }
+    },
+    "fresh_compare_product_Y3aL6c": {
+      "type": "fresh-compare-product",
+      "disabled": true,
+      "settings": {
+        "title": "Comparador de productos",
+        "heading": "Principales beneficios",
+        "value_1": "Elaborado únicamente con carne fresca",
+        "value_2": "Contenido de Carne Fresca",
+        "value_3": "Contenido de  Harinas cárnicas o proteína deshidratada",
+        "value_4": "Contiene una sola fuente de proteína animal",
+        "value_5": "Libre de soja, maíz o trigo",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "fresh_calcular_product_yK3Vn4": {
+      "type": "fresh-calcular-product",
+      "disabled": true,
+      "settings": {
+        "title": "Calculadora de raciones",
+        "title_mb": "Calcula el racionamiento",
+        "heading_first": "¿Cuál es tu objetivo?",
+        "first_value_1": "Mantenimiento",
+        "first_value_2": "Dieta Light",
+        "first_value_3": "Perdida de peso",
+        "heading_second": "¿Cuál es el nivel de actividad de tu mascota?",
+        "second_value_1": "Normal",
+        "second_value_2": "Moderada",
+        "second_value_3": "Alta",
+        "second_value_4": "Extrema",
+        "select_2": "Indica su edad",
+        "select_3": "Indica su peso",
+        "select_4": "Nº de comidas diarias",
+        "button_label_step": "Siguente",
+        "button_label": "Calcular racionamiento",
+        "button_label_mb": "Calcular",
+        "button_label_reset": "Volver a calcular",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quick_order_list_dbebey",
+    "fresh_slider_information_3EtybB",
+    "fresh_benefit_DbkmB3",
+    "related-products",
+    "fresh_shop_the_look_7pDJB6",
+    "fresh_key_points_tQHPVN",
+    "1717640627f04f45ee",
+    "image-with-text",
+    "multicolumn",
+    "fresh_product_recently_kVwVVJ",
+    "fresh_custom_banner_product_m9AGCQ",
+    "1729162391d47ac902",
+    "fresh_social_media_jgTAQc",
+    "fresh_compare_product_Y3aL6c",
+    "fresh_calcular_product_yK3Vn4"
+  ]
+}

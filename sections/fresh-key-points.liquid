@@ -1,0 +1,742 @@
+{% liquid
+  assign section_settings = section.settings
+%}
+
+{% style %}
+  #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points {
+      padding-top: {{ section_settings.padding_top_mb }}px;
+      padding-bottom: {{ section_settings.padding_bottom_mb }}px;
+      Background: {{ section.settings.bg_color_section }};
+  }
+  #section-{{ section.id }}--sys-key-points {
+    padding: 0 24px;
+  }
+  #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points .page-width {
+    padding-inline: 0;
+  }
+  #shopify-section-{{ section.id }}.section-fresh-key-points .sys-key-points--text-inner {
+    padding-top: {{ section.settings.padding_top_title_mb }}px;
+  }
+  .sys-key-points-wrapper-icon .sys-key-points-item--media img {
+    width: 49px;
+    height: 47px;
+  }
+  .sys-key-points-item.swiper-slide:last-child {
+    margin: 0;
+  }
+  .sys-key-points-item.swiper-slide {
+    text-align: center;
+  }
+  .sys-key-points-item--image {
+    display: flex;
+    justify-content: center;
+  }
+  .sys-key-points-item--image img {
+    border-radius: 16px;
+  }
+  .sys-key-points-wrapper-icon .sys-key-points-item--image a {
+    width: 97px;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} h2.title {
+    font-size: {{ section.settings.size_heading_mb }}px;
+    margin-bottom: {{ section.settings.margin_heading_mb }}px;
+    font-family: 'Baskerville', 'sans-serif';
+  }
+
+  #shopify-section-{{ section.id }} .heading__content {
+    font-size: {{ section.settings.size_content_mb }}px;
+    margin-bottom: {{ section.settings.margin_content_mb }}px;
+  }
+  #shopify-section-{{ section.id }}.section-fresh-key-points .title-wrapper h2,
+  #shopify-section-{{ section.id }}.section-fresh-key-points .title-wrapper .heading__content {
+    color: {{ section.settings.color_content }};
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points {
+      padding-top: {{ section_settings.padding_top }}px;
+      padding-bottom: {{ section_settings.padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }}.section-fresh-key-points .sys-key-points--text-inner {
+      padding-top: {{ section.settings.padding_top_title }}px;
+    }
+    #section-{{ section.id }}--sys-key-points {
+      padding: 0;
+    }
+    #shopify-section-{{ section.id }} h2.title {
+      font-size: {{ section.settings.size_heading }}px;
+      margin-bottom: {{ section.settings.margin_heading }}px;
+    }
+    #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points .page-width {
+      padding-inline: 78px;
+    }
+    #shopify-section-{{ section.id }} .heading__content {
+        font-size: {{ section.settings.size_content }}px;
+        margin-bottom: {{ section.settings.margin_content }}px;
+    }
+  }
+{% endstyle %}
+{% liquid
+  if product.metafields.custom.key_point.value == blank
+    assign key_point = section.blocks
+  else
+    assign section_object = product.metafields.custom.key_point.value
+    assign key_point = section_object
+  endif
+%}
+<div class="section-{{ section.id }}--sys-key-points">
+  <div class="page-width">
+    <div class="title-wrapper title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.title != blank -%}
+        <h2 class="title inline-richtext hidden-mb">{{ section.settings.title }}</h2>
+        <h2 class="title inline-richtext hidden-pc">{{ section.settings.title_mobile }}</h2>
+      {%- endif -%}
+      {%- if section.settings.content != blank -%}
+        <div class="heading__content hidden-mb">
+          {{ section.settings.content }}
+        </div>
+        <div class="heading__content hidden-pc">
+          {{ section.settings.content_mb }}
+        </div>
+      {%- endif -%}
+    </div>
+    <div
+      id="section-{{ section.id }}--sys-key-points"
+      class="swiper {% if section.settings.key_point_icon != false %}sys-key-points-wrapper-icon{% endif %}"
+    >
+      <div class="sys-key-points-wrapper swiper-wrapper wrapper-{{ section.blocks.size }}-items">
+        {% for block in key_point %}
+          {% assign index_number = forloop.length %}
+          {% if product.metafields.custom.key_point.value == blank %}
+            {% style %}
+              #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points .sys-key-points-wrapper .sys-key-points-item .sys-key-points--text-wrapper .block-{{ block.id }}-key-points-text {
+                      color: {{ block.settings.color_text }};
+                      font-size: {{ block.settings.font_size_text_mb }}px;
+                      overflow: visible;
+                      line-height: 22px;
+                      font-family: 'Poppins';
+                  }
+                  .sys-key-points--{{ block.id }} .sys-key-points--text-wrapper-description {
+                      font-size: {{ block.settings.font_size_text_decription_mb }}px;
+                      line-height: 22px;
+                      color: {{ block.settings.color_decription_text }};
+                  }
+              @media (min-width: 768px) {
+                  #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points .sys-key-points-wrapper .sys-key-points-item .sys-key-points--text-wrapper .block-{{ block.id }}-key-points-text {
+                      font-size: {{ block.settings.font_size_text }}px;
+                  }
+                  .sys-key-points--{{ block.id }} .sys-key-points--text-wrapper-description {
+                      font-size: {{ block.settings.font_size_text_decription }}px;
+                  }
+              }
+            {% endstyle %}
+            <div
+              class="sys-key-points-item swiper-slide"
+              {% if block.settings.background_color %}
+                style="background-color:{{ block.settings.background_color }}"
+              {% endif %}
+            >
+              <div class="sys-key-points-item--media">
+                {% if block.settings.image != blank or block.settings.image_mb != blank %}
+                  <div class="{% if forloop.first %}image-first{% endif %} sys-key-points-item--image">
+                    <a
+                      {% if block.settings.link_url == blank %}
+                        role="link" aria-disabled="true"
+                      {% else %}
+                        href="{{ block.settings.link_url }}"
+                      {% endif %}
+                    >
+                      {% if block.settings.image != blank %}
+                        {{
+                          block.settings.image
+                          | image_url: width: block.settings.image.width, height: block.settings.image.height
+                          | image_tag:
+                            width: block.settings.image.width,
+                            height: block.settings.image.height,
+                            loading: 'lazy',
+                            alt: 'image-key-point-item',
+                            class: 'sys-key-points-item--img sys-key-points-item--img_des'
+                        }}
+                      {% endif %}
+                      {% if block.settings.image_mb != blank %}
+                        {{
+                          block.settings.image_mb
+                          | image_url: width: block.settings.image_mb.width, height: block.settings.image_mb.height
+                          | image_tag:
+                            width: block.settings.image_mb.width,
+                            height: block.settings.image_mb.height,
+                            loading: 'lazy',
+                            alt: 'image-key-point-item',
+                            class: 'sys-key-points-item--img sys-key-points-item--img_mb'
+                        }}
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="sys-key-points--text-inner sys-key-points--{{ block.id }}">
+                <div
+                  class="sys-key-points--text-wrapper"
+                >
+                  <a
+                    {% if block.settings.title_text_align or block.settings.background_color_title %}
+                      style="{% if block.settings.title_text_align %}text-align:{{ block.settings.title_text_align }};{% endif %}{% if block.settings.background_color_title %} background-color:{{ block.settings.background_color_title }}{% endif %}"
+                    {% endif %}
+                    {% if block.settings.link_url == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.link_url }}"
+                    {% endif %}
+                    class="block-{{ block.id }}-key-points-text text-title"
+                  >
+                    {{- block.settings.link_label | escape -}}
+                  </a>
+                  {% if block.settings.lable_decription %}
+                    <div
+                      class="sys-key-points--text-wrapper-description"
+                      {% if block.settings.description_text_align %}
+                        style="text-align:{{ block.settings.description_text_align }}"
+                      {% endif %}
+                    >
+                      {{ block.settings.lable_decription }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% else %}
+            {%- liquid
+              assign image = block.image.value
+              assign image_mb = block.image.value
+              assign label = block.label.value
+              assign description = block.label_description | metafield_tag
+              assign url = block.link
+              assign color_label = block.label_color
+              assign color_description = block.description_color
+              assign size_label = block.label_size
+              assign size_label_mb = block.label_size_mobile
+              assign size_description = block.description_size
+              assign size_description_mb = block.description_size_mobile
+            -%}
+            {% style %}
+              #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points .sys-key-points-wrapper .sys-key-points-item .sys-key-points--text-wrapper .block-{{ section.id }}--{{ forloop.index }}-key-points-text {
+                      color: {{ color_label }};
+                      font-size: {{ size_label_mb }}px;
+                      overflow: visible;
+                      line-height: 22px;
+                  }
+                  .sys-key-points--{{ section.id }}--{{ forloop.index }} .sys-key-points--text-wrapper-description {
+                      color: {{ color_description }};
+                      font-size: {{ size_description_mb }}px;
+                      line-height: 22px;
+                  }
+              @media (min-width: 768px) {
+                  #shopify-section-{{ section.id }} .section-{{ section.id }}--sys-key-points .sys-key-points-wrapper .sys-key-points-item .sys-key-points--text-wrapper .block-{{ section.id }}--{{ forloop.index }}-key-points-text {
+                      font-size: {{ size_label }}px;
+                  }
+                  .sys-key-points--{{ section.id }}--{{ forloop.index }} .sys-key-points--text-wrapper-description {
+                      font-size: {{ size_description }}px;
+                  }
+              }
+            {% endstyle %}
+            <div class="sys-key-points-item swiper-slide">
+              <div class="sys-key-points-item--media">
+                {% if image != blank or image_mb != blank %}
+                  <div class="{% if forloop.first %}image-first{% endif %} sys-key-points-item--image">
+                    <a
+                      {% if url == blank %}
+                        role="link" aria-disabled="true"
+                      {% else %}
+                        href="{{ url }}"
+                      {% endif %}
+                    >
+                      {% if block.settings.image != blank %}
+                        {{
+                          block.settings.image
+                          | image_url: width: block.settings.image.width, height: block.settings.image.height
+                          | image_tag:
+                            width: block.settings.image.width,
+                            height: block.settings.image.height,
+                            alt: 'image-key-point-item',
+                            class: 'sys-key-points-item--img sys-key-points-item--img_des'
+                        }}
+                      {% endif %}
+
+                      {% if image_mb != blank %}
+                        {{
+                          image_mb
+                          | image_url: width: image_mb.width, height: image_mb.height
+                          | image_tag:
+                            width: image_mb.width,
+                            height: image_mb.height,
+                            alt: 'image-key-point-item',
+                            class: 'sys-key-points-item--img sys-key-points-item--img_mb'
+                        }}
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="sys-key-points--text-inner sys-key-points--{{ section.id }}--{{ forloop.index }}">
+                <div class="sys-key-points--text-wrapper">
+                  <a
+                    {% if url == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ url }}"
+                    {% endif %}
+                    class="block-{{ section.id }}--{{ forloop.index }}-key-points-text text-title"
+                  >
+                    {{- label | escape -}}
+                  </a>
+                  {% if description %}
+                    <div class="sys-key-points--text-wrapper-description">
+                      {{ description }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="section-{{section.id}}-swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="section-{{section.id}}-swiper-button-prev"></div>
+      <div class="section-{{section.id}}-swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="section-{{section.id}}-swiper-scrollbar"></div>
+    </div>
+  </div>
+</div>
+<style>
+    @media (min-width: 768px) {
+
+      .sys-key-points-wrapper-icon .sys-key-points-item.swiper-slide {
+        width: calc(100%/{{ index_number }} - ((24px*{{ index_number | minus: 1 }})/({{ index_number }}))) !important;
+      }
+    }
+    @media (min-width: 1200px) {
+      .sys-key-points-wrapper-icon .sys-key-points-item.swiper-slide {
+        width: calc(100%/{{ index_number }} - ((100px*{{ index_number | minus: 1 }})/({{ index_number }}))) !important;
+      }
+    }
+    @media (min-width: 768px) {
+
+     .sys-key-points-item.swiper-slide {
+        width: calc(100%/{{ index_number }} - ((6px*{{ index_number | minus: 1 }})/({{ index_number }}))) !important;
+      }
+    }
+    @media (min-width: 1200px) {
+      .sys-key-points-item.swiper-slide {
+        width: calc(100%/{{ index_number }} - ((16px*{{ index_number | minus: 1 }})/({{ index_number }}))) !important;
+      }
+    }
+    @media (max-width: 768px) {
+    .swiper-slide {
+      transform: translateX(10%); /* Opzionale per enfatizzare la posizione */
+    }
+  }
+</style>
+<script>
+      var swiper_key_points{{ section.index }} = new Swiper('#section-{{ section.id }}--sys-key-points', {
+        navigation: {
+          nextEl: '.section-{{section.id}}-swiper-button-next',
+          prevEl: '.section-{{section.id}}-swiper-button-prev',
+        },
+        slidesPerView: 1.3, // Per mobile
+        spaceBetween: 16,
+        breakpoints: {
+          768: {
+            slidesPerView: {{ section.blocks.size }}, // Numero di slide visibili
+            spaceBetween: 16,
+          },
+          1200: {
+            slidesPerView: 4, // Numero di slide visibili su desktop
+            spaceBetween: 24, // Spaziatura adeguata per evitare tagli
+          },
+        },
+        preloadImages: true,
+        lazy: false, // Disabilita il lazy loading se già configurato
+      });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('.sys-key-points-item--img');
+    images.forEach((img) => {
+      if (!img.src) {
+        img.src = img.dataset.src; // Assicurati che il dataset contenga l'URL dell'immagine
+      }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Key Points",
+  "tag": "section",
+  "class": "section section-fresh-key-points",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "key_point_icon",
+      "label": "Key point icon",
+      "default": true,
+      "info": "Set width img you fill 49x47"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title_mobile",
+      "label": "Heading mobile"
+    },
+    {
+      "type": "range",
+      "id": "size_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "size_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading mobile",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "margin_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "margin_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom mobile",
+      "default": 14
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content_mb",
+      "label": "Content mobile"
+    },
+    {
+      "type": "range",
+      "id": "size_content",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size content",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_content_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size content mobile",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "margin_content",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Content margin bottom",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "margin_content_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Content margin bottom mobile",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Padding title items"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_title",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding title items",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top_title_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding title items mobile",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Top padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Bottom padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Color section"
+    },
+    {
+      "type": "color",
+      "id": "color_content",
+      "label": "Custom content Color Section",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_section",
+      "label": "Custom Background Color Section",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Key point item",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Media"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mb",
+          "label": "Image on mobile"
+        },
+
+        {
+          "type": "header",
+          "content": "COntent"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "transparent"
+        },
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Label"
+        },
+        {
+          "type": "color",
+          "id": "background_color_title",
+          "label": "Background color Title",
+          "default": "transparent"
+        },
+        {
+        "type": "select",
+        "id": "title_text_align",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center",
+        "label": "Choose text align for Title"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_number",
+          "label": "Show number before label",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "font_size_text",
+          "label": "Font size Desktop",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 28,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "font_size_text_mb",
+          "label": "Font size text on Mobile",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 22,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Custom Color Text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "richtext",
+          "id": "lable_decription",
+          "label": "lable decription"
+        },
+        {
+        "type": "select",
+        "id": "description_text_align",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center",
+        "label": "Choose text align for text description"
+        },
+        {
+          "type": "range",
+          "id": "font_size_text_decription",
+          "label": "Font size Desktop",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 28,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "font_size_text_decription_mb",
+          "label": "Font size text on Mobile",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 22,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "color_decription_text",
+          "label": "Custom Color Text",
+          "default": "#FFFFFF"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Key Points"
+    }
+  ]
+}
+{% endschema %}

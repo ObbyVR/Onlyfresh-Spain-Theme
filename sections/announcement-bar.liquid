@@ -1,0 +1,188 @@
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
+
+<div
+  class="utility-bar gradient"
+  style="background: {{ section.settings.color_background }}; color: {{ section.settings.color_text }}"
+> 
+  <div class="utility-bar-content" style="justify-content: {{ section.settings.text_position }}">
+    {%- if section.blocks.size == 1 -%}
+      <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
+        {%- if section.blocks.first.settings.text != blank -%}
+          {%- if section.blocks.first.settings.link != blank -%}
+            <a href="{{ section.blocks.first.settings.link }}" class="announcement-bar__link link">
+          {%- endif -%}
+            <p class="announcement-bar__message h5">
+              <span>
+                {{ section.blocks.first.settings.text | escape }}
+                <span class="infor">
+                  {{ section.blocks.first.settings.infor | escape }}
+                </span>
+              </span>
+            </p>
+          {%- if section.blocks.first.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    {%- elsif section.blocks.size > 1 -%}
+      <slideshow-component
+        class="announcement-bar slideshow"
+        role="region"
+        aria-roledescription="{{ 'sections.announcements.carousel' | t }}"
+        aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
+      >
+        <div class="announcement-bar-slider slider-buttons">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+          <div
+            class="grid grid--1-col slider slider--everywhere {% if section.settings.auto_rotate%}slideshow__autoplay {% endif %}"
+            id="Slider-{{ section.id }}"
+            aria-live="polite"
+            aria-atomic="true"
+            data-autoplay="{{ section.settings.auto_rotate }}"
+            data-speed="{{ section.settings.change_slides_speed }}"
+          >
+            {%- for block in section.blocks -%}
+              <div
+                class="slideshow__slide slider__slide grid__item grid--1-col"
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                {{ block.shopify_attributes }}
+                role="group"
+                aria-roledescription="{{ 'sections.announcements.announcement' | t }}"
+                aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                tabindex="-1"
+              >
+                <div class="announcement-bar__announcement" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+                  {%- if block.settings.text != blank -%}
+                    {%- if block.settings.link != blank -%}
+                      <a href="{{ block.settings.link }}" class="announcement-bar__link link">
+                    {%- endif -%}
+                        <p class="announcement-bar__message h5">
+                          <span>{{ block.settings.text | escape }}
+                            <span class="infor">
+                              {{ block.settings.infor | escape }}
+                            </span>
+                          </span>
+                        </p>
+                    {%- if block.settings.link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'sections.announcements.next_announcement' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      </slideshow-component>
+    {%- endif -%}
+  </div>
+  <div class="utility-bar-icon__close">{% render 'icon-close-announcement-bar' %}</div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "color_background",
+      "default": "#000000",
+      "label": "t:sections.announcement-bar.settings.color_background.label"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "default": "#ffffff",
+      "label": "t:sections.announcement-bar.settings.color_text.label"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:sections.announcement-bar.settings.text_position.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.announcement-bar.settings.text_position.options__2.label"
+        },
+        {
+          "value": "end",
+          "label": "t:sections.announcement-bar.settings.text_position.options__3.label"
+        }
+      ],
+      "default": "start",
+      "label": "t:sections.announcement-bar.settings.text_position.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.announcement-bar.settings.auto_rotate.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Free shipping from 60 € - Free returns within 60 days",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "infor",
+          "default": "+info",
+          "label": "Infor"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

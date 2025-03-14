@@ -1,0 +1,662 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    @media (min-width:769px) {
+      .collection-hero__inner {
+          background-image: url('https://cdn.shopify.com/s/files/1/0486/9396/9064/files/bakcgroundHD.jpg')!important;
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+    }
+  @media screen and (max-width: 768px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{settings.media_shadow_vertical_offset | at_least: 0}}px + 2rem);
+    }
+  .collection-hero__inner {
+          background-image: url('https://cdn.shopify.com/s/files/1/0486/9396/9064/files/background_collection_mobile.jpg')!important;
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+  }
+  {%- unless collection.image -%}
+    @media screen and (min-width: 750px) {
+        .collection-hero__text-wrapper {
+          position: relative;
+        }
+        .collection-hero__inner {
+          min-height: auto;
+          overflow:hidden;
+        }
+        .collection-hero__text-wrapper {
+          max-width: 100%;
+        }
+        /* .collection-hero__title + .collection-hero__description {
+          padding-right: 80px;
+        } */
+    }
+    {%- if collection.metafields.custom.background_color.value != blank -%}
+      .collection-hero__inner {
+        padding-top: 20px;
+        background-color: {{ collection.metafields.custom.background_color.value }};
+        padding-bottom: 20px;
+        min-height: 256px;
+        position:relative;
+      }
+      .collection-hero__text-wrapper {
+        position: relative;
+      }
+    {%- endif -%}
+  {%- endunless -%}
+  {%- if collection.metafields.custom.collection_banner_mobile == blank -%}
+    @media screen and (max-width: 749px) {
+      .collection-hero__text-wrapper {
+        position: relative;
+      }
+      .collection-hero__inner {
+        min-height: auto;
+      }
+      .collection-hero__image-container {
+        height: auto;
+      }
+    }
+  {%- endif -%}
+  {%- if collection.metafields.custom.color_text.value != blank -%}
+    .rocket-collection-breadcrumb .breadcrumbs__item .breadcrumbs__link,
+    .rocket-collection-breadcrumb .breadcrumbs__item a,
+    .rocket-collection-breadcrumb span,
+    .collection-hero__title,
+    .collection-hero__description,
+    .collection-hero__title + .collection-hero__description {
+      color: {{ collection.metafields.custom.color_text.value }}
+    }
+  {%- endif -%}
+{%- endstyle -%}
+<div
+  class="collection-hero__inner {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  id="collection-hero--{{ collection.id }}"
+  style="
+      {%- if section.settings.show_collection_image == false and section.settings.show_collection_image_background and collection.image -%}
+       background-image:url('{{ collection.image | image_url }}');
+    {% endif %}
+  "
+>
+  <div class="collection-hero__text-wrapper ">
+    {% assign grandpa = null %}
+    {% assign parent = null %}
+
+    {% comment %} Start breadcrumb collection {% endcomment %}
+    {%- if collection.handle == 'child-collection' -%}
+      {% assign grandpa = collections['grandparent-collection-handle'] %}
+      {% assign parent = collections['parent-collection-handle'] %}
+    {%- endif -%}
+
+    {%- if collection.handle == 'parent-collection' -%}
+      {% assign grandpa = collections['grandparent-collection-handle'] %}
+    {%- endif -%}
+
+    {% assign current = collection %}
+
+    {% render 'rocket-collection-breadcrumb', grandpa: grandpa, parent: parent, current: current %}
+    {% comment %} End breadcrumb collection {% endcomment %}
+  </div>
+  <div
+    class="text-image-collection "
+    {%- if collection.metafields.custom.image_side_banner and section.settings.show_collection_description %}
+      style="
+        {%- if section.settings.position_image == 'right' -%}flex-direction: row-reverse;
+        {%- elsif section.settings.position_image == 'left' -%}{% endif %}
+      "
+    {% endif %}
+  >
+    {%- if collection.metafields.custom.image_side_banner and section.settings.show_collection_description %}
+    {% else %}
+      <style>
+        .text-image-collection {
+         justify-content: flex-start;
+        }
+      </style>
+    {% endif %}
+
+    {%- if collection.metafields.custom.image_side_banner %}
+      <div class="collection-banner-desktop">
+        <img
+          class=""
+          srcset="
+            {%- if collection.metafields.custom.image_side_banner.width >= 165 -%}{{ collection.metafields.custom.image_side_banner | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if collection.metafields.custom.image_side_banner.width >= 360 -%}{{ collection.metafields.custom.image_side_banner | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if collection.metafields.custom.image_side_banner.width >= 535 -%}{{ collection.metafields.custom.image_side_banner | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if collection.metafields.custom.image_side_banner.width >= 750 -%}{{ collection.metafields.custom.image_side_banner | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if collection.metafields.custom.image_side_banner.width >= 1070 -%}{{ collection.metafields.custom.image_side_banner | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if collection.metafields.custom.image_side_banner.width >= 1500 -%}{{ collection.metafields.custom.image_side_banner | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ collection.metafields.custom.image_side_banner | image_url }} {{ collection.metafields.custom.image_side_banner.width }}w
+          "
+          src="{{ collection.metafields.custom.image_side_banner | image_url: width: 750 }}"
+          sizes="5000px"
+          alt=""
+          height="1000px"
+          width="auto"
+        >
+      </div>
+    {% endif %}
+
+    <div class="text-related-collections ">
+      <div class="collection__title-text">
+        <h1 class="collection-hero__title headings-desktop-h2 headings-mobile-h4">
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        </h1>
+
+        {%- if section.settings.show_collection_description -%}
+          <div class="collection-hero__description rte">
+            <div class="text has__line-clamp">
+              {{ collection.description }}
+            </div>
+            <a class="" href="#section-seo-dropdown">
+              {{ 'sections.collection_template.show_more' | t }}
+            </a>
+          </div>
+
+          <!-- Overlay e popup nascosti -->
+          <div id="popupOverlay" class="popup-overlay hidden"></div>
+          <div id="popupContainer" class="popup hidden">
+            <div class="popup-content">
+              <span id="closePopup" class="close">&times;</span>
+              <!-- Elemento fisso "X" -->
+              <div class="description-container scrollable-content">
+                <h3>{{ collection.title }}</h3>
+                <p>{{ collection.description }}</p>
+              </div>
+            </div>
+          </div>
+
+          {% render 'related-collections' %}
+
+          <style>
+                /* Nasconde popup e overlay di default */
+                .popup.hidden,
+                .popup-overlay.hidden {
+                  display: none!important;
+                }
+
+                /* Popup */
+                .popup {
+                  position: fixed;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  background-color: #fff;
+                  padding:3rem 6rem 4rem 6rem;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                  z-index: 1001;
+                  max-width: 80%;
+                  max-height: 90%;
+                  overflow-y: auto;
+                  border-radius:10px;
+                }
+
+                .description-container > p {
+                  text-align:justify;
+                }
+                .description-container > h3 {
+                  margin-bottom: 15px;
+                }
+                .description-container .scrollmenu, .description-container button.show_hide.myBtn {
+                  display:none;
+                }
+               .popup-content {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+            }
+
+            .close {
+                position: fixed;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+                font-size: 1.2rem;
+                z-index: 1002;
+                border: 2px solid #000;
+                border-radius: 100%;
+                line-height: 30px;
+                font-weight: 600;
+                width: 34px;
+                background-color: white;
+                text-align: center;
+            }
+
+            .scrollable-content {
+              max-height: 80vh; /* Limita l'altezza massima del contenuto */
+              overflow-y: auto; /* Rende scorrevole il contenuto */
+              padding-bottom:10px;
+              padding-top:10px;
+            }
+
+                /* Effetto sfumato nelle aree di padding */
+            .scrollable-content::before,
+            .scrollable-content::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 15px;
+                pointer-events: none;
+                z-index: 1;
+                margin-bottom:-1px;
+            }
+
+            /* Sfumatura superiore */
+            .scrollable-content::before {
+              top: 0;
+              background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            }
+
+            /* Sfumatura inferiore */
+            .scrollable-content::after {
+              bottom: 0;
+              background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            }
+
+                /* Overlay */
+                .popup-overlay {
+                  position: fixed;
+                  display:block!important;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: rgba(0, 0, 0, 0.5); /* Overlay nero con opacità */
+                  z-index: 1000;
+                }
+
+
+                @media (max-width:1500px) {
+                  .popup {
+                    width:100%;
+                  }
+                }
+
+                @media (max-width:1200px) {
+                   .popup {
+                    max-width:90%;
+                  }
+                }
+                @media (max-width:768px) {
+                  .description-container > p {
+                    font-size:0.7rem;
+                    line-height:1rem;
+                  }
+                  .popup {
+                    padding:1rem 2rem 2rem 2rem
+                  }
+                }
+          </style>
+
+          <!--
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const textContainer = document.querySelector('.collection-hero__description');
+                const text = textContainer.querySelector('.text');
+                const showMoreBtn = textContainer.querySelector('#showMoreBtn');
+                const popupContainer = document.getElementById('popupContainer');
+                const popupOverlay = document.getElementById('popupOverlay');
+                const closePopup = document.getElementById('closePopup');
+
+                // Mostra il pulsante "Mostra di più" solo se il testo è tagliato
+                if (text.scrollHeight > text.clientHeight) {
+                  showMoreBtn.style.display = 'block';
+                }
+
+                // Mostra popup e overlay al clic su "Mostra di più"
+                showMoreBtn.addEventListener('click', function () {
+                  popupContainer.classList.remove('hidden');
+                  popupOverlay.classList.remove('hidden'); // Rimuove hidden per mostrare l'overlay
+                });
+
+                // Chiude popup e overlay al clic su "X"
+                closePopup.addEventListener('click', function () {
+                  popupContainer.classList.add('hidden');
+                  popupOverlay.classList.add('hidden'); // Aggiunge hidden per nascondere l'overlay
+                });
+
+                // Chiude popup e overlay al clic sull'overlay
+                popupOverlay.addEventListener('click', function () {
+                  popupContainer.classList.add('hidden');
+                  popupOverlay.classList.add('hidden'); // Aggiunge hidden per nascondere l'overlay
+                });
+              });
+            </script>
+          -->
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <style>
+                 .collection-slider-container {
+                   position: absolute;
+                   width: calc(100% - 400px);
+                 }
+                 .collection-banner-desktop img {
+                   width:400px;
+                 }
+                 .collection__title-text {
+                   max-width:100%;
+                 }
+                .text-image-collection, .rocket-collection-breadcrumb {
+                  max-width:1920px;
+                  margin:auto;
+                  padding: 0 74px;
+                  position: relative;
+                }
+
+               .has__line-clamp {
+                 -webkit-line-clamp:2;
+               }
+                 .collection-container .facets-wrapper {
+                     padding-top:22px;
+                 }
+                    .pattern-collection img {
+                     min-height:5rem;
+                   }
+
+
+
+                 #collection-hero--{{ collection.id }} .collection-slider-container  {
+                   width:100%;
+                   overflow:visible;
+                 }
+
+               {% if collection.description == blank %}
+                  #collection-hero--{{ collection.id }} {
+                     min-height:12rem;
+                    padding:30px 0;
+                  }
+                 #collection-hero--{{ collection.id }} .collection-hero__text-wrapper {
+                   padding-top:0;
+                   margin-top:0;
+                 }
+               {% endif %}
+
+                   {% if collection.metafields.custom.image_side_banner == blank and collection.description != blank %}
+                      #collection-hero--{{ collection.id }} {
+                        min-height:20.5rem;
+
+                      }
+                   {% endif %}
+               @media screen and (min-width: 750px) {
+                 .collection-banner-desktop {
+                     display: flex;
+                     z-index:1;
+                     margin-top:-2rem;
+                   }
+                 }
+
+     @media (min-width: 1201px) {
+       .collection__title-text,
+       .collection-list {
+         margin-top: 2rem;
+       }
+       .collection-hero__description.rte {
+           max-width: 50%;
+       }
+                         {% if collection.metafields.custom.image_side_banner == blank and collection.description != blank %}
+
+           .collection__title-text {
+             margin-top: 0rem;
+           }
+           .collection-list {
+             margin-top:1rem;
+           }
+                   {% endif %}
+     }
+
+    @media (max-width:1900px) and (min-width:1201px) {
+      #collection-hero--{{ collection.id }} .collection-slider-container {
+        position: absolute;
+        width: calc(100% - 140px);
+      }
+    }
+                 @media (max-width:1200px) {
+                   .collection-container .facets-wrapper {
+                     padding: 20px 22px 32px 22px;
+                   }
+                   .collection-slider-container {
+                     position: absolute;
+                     width: calc(100% - 274px);
+                   }
+                  .text-image-collection, .rocket-collection-breadcrumb {
+                     padding:0 22px;
+                   }
+                       .collection-banner-desktop {
+                   display: flex;
+                   z-index: 1;
+                   margin-bottom: 0rem;
+                   }
+                   .collection-slider-container {
+                     margin-top: 1rem;
+                   }
+                     .text-related-collections {
+                     margin-top: 1rem;
+                     max-width: 100%;
+                   }
+                 {% if collection.metafields.custom.image_side_banner == blank and collection.description != blank %}
+                   .text-related-collections {
+                       margin-top: 0rem;
+                       max-width: 100%;
+                   }
+                   .collection-slider-container {
+                       margin-top: 0rem;
+                   }
+                   .collection-list {
+                     margin-top:1rem;
+                   }
+                   {% endif %}
+                 }
+                 @media (max-width:1024px) {
+
+                   .collection-hero__inner {
+                       min-height: 18em;
+                       padding:20px 0;
+                   }
+                   .text-image-collection {
+                       display: flex;
+                       align-items: flex-start;
+                   }
+                   .collection-banner-desktop {
+                       margin-bottom: -2.95rem;
+                   }
+                   .pattern-collection img {
+                     min-height: 4rem;
+                   }
+                   .collection-hero__text-wrapper {
+                     padding-top:0;
+                   }
+                   .collection-slider-container {
+                     width: calc(100% - 174px);
+                   }
+                   .text-related-collections, .collection-slider-container {
+                     margin-top: 0rem;
+                   }
+                   {% if collection.metafields.custom.image_side_banner == blank %}
+                     #collection-hero--{{ collection.id }} .collection__title-text {
+                       max-width: 100%;
+                     }
+                   {% endif %}
+
+                   {% if collection.description == blank %}
+                      #collection-hero--{{ collection.id }} {
+                        padding:30px 0;
+                      }
+                   {% endif %}
+
+                   {% if collection.metafields.custom.image_side_banner == blank and collection.description != blank %}
+                      #collection-hero--{{ collection.id }} {
+                        padding:20px 0;
+                        min-height:16rem;
+                      }
+                   {% endif %}
+                 }
+                 @media (max-width:768px) {
+                   .collection__title-text {
+                     max-width:100%;
+                   }
+                   .collection-slider-container {
+                     width:100%;
+                   }
+                   .collection-hero__inner {
+                     min-height: 20em;
+                     overflow:hidden;
+                   }
+                   .collection-hero__title+.collection-hero__description p {
+                     font-size: 0.8rem;
+                     line-height: 1.4rem;
+                   }
+                   .collection-container .facets-wrapper {
+                     padding: 0px 22px 32px 22px;
+                   }
+                   .collection-banner-desktop img {
+                     display:none;
+                   }
+                  {% if collection.metafields.custom.image_side_banner == blank %}
+                    #collection-hero--{{ collection.id }} .collection-hero__title {
+                      font-size:1.7rem;
+                     line-height: 32px;
+                    }
+                  {% endif %}
+
+                   {% if collection.metafields.custom.image_side_banner == blank and collection.description != blank %}
+                      #collection-hero--{{ collection.id }} {
+                        min-height:16rem;
+                      }
+                      #collection-hero--{{ collection.id }} .collection-hero__text-wrapper {
+                       margin-top: 0;
+                     }
+                 .text-related-collections,
+                 .collection-slider-container {
+                   margin-top: 0rem;
+                 }
+                   {% endif %}
+                 }
+
+                 @media (max-width:600px) {
+                   .collection-hero__title {
+                     font-size:26px;
+                     line-height:30px;
+                   }
+                   a.btn-collection {
+                     font-size:0.7rem;
+                   }
+                   .collection-hero__inner {
+                     min-height: 18em;
+                     overflow:hidden;
+                   }
+                 }
+               @media (max-width: 500px) {
+             .collection-hero__text-wrapper {
+               margin-top: 0;
+             }
+             .text-related-collections,
+             .collection-slider-container {
+               margin-top: 1rem;
+             }
+                    .text-related-collections {
+                       margin-top: 1rem;
+                       max-width: 100%;
+                   }
+                 {% if collection.metafields.custom.image_side_banner == blank and collection.description != blank %}
+
+                   .collection-slider-container {
+                       margin-top: 0rem;
+                   }
+                   .collection-list {
+                     margin-top:1rem;
+                   }
+                   {% endif %}
+               }
+  </style>
+
+  {%- if section.settings.show_collection_image
+    and section.settings.show_collection_image_background == false
+    and collection.image
+  -%}
+    <div class="collection-hero__image-container">
+      <img
+        class="collection-banner-desktop"
+        srcset="
+          {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+          {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+          {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {{ collection.image | image_url }} {{ collection.image.width }}w
+        "
+        src="{{ collection.image | image_url: width: 750 }}"
+        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+        alt=""
+        width="{{ collection.image.width }}"
+        height="{{ collection.image.height }}"
+      >
+
+      <div class="collection-banner-mobile">
+        {{ collection.metafields.custom.collection_banner_mobile | metafield_tag }}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image_background",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label - Immagine di background",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "select",
+      "id": "position_image",
+      "options": [
+        {
+          "value": "right",
+          "label": "Destra"
+        },
+        {
+          "value": "left",
+          "label": "Sinistra"
+        }
+      ],
+      "default": "right",
+      "label": "Posizione immagine"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    }
+  ]
+}
+{% endschema %}

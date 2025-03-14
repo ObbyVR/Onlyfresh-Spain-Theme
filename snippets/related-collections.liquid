@@ -1,0 +1,115 @@
+{% assign current_tag_collection = collection.metafields.custom.tag_collection %}
+
+<div class="collection-slider-container">
+  <div class="scrollmenu">
+    {% for collection_item in collections %}
+      {% assign item_tag_collection = collection_item.metafields.custom.tag_collection %}
+      {% if item_tag_collection contains current_tag_collection %}
+        <a href="{{ collection_item.url }}" class="btn-collection" draggable="true">
+          {{ collection_item.title }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+
+        div.scrollmenu a:hover {
+      background: black;
+      color: white;
+  }
+    div.scrollmenu {
+      background-color: #36363600;
+      overflow: auto;
+      white-space: nowrap;
+      max-width: 1793px;
+  }
+.scrollmenu {
+    padding-bottom: .7rem;
+}
+
+  div.scrollmenu a {
+    display: inline-block;
+    color: #000000;
+    background: #ffffff;
+    text-align: center;
+    padding: 5px 12px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-radius: .4rem;
+    margin: 0.5rem 0.4rem;
+    box-shadow: 0px 0px 11px #d1d1d1;
+}
+  .scrollmenu:first-child {
+      padding-left: .5rem;
+      margin-left: -2rem;
+  }
+  .scrollmenu:last-child {
+      padding-right: 0rem;
+  }
+
+      .collection-slider-container {
+          overflow-x: auto; /* o scroll */
+          overflow-y: hidden; /* Nasconde la barra di scorrimento verticale */
+          width: 100%;
+          margin: 0 auto;
+          cursor: grab;
+          user-select: none;
+          padding: 0rem 1rem;
+        margin-top:2rem
+      }
+
+    .collection-slider-container::-webkit-scrollbar {
+        height: 8px; /* Altezza della barra di scorrimento */
+    }
+
+    .collection-slider-container::-webkit-scrollbar-thumb {
+        background-color: #999; /* Colore della barra */
+        border-radius: 4px; /* Arrotonda i bordi */
+    }
+
+    .collection-slider-container::-webkit-scrollbar-track {
+        background-color: #f1f1f1; /* Sfondo della barra */
+        border-radius: 4px;
+    }
+
+
+          .collection-list {
+              display: flex;
+              gap: 10px;
+              transform: translateX(0);
+              will-change: transform;
+              transition: transform 0.05s ease-out;
+              padding-left:0;
+          }
+
+            .collection-item {
+              list-style: none;
+              flex: 0 0 auto;
+              background-color: #ffffff;
+              border-radius: 20px;
+              padding: .6rem 1rem!important;
+              box-shadow: 0px 0px 0.8rem #c2c2c247;
+
+          }
+
+          a.btn-collection {
+              text-decoration: none;
+              font-size: 0.9rem;
+              color: black;
+              font-weight: 500;
+              display: inline-block;
+              user-select: none;
+              cursor: inherit;
+          }
+
+
+  @media only screen and (max-width: 600px) {
+    div.scrollmenu a {
+        padding: 5px 12px;
+        margin: 0.5rem 0.1rem;
+    }
+
+  }
+</style>

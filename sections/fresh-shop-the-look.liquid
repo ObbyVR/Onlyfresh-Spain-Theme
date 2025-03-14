@@ -1,0 +1,481 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+{% liquid
+  if product.metafields.custom.shop_the_look_section.value == blank
+    assign heading = section.settings.heading
+    assign image_desktop = section.settings.image_desktop
+    assign image_mobile = section.settings.image_mobile
+    assign dot_background = section.settings.dot_background
+    assign dot_text_color = section.settings.dot_text_color
+    assign products = section.blocks
+  else
+    assign section_object = product.metafields.custom.shop_the_look_section.value
+    assign heading = section_object.heading.value | metafield_tag
+    assign image_desktop = section_object.image_desktop.value
+    assign image_mobile = section_object.image_mobile.value
+    assign dot_background = section_object.dot_background.value
+    assign dot_text_color = section_object.dot_text_color.value
+    assign products = section_object.products.value
+  endif
+%}
+{% style %}
+  .section-{{ section.id }}.rocket-stl .rocket-stl__wrapper .rocket-stl__wrapper__dot .rocket-stl__wrapper__dot__summary,
+  .section-{{ section.id }}.rocket-stl .rocket-stl__wrapper .rocket-stl__wrapper__dot .rocket-stl__wrapper__dot__details {
+      color: {{ dot_text_color }};
+      background: {{ dot_background }};
+  }
+  .section-{{ section.id }}.rocket-stl .rocket-stl__wrapper .rocket-stl__wrapper__dot .rocket-stl__wrapper__dot__details * {
+      color: {{ dot_text_color }};
+  }
+  .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  .section-{{ section.id }} h2.title {
+      font-size: {{ section.settings.size_heading_mb }}px;
+      margin-bottom: {{ section.settings.margin_heading_mb }}px;
+      margin-top: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+      .section-{{ section.id }} {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+      .section-{{ section.id }} h2.title {
+          font-size: {{ section.settings.size_heading }}px;
+          margin-bottom: {{ section.settings.margin_heading }}px;
+      }
+  }
+{% endstyle %}
+
+<div class="section-{{ section.id }} rocket-stl">
+  {% if image_desktop != blank or image_mobile != blank %}
+    <div class="rocket-stl__flex">
+      {% if heading != blank %}
+        <div class="product-slider hidden-pc">
+          <div class="collection__title page-width">
+            <h2 class="title">{{ heading }}</h2>
+          </div>
+        </div>
+      {% endif %}
+      {% if image_desktop != blank or image_mobile != blank %}
+        <div class="rocket-stl__wrapper">
+          {% if image_desktop != blank %}
+            <img
+              src="{{ image_desktop | image_url: width: image_desktop.width }}"
+              loading="lazy"
+              {% if image_mobile != blank %}
+                class="mobile-hidden"
+              {% endif %}
+              alt="{{ image_desktop.alt }}"
+              width="{{ image_desktop.width }}"
+              height="{{ image_desktop.height }}"
+            >
+          {% endif %}
+          {% if image_mobile != blank %}
+            <img
+              src="{{ image_mobile | image_url: width: image_mobile.width }}"
+              loading="lazy"
+              {% if image_mobile != blank %}
+                class="desktop-hidden"
+              {% endif %}
+              alt="{{ image_mobile.alt }}"
+              width="{{ image_mobile.width }}"
+              height="{{ image_mobile.height }}"
+            >
+          {% endif %}
+
+          {% for item in products %}
+            {% if product.metafields.custom.shop_the_look_section.value == blank %}
+              {% if item.settings.product != blank %}
+                {% style %}
+                  [data-block-id="{{ section.id | append: forloop.index }}"] {
+                    top: {{ item.settings.position_y_mobile }}%;
+                    left: {{ item.settings.position_x_mobile }}%;
+                    transform: translate(-{{ item.settings.position_x_mobile }}%, -{{ item.settings.position_y_mobile }}%);
+                  }
+                  @media (min-width: 1024px) {
+                    [data-block-id="{{ section.id | append: forloop.index }}"] {
+                      top: {{ item.settings.position_y }}%;
+                      left: {{ item.settings.position_x }}%;
+                      transform: translate(-{{ item.settings.position_x }}%, -{{ item.settings.position_y }}%);
+                    }
+                  }
+                {% endstyle %}
+                {% if item.settings.position_x_mobile < 38 %}
+                  {%- assign class = 'position-mb-left' -%}
+                {% elsif item.settings.position_x_mobile > 62 %}
+                  {%- assign class = 'position-mb-right' -%}
+                {% else %}
+                  {%- assign class = 'position-mb-center' -%}
+                {% endif %}
+                <stl-dot class="rocket-stl__wrapper__dot" data-block-id="{{ section.id | append: forloop.index }}">
+                  <div class="rocket-stl__wrapper__dot__summary"></div>
+                  <div class="rocket-stl__wrapper__dot__details {{ class }}">
+                    {{
+                      item.settings.product.media[0]
+                      | image_url: width: item.settings.product.media[0].width
+                      | image_tag:
+                        loading: 'lazy',
+                        alt: item.settings.product.media[0].title,
+                        width: item.settings.product.media[0].width,
+                        height: item.settings.product.media[0].height,
+                        class: 'rocket-fresh-product-card__image motion-reduce'
+                    }}
+                    <div class="rocket-fresh-product-card__content">
+                      <a
+                        href="{{ item.settings.product.url }}"
+                        class="rocket-stl__wrapper__dot__details__title"
+                        title="{{ item.settings.product.title }}"
+                      >
+                        <span>{{ item.settings.product.title }}</span>
+                      </a>
+                      <div class="rocket-stl__wrapper__dot__details__price">
+                        {{ item.settings.product.price | money }}
+                      </div>
+                      <div class="rocket-stl__add-btn">
+                        <a href="{{ item.settings.product.url }}">
+                          {{ 'products.product.view_product' | t }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </stl-dot>
+              {% endif %}
+            {% else %}
+              {% if item.product.value != blank %}
+                {% style %}
+                  [data-block-id="{{ section.id | append: forloop.index }}"] {
+                    top: {{ item.position_y_mobile.value }}%;
+                    left: {{ item.position_x_mobile.value }}%;
+                    transform: translate(-{{ item.position_x_mobile.value }}%, -{{ item.position_y_mobile.value }}%);
+                  }
+                  @media (min-width: 1024px) {
+                    [data-block-id="{{ section.id | append: forloop.index }}"] {
+                      top: {{ item.position_y.value }}%;
+                      left: {{ item.position_x.value }}%;
+                      transform: translate(-{{ item.position_x.value }}%, -{{ item.position_y.value }}%);
+                    }
+                  }
+                {% endstyle %}
+                {% if item.position_x_mobile.value < 38 %}
+                  {%- assign class = 'position-mb-left' -%}
+                {% elsif item.position_x_mobile.value > 62 %}
+                  {%- assign class = 'position-mb-right' -%}
+                {% else %}
+                  {%- assign class = 'position-mb-center' -%}
+                {% endif %}
+                <stl-dot class="rocket-stl__wrapper__dot" data-block-id="{{ section.id | append: forloop.index }}">
+                  <div class="rocket-stl__wrapper__dot__summary"></div>
+                  <div class="rocket-stl__wrapper__dot__details {{ class }}">
+                    {{
+                      item.product.value.media[0]
+                      | image_url: width: item.product.value.media[0].width
+                      | image_tag:
+                        loading: 'lazy',
+                        alt: item.product.value.media[0].title,
+                        width: item.product.value.media[0].width,
+                        height: item.product.value.media[0].height,
+                        class: 'rocket-fresh-product-card__image motion-reduce'
+                    }}
+
+                    <div class="rocket-fresh-product-card__content">
+                      <a
+                        href="{{ item.product.value.url }}"
+                        class="rocket-stl__wrapper__dot__details__title"
+                        title="{{ item.product.value.title }}"
+                      >
+                        <span>{{ item.product.value.title }}</span>
+                      </a>
+                      <div class="rocket-stl__wrapper__dot__details__price">{{ item.product.value.price | money }}</div>
+
+                      <div class="rocket-stl__add-btn">
+                        <a href="{{ item.product.value.url }}">
+                          {{ 'products.product.view_product' | t }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </stl-dot>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="rocket-stl__inner product-slider">
+        {% if heading != blank %}
+          <h2 class="title hidden-mb">{{ heading }}</h2>
+        {% endif %}
+        <slider-component id="product-slider-{{ section.id }}" class="swiper-container swiper product-slider">
+          <ul
+            id="Slider-{{ section.id }}"
+            class="swiper-wrapper product-grids contains-card contains-card--product"
+            role="list"
+            aria-label="{{ 'general.slider.name' | t }}"
+          >
+            {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+              <li
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                class="swiper-slide product-item"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {% render 'rocket-fresh-card-product',
+                  card_product: product,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  image_shape: section.settings.image_shape,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_vendor: section.settings.show_vendor,
+                  show_rating: section.settings.show_rating,
+                  show_quick_add: section.settings.enable_quick_add,
+                  section_id: section.id,
+                  product_slider: false
+                %}
+              </li>
+            {%- else -%}
+              {%- for i in (1..4) -%}
+                <li
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
+                  {% render 'rocket-fresh-card-product',
+                    show_vendor: section.settings.show_vendor,
+                    placeholder_image: placeholder_image
+                  %}
+                </li>
+              {%- endfor -%}
+            {%- endfor -%}
+          </ul>
+          <!-- If we need pagination -->
+          <div class="section-{{section.id}}-swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="section-{{section.id}}-swiper-button-prev swiper-button button button-prev">
+            {% render 'icon-chervon-left' %}
+          </div>
+          <div class="section-{{section.id}}-swiper-button-next swiper-button button button-next">
+            {% render 'icon-chervon-right' %}
+          </div>
+
+          <!-- If we need scrollbar -->
+          <div class="section-{{section.id}}-swiper-scrollbar"></div>
+        </slider-component>
+      </div>
+    </div>
+  {% endif %}
+</div>
+<script>
+  var swiper_product_slider_{{ section.index }} = new Swiper('#product-slider-{{ section.id }}', {
+    navigation: {
+      nextEl: '.section-{{section.id}}-swiper-button-next',
+      prevEl: '.section-{{section.id}}-swiper-button-prev',
+    },
+    slidesPerView: 2,
+    spaceBetween: 7,
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 36,
+      },
+      1024: {
+        slidesPerView: 1,
+        spaceBetween: 36,
+      }
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Shop the look",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "size_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "size_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size heading mobile",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "margin_heading",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "margin_heading_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom mobile",
+      "default": 14
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 25,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding Top on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding Bottom on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product dot",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "range",
+          "id": "position_x",
+          "label": "Position X",
+          "min": 0,
+          "max": 100,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "position_y",
+          "label": "Position Y",
+          "min": 0,
+          "max": 100,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "position_x_mobile",
+          "label": "Position X mobile",
+          "min": 0,
+          "max": 100,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "position_y_mobile",
+          "label": "Position Y mobile",
+          "min": 0,
+          "max": 100,
+          "unit": "%",
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the look"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+{% comment %}
+Custom code: auto customer discount
+Replace LOYALTY and LOYALTY10 with the customer's tag and discount code
+{% endcomment %}
+
+
+{% assign discount_code = 'PSQFRNKC2SV3' %}
+
+
+  <script>
+    window.addEventListener('load', function() {
+      fetch("/discount/{{ discount_code }}")
+    })
+  </script>
+      

@@ -1,0 +1,151 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="gradient">
+  <div class="section-{{ section.id }}-padding">
+    <div class="list-marquee" style="background: {{section.settings.background_color}}">
+      <div class="list-marquee-scroll" >
+        {%- for block in section.blocks -%}
+          <div class="list-marquee_items">
+            <div class="marquee_item item-first{% if block.settings.italic_1%} italic{% endif %}" style="color: {{section.settings.text_color}}">{{ block.settings.content_1 }}</div>
+            <div class="marquee_item item-second {% if block.settings.italic_2%} italic{% endif %}" style="color: {{section.settings.text_color}}">{{ block.settings.content_2 }}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee",
+  "tag": "section",
+  "class": "section section-marquee-list",
+  "max_blocks": 15,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F3F5F7"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111010"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Top padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Bottom padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_block",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content_1",
+          "label": "1st content",
+          "default": "100% carnes frescas"
+        },
+        {
+          "type": "checkbox",
+          "id": "italic_1",
+          "label": "Italic text",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "content_2",
+          "label": "2nd content",
+          "default": "0% harinas de carne"
+        },
+        {
+          "type": "checkbox",
+          "id": "italic_2",
+          "label": "Italic text",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "blocks": [
+        {
+          "type": "featured_block"
+        },
+        {
+          "type": "featured_block"
+        },
+        {
+          "type": "featured_block"
+        },
+        {
+          "type": "featured_block"
+        },
+        {
+          "type": "featured_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

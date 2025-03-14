@@ -1,0 +1,21 @@
+{% liquid
+  assign button_class = 'fresh-button fresh-button_rich-text fresh-button--color rocket-button-fresh btn'
+%}
+
+{% if url != blank %}
+  <a
+    href="{{ url }}"
+    class="{{ button_class }} {{ type }}"
+    style="--color-button: {{ color }}; --bg-color-button: {{ bg_color }}"
+  >
+    {{- label -}}
+  </a>
+{% else %}
+  <div
+    class="{{ button_class }} {{ type }} no-have__link"
+    disable="disable"
+    style="--color-button: {{ color }}; --bg-color-button: {{ bg_color }}"
+  >
+    {{ label }}
+  </div>
+{% endif %}

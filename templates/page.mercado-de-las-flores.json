@@ -1,0 +1,818 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hero_banner_KP9zLM": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_AJkPzq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/main_banner2.jpg",
+            "desktop_content_position": "left",
+            "mobile_content_position": "left-mb",
+            "desktop_content_position_y": "middle",
+            "desktop_content_position_y_mb": "middle-mb",
+            "content_alignment": "center",
+            "content_alignment_mb": "center-mb",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "¡Celebra la magia de la navidad con The Only Fresh Company!",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 41,
+            "font_size_title_mb": 22,
+            "title_margin_bottom": 50,
+            "title_margin_bottom_mb": 16,
+            "description": "<p>Ven a visitarnos en el Mercado de las Flores de Vogue éste 14 de diciembre.<br/><strong>Haz tu foto más creativa y gana premios increíbles para ti y tu mejor amigo</strong></p>",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "300",
+            "font_size_content": 21,
+            "font_size_content_mb": 22,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "link-s",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_AJkPzq"
+      ],
+      "custom_css": [
+        ".vis-hero_banner--content {max-width: 59%; padding-top: 40px; padding-bottom: 52px; padding-right: 19rem;}",
+        ".vis-hero_banner--content .heading-title__subtitle .description {max-width: 100%; margin-top: 0rem;}",
+        ".vis-hero_banner--innner.vis-hero_banner--innner-template--24039768785230__hero_banner_KP9zLM {border-radius: 2rem 2rem 0rem 0rem;}"
+      ],
+      "settings": {
+        "enable_slider": false,
+        "enable_pagination": false,
+        "color_pagination_desktop": "#bdbdbd",
+        "color_pagination_mobile": "#f3f5f7",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 50,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 0,
+        "content_padding_bottom": 52,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 52,
+        "content_padding_left": 40,
+        "content_padding_right": 52,
+        "content_padding_left_mb": 40,
+        "content_padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_f9LpDe": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_cgBwpp": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/shutterstock_2035630841.jpg"
+          }
+        },
+        "title_NJCqFR": {
+          "type": "title",
+          "settings": {
+            "heading": "<strong>Listo para participar?</strong>",
+            "font_weight_title": "400",
+            "font_size_title": 39,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_AJ3DqQ": {
+          "type": "content",
+          "settings": {
+            "text": "<ol><li>Sube una foto o vídeo de tu mascota en el stand de The Only Fresh Company en el Mercado de las Flores a tu cuenta de Instagram.<br/><br/></li><li>Etiqueta a @theonlyfreshcompany.<br/><br/></li><li>Sigue nuestras cuentas: @amanovapets @harperandbone @trovetplus @theonlyfreshcompany</li></ol>",
+            "font_weight_content": "400",
+            "font_size_content": 21,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_cgBwpp",
+        "title_NJCqFR",
+        "content_AJ3DqQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#e41c1c",
+        "color_text": "#ffffff",
+        "color_text_button": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "image_banner_LiRPfA": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_efx678": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_EyexgW": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_eHdxKN": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_efx678",
+        "text_EyexgW",
+        "buttons_eHdxKN"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/striscia_navidad.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "fresh_icon_with_text_MhgTgC": {
+      "type": "fresh-icon-with-text",
+      "blocks": {
+        "icon_text_afDD44": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/35fd5167bc0c5916b3ecac989ee73711eafab0e7f1834e9263dddc222cc4c558.webp",
+            "title": "Sube una foto o vídeo de tu mascota",
+            "description": "en el nuestro stand en el Mercado de las Flores a tu cuenta de Instagram"
+          }
+        },
+        "icon_text_BhWb9g": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/969198a7f38ff43215730b51bd1682611d0cc74c0039a7981952cc12ae809701.webp",
+            "title": "Etiqueta a",
+            "description": "@theonlyfreshcompany"
+          }
+        },
+        "icon_text_bkj9q4": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/969198a7f38ff43215730b51bd1682611d0cc74c0039a7981952cc12ae809701.webp",
+            "title": "Sigue nuestras cuentas:",
+            "description": "@amanovapets @harperandbone @trovetplus @theonlyfreshcompany"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_afDD44",
+        "icon_text_BhWb9g",
+        "icon_text_bkj9q4"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "image_banner_Lfked6": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_FD3PAn": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_NVqx7J": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_YairFa": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FD3PAn",
+        "text_NVqx7J",
+        "buttons_YairFa"
+      ],
+      "custom_css": [
+        ".banner__media.media {max-height: 3rem;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Senza_titolo-14.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "fresh_rich_text_DF3Ryh": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_nCeqDY": {
+          "type": "title",
+          "settings": {
+            "heading": "<strong>¿Listo para participar?</strong> ",
+            "font_weight_title": "600",
+            "font_size_title": 52,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_z6FtBi": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Consulta aquí las bases completas del concurso. about your brand</p>",
+            "font_weight_content": "400",
+            "font_size_content": 20,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_rfMbp9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "rocket_button_label_1": "Text Button",
+            "rocket_button_url_1": "",
+            "rocket_button_label_2": "Text Button",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "Text Button",
+            "rocket_button_url_3": "",
+            "font_size_button": 12,
+            "font_size_button_mb": 12
+          }
+        }
+      },
+      "block_order": [
+        "title_nCeqDY",
+        "content_z6FtBi",
+        "button_rfMbp9"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#173d2d",
+        "color_text": "#ffffff",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "rocket_icon_with_text_eXYhAh": {
+      "type": "rocket-icon-with-text",
+      "blocks": {
+        "icon_text_DrMNPd": {
+          "type": "icon_text",
+          "settings": {
+            "title": "<b>Sube una foto o vídeo de tu mascota en el stand de The Only Fresh Company</b> que tendremos en mercado de las flores a tu cuenta de Instagram. Recuerda que es el 14 de diciembre",
+            "image": "shopify://shop_images/1_cece97b0-92e4-453c-a5a3-c64b4272a416.png"
+          }
+        },
+        "icon_text_xiFyVT": {
+          "type": "icon_text",
+          "settings": {
+            "title": "Etiqueta a <br><b>@theonlyfreshcompany.</b>",
+            "image": "shopify://shop_images/2_0295260a-a757-48fe-a7ea-97d0baef6ade.png"
+          }
+        },
+        "icon_text_KbknLG": {
+          "type": "icon_text",
+          "settings": {
+            "title": "Sigue nuestras tres cuentas:  <br><b>@amanovapets @harperandbone @trovetplus @theonlyfreshcompany</b>",
+            "image": "shopify://shop_images/3_3f1f2ee0-6c6b-49a7-b729-224e06471928.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_DrMNPd",
+        "icon_text_xiFyVT",
+        "icon_text_KbknLG"
+      ],
+      "custom_css": [
+        ".rocket-icon-text {background: #ffff;}",
+        "h3.body-m-regular {color: black; font-size: 1rem;}",
+        "h3.body-m-regular {line-height: 1.4rem;}"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 11,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "slider_test_8N3Ydy": {
+      "type": "slider-test",
+      "blocks": {
+        "slide_cpe869": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2035630841.jpg",
+            "title": "s2s2",
+            "description": "s2s2"
+          }
+        },
+        "slide_MhaVwr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2035630841.jpg",
+            "title": "w2w2",
+            "description": "w2w2"
+          }
+        },
+        "slide_hFB7C9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2035630841.jpg",
+            "title": "wwq",
+            "description": "wqwq"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cpe869",
+        "slide_MhaVwr",
+        "slide_hFB7C9"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Fresh Slider"
+      }
+    },
+    "image_banner_YRaGQm": {
+      "type": "image-banner",
+      "disabled": true,
+      "custom_css": [
+        ".banner__media.media {max-height: 3rem;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Senza_titolo-14.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_wybEDd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mXYq4X": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_YitBe4": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Plazo para subir la foto: </strong>Hasta el 16 de diciembre.<br/><strong>Anuncio ganador: </strong>17 de diciembre</p>"
+          }
+        },
+        "button_4pYD7i": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_mXYq4X",
+        "text_YitBe4",
+        "button_4pYD7i"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "fresh_rich_text_wieDQy": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_MnVgcU": {
+          "type": "title",
+          "settings": {
+            "heading": "Premios únicos para dueños que buscan lo mejor",
+            "font_weight_title": "400",
+            "font_size_title": 36,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_P6AqkF": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_fNi9Mm": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "rocket_button_label_1": "Text Button",
+            "rocket_button_url_1": "",
+            "rocket_button_label_2": "Text Button",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "Text Button",
+            "rocket_button_url_3": "",
+            "font_size_button": 12,
+            "font_size_button_mb": 12
+          }
+        }
+      },
+      "block_order": [
+        "title_MnVgcU",
+        "content_P6AqkF",
+        "button_fNi9Mm"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#ba1b1b",
+        "color_text": "#ffffff",
+        "color_text_button": "#ffffff",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "image_banner_BbfPgL": {
+      "type": "image-banner",
+      "disabled": true,
+      "custom_css": [
+        ".banner__media.media {max-height: 3rem;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Senza_titolo-14.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "fresh_image_text_iUQfWd": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_nDe6XA": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/golden-retriever-labrador-dog-in-the-living-room-o-2024-12-07-23-39-39-utc.jpg"
+          }
+        },
+        "title_LFiiXJ": {
+          "type": "title",
+          "settings": {
+            "heading": "Primer premio",
+            "font_weight_title": "400",
+            "font_size_title": 40,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_DDjapd": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Vive una experiencia única con tu peludo en un exclusivo hotel de 5 estrellas en el corazón de Madrid. Disfruta de una noche de lujo para 2 adultos en compañía de tu mejor amigo, una deliciosa cena en un restaurante de autor y un vale de 100 € para consentirlo en Only Fresh. ¡Un plan perfecto para disfrutar juntos! 🐾✨ </p>",
+            "font_weight_content": "400",
+            "font_size_content": 16,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_nDe6XA",
+        "title_LFiiXJ",
+        "content_DDjapd"
+      ],
+      "custom_css": [
+        ".fresh-image__text .fresh-block_banner--media {width: 65%;}",
+        "h2.rich-text__heading.fresh-image-text__heading.rte.inline-richtext.rocket-font-fgrotesk {color: #ba1b1b;}"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 59,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 0,
+        "padding_left": 40,
+        "padding_right": 40,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    },
+    "fresh_image_text_EmNCEb": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_YyfH87": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/welsh-corgi-dog-in-deer-horns-under-christmas-tree-2024-11-18-23-56-26-utc.jpg"
+          }
+        },
+        "title_94dnKC": {
+          "type": "title",
+          "settings": {
+            "heading": "Segundo premio",
+            "font_weight_title": "400",
+            "font_size_title": 40,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_KY8YAn": {
+          "type": "content",
+          "settings": {
+            "text": "<p>¡Un vale de 100 € para consentir a tu peludo con los mejores productos de Onlyfresh! 🐾✨ Podrás usarlo en nuestras tiendas físicas o en nuestra tienda online, y elegir todo lo que necesitas para mimar a tu mascota. ¡Un premio pensado para los que buscan lo mejor para sus compañeros peludos!</p>",
+            "font_weight_content": "400",
+            "font_size_content": 16,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_YyfH87",
+        "title_94dnKC",
+        "content_KY8YAn"
+      ],
+      "custom_css": [
+        ".fresh-image__text .fresh-block_banner--media {width: 65%;}",
+        "h2.rich-text__heading.fresh-image-text__heading.rte.inline-richtext.rocket-font-fgrotesk {color: #ba1b1b;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 40,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_EqUPYf": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_nAkVwi": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/pug-in-santa-hat-sitting-under-christmas-tree-with-2024-11-19-10-47-16-utc.jpg"
+          }
+        },
+        "title_gptFrH": {
+          "type": "title",
+          "settings": {
+            "heading": "Tercer premio",
+            "font_weight_title": "400",
+            "font_size_title": 41,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_6ftKJx": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Tercer premio ¡Un vale de 50 € para mimar a tu peludo con nuestrosproductos exclusivos! 🐾✨ Úsalo en nuestras tiendas físicas de Onlyfresh o en nuestra tienda online y dale a tu mascota el cuidado especial que merece. ¡Pequeños detalles que marcan la diferencia!</p>",
+            "font_weight_content": "400",
+            "font_size_content": 16,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_nAkVwi",
+        "title_gptFrH",
+        "content_6ftKJx"
+      ],
+      "custom_css": [
+        ".fresh-image__text .fresh-block_banner--media {width: 65%;}",
+        "h2.rich-text__heading.fresh-image-text__heading.rte.inline-richtext.rocket-font-fgrotesk {color: #ba1b1b;}"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 40,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_rich_text_L7LbGL": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_myWeNA": {
+          "type": "title",
+          "settings": {
+            "heading": "Los ganadores serán seleccionados cuidadosamente por el equipo de The Only Fresh. Evaluaremos a todos los participantes con atención a cada detalle y nos aseguraremos de elegir a los finalistas y ganadores que mejor representen el espíritu de esta concurso.",
+            "font_weight_title": "250",
+            "font_size_title": 24,
+            "font_size_title_mb": 27
+          }
+        },
+        "button_6A8tQt": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "rocket_button_label_1": "Text Button",
+            "rocket_button_url_1": "",
+            "rocket_button_label_2": "Text Button",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "Text Button",
+            "rocket_button_url_3": "",
+            "font_size_button": 12,
+            "font_size_button_mb": 12
+          }
+        }
+      },
+      "block_order": [
+        "title_myWeNA",
+        "button_6A8tQt"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#ba1b1b",
+        "color_text": "#ffffff",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_KP9zLM",
+    "fresh_image_text_f9LpDe",
+    "image_banner_LiRPfA",
+    "fresh_icon_with_text_MhgTgC",
+    "image_banner_Lfked6",
+    "fresh_rich_text_DF3Ryh",
+    "rocket_icon_with_text_eXYhAh",
+    "slider_test_8N3Ydy",
+    "image_banner_YRaGQm",
+    "rich_text_wybEDd",
+    "fresh_rich_text_wieDQy",
+    "image_banner_BbfPgL",
+    "fresh_image_text_iUQfWd",
+    "fresh_image_text_EmNCEb",
+    "fresh_image_text_EqUPYf",
+    "fresh_rich_text_L7LbGL"
+  ]
+}

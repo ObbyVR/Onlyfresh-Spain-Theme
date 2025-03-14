@@ -1,0 +1,497 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresh_faq_nwRn9N": {
+      "type": "fresh-faq",
+      "blocks": {
+        "blocks_VXGAkg": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "",
+            "label": ""
+          }
+        },
+        "blocks_VfWNTj": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "faq-item-1,faq-item-2",
+            "label": "Ver todas"
+          }
+        },
+        "blocks_ri7CFf": {
+          "type": "blocks",
+          "settings": {
+            "section_id": "faq-item-1",
+            "label": "Elaboración"
+          }
+        },
+        "blocks_jk7Ymj": {
+          "type": "blocks",
+          "settings": {
+            "section_id": "faq-item-2",
+            "label": "Nutrición"
+          }
+        },
+        "blocks_U6r3YQ": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "faq-item-4",
+            "label": "Pagos"
+          }
+        },
+        "blocks_qBUHgh": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "faq-item-5",
+            "label": "Tarjeta regalo"
+          }
+        },
+        "blocks_Wr98yj": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "faq-item-6",
+            "label": "Pagos"
+          }
+        },
+        "blocks_zGC9np": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "faq-item-7",
+            "label": "Envíos y entregas"
+          }
+        },
+        "blocks_nb8aGx": {
+          "type": "blocks",
+          "disabled": true,
+          "settings": {
+            "section_id": "faq-item-8",
+            "label": "Mi cuenta"
+          }
+        }
+      },
+      "block_order": [
+        "blocks_VXGAkg",
+        "blocks_VfWNTj",
+        "blocks_ri7CFf",
+        "blocks_jk7Ymj",
+        "blocks_U6r3YQ",
+        "blocks_qBUHgh",
+        "blocks_Wr98yj",
+        "blocks_zGC9np",
+        "blocks_nb8aGx"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 600px) {.section-fresh-faqs .fresh-faqs .fresh-faqs__inner {flex-direction: column-reverse;}.fresh-faqs__heading {margin-top: 2rem;}}"
+      ],
+      "settings": {
+        "heading": "FAQS",
+        "heading_color": "#191919",
+        "image": "shopify://shop_images/Rosa_2_4407af47-db63-4020-9bc2-71c4bae47701.jpg",
+        "image_mobile": "shopify://shop_images/Rosa_2_460b26a1-cb38-44c4-a70c-6bfdfa17ef08.jpg",
+        "padding_top": 48,
+        "padding_bottom": 94,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "fresh_faqs_item_xNDKPk": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_jYFanY": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Nuestro pienso se elabora en la planta de alta tecnología de Visán, una empresa familiar con más de 20 años de experiencia en la elaboración de alimentos naturales para perros y gatos.</p>"
+          }
+        },
+        "block_6rVmDz": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Sí. Las carnes y pescados que utilizamos en nuestros productos son únicamente frescos. En Amanova no utilizamos harinas de carne, carnes en polvo, carnes desecadas o carnes deshidratadas, ya que este tipo de ingredientes pierden muchas de sus propiedades nutritivas en el proceso de elaboración</p>"
+          }
+        },
+        "block_rbxybd": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Cuál es la ventaja de utilizar carne fresca en el pienso? </p>",
+            "description": "<p>La carne fresca tiene dos ventajas fundamentales frente a las carnes secas. La primera, es que vemos y sabemos cual es el ingrediente que estamos utilizando en la elaboración de nuestros productos, las carnes desecadas o en forma de polvo pierden su forma y no es posible saber con certeza lo que se está utilizando, ya que alguien ya se ocupó de procesarlo con anterioridad. La segunda ventaja, es que la carne fresca tiene más propiedades nutritivas que las carnes secas, por el simple hecho de ser fresca. Cuando vamos al mercado compramos productos frescos porque son más sanos que los secos, en la nutrición para mascotas ocurre lo mismo.</p>"
+          }
+        },
+        "block_KeCkeL": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Por qué la carne fresca es tan importante? </p>",
+            "description": "<p>La carne fresca aporta muchos nutrientes, vitaminas y proteínas de alta calidad. Las harinas o carnes deshidratadas sufren varias fases de calentamiento durante la producción, es por esto que su nivel nutricional es más bajo en comparación con las carnes frescas.</p>"
+          }
+        },
+        "block_nJThHi": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿De dónde proceden los ingredientes?</p>",
+            "description": "<p>Las carnes, pescados y vegetales provienen de los mejores proveedores y granjas españolas y europeas. Cada uno ha sido seleccionado cuidadosamente ya que establecemos altos estándares de calidad y nutrición.</p>"
+          }
+        },
+        "block_DKXXJq": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Qué es OGM?</p>",
+            "description": "<p>OGM son las siglas de Organismo Genéticamente Modificado. Éste es el nombre que recibe cualquier organismo cuyo material genético ha sido transformado de una manera ajena a los métodos naturales de multiplicación o combinación.</p>"
+          }
+        },
+        "block_f43Lwy": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Los ingredientes están libres de ogm?</p>",
+            "description": "<p>Ninguno de los ingredientes utilizados en la elaboración de nuestros productos contienen organismos modificados genéticamente.</p>"
+          }
+        },
+        "block_k8eViY": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Los ingredientes son naturales?</p>",
+            "description": "<p>Sí, todos nuestros ingredientes son naturales y han sido cuidadosamente seleccionados e inspeccionados.</p>"
+          }
+        },
+        "block_pQWYMg": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Contáis con algún certificado de calidad?</p>",
+            "description": "<p>Visán cuenta con las certificaciones ISO 9001 e ISO 22000 como empresa dedicada al desarrollo y fabricación de alimentos para animales de compañía. Nuestro departamento de control de calidad sigue un sistema de protocolo desde el primer momento en que los ingredientes entran en nuestro almacén. Todos y cada uno de nuestros productos son sometidos a pruebas microbiológicas y nutricionales por laboratorios internos y externos certificados en Europa. Nuestro objetivo es mantener el más alto nivel de calidad y seguridad en todos nuestros productos.</p>"
+          }
+        },
+        "block_zctFUQ": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Hacéis pruebas en animales?</p>",
+            "description": "<p>Todos nuestros procesos aseguran el bienestar animal y no testamos en animales. Podrás encontrar nuestra certificación PETA en: <a href=\"http://features.peta.org/cruelty-free-company-search/cruelty_free_companies_company.aspx?Com_Id=6156\">http://features.peta.org/cruelty-free-company-search/cruelty_free_companies_company.aspx?Com_Id=6156</a></p>"
+          }
+        },
+        "block_cwLVpF": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Qué significa que las recetas sean vet approved?</p>",
+            "description": "<p>Significa que todos y cada uno de nuestros alimentos han pasado todos los procesos cualitativos necesarios para cumplir con todos los requerimientos nutritivos con el consentimiento de profesionales veterinarios expertos en nutrición</p>"
+          }
+        },
+        "block_TxVkBr": {
+          "type": "block",
+          "settings": {
+            "title": "<p>He notado que a veces cambia el color de la croqueta. ¿es normal?</p>",
+            "description": "<p>Sí, es totalmente normal. Los productos Amanova no contienen colorantes artificiales. El color de las croquetas es el que aporta el conjunto de carnes frescas e ingredientes naturales, por lo tanto puede haber pequeñas variaciones de color en cada una de las elaboraciones, sin que el sabor se vea alterado.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_jYFanY",
+        "block_6rVmDz",
+        "block_rbxybd",
+        "block_KeCkeL",
+        "block_nJThHi",
+        "block_DKXXJq",
+        "block_f43Lwy",
+        "block_k8eViY",
+        "block_pQWYMg",
+        "block_zctFUQ",
+        "block_cwLVpF",
+        "block_TxVkBr"
+      ],
+      "settings": {
+        "section_id": "faq-item-1"
+      }
+    },
+    "fresh_faqs_item_4czkag": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_c4JRgA": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Qué cantidad de alimento está indicada para mi mascota?</p>",
+            "description": "<p>La cantidad de alimento recomendado lo podrás encontrar en las tablas de ración que aparecen en el envase y también en la ficha de cada uno de los productos dentro de esta página web. Las cantidades son orientativas, ya que la cantidad de alimento depende de diversos factores, como peso, nivel de actividad, edad, metabolismo, condiciones ambientales, etc.</p>"
+          }
+        },
+        "block_EzPPLQ": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Qué son los FOS y MOS?</p>",
+            "description": "<p>Los FOS y MOS son dos tipos de prebióticos. El intestino grueso de nuestras mascotas contiene bacterias beneficiosas que necesitan alimentarse de estos prebióticos para crecer, reproducirse y evitar la proliferación de bacterias dañinas.</p>"
+          }
+        },
+        "block_bT6b7k": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Gué significa Grain free?</p>",
+            "description": "<p>Significa que los productos se han elaborado sin granos ni cereales. Nuestras variedades Grain Free no contienen ningún tipo de cereal o granos.</p>"
+          }
+        },
+        "block_kUxzLc": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Qué significa Low grain?</p>",
+            "description": "<p>Significa que los productos se han elaborado con la inclusión perfecta de cereales nutritivos como el arroz o súper alimentos como la quinoa, los cuales ayudan a liberar la energía lentamente y son muy beneficiosos para la salud.</p>"
+          }
+        },
+        "block_9nULFV": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Todos los productos son hipoalergénicos?</p>",
+            "description": "<p>Toda la gama de alimentación seca de Amanova es ideal para aquellas mascotas que tengan alergias o intolerancias a ciertas proteínas animales, por lo que hemos diseñado cada una de las recetas con una sola fuente de proteína animal, lo cual evitará que las mascotas presenten cuadros alérgicos.</p>"
+          }
+        },
+        "block_fzcXxb": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Qué procedencia tiene el aceite o grasa que se añade?</p>",
+            "description": "<p>Los aceites utilizados en nuestras recetas provienen de las propias carnes o pescados frescos y a los que sometemos a un proceso de centrifugación y decantación para purificarlos.</p>"
+          }
+        },
+        "block_8Qq7xp": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Por qué se usa aceite de pescado en la composición del producto?</p>",
+            "description": "<p>El aceite de pescado es rico en ácidos grasos omega 3 que tienen propiedades beneficiosas para los animales, mejoran el sistema inmune y la barrera cutánea, limitan la penetración de alérgenos y disminuyen las inflamaciones.</p>"
+          }
+        },
+        "block_79z8Hz": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Amanova es adecuada para mascotas con diabetes, con problemas renales, intestinales o cardíacos?</p>",
+            "description": "<p>Si tu mascota tiene problemas de salud nuestra recomendación es que el veterinario sea el que aconseje y prescriba la alimentación que debe seguir.</p>"
+          }
+        },
+        "block_YRH9U9": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Amanova es adecuada para mascotas con obesidad o problemas de sobrepeso?</p>",
+            "description": "<p>Amanova cuenta con recetas específicas para mascotas que sufren sobrepeso o con potencial, sin embargo, te recomendamos llevar a tu mascota al veterinario para que te asesore con la dieta más adecuada.</p>"
+          }
+        },
+        "block_cQHtAp": {
+          "type": "block",
+          "settings": {
+            "title": "<p>Mi mascota es alérgica a algunos cereales, ¿qué variedad es la más indicada?</p>",
+            "description": "<p>Si tu mascota presenta cuadros alérgicos a ciertos cereales, te ofrecemos nuestra selección de productos Grain free, se trata de recetas 100% libres de granos y cereales, donde incluimos fuentes de carbohidratos como calabaza, zanahoria o guisantes.</p>"
+          }
+        },
+        "block_PEq33B": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Las recetas que incluyen cereales son sanas?</p>",
+            "description": "<p>Sí, toda la selección de productos Low Grain incluyen cereales con altos niveles nutricionales, como el arroz y la quinoa que son cereales sin gluten y ricos en nutrientes y proteínas.</p>"
+          }
+        },
+        "block_Y6WUJ8": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Cómo hago la transición de otra marca a amanova?</p>",
+            "description": "<p>Para cualquier duda o aclaración contacta con nuestro Departamento de Atención al Cliente por medio de los diferentes canales de comunicación disponibles.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_c4JRgA",
+        "block_EzPPLQ",
+        "block_bT6b7k",
+        "block_kUxzLc",
+        "block_9nULFV",
+        "block_fzcXxb",
+        "block_8Qq7xp",
+        "block_79z8Hz",
+        "block_YRH9U9",
+        "block_cQHtAp",
+        "block_PEq33B",
+        "block_Y6WUJ8"
+      ],
+      "settings": {
+        "section_id": "faq-item-2"
+      }
+    },
+    "fresh_faqs_item_UPqq9i": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_ixW66G": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        },
+        "block_VmhNyG": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_ixW66G",
+        "block_VmhNyG"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "faq-item-3"
+      }
+    },
+    "fresh_faqs_item_EKLMeT": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_3K8HW7": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        },
+        "block_mCNKw4": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_3K8HW7",
+        "block_mCNKw4"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "faq-item-4"
+      }
+    },
+    "fresh_faqs_item_9bTWVT": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_mhzHXw": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        },
+        "block_YETbVJ": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_mhzHXw",
+        "block_YETbVJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "faq-item-5"
+      }
+    },
+    "fresh_faqs_item_Rm4AHh": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_PLdEp3": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        },
+        "block_kxJwKV": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_PLdEp3",
+        "block_kxJwKV"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "faq-item-6"
+      }
+    },
+    "fresh_faqs_item_yzLieM": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_pKmgEw": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        },
+        "block_mV86yL": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_pKmgEw",
+        "block_mV86yL"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "faq-item-7"
+      }
+    },
+    "fresh_faqs_item_icGmdK": {
+      "type": "fresh-faqs-item",
+      "blocks": {
+        "block_cWiEEm": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿Dónde hacéis las croquetas?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        },
+        "block_QxLeQi": {
+          "type": "block",
+          "settings": {
+            "title": "<p>¿En el pienso, solo utilizáis carne fresca?</p>",
+            "description": "<p>Las fórmulas de Amanova son exclusivas y diseñadas en Visán por un equipo de veterinarios y nutricionistas con experiencia en nutrición para animales. Cada una de las recetas han sido cuidadosamente estudiadas y testadas para ofrecer a nuestros mejores amigos la nutrición más sana.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_cWiEEm",
+        "block_QxLeQi"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "faq-item-8"
+      }
+    }
+  },
+  "order": [
+    "fresh_faq_nwRn9N",
+    "fresh_faqs_item_xNDKPk",
+    "fresh_faqs_item_4czkag",
+    "fresh_faqs_item_UPqq9i",
+    "fresh_faqs_item_EKLMeT",
+    "fresh_faqs_item_9bTWVT",
+    "fresh_faqs_item_Rm4AHh",
+    "fresh_faqs_item_yzLieM",
+    "fresh_faqs_item_icGmdK"
+  ]
+}

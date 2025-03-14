@@ -1,0 +1,12 @@
+<nav
+  class="header__inline-menu"
+  style=""
+>
+  <ul class="list-menu list-menu--inline no-mobile">
+    {% for link in linklists['first-menu'].links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

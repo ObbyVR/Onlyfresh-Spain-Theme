@@ -1,0 +1,201 @@
+@media screen and (max-width: 749px) {
+  .collection .grid__item:only-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .collection .slider.slider--tablet {
+    margin-bottom: 1.5rem;
+  }
+}
+.rocket-fresh-product-card__wrapper {
+  justify-content: space-evenly;
+}
+
+.collection-container {
+    max-width: 1920px;
+    margin: auto;
+}
+
+.collection .loading-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  padding: 0 1.5rem;
+  opacity: 0.7;
+}
+
+
+  .collection-container .facets-wrapper {
+    max-width:100%;
+  }
+
+  .variant-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top:10px;
+}
+  .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .legend {
+    font-size:1rem;
+    color:#000;
+  }
+  .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input {
+    color: #000000;
+    border-radius:5px;
+    background: #ffffff;
+  }
+  .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label {
+    padding: 2px 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #000000;
+    border-radius:5px;
+    text-align:center;
+    background-color: var(--color-secondary-bright);
+  }
+  .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label span {
+    font-weight:400;
+  }
+  .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label:hover {
+    background-color: #000000;
+    color:#fff;
+  }
+   .rocket-fresh-product-card__inner:hover .rocket-fresh-product-card__quick-add {
+    box-shadow: 1px 1px 30px 5px #52525221;
+    border-radius:10px;
+   }
+
+@media (max-width:1920px) {
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label {
+      padding: 2px 1.5rem; 
+    }
+}
+
+@media (max-width:1780px) {
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label {
+      padding: 2px 1.2rem; 
+    }
+}
+
+@media (max-width:1330px) {
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label {
+      padding: 2px 1rem; 
+    }
+}
+
+@media (max-width:1230px) {
+    .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant label {
+      padding: 2px 0.8rem; 
+    }
+}
+
+@media (max-width:1024px) {
+  .rocket-fresh-product-card__inner .rocket-fresh-product-card__quick-add .product-form__input .variant {
+    position: relative;
+    width: 30%;
+  }
+}
+@media screen and (min-width: 750px) {
+  .collection .loading-overlay {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.collection.loading .loading-overlay {
+  display: block;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.collection.loading .loading-overlay::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 100%;
+  border-right: 2px solid transparent;
+  animation: 0.5s spin linear infinite;
+}
+.collection--empty .title-wrapper {
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+
+@media screen and (max-width: 989px) {
+  .collection .slider--tablet.product-grid {
+    scroll-padding-left: 1.5rem;
+  }
+}
+
+.collection__description > * {
+  margin: 0;
+}
+
+.collection__title.title-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.collection__title .title:not(:only-child) {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+  .collection__title--desktop-slider .title {
+    margin-bottom: 2.5rem;
+  }
+
+  .collection__title.title-wrapper--self-padded-tablet-down {
+    padding: 0 5rem;
+  }
+
+  .collection slider-component:not(.page-width-desktop) {
+    padding: 0;
+  }
+
+  .collection--full-width slider-component:not(.slider-component-desktop) {
+    padding: 0 1.5rem;
+    max-width: none;
+  }
+}
+
+.collection__view-all a:not(.link) {
+  margin-top: 1rem;
+}
+.template-search__search form.search .search__button {
+	display: none;
+}
+.template-search__search form.search .field__label {
+	display: none;
+}
+.template-search__search form.search .search__input {
+	height: 42px;
+	border-radius: 20px;
+	border: 1px solid #000;
+	color: #2c2a29;
+	padding: 10px 16px;
+	font-family: Poppins;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 22px;
+	text-align: left;
+}
+.template-search__header [role="status"] {
+  text-align: center;
+}

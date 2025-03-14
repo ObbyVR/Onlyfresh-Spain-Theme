@@ -1,0 +1,210 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: #F3F5F7;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<link rel="stylesheet" href="{{ 'page-styleguide.css' | asset_url }}">
+
+<div class="section-{{ section.id }}-padding page-styleguide">
+  <div class="page-width">
+    <div class="typography-wrapper">
+      <div class="styleguide-heading">Typography</div>
+      <div class="typography-wrapper-item">
+        <div class="styleguide-heading">Desktop</div>
+        <div class="styleguide-heading">Mobile</div>
+      </div>
+      <div class="typography-wrapper-item">
+        <h1>Title (H1)</h1>
+
+        <h1 class="h1-mobile">Title (H1)</h1>
+      </div>
+
+      <div class="typography-wrapper-item">
+        <h2>Title (H2)</h2>
+        <h2 class="h2-mobile">Title (H2)</h2>
+      </div>
+      <div class="typography-wrapper-item">
+        <h3>Title (H3)</h3>
+        <h3 class="h3-mobile">Title (H3)</h3>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <h4>Title (H4)</h4>
+        <h4 class="h4-mobile">Title (H4)</h4>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <h5>Title (H5)</h5>
+        <h5 class="h5-mobile">Title (H5)</h5>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <h6>Title (H6)</h6>
+        <h6 class="h6-mobile">Title (H6)</h6>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <p class="text-lb">Body Large Medium</p>
+        <p class="text-lb">Body Large Medium</p>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <p class="text-l">Body Large Regular</p>
+        <p class="text-l">Body Large Regular</p>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <p class="text-mb">Body Bold</p>
+        <p class="text-mb">Body Bold</p>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <p class="text-m">Body Regular</p>
+        <p class="text-m">Body Regular</p>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <p class="text-sb">Body Small Bold</p>
+        <p class="text-sb">Body Small Bold</p>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <p class="text-s">Body Small Regular</p>
+        <p class="text-s">Body Small Regular</p>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <a href="#" class="link-l">Link Large</a>
+        <a href="#" class="link-l">Link Large</a>
+
+      </div>
+      <div class="typography-wrapper-item">
+        <a href="#" class="link-s">Link Small</a>
+        <a href="#" class="link-s">Link Small</a>
+      </div>
+    </div>
+    <div class="color-wrapper">
+      <div class="styleguide-heading">Color</div>
+
+      <div class="color-type">
+        <div class="color-title">Primary</div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-primary);"></div>
+          <span class="color-item-title">HEX: 111010</span>
+        </div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-background);border: 1px solid var(--color-primary);"></div>
+          <span class="color-item-title">HEX: FFFFFF</span>
+        </div>
+      </div>
+      <div class="color-type">
+        <div class="color-title">Grey Scale</div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-secondary-dark);"></div>
+          <span class="color-item-title">HEX: 6B6565</span>
+        </div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-secondary-medium);"></div>
+          <span class="color-item-title">HEX: BDBDBD</span>
+        </div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-secondary-bright);border: 1px solid var(--color-primary);"></div>
+          <span class="color-item-title">HEX: F3F5F7</span>
+        </div>
+      </div>
+      <div class="color-type">
+        <div class="color-title">Status</div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-success);"></div>
+          <span class="color-item-title">HEX: B6DB84</span>
+        </div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-infor);"></div>
+          <span class="color-item-title">HEX: 67949E</span>
+        </div>
+        <div class="color-item-wrapper">
+          <div class="color-item" style="background-color: var(--color-hot);"></div>
+          <span class="color-item-title">HEX: AD5371</span>
+        </div>
+      </div>
+    </div>
+    <div class="button-wrapper">
+      <div class="styleguide-heading">Button</div>
+      <div class="button-wrapper-items">
+        <button type="button" class="btn-primary">Para Perros</button>
+        <button type="button" class="btn-secondary">Para Perros</button>
+        <button type="button" class="btn-primary-outline">Para Perros</button>
+        <button type="button" class="btn-secondary-outline">Para Perros</button>
+        <button type="button" disabled>Para Perros</button>
+      </div>
+    </div>
+    <div class="tab-wrapper">
+      <div class="styleguide-heading">Tab</div>
+      <a href="#" class="tab">Ver todas</a>
+    </div>
+
+    <div class="field-wrapper">
+      <div class="styleguide-heading">Fields</div>
+
+      <div class="field" style="max-width: 416px;">
+        <label for="#input1">Nombre y apellido</label>
+        <input type="text" id="input1" placeholder="Nombre y apellido">
+      </div>
+      
+      <div class="field" style="max-width: 416px;">
+        <label for="#select1">Nombre y apellido</label>
+        <select type="text" id="select1">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="value">value</option>
+          <option value="value">value</option>
+          <option value="value">value</option>
+        </select>
+      </div>
+      <div class="field" style="max-width: 416px;">
+        <label for="#input2">Nombre y apellido</label>
+        <input type="text" id="input2" placeholder="Nombre y apellido" class="input-error">
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Styleguide",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ]
+  }
+  {% endschema %}

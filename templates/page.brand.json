@@ -1,0 +1,1461 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hero_banner_we3JMC": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_6GgWBM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/nl-dt.png",
+            "image_mb": "shopify://shop_images/landing-header_1.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Amazingly, it’s made <br> for dogs, not people.",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#111010",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 36,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 11,
+            "description_margin_bottom": 32,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Para Perros",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "Para gatos",
+            "button_style_2": "btn btn-secondary"
+          }
+        },
+        "image_EmhbJn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/nl-dt.png",
+            "image_mb": "shopify://shop_images/landing-header_1.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Amazingly, it’s made                           for dogs, not people.",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#111010",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 36,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 11,
+            "description_margin_bottom": 32,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Para Perros",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "Para gatos",
+            "button_style_2": "btn btn-secondary"
+          }
+        },
+        "image_VKme43": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/nl-dt.png",
+            "image_mb": "shopify://shop_images/landing-header_1.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Amazingly, it’s made                           for dogs, not people.",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#111010",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 36,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 11,
+            "description_margin_bottom": 32,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Para Perros",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "Para gatos",
+            "button_style_2": "btn btn-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "image_6GgWBM",
+        "image_EmhbJn",
+        "image_VKme43"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "enable_pagination": true,
+        "color_pagination_desktop": "#ffffff",
+        "color_pagination_mobile": "#ffffff",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 71,
+        "content_padding_bottom": 69,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 25,
+        "content_padding_left": 78,
+        "content_padding_right": 78,
+        "content_padding_left_mb": 24,
+        "content_padding_right_mb": 24
+      }
+    },
+    "fresh_rich_text_NQN7i9": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "subtitle_6HyYb4": {
+          "type": "subtitle",
+          "settings": {
+            "caption": "En Amanova amamos a nuestras mascotas",
+            "font_weight_subtitle": "400",
+            "font_size_subtitle": 16,
+            "font_size_subtitle_mb": 14
+          }
+        },
+        "title_47tmib": {
+          "type": "title",
+          "settings": {
+            "heading": "Todas nuestras recetas para perros y gatos se preparan en nuestra propia cocina, con mucho amor, como si lo hicieras tu mismo.",
+            "font_weight_title": "400",
+            "font_size_title": 36,
+            "font_size_title_mb": 32
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_6HyYb4",
+        "title_47tmib"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 95,
+        "max_width_mb": 100,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 60
+      }
+    },
+    "collection_list_Bzf3aJ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_xBqrAB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "<p>Elaborada con ingredientes frescos y naturales.</p>",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_hbMNrN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "<p>Elaborada con ingredientes frescos y naturales.</p>",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_yqP6dL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "<p>Elaborada con ingredientes frescos y naturales.</p>",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_xBqrAB",
+        "featured_collection_hbMNrN",
+        "featured_collection_yqP6dL"
+      ],
+      "settings": {
+        "title": "Descubre nuestra gama",
+        "font_size_title": 36,
+        "font_size_title_mb": 24,
+        "title_position": "left",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 63
+      }
+    },
+    "fresh_custom_banner_product_QHw6bx": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_ayAKwb": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/image_extra_content_1.png",
+            "image_mb": "shopify://shop_images/Frame_7561.png",
+            "content_position_x": "right",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Bloque info extra",
+            "color_heading": "#000000",
+            "description": "<p>dolor sit amet consectetur. Magna tincidunt nunc nisl lacus adipiscing vel ut id nisl. Egestas tortor sed senectus cursus mauris. Non at non pellentesque orci nibh enim nulla. Elementum ultricies faucibus in et sed lectus molestie. Nisl elit at pharetra diam auctor nulla vitae. Gravida pretium semper purus gravida gravida gravida aliquet nisl cursus. Rhoncus adipiscing adipiscing ut sit. Diam mattis diam ullamcorper mi. Vel condimentum tellus tincidunt faucibus pharetra tortor tellus mauris ornare.Aliquam viverra eget consectetur tortor pellentesque fermentum sit lorem. Ut blandit a egestas a tempor scelerisque vehicula tellus. Commodo egestas non pulvinar quisque aliquet pulvinar. Massa egestas rhoncus nunc est imperdiet. Massa sollicitudin sit id dictumst nibh feugiat.</p>",
+            "color_content": "#8d8d8d",
+            "button_label": "Optional button",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_ayAKwb"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52
+      }
+    },
+    "fresh_hero_banner_DgkkC8": {
+      "type": "fresh-hero-banner",
+      "blocks": {
+        "image_RHBypM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner-descubre_1536x_1.png",
+            "image_mb": "shopify://shop_images/mb_banner-descubre_1536x_1.png",
+            "heading_size": "h2",
+            "heading": "Bloque info extra",
+            "color_text_title": "#111010",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 36,
+            "font_size_title_mb": 32,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Magna tincidunt nunc nisl lacus adipiscing vel ut id nisl. Egestas tortor sed senectus cursus mauris. Non at non pellentesque orci nibh enim nulla. Elementum ultricies faucibus in et sed lectus molestie. Nisl elit at pharetra diam auctor nulla vitae. <br/><br/>Aliquam viverra eget consectetur tortor pellentesque fermentum sit lorem. Ut blandit a egestas a tempor scelerisque vehicula tellus. Commodo egestas non pulvinar quisque aliquet pulvinar. Massa egestas rhoncus nunc est imperdiet. Massa sollicitudin sit id dictumst nibh feugiat.</p>",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "250",
+            "font_size_content": 14,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "Optional button",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_RHBypM"
+      ],
+      "settings": {
+        "enable_slider": false,
+        "enable_pagination": false,
+        "type_of_media": "type_image",
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "desktop_content_position": "left",
+        "mobile_content_position": "center-mb",
+        "desktop_content_position_y": "middle",
+        "desktop_content_position_y_mb": "top-mb",
+        "content_alignment": "left",
+        "content_alignment_mb": "left-mb",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 40,
+        "content_padding_bottom": 52,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 52,
+        "content_padding_left": 76,
+        "content_padding_right": 76,
+        "content_padding_left_mb": 32,
+        "content_padding_right_mb": 32
+      }
+    },
+    "fresh_custom_banner_product_wgeVcc": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_Gj9Tt4": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/image_extra_content_1.png",
+            "image_mb": "shopify://shop_images/Frame_7561.png",
+            "content_position_x": "left",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Bloque info extra",
+            "color_heading": "#000000",
+            "description": "<p>dolor sit amet consectetur. Magna tincidunt nunc nisl lacus adipiscing vel ut id nisl. Egestas tortor sed senectus cursus mauris. Non at non pellentesque orci nibh enim nulla. Elementum ultricies faucibus in et sed lectus molestie. Nisl elit at pharetra diam auctor nulla vitae. Gravida pretium semper purus gravida gravida gravida aliquet nisl cursus. Rhoncus adipiscing adipiscing ut sit. Diam mattis diam ullamcorper mi. Vel condimentum tellus tincidunt faucibus pharetra tortor tellus mauris ornare.Aliquam viverra eget consectetur tortor pellentesque fermentum sit lorem. Ut blandit a egestas a tempor scelerisque vehicula tellus. Commodo egestas non pulvinar quisque aliquet pulvinar. Massa egestas rhoncus nunc est imperdiet. Massa sollicitudin sit id dictumst nibh feugiat.</p>",
+            "color_content": "#8d8d8d",
+            "button_label": "Optional button",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_Gj9Tt4"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52
+      }
+    },
+    "fresh_product_slider_y4ByB4": {
+      "type": "fresh-product-slider",
+      "settings": {
+        "title": "Productos más vendidos de Amanova",
+        "title_position": "left",
+        "size_heading": 36,
+        "size_heading_mb": 24,
+        "margin_heading": 26,
+        "margin_heading_mb": 18,
+        "collection": "amanova",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "collection_list_qpAA9B": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_X8ieQf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_4VgEgq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_X8ieQf",
+        "featured_collection_4VgEgq"
+      ],
+      "settings": {
+        "title": "Conoce a nuestros fabulosos amigos",
+        "font_size_title": 36,
+        "font_size_title_mb": 24,
+        "title_position": "center",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "fresh_hero_banner_UJrN4H": {
+      "type": "fresh-hero-banner",
+      "blocks": {
+        "image_Gii4JB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner-descubre2.png",
+            "image_mb": "shopify://shop_images/banner-descubre2mb.png",
+            "heading_size": "h2",
+            "heading": "Bloque info extra",
+            "color_text_title": "#111010",
+            "color_text_title_mobile": "#111010",
+            "font_weight_title": "400",
+            "font_size_title": 36,
+            "font_size_title_mb": 32,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Magna tincidunt nunc nisl lacus adipiscing vel ut id nisl. Egestas tortor sed senectus cursus mauris. Non at non pellentesque orci nibh enim nulla. Elementum ultricies faucibus in et sed lectus molestie. Nisl elit at pharetra diam auctor nulla vitae. <br/><br/>Aliquam viverra eget consectetur tortor pellentesque fermentum sit lorem. Ut blandit a egestas a tempor scelerisque vehicula tellus. Commodo egestas non pulvinar quisque aliquet pulvinar. Massa egestas rhoncus nunc est imperdiet. Massa sollicitudin sit id dictumst nibh feugiat.</p>",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "250",
+            "font_size_content": 14,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "Optional button",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_Gii4JB"
+      ],
+      "settings": {
+        "enable_slider": false,
+        "enable_pagination": false,
+        "type_of_media": "type_image",
+        "content_width_mobile": 100,
+        "content_width": 44,
+        "desktop_content_position": "right",
+        "mobile_content_position": "center-mb",
+        "desktop_content_position_y": "middle",
+        "desktop_content_position_y_mb": "top-mb",
+        "content_alignment": "left",
+        "content_alignment_mb": "left-mb",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 40,
+        "content_padding_bottom": 52,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 52,
+        "content_padding_left": 76,
+        "content_padding_right": 76,
+        "content_padding_left_mb": 32,
+        "content_padding_right_mb": 32
+      }
+    },
+    "fresh_slider_information_3EtybB": {
+      "type": "fresh-slider-information",
+      "blocks": {
+        "block_mDFEAx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/spoon-bowl-full-seeds.png",
+            "image_mobile": "shopify://shop_images/spoon-bowl-full-seeds.png",
+            "title": "Quinoa",
+            "description": "<p>Un \"súper alimento\" que ayudará a prevenir el estreñimiento y a mejorar la digestión</p>"
+          }
+        },
+        "block_Nt3hrY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/fotos_ingredientes.png",
+            "image_mobile": "shopify://shop_images/fotos_ingredientes_03ae1bcc-979f-4786-9d58-087a8ceaa590.png",
+            "title": "Espirulina",
+            "description": "<p>Repleto de vitaminas y minerales y compuesto de aminoácidos y ácidos grasos esenciales.</p>"
+          }
+        },
+        "block_QDiCmm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "image_mobile": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "title": "Arándanos",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_Xq8thU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "image_mobile": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "title": "Jengibre",
+            "description": "<p>Reduce la inflamación, el colesterol y ayuda a mantener niveles saludables de azúcar en la sangre.</p>"
+          }
+        },
+        "block_TaUtWh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/banner-descubre_hero_2.png",
+            "image_mobile": "shopify://shop_images/banner-descub3.png",
+            "title": "Catgo",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_qCrNrF": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_6028.png",
+            "image_mobile": "shopify://shop_images/Rectangle_4310.png",
+            "title": "Cat Cat",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_zbcfdR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_6028_e256c7da-c336-479c-b44e-5096c0e1569d.png",
+            "image_mobile": "shopify://shop_images/Frame_6028_1ad6ad94-b4b2-4068-b4cb-d015e43ef812.png",
+            "title": "Doggo",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_FFE933": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/mbRectangle_4274.png",
+            "image_mobile": "shopify://shop_images/mbRectangle_4274.png",
+            "title": "Three Dog",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_DpHtVf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "image_mobile": "shopify://shop_images/fotos_ingredientes_946f9e25-1ea1-4328-9679-c7c9f82a3550.png",
+            "title": "Arándanos",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        },
+        "block_hXajPw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/mbFrame_5317.png",
+            "image_mobile": "shopify://shop_images/mbFrame_5317.png",
+            "title": "Beneficios",
+            "description": "<p>Un \"súper alimento\" que ayudará a prevenir el estreñimiento y a mejorar la digestión</p>"
+          }
+        },
+        "block_QH8fq7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "image_mobile": "shopify://shop_images/ginger-root-ginger-powder-table_1.png",
+            "title": "Jengibre",
+            "description": "<p>Reduce la inflamación, el colesterol y ayuda a mantener niveles saludables de azúcar en la sangre.</p>"
+          }
+        },
+        "block_nmBnNU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_N04FIfHhv_k_bd90a581-6de9-4836-a8d8-7a1b6ab207e8.png",
+            "image_mobile": "shopify://shop_images/unsplash_N04FIfHhv_k_bd90a581-6de9-4836-a8d8-7a1b6ab207e8.png",
+            "title": "Espirulina",
+            "description": "<p>Sus propiedades impiden la adhesión de bacterias y otros microorganismos a la superficie del aparato urinario.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_mDFEAx",
+        "block_Nt3hrY",
+        "block_QDiCmm",
+        "block_Xq8thU",
+        "block_TaUtWh",
+        "block_qCrNrF",
+        "block_zbcfdR",
+        "block_FFE933",
+        "block_DpHtVf",
+        "block_hXajPw",
+        "block_QH8fq7",
+        "block_nmBnNU"
+      ],
+      "settings": {
+        "horizontal_alignment": "center",
+        "horizontal_alignment_mobile": "center",
+        "heading": "Ingredientes especiales",
+        "heading_mobile": "Ingredientes especiales",
+        "heading_color": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 52,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
+      }
+    },
+    "marquee_W6XHgP": {
+      "type": "marquee",
+      "blocks": {
+        "featured_block_tWW6YU": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_4wixTU": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_4xz7tb": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_wrKxTV": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_mFrqPD": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_AbDNWb": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_kdkHQA": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_UCTtf4": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_G9c9we": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        },
+        "featured_block_KrciLc": {
+          "type": "featured_block",
+          "settings": {
+            "content_1": "100% carnes frescas",
+            "italic_1": false,
+            "content_2": "0% harinas de carne",
+            "italic_2": true
+          }
+        }
+      },
+      "block_order": [
+        "featured_block_tWW6YU",
+        "featured_block_4wixTU",
+        "featured_block_4xz7tb",
+        "featured_block_wrKxTV",
+        "featured_block_mFrqPD",
+        "featured_block_AbDNWb",
+        "featured_block_kdkHQA",
+        "featured_block_UCTtf4",
+        "featured_block_G9c9we",
+        "featured_block_KrciLc"
+      ],
+      "settings": {
+        "background_color": "#f3f5f7",
+        "text_color": "#111010",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "fresh_benefit_g6DJ9a": {
+      "type": "fresh-benefit",
+      "blocks": {
+        "benefit_TTYzVh": {
+          "type": "benefit",
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        },
+        "benefit_wUCmq7": {
+          "type": "benefit",
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        },
+        "benefit_GN4g9x": {
+          "type": "benefit",
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        },
+        "benefit_UQUy7p": {
+          "type": "benefit",
+          "settings": {
+            "title": "Probiotic effect",
+            "content": "<p>Contiene probióticos y prebióticos que promoverán el crecimiento de la flora bacteriana beneficiosa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_TTYzVh",
+        "benefit_wUCmq7",
+        "benefit_GN4g9x",
+        "benefit_UQUy7p"
+      ],
+      "settings": {
+        "heading": "Beneficios",
+        "image": "shopify://shop_images/Benefit.jpg",
+        "image_mb": "shopify://shop_images/mbRectangle_4274.png",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "video_hjHqiy": {
+      "type": "video",
+      "settings": {
+        "desktop_content_position": "right",
+        "width_content": 9999999,
+        "heading": "",
+        "font_size_heading": 16,
+        "font_size_heading_mb": 16,
+        "content": "",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/banner-descubre_video.png",
+        "description": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    },
+    "fresh_key_points_wKaNeG": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_neChXR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/keyvisual-2304x1294-copia_small_1.png",
+            "image_mb": "shopify://shop_images/keyvisual-2304x1294-copia_small_1.png",
+            "link_url": "",
+            "link_label": "Envío gratis",
+            "use_number": true,
+            "font_size_text": 24,
+            "font_size_text_mb": 22,
+            "color_text": "#000000",
+            "lable_decription": "",
+            "font_size_text_decription": 28,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_UgQpLb": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Captura_de_pantalla_2024-02-13_a_las_16.11_1.png",
+            "image_mb": "shopify://shop_images/Captura_de_pantalla_2024-02-13_a_las_16.11_1.png",
+            "link_url": "",
+            "link_label": "Experiencia",
+            "use_number": true,
+            "font_size_text": 24,
+            "font_size_text_mb": 22,
+            "color_text": "#000000",
+            "lable_decription": "",
+            "font_size_text_decription": 28,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_zWpxNL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Captura_de_pantalla_2024-02-13_a_las_16.11_2.png",
+            "image_mb": "shopify://shop_images/Captura_de_pantalla_2024-02-13_a_las_16.11_2.png",
+            "link_url": "",
+            "link_label": "Recompensas",
+            "use_number": true,
+            "font_size_text": 24,
+            "font_size_text_mb": 22,
+            "color_text": "#000000",
+            "lable_decription": "",
+            "font_size_text_decription": 28,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_XDKWXC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Captura_de_pantalla_2024-02-13_a_las_16.12_1.png",
+            "image_mb": "shopify://shop_images/Captura_de_pantalla_2024-02-13_a_las_16.12_1.png",
+            "link_url": "",
+            "link_label": "Personalización",
+            "use_number": true,
+            "font_size_text": 24,
+            "font_size_text_mb": 22,
+            "color_text": "#000000",
+            "lable_decription": "",
+            "font_size_text_decription": 24,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "block_neChXR",
+        "block_UgQpLb",
+        "block_zWpxNL",
+        "block_XDKWXC"
+      ],
+      "settings": {
+        "key_point_icon": false,
+        "title": "",
+        "title_mobile": "",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 44,
+        "margin_heading_mb": 14,
+        "content": "",
+        "content_mb": "",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 14,
+        "padding_top_title": 24,
+        "padding_top_title_mb": 10,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "color_content": "#111010",
+        "bg_color_section": "#ffffff"
+      }
+    },
+    "collection_list_MJMdHT": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_e9NtyU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_VFQ8gy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_tPwwxw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comida-para-perros-cachorros",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_e9NtyU",
+        "featured_collection_VFQ8gy",
+        "featured_collection_tPwwxw"
+      ],
+      "settings": {
+        "title": "Explora nuestras marcas",
+        "font_size_title": 36,
+        "font_size_title_mb": 24,
+        "title_position": "left",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "hero_banner_9aYem4": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_CkNh48": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner-descub3.png",
+            "image_mb": "shopify://shop_images/banner-descubre_hero_2.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Title Banner x2",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 36,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "<p>Espacio para un subtítulo</p>",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 24,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Optional button",
+            "button_style": "btn btn-secondary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        },
+        "image_xCQVtB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner-descubr_hero_1.png",
+            "image_mb": "shopify://shop_images/banner-descubr_hero_1.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Title Banner x2",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 43,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "<p>Espacio para un subtítulo</p>",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 24,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Optional button",
+            "button_style": "btn btn-secondary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_CkNh48",
+        "image_xCQVtB"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "enable_pagination": false,
+        "color_pagination_desktop": "#bdbdbd",
+        "color_pagination_mobile": "#f3f5f7",
+        "color_pagination_active": "#111010",
+        "column_desktop": 2,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 0,
+        "content_padding_bottom": 100,
+        "content_padding_top_mb": 0,
+        "content_padding_bottom_mb": 60,
+        "content_padding_left": 40,
+        "content_padding_right": 52,
+        "content_padding_left_mb": 40,
+        "content_padding_right_mb": 52
+      }
+    },
+    "fresh_rich_text_qLXUkR": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "subtitle_6aRQYk": {
+          "type": "subtitle",
+          "settings": {
+            "caption": "En Amanova amamos a nuestras mascotas",
+            "font_weight_subtitle": "400",
+            "font_size_subtitle": 16,
+            "font_size_subtitle_mb": 14
+          }
+        },
+        "title_XiyPX6": {
+          "type": "title",
+          "settings": {
+            "heading": "Todas nuestras recetas para perros y gatos se preparan en nuestra propia cocina, con mucho amor, como si lo hicieras tu mismo.",
+            "font_weight_title": "400",
+            "font_size_title": 36,
+            "font_size_title_mb": 32
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_6aRQYk",
+        "title_XiyPX6"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 95,
+        "max_width_mb": 100,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "fresh_product_banner_3QWRFL": {
+      "type": "fresh-product-banner",
+      "blocks": {
+        "block_Q9in9H": {
+          "type": "block",
+          "settings": {
+            "collection": "comida-para-perros",
+            "products_to_show": 4,
+            "image": "shopify://shop_images/image_19.jpg",
+            "image_mb": "shopify://shop_images/image_19_mobile.jpg",
+            "desktop_content_position": "center",
+            "content_alignment": "left",
+            "description": "<p>Descubre cuál es el mejor producto para tu mascota con nuestro Quiz</p>",
+            "color_text_content": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 36,
+            "font_size_content_mb": 24,
+            "button_url": "",
+            "button_label": "Descubrir",
+            "font_size_button": 14,
+            "font_size_button_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "block_Q9in9H"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 76,
+        "padding_right": 76,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0
+      }
+    },
+    "fresh_key_points_xyk4aF": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_6XALVa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 01",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_r7WkNL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 01",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_BJnFkV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 01",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_FGPX8n": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "image_mb": "shopify://shop_images/noun-eco-5742562_1.svg",
+            "link_url": "",
+            "link_label": "Valor 01",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Lorem ipsum dolor sit amet consectetur. Pellentesque dignissim habitant ultrices ultrices.</p>",
+            "font_size_text_decription": 14,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "block_6XALVa",
+        "block_r7WkNL",
+        "block_BJnFkV",
+        "block_FGPX8n"
+      ],
+      "settings": {
+        "key_point_icon": true,
+        "title": "Bloque para iconos",
+        "title_mobile": "Bloque para iconos",
+        "size_heading": 36,
+        "size_heading_mb": 36,
+        "margin_heading": 40,
+        "margin_heading_mb": 40,
+        "content": "",
+        "content_mb": "",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 14,
+        "padding_top_title": 10,
+        "padding_top_title_mb": 10,
+        "padding_top": 74,
+        "padding_bottom": 74,
+        "padding_top_mb": 61,
+        "padding_bottom_mb": 61,
+        "color_content": "#ffffff",
+        "bg_color_section": "#000000"
+      }
+    },
+    "hero_banner_WtECkk": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_9eLkDy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner-descubre_hero4.png",
+            "image_mb": "shopify://shop_images/banner-descubre_hero_4mb.png",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Bloque info extra, call to action final",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 48,
+            "font_size_title_mb": 32,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "<p>Espacio para un subtítulo</p>",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 24,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Descargar catálogo",
+            "button_style": "btn btn-secondary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_9eLkDy"
+      ],
+      "settings": {
+        "enable_slider": false,
+        "enable_pagination": false,
+        "color_pagination_desktop": "#bdbdbd",
+        "color_pagination_mobile": "#f3f5f7",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 45,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 40,
+        "content_padding_bottom": 52,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 52,
+        "content_padding_left": 40,
+        "content_padding_right": 52,
+        "content_padding_left_mb": 40,
+        "content_padding_right_mb": 52
+      }
+    },
+    "fresh_social_media_jgTAQc": {
+      "type": "fresh-social-media",
+      "blocks": {
+        "block_xMM9gh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Ig1.jpg",
+            "image_mb": "shopify://shop_images/Ig1.jpg",
+            "link_url": "shopify://collections/cachorros"
+          }
+        },
+        "block_Nmj67H": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/IG2.jpg",
+            "image_mb": "shopify://shop_images/IG2.jpg",
+            "link_url": ""
+          }
+        },
+        "block_FKEPqj": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Ig3.jpg",
+            "image_mb": "shopify://shop_images/Ig3.jpg",
+            "link_url": ""
+          }
+        },
+        "block_mbjWVH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/IG4.jpg",
+            "image_mb": "shopify://shop_images/IG4.jpg",
+            "link_url": ""
+          }
+        },
+        "block_wjQwb4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Ig1.jpg",
+            "image_mb": "shopify://shop_images/Ig1.jpg",
+            "link_url": ""
+          }
+        },
+        "block_6hEtFa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/IG2.jpg",
+            "image_mb": "shopify://shop_images/IG2.jpg",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_xMM9gh",
+        "block_Nmj67H",
+        "block_FKEPqj",
+        "block_mbjWVH",
+        "block_wjQwb4",
+        "block_6hEtFa"
+      ],
+      "settings": {
+        "title": "How to use it",
+        "size_heading": 36,
+        "size_heading_mb": 32,
+        "margin_heading": 7,
+        "margin_heading_mb": 7,
+        "content": "Lorem ipsum dolor sit amet consectetur. Proin commodo orci magnis tristique lectus nunc.",
+        "content_mb": "Lorem ipsum dolor sit amet consectetur. Proin commodo orci magnis tristique lectus nunc.",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 35,
+        "margin_content_mb": 24,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_we3JMC",
+    "fresh_rich_text_NQN7i9",
+    "collection_list_Bzf3aJ",
+    "fresh_custom_banner_product_QHw6bx",
+    "fresh_hero_banner_DgkkC8",
+    "fresh_custom_banner_product_wgeVcc",
+    "fresh_product_slider_y4ByB4",
+    "collection_list_qpAA9B",
+    "fresh_hero_banner_UJrN4H",
+    "fresh_slider_information_3EtybB",
+    "marquee_W6XHgP",
+    "fresh_benefit_g6DJ9a",
+    "video_hjHqiy",
+    "fresh_key_points_wKaNeG",
+    "collection_list_MJMdHT",
+    "hero_banner_9aYem4",
+    "fresh_rich_text_qLXUkR",
+    "fresh_product_banner_3QWRFL",
+    "fresh_key_points_xyk4aF",
+    "hero_banner_WtECkk",
+    "fresh_social_media_jgTAQc"
+  ]
+}

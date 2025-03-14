@@ -1,0 +1,574 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet"
+>
+<div class="page-fidelity">
+  <div class="container-fidelity">
+    <div class="banner-fidelity">
+      <div class="block-side-banner">
+        <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/logo_rewards.png">
+        {% if customer %}
+          <p class="text-banner-fidelity">
+            The Only fresh<br>
+            <span style="font-weight:900;">Rewards</span>
+          </p>
+        {% else %}
+          <p class="text-banner-fidelity">
+            The Only fresh<br>
+            <span style="font-weight:700;">Rewards</span>
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="registration-container">
+      <div class="registration-box">
+        <h2 class="title-registration">¡En Onlyfresh premiamos tu fidelidad!</h2>
+        <p class="text-registration">Acumula puntos, que podrás canjear en cualquier momento para tus compras.</p>
+        {% comment %}
+          <div class="box-button-user">
+            <a href="https://es.onlyfresh.com/account/login?return_url=%2Faccount" class="button-user">REGÍSTRATE</a>
+            <a href="https://es.onlyfresh.com/account/login?return_url=%2Faccount" class="button-user">LOGIN</a>
+          </div>
+        {% endcomment %}
+      </div>
+    </div>
+
+    <div class="rules-container">
+      <h2 class="title-istruction-top">¿COMO OBTENER TUS PUNTOS?</h2>
+      <div class="rules-fidelity">
+        <div class="rules">
+          <div class="number-rules" style="background-color:#FAB600">1</div>
+          <div class="block-text-rules">
+            <h3 class="title-rules">
+              <a href="https://es.onlyfresh.com/account/login?return_url=%2Faccount">RegÍstrate</a>
+            </h3>
+            <p class="text-rules">en nuestra pagina web oficial o en tienda física para crear tu perfil.</p>
+          </div>
+        </div>
+        <div class="rules">
+          <div class="number-rules" style="background-color:#FAB600">2</div>
+          <div class="block-text-rules">
+            <h3 class="title-rules">Gana</h3>
+            <p class="text-rules">por cada 1€ de compra en nuestra página web o tiendas propias Onlyfresh.</p>
+          </div>
+        </div>
+        <div class="rules">
+          <div class="number-rules" style="background-color:#FAB600">3</div>
+          <div class="block-text-rules">
+            <h3 class="title-rules">Canjea</h3>
+            <p class="text-rules">online o en tienda física (a partir de 500 puntos) durante el proceso de pago.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="istructions-fidelity">
+      <h2 class="title-istruction-top2">algunos ejemplos de lo que puedes conseguir con tus puntos</h2>
+      <div class="istruction-box">
+        <div class="istruction">
+          <div class="image-istructions">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/Screenshot_2024-06-11_alle_16.55.15.png">
+          </div>
+          <div class="block-text-istructions">
+            <h3 class="title-istructions">500 puntos</h3>
+          </div>
+        </div>
+        <div class="istruction">
+          <div class="image-istructions">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/Screenshot_2024-06-11_alle_16.57.58.png">
+          </div>
+          <div class="block-text-istructions">
+            <h3 class="title-istructions">2000 puntos</h3>
+          </div>
+        </div>
+        <div class="istruction">
+          <div class="image-istructions">
+            <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/Screenshot_2024-06-11_alle_16.58.05.png">
+          </div>
+          <div class="block-text-istructions">
+            <h3 class="title-istructions">5000 puntos</h3>
+          </div>
+        </div>
+      </div>
+      <p class="text-istructions"></p>
+    </div>
+    <div class="text-image-fidelity-container">
+      <div class="text-box-fidelity">
+        <p class="text-side-fidelity">
+          Obtén lo mejor de Onlyfresh® Rewards directamente en tus manos.
+          <a href="https://es.onlyfresh.com/account"><b>Descarga tu Tarjeta</b></a> Onlyfresh para acumular y canjear
+          tus puntos. Haz login para descargarla
+        </p>
+      </div>
+      <div class="image-box-fidelity">
+        <img
+          class="image-fidelity-side"
+          src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/image-fidelity_4x-100_2160x_jpg.webp?v=1722584086"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .page-fidelity{
+    font-family: Poppins;
+  }
+     .banner-fidelity {
+      background: url(https://cdn.shopify.com/s/files/1/0486/9396/9064/files/banner_fidelity_4x-100_dba0da30-4800-4b56-a920-3e02b81534d7_2160x.jpg?v=1717663744);
+      background-size: contain;
+      background-repeat: no-repeat;
+      aspect-ratio: 1841 / 683;
+      display: flex;
+      align-items: center;
+    }
+    .block-side-banner {
+      max-width: 35%;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem ;
+      margin-left:5%;
+    }
+    p.text-banner-fidelity {
+      font-size: calc(24px + 1.5vw);
+      text-align: center;
+      margin-top: 10px;
+      color: white;
+      text-transform: uppercase;
+  }
+    .block-side-banner img {
+      width: 60%;
+      max-width: 20rem;
+      margin: auto;
+    }
+    .rules-container {
+      background-color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0px 5.5rem 0rem;
+  }
+    .registration-container {
+      background-color: #006C6E;
+    }
+    .registration-box {
+      margin: auto;
+      text-align: center;
+      padding: 5rem;
+    }
+    h2.title-registration {
+      color: white;
+      font-weight: 700;
+      font-size: calc(24px + 1.5vw);
+      margin-bottom: 10px;
+    }
+    p.text-registration {
+      color: #fff;
+      font-weight: 500;
+      margin: auto;
+      font-size: calc(18px + .5vw);
+    }
+    .box-button-user {
+      display: flex;
+      justify-content: space-evenly;
+      max-width: 600px;
+      margin: auto;
+    }
+    a.button-user {
+      padding: 5px 20px;
+      background-color: #EDE7E9;
+      min-width:150px;
+    }
+    .rules-fidelity {
+      display: flex;
+      padding: 4rem 0px 0px ;
+      max-width:1080px;
+      border-radius: 20px;
+      justify-content: space-between;
+    }
+    .rules {
+      display: flex;
+      width: 30%;
+      align-items: center;
+      flex-direction: column;
+      color: black;
+    }
+    .number-rules {
+      height: 80px;
+      width: 80px;
+      color: black;
+      padding-top: 5px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .block-text-rules {
+      text-align: center;
+    }
+    h3.title-rules {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    p.text-rules {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    h2.title-istruction-top {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      color: #006C6E;
+      border-bottom: 2px solid #006C6E;
+      padding: 0rem 0rem 1rem 0rem;
+        text-align: center;
+  }
+
+
+     .title-istruction-top2 {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+       color: white;
+       border-bottom: 2px solid #FAB600;
+      padding: 0rem 0rem 1rem 0rem;
+       text-align: center;
+
+    }
+   .istructions-fidelity {
+      background-color: #006C6E;
+      padding: 41px 20px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+    .istruction-box {
+      display: flex;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 50px auto 0;
+    }
+    .istruction {
+      width: 28%;
+      text-align: center;
+      background-color:#fff;
+      border-radius: 30px;
+      padding: 10px 20px;
+    }
+
+    h3.title-istructions {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: black;
+  }
+    p.text-istructions {
+      font-size: 1.5rem;
+      margin: 0 0 10px 0;
+      margin-top: 35px;
+      color: white;
+    }
+    .image-istructions {
+      margin: auto;
+      display: flex;
+      padding: 5px;
+      align-items: flex-end;
+    }
+     .image-fidelity-side {
+      width: 100%;
+     }
+    .image-box-fidelity {
+      width: 50%;
+    }
+    .text-image-fidelity-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .text-box-fidelity {
+      width: 57%;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10%;
+    }
+    p.text-side-fidelity {
+      font-size: 2rem;
+      text-align: center;
+      color: black;
+      line-height: 3rem;
+      font-weight: 500;
+  }
+    p.text-side-fidelity a {
+      color: black;
+
+    }
+
+    @media (max-width:950px) {
+      h2.title-registration {
+      font-size: calc(18px + 1.5vw);
+  }
+      p.text-istructions, p.text-rules {
+        font-size: 0.8rem;
+      }
+      p.text-registration, p.text-side-fidelity {
+        font-size: 1rem;
+      }
+
+      h3.title-rules, h2.title-istruction-top, h2.title-istruction-top2 {
+        font-size: 1.1rem;
+      }
+      p.text-side-fidelity a {
+        text-underline-offset: 2px;
+      }
+      .number-rules {
+        height: 50px;
+        width: 50px;
+        font-size: 1.2rem;
+      }
+      .block-side-banner {
+        padding-bottom:5px;
+      }
+
+      .banner-fidelity {
+        background:url(https://cdn.shopify.com/s/files/1/0486/9396/9064/files/banner_fidelity1_2160x.jpg?v=1717756149);
+        background-size: contain;
+        aspect-ratio: 371 / 563;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .block-side-banner img {
+          max-width: 60%;
+      }
+
+      .block-side-banner {
+          max-width: 70%;
+          padding:15% 0px 0px 0px;
+      }
+      .rules {
+      display: flex;
+      width: 65%;
+      align-items: center;
+      flex-direction: column;
+      color: black;
+      margin: auto;
+      margin-bottom: 1rem;
+  }
+      .rules-fidelity {
+      display: block;
+      padding: 4rem 0px 0px 0px;
+      max-width: 100%;
+      border-radius: 20px;
+      justify-content: space-between;
+  }
+
+  .rules-container {
+
+      padding: 2rem 0px 1.5rem 0rem;
+  }
+      .text-image-fidelity-container {
+      display: block;
+  }
+      .text-box-fidelity {
+      width: 100%;
+  }
+      .image-box-fidelity {
+      width: 100%;
+  }
+      .istruction-box {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin: 4rem 0rem 0rem;
+      align-items: center;
+      row-gap: 1rem;
+  }
+      .istruction {
+      width: 65%;
+
+  }
+    }
+
+   /* @media (max-width:500px) {
+      p.text-banner-fidelity {
+        font-size: 1.2rem;
+      }
+      .rules-container {
+        padding: 30px 10px;
+      }
+      .rules-fidelity {
+        padding: 30px 10px 10px;
+      }
+      .istruction {
+        width: 100%;
+        margin-bottom:20px;
+      }
+      .istruction-box {
+        flex-direction: column;
+      }
+      .istructions-fidelity {
+        padding: 20px
+      }
+      p.text-istructions {
+        font-size: 1rem;
+        text-align:center;
+      }
+      p.text-registration {
+        font-size: 0.8rem;
+      }
+      h2.title-registration {
+        font-size: 1.2rem;
+      }
+      h3.title-rules {
+        font-size: 1rem;
+      }
+      h2.title-istruction-top {
+        font-size: 0.8rem;
+        text-underline-offset: 4px!important;
+      }
+      .text-image-fidelity-container {
+        flex-direction: column;
+      }
+      .image-box-fidelity {
+        width: 100%;
+      }
+      .text-box-fidelity {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+      }
+       p.text-side-fidelity {
+        font-size: 1.2rem;
+        padding:10%;
+      }
+      .registration-box {
+        padding: 50px 30px;
+      }
+    }
+    @media (max-width: 414px) {
+      .block-side-banner {
+        max-width: 80%;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .image-istructions {
+        justify-content: center;
+      }
+      .number-rules {
+        height: 65px;
+        min-width: 65px;
+        margin:10px 10px 10px 0;
+      }
+      .block-text-rules {
+        text-align: left;
+      }
+      .rules {
+        width:100%;
+        flex-direction: row;
+      }
+      .rules-fidelity {
+        flex-direction: column;
+        padding: 10px;
+      }
+      a.button-user {
+        padding: 5px;
+        min-width: 110px;
+      }
+
+      .text-side-fidelity {
+        font-size: 1rem;
+      }
+
+    }
+
+
+
+    /* testo inutile
+     @media (min-width:1921px) {
+      h3.title-rules {
+        font-size:1.7rem;
+      }
+      p.text-rules {
+        font-size:1.2rem;
+      }
+      h2.title-registration {
+        font-size: 2.6rem;
+      }
+      p.text-registration {
+        max-width: unset;
+        font-size: 1.6rem;
+      }
+      .registration-box {
+        max-width: unset;
+        font-weight: 400;
+      }
+      p.text-istructions {
+        font-size: 1.4rem;
+      }
+      .istructions-fidelity {
+        padding: 50px 20px 50px;
+      }
+      h2.title-istruction-top {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width:1500px) {
+      .text-box-fidelity {
+        padding:5%;
+      }
+    }
+    @media (max-width:1300px) {
+      .block-side-banner img {
+        max-width:70%;
+      }
+      p.text-banner-fidelity {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 1150px) {
+      p.text-banner-fidelity {
+          font-size: 2rem;
+      }
+      .block-side-banner img {
+          max-width: 60%;
+      }
+      p.text-side-fidelity {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .istructions-fidelity {
+        background-color: #006C6E;
+        padding: 50px 20px;
+      }
+    }
+    @media (max-width:1024px) {
+      .block-side-banner {
+      max-width: 45%;
+      margin-left:0;
+      padding:30px;
+      }
+      .block-side-banner img {
+      max-width: 60%;
+      }
+    }
+    @media (max-width: 900px) {
+      .block-side-banner {
+        max-width: 55%;
+        padding: 15px;
+      }
+      .block-side-banner img {
+        max-width: 50%;
+      }
+      p.text-banner-fidelity {
+        font-size: 1.8rem;
+      }
+    }*/
+</style>

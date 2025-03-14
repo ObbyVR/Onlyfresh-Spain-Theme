@@ -1,0 +1,259 @@
+.faqs-page {
+    #MainContent {
+        padding: 0;
+        margin: 0;
+    }
+}
+.section-fresh-faqs {
+    .fresh-faqs {
+        display: block;
+        .fresh-faqs__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+
+            @media (min-width: 960px) {
+                flex-direction: row;
+                padding-left: 32px;
+            }
+
+            @media (min-width: 1280px) {
+                padding-left: 76px;
+            }
+
+            .fresh-faqs__main {
+                width: 100%;
+
+                @media (min-width: 960px) {
+                    width: calc(62.22vw - 76px);
+                }
+
+                .fresh-faqs__heading {
+                    padding: 0 8px 0 24px;
+
+                    @media (min-width: 960px) {
+                        padding: 0;
+                    }
+
+                    h2 {
+                        font-family: 'Baskerville';
+                        font-weight: 400;
+                        font-size: 32px;
+                        line-height: 44px;
+                        letter-spacing: -1.4px;
+
+                        @media (min-width: 768px) {
+                            font-size: 36px;
+                            margin-top: 1px;
+                        }
+                    }
+                }
+
+                .fresh-faqs__links {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 16px;
+                    margin-top: 24px;
+                    overflow-x: auto;
+                    padding-left: 24px;
+                    padding-right: 24px;
+
+                    @media (min-width: 768px) {
+                        margin-top: 32px;
+                    }
+
+                    @media (min-width: 960px) {
+                        max-width: 506px;
+                        overflow-x: unset;
+                        flex-wrap: wrap;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 0;
+                        display: none;
+                    }
+
+                    .fresh-faqs__links-btn {
+                        height: 46px;
+                        width: fit-content;
+                        white-space: nowrap;
+                        outline: 1px solid #111010;
+                        outline-offset: -1px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                        font-family: Poppins;
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: #111010;
+                        padding: 0 16px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                        -webkit-transition: all 0.3s ease-in-out;
+                        -moz-transition: all 0.3s ease-in-out;
+                        -ms-transition: all 0.3s ease-in-out;
+                        -o-transition: all 0.3s ease-in-out;
+
+                        @media(min-width: 768px) {
+                            &:hover {
+                                background-color: #111010;
+                                color: #FFFFFF;
+                            }
+                        }
+
+                        &.c-active {
+                            background-color: #111010;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+
+                .fresh-faqs__content {
+                    margin: 16px 0 56px 0;
+                    padding: 0 25.5px;
+
+                    @media (min-width: 768px) {
+                        margin: 16px 0 90px 0;
+                    }
+
+                    @media (min-width: 960px) {
+                        max-width: 667px;
+                        padding: 0;
+                    }
+
+                    .fresh-faqs__links-content {
+                        display: none;
+                        flex-direction: column;
+
+                        &.c-active {
+                            display: flex;
+                        }
+
+                        .fresh-faqs-item {
+                            .fresh-faqs__item {
+                                margin-top: 24px;
+                                display: block;
+
+                                @media (min-width: 768px) {
+                                    margin-top: 32px;
+                                }
+
+                                .accordion {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding-bottom: 15px;
+                                    border-bottom: 1px solid #BDBDBD;
+                                    cursor: pointer;
+
+                                    & * {
+                                        font-family: 'Baskerville';
+                                        font-weight: 600;
+                                        font-size: 18px;
+                                        line-height: 24px;
+                                        color: #111010;
+                                        letter-spacing: 1.1px;
+                                        padding-right: 8px;
+                                        width: 100%;
+
+                                        @media (min-width: 960px) {
+                                            padding-right: 0;
+                                            width: unset;
+                                        }
+                                    }
+
+                                    &.is-active {
+                                        .icon-minus {
+                                            display: block;
+                                        }
+                                        .icon-plus {
+                                            display: none;
+                                        }
+                                    }
+
+                                    .icon-minus {
+                                        display: none;
+                                        width: 24px;
+                                        height: 24px;
+                                        padding: 0;
+                                    }
+                                    .icon-plus {
+                                        display: block;
+                                        width: 24px;
+                                        height: 24px;
+                                        padding: 0;
+                                    }
+                                }
+                                .panel {
+                                    display: none;
+                                    margin-top: 16px;
+                                    font-family: Poppins;
+                                    font-weight: 300;
+                                    font-size: 14px;
+                                    line-height: 22px;
+                                    color: #111010;
+                                    letter-spacing: -0.05px;
+
+                                    &.is-active {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fresh-faqs__media {
+                overflow: hidden;
+                width: 100%;
+
+                @media (min-width: 960px) {
+                    width: 37.78vw;
+                    border-radius: 16px 0px 0px 16px;
+                    -webkit-border-radius: 16px 0px 0px 16px;
+                    -moz-border-radius: 16px 0px 0px 16px;
+                    -ms-border-radius: 16px 0px 0px 16px;
+                    -o-border-radius: 16px 0px 0px 16px;
+                }
+            
+                .content-desktop {
+                    display: none;
+
+                    @media (min-width: 960px) {
+                        display: block;
+                    }
+                }
+                .content-mobile {
+                    display: block;
+
+                    @media (min-width: 960px) {
+                        display: none;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 375 / 458;
+
+                    @media (min-width: 960px) {
+                        aspect-ratio: 544 / 898;
+                    }
+                }
+            }
+        }
+    }
+}

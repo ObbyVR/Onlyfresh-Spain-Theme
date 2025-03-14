@@ -1,0 +1,131 @@
+
+<div class="form-contact">
+    {% form 'contact' %}
+    {%- assign attr_name = 'contact.form.name' | t | handle -%}
+    {%- assign attr_phone = 'contact.form.phone' | t | handle -%}
+
+
+      <div class="form__head">
+        <h1 class="h1 align-c form__title">
+            {{ page.title }}
+        </h1><!-- /.form__title -->
+<div style="font-size:18px;">Bienvenido a Onlyfresh.<br>
+Por favor rellena tus datos, y en cuanto sean verificados te enviaremos un correo con las instrucciones para poder empezar a disfrutar de tu <b>20%</b> de descuento en el e-commerce.<br><br> 
+¡Y no te olvides de seguirnos en redes sociales!<br><b>#theonlyfreshcompany</b></div>
+        <div class="form__description">
+            {{- page.content -}}
+        </div><!-- /.form__description -->
+      </div><!-- /.form__head -->
+
+        {%- if form.errors -%}
+          <div class="form__message form__message--error">
+              {{- form.errors | default_errors -}}
+          </div><!-- /.form__message form__message-/-error -->
+        {%- endif -%}
+
+        {%- if form.posted_successfully? -%}
+          <div class="form__message form__message--success">
+              {{- 'contact.form.post_success' | t -}}
+          </div><!-- /.form-alert -->
+        {%- endif -%}
+
+      <div class="form__body">
+        <div class="form-row">
+          <label for="field-contact-name" class="form__label">Nombre y apellido</label>
+
+          <input type="text" id="field-contact-name" class="field" name="contact[{{ attr_name }}]" autocapitalize="words" value="{{ customer.name | default: form[attr_name] }}">
+        </div><!-- /.form-row -->
+
+        <div class="form-row">
+          <label for="field-contact-email" class="form__label">e-mail</label>
+
+          <input type="email" id="field-contact-email" class="field" name="contact[email]" autocorrect="off" autocapitalize="off" value="{{ customer.email | default: form.email }}" required>
+        </div><!-- /.form-row -->
+
+        <div class="form-row">
+          <label for="field-contact-phone" class="form__label">Telefóno</label>
+
+          <input type="tel" id="field-contact-phone" class="field" name="contact[{{ attr_phone }}]" pattern="[0-9\-]*" value="{{ customer.phone | default: form[attr_phone] }}">
+        </div><!-- /.form-row -->
+        <div class="form-row">
+
+         <label for="field-contact-departamento" class="form__label">Departamento</label>
+
+          <input type="text" id="field-contact-departamento" class="field" name="contact[departamento]" autocapitalize="words" required>
+        </div><!-- /.form-row -->
+        
+        <div class="form-row">
+         <label for="field-contact-gerente" class="form__label">Jefe de departamento</label>
+          <input type="text" id="field-contact-gerente" class="field" name="contact[gerente]" autocapitalize="words" required>
+        </div><!-- /.form-row -->
+        <div class="form-row">
+         <label for="field-contact-gerente" class="form__label">DNI</label>
+          <input type="text" id="field-contact-gerente" class="field" name="contact[dni]" autocapitalize="words" required>
+        </div><!-- /.form-row -->
+
+        <div class="form-row">
+          <label for="field-contact-message" class="form__label">Comentarios</label>
+
+          <textarea rows="10" id="field-contact-message" class="field" name="contact[body]" required>{{ form.body }}</textarea>
+        </div><!-- /.form-row -->
+      </div><!-- /.form__body -->
+  
+  <div class="privacy">
+<input type="hidden" name="customer[accepts_privacy]" value="" />
+    <input type="checkbox" name="customer[accepts_privacy]" required /><a href="/pages/politica-de-privacidad"> He leído y acepto la política de privacidad</a>.
+</div>
+
+      <div class="form__actions clear">
+        <button type="submit" class="form__btn btn btn--form">
+            Enviar
+        </button>
+      </div><!-- /.form-actions -->
+    {% endform %}
+</div><!-- /.form -->
+
+<style>
+
+.template--registro_empleados
+.form__actions .btn {
+    padding: 14px 15px;
+    border: 1px solid #5E9484;
+    box-shadow: 0 0 5px #0003;
+    margin-top: 30px;
+    background: #5E9484;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 6rem;
+}
+
+.template--registro_empleados
+.article__body h1, .wysiwyg h1, .h1 {
+    font-size: 30px;
+    line-height: 62px;
+    font-weight: bold;
+}
+label.form__label {
+    font-size: 1rem;
+}
+
+  .form-contact {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 7rem;
+    padding: 2rem;
+}
+  .form-row {
+    padding: 1rem 0rem;
+}
+  .form__head {
+    margin-bottom: 3rem;
+}
+  .template--registro_empleados .article__body h1, .wysiwyg h1, .h1 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+  .privacy {
+    margin: 1rem 0rem;
+}
+  </style>

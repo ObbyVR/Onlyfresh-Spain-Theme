@@ -1,0 +1,238 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "fresh_image_text_adjK4R": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_3CJe3q": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/banner-collab-1.jpg",
+            "image_mb": "shopify://shop_images/banner-collab-1.jpg"
+          }
+        },
+        "title_m8Qydx": {
+          "type": "title",
+          "settings": {
+            "heading": "¿Quieres formar parte del equipo de colaboradores Onlyfresh?",
+            "font_weight_title": "600",
+            "font_size_title": 32,
+            "font_size_title_mb": 18
+          }
+        },
+        "content_QDHndN": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Te lo ponemos muy fácil. Buscamos colaboradores que quieran representar a nuestras marcas de alimentos Súper Premium y brindar a sus mascotas una nutrición natural y saludable. Si te identificas con nuestro concepto, valores y a tu mascota le encantan nuestras recetas, sigue las instrucciones y consigue ser parte de nuestro equipo.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "subtitle_gn6KWE": {
+          "type": "subtitle",
+          "settings": {
+            "caption": "Si te identificas con nuestro concepto, valores y a tu mascota le encantan nuestras recetas, sigue las instrucciones y consigue ser parte de nuestro equipo.",
+            "font_weight_subtitle": "400",
+            "font_size_subtitle": 14,
+            "font_size_subtitle_mb": 14
+          }
+        },
+        "button_jHpmne": {
+          "type": "button",
+          "settings": {
+            "button_label": "Unéte al equipo",
+            "button_link": "https://join.collabs.shopify.com/community/apply/ttMKHoUh4S0",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "https://join.collabs.shopify.com/community/apply/ttMKHoUh4S0",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "media_3CJe3q",
+        "title_m8Qydx",
+        "content_QDHndN",
+        "subtitle_gn6KWE",
+        "button_jHpmne"
+      ],
+      "custom_css": [
+        ".rich-text__buttons {text-align: left;}"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "bottom",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 0,
+        "padding_right": 40,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_WBmaXn": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_MnCL99": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/banner-collab.jpg",
+            "image_mb": "shopify://shop_images/banner-collab.jpg"
+          }
+        },
+        "title_9exRML": {
+          "type": "title",
+          "settings": {
+            "heading": "¿Qué necesitas para formar parte de nuestro equipo?",
+            "font_weight_title": "600",
+            "font_size_title": 32,
+            "font_size_title_mb": 18
+          }
+        },
+        "content_K4pAaj": {
+          "type": "content",
+          "settings": {
+            "text": "<ul><li>Ser fiel seguidor de nuestra marca ¡Seguirnos en Instagram es un requisito indispensable!<br/></li><li>Entra en el enlace ubicado al final y completa el formulario<br/></li><li>Los seguidores son un número más, no importa cuántos seguidores tengas, nos importa la calidad.<br/></li><li>Valoraremos tu perfil y nos pondremos en contacto contigo para darte la bienvenida.</li></ul>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_hVCFPE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Unéte al equipo",
+            "button_link": "https://join.collabs.shopify.com/community/apply/ttMKHoUh4S0",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "media_MnCL99",
+        "title_9exRML",
+        "content_K4pAaj",
+        "button_hVCFPE"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "bottom",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#fce6e6",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 0,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_WJNqGy": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_iWzDVg": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/banner-collab-2.jpg",
+            "image_mb": "shopify://shop_images/banner-collab-2.jpg"
+          }
+        },
+        "title_hgARjr": {
+          "type": "title",
+          "settings": {
+            "heading": "¿Qué beneficios obtendrás si eres colaborador de Onlyfresh?",
+            "font_weight_title": "600",
+            "font_size_title": 32,
+            "font_size_title_mb": 18
+          }
+        },
+        "content_EjPfBJ": {
+          "type": "content",
+          "settings": {
+            "text": "<ul><li>Packs de productos gratis durante el tiempo que se acuerde la colaboración.</li><li>Ofertas y promociones exclusivas para ti.</li></ul>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_dxeQ3P": {
+          "type": "button",
+          "settings": {
+            "button_label": "Unéte al equipo",
+            "button_link": "https://join.collabs.shopify.com/community/apply/ttMKHoUh4S0",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "media_iWzDVg",
+        "title_hgARjr",
+        "content_EjPfBJ",
+        "button_dxeQ3P"
+      ],
+      "custom_css": [
+        ".rich-text__buttons {text-align: left;}"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "bottom",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52,
+        "padding_left": 0,
+        "padding_right": 40,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fresh_image_text_adjK4R",
+    "fresh_image_text_WBmaXn",
+    "fresh_image_text_WJNqGy"
+  ]
+}

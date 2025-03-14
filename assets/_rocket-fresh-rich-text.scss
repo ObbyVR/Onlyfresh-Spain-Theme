@@ -1,0 +1,106 @@
+.fresh-rich-text-container {
+    .fresh-rich-text__wrapper {
+        padding: 0 24px;
+        @media (min-width: 768px) {
+            padding: 0 78px;
+        }
+        .rich-text__blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            @media (min-width: 768px) {
+                gap: 32px;
+            }
+        }
+
+        &.left {
+            .rich-text__blocks {
+                margin-left: 0;
+                .fresh-rich-text__caption {
+                    padding-right: 9px;
+                    @media(min-width: 768px) {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        &.center {
+            .rich-text__blocks {
+                margin: 0 auto;
+                .fresh-rich-text__caption {
+                    max-width: 97%;
+                    margin: 0 auto;
+                    @media(min-width: 768px) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.right {
+            @media (min-width: 768px) {
+                padding-right: 78px;
+            }
+
+            .rich-text__blocks {
+                margin-right: 0;
+                margin-left: auto;
+                .fresh-rich-text__caption {
+                    padding-right: 9px;
+                    @media(min-width: 768px) {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rich-text__blocks {
+    .fresh-rich-text__caption {
+        line-height: 28px;
+        margin: 0;
+    }
+
+    .fresh-rich-text__heading {
+        line-height: 36px;
+        margin: 0;
+        letter-spacing: 0;
+        @media(min-width: 768px) {
+            line-height: 46px;
+        }
+    }
+
+    .fresh-rich-text__content {
+        margin: 0;
+        p {
+            line-height: 22px;
+            @media(min-width: 768px) {
+                line-height: 30px;
+            }
+        }
+    }
+
+    .fresh-hero-banner__button-wrapper {
+        margin: 0;
+        margin-top: 16px;
+        gap: 16px;
+        max-width: 100%;
+        @media (min-width: 768px) {
+            margin: 0;
+        }
+        .fresh-button_rich-text {
+            line-height: 22px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0 15px;
+            text-underline-offset: 3px;
+            &.no-have__link {
+                text-decoration: none;
+                cursor: auto;
+            }
+        }
+    }
+}

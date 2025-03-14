@@ -1,0 +1,176 @@
+{% assign mod_data = mod_data | default: false %}
+
+{% if mod_data %}
+    {%- assign _section = mod_data -%}
+    {%- assign section_inverse = _section.inverse -%}
+    {%- assign section_background_color = _section.background_color -%}
+    {%- assign section_color_title = _section.color_title -%}
+    {%- assign section_color_text = _section.color_text -%}
+    {%- assign section_color_text_1 = _section.color_text_1 -%}
+    {%- assign section_color_text_2 = _section.color_text_2 -%}
+    {%- assign section_color_text_3 = _section.color_text_3 -%}
+    {%- assign section_color_text_4 = _section.color_text_4 -%}
+    {%- assign section_color_text_5 = _section.color_text_5 -%}
+    {%- assign section_font_size_title = _section.font_size_title -%}
+    {%- assign section_font_weight_title = _section.font_weight_title -%}
+    {%- assign section_font_size_text = _section.font_size_text -%}
+    {%- assign section_font_size_text_1 = _section.font_size_text_1 -%}
+    {%- assign section_font_size_text_2 = _section.font_size_text_2 -%}
+    {%- assign section_font_size_text_3 = _section.font_size_text_3-%}
+    {%- assign section_font_size_text_4 = _section.font_size_text_4 -%}
+    {%- assign section_font_size_text_5 = _section.font_size_text_5 -%}
+    {%- assign section_font_weight_text = _section.font_weight_text -%}
+    {%- assign section_font_weight_text_1 = _section.font_weight_text_1 -%}
+    {%- assign section_font_weight_text_2 = _section.font_weight_text_2 -%}
+    {%- assign section_font_weight_text_3 = _section.font_weight_text_3 -%}
+    {%- assign section_font_weight_text_4 = _section.font_weight_text_4 -%}
+    {%- assign section_font_weight_text_5 = _section.font_weight_text_5 -%}
+    {%- assign section_font_size_btn = _section.font_size_btn -%}
+    {%- assign section_font_weight_btn = _section.font_weight_btn -%}
+    {%- assign section_color_btn = _section.color_btn -%}
+    {%- assign section_font_size_btn_2 = _section.font_size_btn_2 -%}
+    {%- assign section_font_size_btn_3 = _section.font_size_btn_3 -%}
+    {%- assign section_font_weight_btn_2 = _section.font_weight_btn_2 -%}
+    {%- assign section_font_weight_btn_3 = _section.font_weight_btn_3 -%}
+    {%- assign section_color_btn_2 = _section.color_btn_2 -%}
+    {%- assign section_color_btn_3 = _section.color_btn_3 -%}
+    {%- assign section_color_btn_background_2 = _section.color_btn_background_2 -%}
+    {%- assign section_color_btn_background_3 = _section.color_btn_background_3 -%}
+    {%- assign section_button_width_1 = _section.button_width_1 -%}
+    {%- assign section_button_width_2 = _section.button_width_2 -%}
+    {%- assign section_image = _section.image -%}
+    {%- assign section_title = _section.title -%}
+    {%- assign section_btn_text_1 = _section.btn_text_1 -%}
+    {%- assign section_btn_url_1 = _section.btn_url_1 -%}
+    {%- assign section_btn_text_2 = _section.btn_text_2 -%}
+    {%- assign section_btn_url_2 = _section.btn_url_2 -%}
+    {%- assign section_btn_text_3 = _section.btn_text_3 -%}
+    {%- assign section_btn_url_3 = _section.btn_url_3 -%}
+    {%- assign section_text = _section.text -%}
+    {%- assign section_text_1 = _section.text_1 -%}
+    {%- assign section_text_2 = _section.text_2 -%}
+    {%- assign section_text_3 = _section.text_3 -%}
+    {%- assign section_text_4 = _section.text_4 -%}
+    {%- assign section_text_5 = _section.text_5 -%}
+
+    {%- assign section_title_class = _section.title_class -%}
+    {%- assign section_text_class = _section.text_class -%}
+	{%- assign section_text_class_1 = _section.text_class_1 -%}
+
+    {%- assign section_title-padding-top = _section.title-padding-top -%}
+    {%- assign section_title-padding-left = _section.title-padding-left -%}
+    {%- assign section_title-padding-bottom = _section.title-padding-bottom -%}
+    {%- assign section_title-padding-right = _section.title-padding-right -%}
+    {%- assign section_text-padding-top = _section.text-padding-top -%}
+    {%- assign section_text-padding-left = _section.text-padding-left -%}
+    {%- assign section_text-padding-bottom = _section.text-padding-bottom -%}
+    {%- assign section_text-padding-right = _section.text-padding-right -%}
+    {%- assign section_text-1-padding-top = _section.text-1-padding-top -%}
+    {%- assign section_text-1-padding-left = _section.text-1-padding-left -%}
+    {%- assign section_text-1-padding-bottom = _section.text-1-padding-bottom -%}
+    {%- assign section_text-1-padding-right = _section.text-1-padding-right -%}
+    {%- assign section_text-2-padding-top = _section.text-2-padding-top -%}
+    {%- assign section_text-2-padding-left = _section.text-2-padding-left -%}
+    {%- assign section_text-2-padding-bottom = _section.text-2-padding-bottom -%}
+    {%- assign section_text-2-padding-right = _section.text-2-padding-right -%}
+    {%- assign section_text-3-padding-top = _section.text-3-padding-top -%}
+    {%- assign section_text-3-padding-left = _section.text-3-padding-left -%}
+    {%- assign section_text-3-padding-bottom = _section.text-3-padding-bottom -%}
+    {%- assign section_text-3-padding-right = _section.text-3-padding-right -%}
+    {%- assign section_text-4-padding-top = _section.text-4-padding-top -%}
+    {%- assign section_text-4-padding-left = _section.text-4-padding-left -%}
+    {%- assign section_text-4-padding-bottom = _section.text-4-padding-bottom -%}
+    {%- assign section_text-4-padding-right = _section.text-4-padding-right -%}
+    {%- assign section_text-5-padding-top = _section.text-5-padding-top -%}
+    {%- assign section_text-5-padding-left = _section.text-5-padding-left -%}
+    {%- assign section_text-5-padding-bottom = _section.text-5-padding-bottom -%}
+    {%- assign section_text-5-padding-right = _section.text-5-padding-right -%}
+
+
+    <div class="image-text">
+        <div class="image-text__inner {% if section_inverse %}inverse{% endif %}">
+            {% if section_image != blank %}
+                <div class="image-text__image">
+                    <figure>
+                        <img class="lazyload" data-src="{{- section_image | img_url: '1024x' -}}" alt="{{- section_image.alt -}}" data-srcset="{% render 'srcset', desktop: section_image %}">
+                    </figure>
+                </div><!-- /.image-text__image -->
+            {% endif %}
+
+            {% if section_title != blank or section_text != blank %}
+                <div class="image-text__content-wrapper" style="background-color: {{ section_background_color }};">
+                    <div class="image-text__content">
+                        {% if section_title != blank %}
+                            <h2 class="image-text__title {{ section_title_class }}" style="color:{{ section_color_title }}; font-size: {{ section_font_size_title }}vw; font-weight: {{ section_font_weight_title }}; padding-top: {{ section_title-padding-top }}px; padding-left: {{ section_title-padding-left }}px; padding-bottom: {{ section_title-padding-bottom }}px; padding-right: {{ section_title-padding-right }}px;   ">
+                                {{- section_title | newline_to_br -}}
+                            </h2><!-- /.image-text__title -->
+                        {% endif %}
+
+                        {% if section_text != blank %}
+                            <p class="image-text__entry {{ section_text_class }}" style="color: {{ section_color_text }}; font-size: {{ section_font_size_text }}vw; font-weight: {{ section_font_weight_text }}; padding-top: {{ section_text-padding-top }}px; padding-left: {{ section_text-padding-left }}px; padding-bottom: {{ section_text-padding-bottom }}px; padding-right: {{ section_text-padding-right }}px;  ">
+                                {{- section_text | newline_to_br -}}
+                            </p><!-- /.image-text__entry -->
+                        {% endif %}
+
+                        {% if section_text_1 != blank %}
+                            <p class="image-text__entry {{ section_text_class_1 }}" style="color: {{ section_color_text_1 }}; font-size: {{ section_font_size_text_1 }}px; font-weight: {{ section_font_weight_text_1 }}; padding-top: {{ section_text-1-padding-top }}px; padding-left: {{ section_text-1-padding-left }}px; padding-bottom: {{ section_text-1-padding-bottom }}px; padding-right: {{ section_text-1-padding-right }}px;  ">
+                                {{- section_text_1 | newline_to_br -}}
+                            </p><!-- /.image-text__entry -->
+                        {% endif %}
+
+                        {% if section_text_2 != blank %}
+                            <p class="image-text__entry" style="color: {{ section_color_text_2 }}; font-size: {{ section_font_size_text_2 }}px; font-weight: {{ section_font_weight_text_2 }}; padding-top: {{ section_text-2-padding-top }}px; padding-left: {{ section_text-2-padding-left }}px; padding-bottom: {{ section_text-2-padding-bottom }}px; padding-right: {{ section_text-2-padding-right }}px;  ">
+                                {{- section_text_2 | newline_to_br -}}
+                            </p><!-- /.image-text__entry -->
+                        {% endif %}
+
+                        {% if section_text_3 != blank %}
+                            <p class="image-text__entry" style="color: {{ section_color_text_3 }}; font-size: {{ section_font_size_text_3 }}px; font-weight: {{ section_font_weight_text_3 }}; padding-top: {{ section_text-3-padding-top }}px; padding-left: {{ section_text-3-padding-left }}px; padding-bottom: {{ section_text-3-padding-bottom }}px; padding-right: {{ section_text-3-padding-right }}px;  ">
+                                {{- section_text_3 | newline_to_br -}}
+                            </p><!-- /.image-text__entry -->
+                        {% endif %}
+
+                        {% if section_text_4 != blank %}
+                            <p class="image-text__entry" style="color: {{ section_color_text_4 }}; font-size: {{ section_font_size_text_4 }}px; font-weight: {{ section_font_weight_text_4 }}; padding-top: {{ section_text-4-padding-top }}px; padding-left: {{ section_text-4-padding-left }}px; padding-bottom: {{ section_text-4-padding-bottom }}px; padding-right: {{ section_text-4-padding-right }}px;  ">
+                                {{- section_text_4 | newline_to_br -}}
+                            </p><!-- /.image-text__entry -->
+                        {% endif %}
+
+                        {% if section_text_5 != blank %}
+                            <p class="image-text__entry" style="color: {{ section_color_text_5 }}; font-size: {{ section_font_size_text_5 }}px; font-weight: {{ section_font_weight_text_5 }}; padding-top: {{ section_text-5-padding-top }}px; padding-left: {{ section_text-5-padding-left }}px; padding-bottom: {{ section_text-5-padding-bottom }}px; padding-right: {{ section_text-5-padding-right }}px;  ">
+                                {{- section_text_5 | newline_to_br -}}
+                            </p><!-- /.image-text__entry -->
+                        {% endif %}
+
+                    </div><!-- /.image-text__content -->
+                  {% if section_btn_text_1 != blank and section_btn_url_1 != blank %}
+                    <div class="button-box-promozioni" stye="width: {{ section_button_width_1 }}%; ">
+                        {% if section_btn_text_1 != blank and section_btn_url_1 != blank %}
+                            <a href="{{- section_btn_url_1 -}}" class="hero__btn" style="color: {{ section_color_btn }}; background-color: {{ section_color_btn_background_2 }}; font-size: {{ section_font_size_btn }}px; font-weight: {{ section_font_weight_btn }} ">
+                                {{- section_btn_text_1 -}}
+                            </a><!-- /.hero__btn -->
+                        {% endif %}
+
+                        {% if section_btn_text_2 != blank and section_btn_url_2 != blank %}
+                            <a href="{{- section_btn_url_2 -}}" class="hero__btn titoli-inline" style="color: {{ section_color_btn_2 }};background-color: {{ section_color_btn_background_2 }}; font-size: {{ section_font_size_btn_2 }}px; font-weight: {{ section_font_weight_btn_2 }} ">
+                                {{- section_btn_text_2 -}}
+                            </a><!-- /.hero__btn -->
+                        {% endif %}
+
+                        {% if section_btn_text_3 != blank and section_btn_url_3 != blank %}
+                            <a href="{{- section_btn_url_3 -}}" class="hero__btn titoli-inline" style="color: {{ section_color_btn_3 }};background-color: {{ section_color_btn_background_3 }}; font-size: {{ section_font_size_btn_3 }}px">
+                                {{- section_btn_text_3 -}}
+                            </a><!-- /.hero__btn -->
+                        {% endif %}
+                    </div>
+{% endif %}
+                </div><!-- /.image-text__content -->
+            {% endif %}
+
+
+
+        </div><!-- /.image-text__inner -->
+
+
+    </div><!-- /.image-text -->
+{% endif %}

@@ -1,0 +1,132 @@
+.local_pickup {
+	.pickup-availability-preview {
+		padding: 0;
+	}
+	pickup-availability[available] {
+		min-height: auto;
+	}
+	.pickup-availability-info {
+		margin-top: 17px;
+		@media screen and (min-width: 768px) {
+			margin-top: 9px;
+		}
+		.pickup-availability-button {
+			border: 0;
+			outline: none;
+			box-shadow: none;
+			font-weight: 500;
+			font-family: var(--font-body);
+			font-size: 14px;
+			line-height: 22px;
+			letter-spacing: 0;
+			color: #111010;
+			text-underline-offset: 1px;
+			text-decoration-thickness: 1px;
+			min-height: auto;
+			height: auto;
+			padding: 0;
+			display: flex;
+			margin: 0;
+			svg {
+				width: 16px;
+				height: 16px;
+				margin-right: 4px;
+			}
+			> * {
+				pointer-events: none;
+				margin-bottom: 0;
+			}
+			@media screen and (min-width: 768px) {
+				font-size: 12px;
+				> * {
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+}
+body {
+	pickup-availability-drawer.gradient {
+		background: #fff;
+		z-index: 9;
+		border-color: #ccc;
+		max-width: 490px;
+		padding: 0;
+		overflow: unset;
+		border: 0 !important;
+		// opacity: 1;
+        // transform: translate(0);
+        // animation: animateDrawerOpen var(--duration-default) ease;
+	}
+	pickup-availability-drawer {
+		&:before {
+			content: "";
+			position: fixed;
+			right: 0;
+			background-color: rgba(255,255,255,0.5);
+			width: 100vw;
+			height: 100vh;
+			top: 0;
+			pointer-events: none;
+			backdrop-filter: blur(1px);
+		}
+		.pickup-availability-inner {
+			position: relative;
+			z-index: 1;
+			height: 100%;
+			overflow: auto;
+			padding: 2rem;
+			border: 1px solid #ccc;
+		}
+		.pickup-availability-header {
+			margin-bottom: 5px;
+		}
+		.pickup-availability-drawer-title {
+			margin: 0;
+			color: #111010;
+		}
+		.pickup-availability-drawer-button {
+			position: absolute;
+			right: 20px;
+			top: 10px;
+			width: 48px;
+			height: 48px;
+			padding: 0;
+			border: 0;
+		}
+		.pickup-availability-variant {
+			font-family: var(--font-body);
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 22px;
+			color: #111010;
+			letter-spacing: 0;
+		}
+		.pickup-availability-list__item {
+			border-top: 1px solid #ccc !important;
+			padding: 15px 0;
+			.label {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-weight: 500;
+			}
+			.tick_available {
+				width: 10px;
+				height: 10px;
+				background: #51b41f;
+				border-radius: 50%;
+			}
+			.time {
+				padding-left: 20px;
+				margin-top: 0;
+				color: #b1b1b1;
+			}
+		}
+		.pickup-availability-address {
+			font-size: 14px;
+			padding-left: 20px;
+			margin-top: 10px;
+		}
+	}
+}

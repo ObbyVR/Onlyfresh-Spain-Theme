@@ -1,0 +1,1857 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hero_banner_we3JMC": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_6GgWBM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner-perro-y-gato-Amazing.jpg",
+            "image_mb": "shopify://shop_images/harper.jpg",
+            "desktop_content_position": "center",
+            "mobile_content_position": "center-mb",
+            "desktop_content_position_y": "middle",
+            "desktop_content_position_y_mb": "middle-mb",
+            "content_alignment": "center",
+            "content_alignment_mb": "center-mb",
+            "color_overlay": "#ffffff",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "A world of amazing pet food",
+            "color_text_title": "#111111",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 60,
+            "font_size_title_mb": 36,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 11,
+            "description_margin_bottom": 32,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "Para perros",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "Para gatos",
+            "button_style_2": "btn btn-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "image_6GgWBM"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "enable_pagination": true,
+        "color_pagination_desktop": "#ffffff",
+        "color_pagination_mobile": "#ffffff",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 71,
+        "content_padding_bottom": 69,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 25,
+        "content_padding_left": 78,
+        "content_padding_right": 78,
+        "content_padding_left_mb": 24,
+        "content_padding_right_mb": 24
+      }
+    },
+    "collection_list_Bzf3aJ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_xBqrAB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "amanova-para-perros",
+            "title": "Para perros",
+            "image": "shopify://shop_images/cat_dog.png",
+            "background_color": "linear-gradient(136deg, rgba(232, 157, 90, 1) 11%, rgba(247, 131, 28, 1) 84%)",
+            "content": "<p>Elaborada con ingredientes frescos y naturales.</p>",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_hbMNrN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "amanova-para-gatos",
+            "title": "Para gatos",
+            "image": "shopify://shop_images/cat_gatos.png",
+            "background_color": "linear-gradient(46deg, rgba(197, 60, 91, 1) 13%, rgba(217, 86, 116, 1) 86%)",
+            "content": "<p>Elaborada con ingredientes frescos y naturales.</p>",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_Raax3J": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Accessorios",
+            "image": "shopify://shop_images/accessorios.png",
+            "background_color": "linear-gradient(180deg, rgba(208, 153, 233, 1), rgba(220, 192, 233, 1) 100%)",
+            "content": "<p>Elaborada con ingredientes frescos y naturales.</p>",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_xBqrAB",
+        "featured_collection_hbMNrN",
+        "featured_collection_Raax3J"
+      ],
+      "settings": {
+        "title": "Para perros",
+        "font_size_title": 36,
+        "font_size_title_mb": 24,
+        "title_position": "left",
+        "padding_top": 52,
+        "padding_bottom": 55,
+        "padding_top_mb": 41,
+        "padding_bottom_mb": 63
+      }
+    },
+    "fresh_custom_banner_product_QHw6bx": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_ayAKwb": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/manzana-y-pollo.jpg",
+            "image_mb": "shopify://shop_images/portrait-of-a-young-finnish-lapphund-dog-sitting-a-2023-11-27-04-50-58-utc.jpg",
+            "content_position_x": "right",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Totalmente saludable",
+            "color_heading": "#000000",
+            "description": "<p>Una mascota sana es una mascota feliz. Nuestro equipo de nutricionistas y veterinarios crean nuestras recetas para que proporcionen una nutrición equilibrada. Seleccionamos solo los ingredientes naturales de alta calidad y que poseen beneficios para la salud. Además, incluimos superalimentos especiales, prebióticos y probióticos. Asimismo, tenemos cuidado de evitar ingredientes que pudieran causar alergias o intolerancias.</p>",
+            "color_content": "#111010",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_ayAKwb"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
+    },
+    "fresh_custom_banner_product_8FUiXn": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_c9nGUf": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/gato_cucharaa.jpg",
+            "content_position_x": "left",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Preparada en nuestra cocina",
+            "color_heading": "#000000",
+            "description": "<p>Nuestro equipo de expertos se encarga de crear cada una de nuestras recetas, controlando todo el proceso desde la investigación hasta la producción. Además tenemos insuperables sabores que aportan a nuestra comida una apetencia única e inigualable. Estamos orgullosos de contar con la tecnología de alimentación para mascotas más avanzada y sofisticada de Europa.</p>",
+            "color_content": "#000000",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_c9nGUf"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
+    },
+    "fresh_custom_banner_product_UYgwki": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_LBzz6w": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/nuves-y-cervo-volador.jpg",
+            "image_mb": "shopify://shop_images/a-street-cat-in-istanbul-turkey-2023-11-27-05-15-06-utc.jpg",
+            "content_position_x": "right",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Excepcionalmente sabrosa",
+            "color_heading": "#000000",
+            "description": "<p>Tu mejor amigo se merece una comida exquisita. Nuestras recetas son deliciosas, ya que utilizamos grandes cantidades de carnes y pescados de calidad superior, y porque los cocinamos lentamente en sus propios jugos. Eso hace que conserven mejor su sabor natural y sus nutrientes, de modo que obtenemos una comida saludable con olor y sabor irresistibles.</p>",
+            "color_content": "#000000",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_LBzz6w"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
+      }
+    },
+    "hero_banner_JFfCmw": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_RCrx7F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Acquisizione_schermata_16.12.2024_alle_17.26.59.png",
+            "image_mb": "shopify://shop_images/harper_ingredientes-mobile.jpg",
+            "desktop_content_position": "center",
+            "mobile_content_position": "center-mb",
+            "desktop_content_position_y": "bottom",
+            "desktop_content_position_y_mb": "bottom-mb",
+            "content_alignment": "center",
+            "content_alignment_mb": "center-mb",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "600",
+            "font_size_title": 35,
+            "font_size_title_mb": 21,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 16,
+            "description": "",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "300",
+            "font_size_content": 18,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 10,
+            "description_margin_bottom_mb": 50,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "link-s",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        },
+        "image_yq9qgf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner_harper.jpg",
+            "desktop_content_position": "center",
+            "mobile_content_position": "center-mb",
+            "desktop_content_position_y": "bottom",
+            "desktop_content_position_y_mb": "bottom-mb",
+            "content_alignment": "center",
+            "content_alignment_mb": "center-mb",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "Frutas y verduras frescas",
+            "color_text_title": "#111010",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 28,
+            "font_size_title_mb": 22,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 16,
+            "description": "<p>Todas nuestras recetas incluyen frutas y verduras frescas, repletas de fibra y beneficios saludables para proporcionar una nutrición equilibrada.</p>",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 28,
+            "font_size_content_mb": 22,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "link-s",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_RCrx7F",
+        "image_yq9qgf"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.vis-hero_banner--content {max-width: 50%; padding-top: 40px; padding-bottom: 52px; padding-left: 10%; padding-right: 52px; }}"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "enable_pagination": true,
+        "color_pagination_desktop": "#bdbdbd",
+        "color_pagination_mobile": "#f3f5f7",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 40,
+        "content_padding_bottom": 52,
+        "content_padding_top_mb": 50,
+        "content_padding_bottom_mb": 52,
+        "content_padding_left": 40,
+        "content_padding_right": 52,
+        "content_padding_left_mb": 40,
+        "content_padding_right_mb": 52
+      }
+    },
+    "fresh_hero_banner_DgkkC8": {
+      "type": "fresh-hero-banner",
+      "blocks": {
+        "image_RHBypM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/etichal2.jpg",
+            "image_mb": "shopify://shop_images/mb_banner-descubre_1536x_1.png",
+            "heading_size": "h2",
+            "heading": "Combinación exclusiva de carne y pescado",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 36,
+            "font_size_title_mb": 32,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "<p>En cada receta combinamos una proporción exclusiva de proteínas para extraer los mayores beneficios de cada tipo de carne o pescado, mejorando la salud y bienestar de nuestras mascotas.</p>",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "250",
+            "font_size_content": 14,
+            "font_size_content_mb": 14,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        },
+        "image_7ppHHH": {
+          "type": "image",
+          "settings": {
+            "heading_size": "h2",
+            "heading": "",
+            "color_text_title": "#111010",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 28,
+            "font_size_title_mb": 22,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 16,
+            "description": "",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "400",
+            "font_size_content": 28,
+            "font_size_content_mb": 22,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "link-s",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_RHBypM",
+        "image_7ppHHH"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".vis-hero_banner--content .heading-title__subtitle .description.right {margin-right: 0; margin-left: auto; text-align: left;}"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "enable_pagination": true,
+        "type_of_media": "type_image",
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "desktop_content_position": "right",
+        "mobile_content_position": "right-mb",
+        "desktop_content_position_y": "middle",
+        "desktop_content_position_y_mb": "top-mb",
+        "content_alignment": "right",
+        "content_alignment_mb": "left-mb",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 40,
+        "content_padding_bottom": 52,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 52,
+        "content_padding_left": 76,
+        "content_padding_right": 76,
+        "content_padding_left_mb": 32,
+        "content_padding_right_mb": 32
+      }
+    },
+    "fresh_benefit_g6DJ9a": {
+      "type": "fresh-benefit",
+      "blocks": {
+        "benefit_TTYzVh": {
+          "type": "benefit",
+          "settings": {
+            "title": "Combinación exclusiva de carne y pescado",
+            "content": "<p>En cada receta combinamos una proporción exclusiva de proteínas para extraer los mayores beneficios de cada tipo de carne o pescado, mejorando la salud y bienestar de nuestras mascotas.</p>"
+          }
+        },
+        "benefit_FA87xX": {
+          "type": "benefit",
+          "settings": {
+            "title": "Probiotic effect",
+            "content": ""
+          }
+        },
+        "benefit_wUCmq7": {
+          "type": "benefit",
+          "settings": {
+            "title": "Frutas y verduras frescas",
+            "content": "<p>Todas nuestras recetas incluyen frutas y verduras frescas, repletas de fibra y beneficios saludables para proporcionar una nutrición equilibrada.</p>"
+          }
+        },
+        "benefit_GN4g9x": {
+          "type": "benefit",
+          "settings": {
+            "title": "Super-alimentos especiales",
+            "content": "<p>Incluimos algunos de los más excepcionales ingredientes de la naturaleza, como el alga kelp, las semillas de lino, la cúrcuma o el té verde, seleccionados por sus increíbles beneficios para la salud.</p>"
+          }
+        },
+        "benefit_UQUy7p": {
+          "type": "benefit",
+          "settings": {
+            "title": "vitaminas y minerales orgánicos",
+            "content": "<p>Cada receta incluye vitaminas esenciales y minerales quelados, y al ser orgánicos, las mascotas las absorben en mayor medida favoreciendo una vida más larga, sana y feliz.</p>"
+          }
+        },
+        "benefit_XMNaU6": {
+          "type": "benefit",
+          "settings": {
+            "title": "Sin ingredientes alérgicos o de relleno",
+            "content": "<p>A diferencia de otras marcas, no utilizamos ingredientes modificados genéticamente o de relleno como el maíz, trigo o soja, los cuales no aportan unos niveles nutricionalmente saludables para las mascotas.</p>"
+          }
+        },
+        "benefit_ANC4Wx": {
+          "type": "benefit",
+          "settings": {
+            "title": "probióticos y prebióticos",
+            "content": "<p>Todas nuestras recetas contienen microorganismos beneficiosos para la flora intestinal que promueven un mayor nivel de salud interna y minimizan la obtención de posibles enfermedades.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_TTYzVh",
+        "benefit_FA87xX",
+        "benefit_wUCmq7",
+        "benefit_GN4g9x",
+        "benefit_UQUy7p",
+        "benefit_XMNaU6",
+        "benefit_ANC4Wx"
+      ],
+      "settings": {
+        "heading": "",
+        "benefici_sovrapposti": "no",
+        "image": "shopify://shop_images/banner_perro_gato.jpg",
+        "image_mb": "shopify://shop_images/mbRectangle_4274.png",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_rich_text_ExGyER": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_jwjKbt": {
+          "type": "title",
+          "settings": {
+            "heading": "Ingredientes excepionales",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_GmQC6D": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Cuando se trata de comida, lo que importa es lo que hay dentro. Tanto si es para personas o para mascotas, creemos que la alimentación debe ser deliciosa y nutritiva, y para eso se necesitan los mejores ingredientes. En nuestras recetas utilizamos carne, pescado, verduras y frutas frescas de alta calidad. Cada uno de los ingredientes está cuidadosamente seleccionado y cocinados en su punto perfecto para que conserven sus beneficios nutricionales y sus sabores naturales.<br/></p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_GaNkfz": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "rocket_button_label_1": "Text Button",
+            "rocket_button_url_1": "",
+            "rocket_button_label_2": "Text Button",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "Text Button",
+            "rocket_button_url_3": "",
+            "font_size_button": 12,
+            "font_size_button_mb": 12
+          }
+        }
+      },
+      "block_order": [
+        "title_jwjKbt",
+        "content_GmQC6D",
+        "button_GaNkfz"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "fresh_slider_information_3EtybB": {
+      "type": "fresh-slider-information",
+      "blocks": {
+        "block_mDFEAx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_ATUN.jpg",
+            "title": "Atún",
+            "description": "<p>Lleno de vitaminas, minerales y ácidos grasos omega-3 para una piel sana.</p>"
+          }
+        },
+        "block_Nt3hrY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_SALMON.jpg",
+            "title": "Salmón",
+            "description": "<p>Rico en ácidos grasos omega-3 EPA y DHA que favorecen la salud articular.</p>"
+          }
+        },
+        "block_QDiCmm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_WHITE_FISH.jpg",
+            "title": "Pescado blanco",
+            "description": "<p>Bajo en grasas, rico en calcio, potasio, fósforo y omega-3.</p>"
+          }
+        },
+        "block_Xq8thU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_PAVO.jpg",
+            "title": "Pavo",
+            "description": "<p>Carne blanca que ayuda a desarrollar la musculatura y mejorar la digestión.</p>"
+          }
+        },
+        "block_TaUtWh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_PATO.jpg",
+            "title": "Pato",
+            "description": "<p>Fuente magra de proteínas rica en hierro, vitaminas y aminoácidos y baja en grasas saturadas.</p>"
+          }
+        },
+        "block_qCrNrF": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_POLLO.jpg",
+            "title": "Pollo",
+            "description": "<p>Deliciosa fuente de proteínas y Omega-6 para que tu mascota desarrolle unos músculos grandes y fuertes.</p>"
+          }
+        },
+        "block_gHrNhz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_CORDERO.jpg",
+            "title": "Cordero",
+            "description": "<p>Bajo en grasas, rico en proteínas, calcio, potasio, fósforo y omega-3.</p>"
+          }
+        },
+        "block_zbQTLk": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_PORK.jpg",
+            "title": "Cerdo ibérico",
+            "description": "<p>Ideal para los más quisquillosos con la comida. Rico en proteínas, potasio, fósforo, zinc y hierro.</p>"
+          }
+        },
+        "block_Lyr7yp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_JABALI.jpg",
+            "title": "Jabalí",
+            "description": "<p>Deliciosamente sabroso y una buena fuente de zinc, hierro y vitaminas.</p>"
+          }
+        },
+        "block_3zf9hk": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_VENADO.jpg",
+            "title": "Ciervo",
+            "description": "<p>Repleto de Vitaminas B para inyectar energía, además de zinc y hierro, beneficiosos para los órganos y para fortalecer la inmunidad.</p>"
+          }
+        },
+        "block_xeLAjd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_CONEJO.jpg",
+            "title": "Conejo",
+            "description": "<p>Rico en proteínas, bajo en grasas y con gran cantidad de hierro y vitamina B.</p>"
+          }
+        },
+        "block_pPVmtg": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_MANZANA.jpg",
+            "title": "Manzana",
+            "description": "<p>Rica en pectina para facilitar la eliminación de toxinas.</p>"
+          }
+        },
+        "block_zd3TTf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_BROCOLI.jpg",
+            "title": "Brócoli",
+            "description": "<p>Lleno de antioxidantes y fibras para favorecer una buena digestión.</p>"
+          }
+        },
+        "block_XNAGdR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_ARANDANOS.jpg",
+            "title": "Arándanos rojos",
+            "description": "<p>Con vitamina C y antioxidantes, además de taninos que ayudan al buen estado del aparato urinario.</p>"
+          }
+        },
+        "block_6Lp6Pg": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_CALABAZA.jpg",
+            "title": "Calabaza",
+            "description": "<p>Con gran cantidad de fibras beneficiosas que ayudan a la digestión de tu mascota.</p>"
+          }
+        },
+        "block_LhDRFp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_ZANAHORIA.jpg",
+            "title": "Zanahoria",
+            "description": "<p>Contiene betacaroteno y flavonoides para preservar la buena visión.</p>"
+          }
+        },
+        "block_NQhenC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_GARBANZO.jpg",
+            "title": "Garbanzos",
+            "description": "<p>Vitaminas, minerales y mucha fibra para mejorar la digestión.</p>"
+          }
+        },
+        "block_xwahTG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_PATATA_DULCE.jpg",
+            "title": "Patata dulce",
+            "description": "<p>Sabrosa y con mucha fibra, además de vitaminas y minerales.</p>"
+          }
+        },
+        "block_DQHGPB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_GUISANTES.jpg",
+            "title": "Guisantes verdes y amarillos",
+            "description": "<p>Con proteínas de alta calidad, vitaminas, minerales y fibra.</p>"
+          }
+        },
+        "block_xa4rKb": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_REMOLACHA.jpg",
+            "title": "Remolacha",
+            "description": "<p>Con mucha fibra, para mejorar la salud intestinal y la absorción de nutrientes.</p>"
+          }
+        },
+        "block_JMCwdW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_ARROZ.jpg",
+            "title": "Arroz integral",
+            "description": "<p>Con gran cantidad de fibra, además de vitaminas, minerales y omega-3.</p>"
+          }
+        },
+        "block_kejpEE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_AVENA.jpg",
+            "image_mobile": "shopify://shop_images/INGREDIENTE_AVENA.jpg",
+            "title": "Avena integral",
+            "description": "<p>Repleta de vitaminas, minerales y proteínas, y rica en betaglucanos.</p>"
+          }
+        },
+        "block_HQHgXX": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "title": "CEBADA INTEGRAL",
+            "description": "<p>Con potentes betaglucanos, que ayudan a reducir el colesterol y los niveles de azúcar en sangre.</p>"
+          }
+        },
+        "block_6PQxCn": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_LINO.jpg",
+            "title": "Semillas de lino",
+            "description": "<p>Omega-3 para potenciar la inmunidad y mejorar el pelaje.</p>"
+          }
+        },
+        "block_bwWAiA": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_GLUCOSAMINA.jpg",
+            "title": "Glucosamina y condroitina",
+            "description": "<p>Con propiedades anti-inflamatorias beneficiosas para las articulaciones y los huesos.</p>"
+          }
+        },
+        "block_3qXThh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_CURCUMA.jpg",
+            "title": "Cúrcuma",
+            "description": "<p>Excelentes propiedades anti-inflamatorias y analgésicas.</p>"
+          }
+        },
+        "block_Jdhtpw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_ALGA_KELP.jpg",
+            "title": "Alga kelp",
+            "description": "<p>Con vitaminas y yodo beneficiosos para el metabolismo de la mascota.</p>"
+          }
+        },
+        "block_CcfmfW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_ROSA_CANINA.jpg",
+            "title": "Rosa canina",
+            "description": "<p>Mejora la inmunidad, ayuda al buen estado de las articulaciones y potencia la energía.</p>"
+          }
+        },
+        "block_6reMDY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_TE_VERDE.jpg",
+            "title": "Té verde",
+            "description": "<p>Con antioxidantes beneficiosos para el sistema cardiovascular.</p>"
+          }
+        },
+        "block_zEULck": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTE_YUCA.jpg",
+            "title": "Yuca",
+            "description": "<p>Ayuda a eliminar toxinas y mejorar la digestión.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_mDFEAx",
+        "block_Nt3hrY",
+        "block_QDiCmm",
+        "block_Xq8thU",
+        "block_TaUtWh",
+        "block_qCrNrF",
+        "block_gHrNhz",
+        "block_zbQTLk",
+        "block_Lyr7yp",
+        "block_3zf9hk",
+        "block_xeLAjd",
+        "block_pPVmtg",
+        "block_zd3TTf",
+        "block_XNAGdR",
+        "block_6Lp6Pg",
+        "block_LhDRFp",
+        "block_NQhenC",
+        "block_xwahTG",
+        "block_DQHGPB",
+        "block_xa4rKb",
+        "block_JMCwdW",
+        "block_kejpEE",
+        "block_HQHgXX",
+        "block_6PQxCn",
+        "block_bwWAiA",
+        "block_3qXThh",
+        "block_Jdhtpw",
+        "block_CcfmfW",
+        "block_6reMDY",
+        "block_zEULck"
+      ],
+      "custom_css": [],
+      "settings": {
+        "horizontal_alignment": "center",
+        "horizontal_alignment_mobile": "center",
+        "heading": "",
+        "heading_mobile": "",
+        "heading_color": "#000000",
+        "padding_top": 18,
+        "padding_bottom": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
+      }
+    },
+    "fresh_custom_banner_product_wgeVcc": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_Gj9Tt4": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/perros_gatos.jpg",
+            "image_mb": "shopify://shop_images/perros_gatos.jpg",
+            "content_position_x": "left",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Probióticos y prebióticos",
+            "color_heading": "#000000",
+            "description": "<p>Añadimos probióticos y prebióticos a nuestras recetas para favorecer las bacterias saludables que ayudan a mejorar la digestión de tu mascota.</p><p>La salud intestinal de tu mascota es fundamental para su felicidad. Una buena digestión depende de los increíbles microorganismos que crecen de forma natural en su barriguita. Por eso nuestra alimentación para perros contiene probióticos que impiden el crecimiento de bacterias perjudiciales. Además, añadimos prebióticos a todas nuestras recetas para favorecer el desarrollo de las bacterias beneficiosas. Es una manera fácil y saludable de darle a tu mascota una pequeña ayuda extra para que tenga una buena digestión.</p>",
+            "color_content": "#8d8d8d",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_Gj9Tt4"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 600px) {.fresh-hero_banner--item {display: flex; flex-direction: column-reverse; } .fresh-hero_banner--text-wrapper {padding-top: 3rem; }}"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 21
+      }
+    },
+    "fresh_key_points_xyk4aF": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_6XALVa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/casa_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Preparamos nuestra deliciosa comida en nuestras propias cocinas ubicadas en plena naturaleza.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_r7WkNL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/gato_regando_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": false,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Harper y Bone quieren que todos cuidemos nuestro medioambiente.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_BJnFkV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/perro_revista_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Por eso utilizamos envases con materiales sostenibles que minimizan el impacto en el entorno.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_FGPX8n": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/bolsa_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Envasamos nuestras croquetas en bolsas fabricadas con PLA y papel con certificación FSC.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "block_6XALVa",
+        "block_r7WkNL",
+        "block_BJnFkV",
+        "block_FGPX8n"
+      ],
+      "disabled": true,
+      "settings": {
+        "key_point_icon": false,
+        "title": "Cuidamos el planeta",
+        "title_mobile": "Cuidamos el planeta",
+        "size_heading": 36,
+        "size_heading_mb": 36,
+        "margin_heading": 40,
+        "margin_heading_mb": 40,
+        "content": "Harper y Bone cuidan de nuestro planeta, y sabemos que tú también.",
+        "content_mb": "Harper y Bone cuidan de nuestro planeta, y sabemos que tú también.",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 14,
+        "padding_top_title": 10,
+        "padding_top_title_mb": 10,
+        "padding_top": 74,
+        "padding_bottom": 74,
+        "padding_top_mb": 61,
+        "padding_bottom_mb": 61,
+        "color_content": "#ffffff",
+        "bg_color_section": "#000000"
+      }
+    },
+    "fresh_rich_text_6qC6K6": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_yzAnmV": {
+          "type": "title",
+          "settings": {
+            "heading": "Y recuerda...",
+            "font_weight_title": "400",
+            "font_size_title": 43,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_nkLNVb": {
+          "type": "content",
+          "settings": {
+            "text": "<p>nuestras recetas no contienen conservantes o saborizantes artificiales</p>",
+            "font_weight_content": "400",
+            "font_size_content": 18,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_xia4tV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "rocket_button_label_1": "Text Button",
+            "rocket_button_url_1": "",
+            "rocket_button_label_2": "Text Button",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "Text Button",
+            "rocket_button_url_3": "",
+            "font_size_button": 12,
+            "font_size_button_mb": 12
+          }
+        }
+      },
+      "block_order": [
+        "title_yzAnmV",
+        "content_nkLNVb",
+        "button_xia4tV"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#000000",
+        "color_text": "#ffffff",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50
+      }
+    },
+    "fresh_rich_text_QeXagm": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_GFEd96": {
+          "type": "title",
+          "settings": {
+            "heading": "Cuidamos el planeta",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_YQJyK6": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Harper y Bone cuidan de nuestro planeta, y sabemos que tú también.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "button_qPwUmy": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "rocket_button_label_1": "Text Button",
+            "rocket_button_url_1": "",
+            "rocket_button_label_2": "Text Button",
+            "rocket_button_url_2": "",
+            "rocket_button_label_3": "Text Button",
+            "rocket_button_url_3": "",
+            "font_size_button": 12,
+            "font_size_button_mb": 12
+          }
+        }
+      },
+      "block_order": [
+        "title_GFEd96",
+        "content_YQJyK6",
+        "button_qPwUmy"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 54,
+        "padding_bottom": 0,
+        "padding_top_mb": 36,
+        "padding_bottom_mb": 0
+      }
+    },
+    "fresh_slider_information_XAdP9z": {
+      "type": "fresh-slider-information",
+      "blocks": {
+        "block_NWR7m7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_10.jpg",
+            "title": "",
+            "description": "<p>Preparamos nuestra deliciosa comida en nuestras propias cocinas ubicadas en plena naturaleza.</p>"
+          }
+        },
+        "block_PW8jr4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_7.jpg",
+            "title": "",
+            "description": "<p>Harper y Bone quieren que todos cuidemos nuestro medioambiente.</p>"
+          }
+        },
+        "block_BPmCam": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_4_67b4e7d0-6bcc-467f-a405-b997c1873c78.jpg",
+            "title": "",
+            "description": "<p>Por eso utilizamos envases con materiales sostenibles que minimizan el impacto en el entorno.</p>"
+          }
+        },
+        "block_eUwc9F": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_11.jpg",
+            "title": "",
+            "description": "<p>Envasamos nuestras croquetas en bolsas fabricadas con PLA y papel con certificación FSC</p>"
+          }
+        },
+        "block_WKbpQA": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_5_a3301d31-42cf-403b-892b-1e138851ac41.jpg",
+            "title": "",
+            "description": "<p>El PLA es un material renovable y elaborado con...¡vegetales!</p>"
+          }
+        },
+        "block_JjCiFe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_2_715a5984-7db5-4db3-94a3-0f8a62233630.jpg",
+            "title": "",
+            "description": "<p>Contamos con la certificación Ethical Brand Award, que refuerza nuestras credenciales sostenibles y éticas</p>"
+          }
+        },
+        "block_RkweWQ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_8.jpg",
+            "title": "",
+            "description": "<p>Puedes desechar nuestros envases de croquetas al cubo de la basura orgánica o al de papel.</p>"
+          }
+        },
+        "block_fdANAA": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_3_587d3f88-f705-433f-a2d1-ba54133f81d2.jpg",
+            "title": "",
+            "description": "<p>...donde se reciclan rápidamente sin producir derivados nocivos.</p>"
+          }
+        },
+        "block_HaUXNr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_1_49815369-d84e-48c3-bb0b-9018653a4524.jpg",
+            "title": "",
+            "description": "<p>Harper y Bone miran al futuro con amor y cariño.</p>"
+          }
+        },
+        "block_h4YKEq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_9.jpg",
+            "title": "",
+            "description": "<p>Seguiremos investigando continuamente sobre materiales y procesos innovadores y respetuosos con el medioambiente.</p>"
+          }
+        },
+        "block_DMRwqX": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Livello_6.jpg",
+            "title": "",
+            "description": "<p>Estamos siempre buscando formas nuevas y sostenibles para reducir nuestro impacto.</p>"
+          }
+        },
+        "block_ByKxAT": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/hard-boiled-eggs-2023-11-27-05-35-54-utc.jpg",
+            "title": "",
+            "description": "<p><strong>Así ayudamos a mantener la belleza de nuestro planeta para Harper y Bone...¡y también para todos nosotros!</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_NWR7m7",
+        "block_PW8jr4",
+        "block_BPmCam",
+        "block_eUwc9F",
+        "block_WKbpQA",
+        "block_JjCiFe",
+        "block_RkweWQ",
+        "block_fdANAA",
+        "block_HaUXNr",
+        "block_h4YKEq",
+        "block_DMRwqX",
+        "block_ByKxAT"
+      ],
+      "settings": {
+        "horizontal_alignment": "center",
+        "horizontal_alignment_mobile": "center",
+        "heading": "",
+        "heading_mobile": "",
+        "heading_color": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 52,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
+      }
+    },
+    "fresh_key_points_kzRg8D": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_NCti4R": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/gato_regando_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>El PLA es un material renovable y elaborado con...¡vegetales!</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_JcWLa9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/bolsa_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Contamos con la certificación Ethical Brand Award, que refuerza nuestras credenciales sostenibles y éticas</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_dmn6zi": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/casa_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "<p><strong>Puedes desechar nuestros envases de croquetas al cubo de la basura orgánica o al de papel.</strong></p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_j6pXrB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/perro_revista_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "<p><strong>...donde se reciclan rápidamente sin producir derivados nocivos.</strong></p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "block_NCti4R",
+        "block_JcWLa9",
+        "block_dmn6zi",
+        "block_j6pXrB"
+      ],
+      "disabled": true,
+      "settings": {
+        "key_point_icon": false,
+        "title": "",
+        "title_mobile": "",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 44,
+        "margin_heading_mb": 14,
+        "content": "",
+        "content_mb": "",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 14,
+        "padding_top_title": 10,
+        "padding_top_title_mb": 10,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "color_content": "#ffffff",
+        "bg_color_section": "#000000"
+      }
+    },
+    "fresh_key_points_PnbXFg": {
+      "type": "fresh-key-points",
+      "blocks": {
+        "block_riXVjN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/perro_revista_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Harper y Bone miran al futuro con amor y cariño.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_zzQWCr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/casa_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Seguiremos investigando continuamente sobre materiales y procesos innovadores y respetuosos con el medioambiente.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 22,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_RVjXzK": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/perro_revista_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Estamos siempre buscando formas nuevas y sostenibles para reducir nuestro impacto.</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        },
+        "block_QFeKte": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/gato_regando_1024x_png.webp",
+            "link_url": "",
+            "link_label": "",
+            "use_number": true,
+            "font_size_text": 28,
+            "font_size_text_mb": 22,
+            "color_text": "#ffffff",
+            "lable_decription": "<p>Así ayudamos a mantener la belleza de nuestro planeta para Harper y Bone...¡y también para todos nosotros!</p>",
+            "font_size_text_decription": 16,
+            "font_size_text_decription_mb": 14,
+            "color_decription_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "block_riXVjN",
+        "block_zzQWCr",
+        "block_RVjXzK",
+        "block_QFeKte"
+      ],
+      "disabled": true,
+      "settings": {
+        "key_point_icon": false,
+        "title": "",
+        "title_mobile": "",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 44,
+        "margin_heading_mb": 14,
+        "content": "",
+        "content_mb": "",
+        "size_content": 14,
+        "size_content_mb": 14,
+        "margin_content": 32,
+        "margin_content_mb": 0,
+        "padding_top_title": 10,
+        "padding_top_title_mb": 10,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 32,
+        "color_content": "#ffffff",
+        "bg_color_section": "#000000"
+      }
+    },
+    "collection_list_qpAA9B": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_X8ieQf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Comida seca",
+            "image": "shopify://shop_images/para_perros_d9dd57f5-7855-42a7-b022-a83d4b8ecca2.png",
+            "background_color": "linear-gradient(180deg, rgba(187, 45, 83, 1), rgba(187, 45, 83, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "start"
+          }
+        },
+        "featured_collection_CA9c4J": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Comida húmeda",
+            "image": "shopify://shop_images/para_perros2.png",
+            "background_color": "linear-gradient(270deg, rgba(70, 102, 169, 1), rgba(70, 102, 169, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_rQhQKP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Snacks",
+            "image": "shopify://shop_images/para_perros_d9dd57f5-7855-42a7-b022-a83d4b8ecca2.png",
+            "background_color": "linear-gradient(89deg, rgba(189, 159, 198, 1) 7%, rgba(189, 159, 198, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_4VgEgq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Cachorros",
+            "image": "shopify://shop_images/para_perros_d9dd57f5-7855-42a7-b022-a83d4b8ecca2.png",
+            "background_color": "linear-gradient(127deg, rgba(174, 177, 94, 1) 11%, rgba(174, 177, 94, 0.8) 81%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_YUhpCg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Adultos",
+            "image": "shopify://shop_images/para_perros2.png",
+            "background_color": "linear-gradient(180deg, rgba(65, 137, 147, 1), rgba(65, 137, 147, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_mNChpP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Mayores",
+            "image": "shopify://shop_images/para_perros_d9dd57f5-7855-42a7-b022-a83d4b8ecca2.png",
+            "background_color": "linear-gradient(228deg, rgba(206, 112, 70, 1) 14%, rgba(206, 112, 70, 0.8) 83%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_X8ieQf",
+        "featured_collection_CA9c4J",
+        "featured_collection_rQhQKP",
+        "featured_collection_4VgEgq",
+        "featured_collection_YUhpCg",
+        "featured_collection_mNChpP"
+      ],
+      "settings": {
+        "title": "Para perros",
+        "font_size_title": 36,
+        "font_size_title_mb": 24,
+        "title_position": "left",
+        "padding_top": 0,
+        "padding_bottom": 1,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 33
+      }
+    },
+    "collection_list_PAWP8b": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_iftGWp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Comida seca",
+            "image": "shopify://shop_images/cat_gatos.png",
+            "background_color": "linear-gradient(180deg, rgba(127, 150, 190, 1), rgba(127, 150, 190, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_LF66XB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Comida húmeda",
+            "image": "shopify://shop_images/para_gatos_9d4c060f-a80c-4d42-97ee-f207a01669c6.png",
+            "background_color": "radial-gradient(rgba(189, 112, 130, 1), rgba(189, 112, 130, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_yMGYFM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Snacks",
+            "image": "shopify://shop_images/para_gatos.png",
+            "background_color": "linear-gradient(270deg, rgba(193, 101, 71, 1), rgba(193, 101, 71, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_rYVDG6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Cachorros",
+            "image": "shopify://shop_images/cat_gatos.png",
+            "background_color": "linear-gradient(180deg, rgba(157, 168, 99, 1), rgba(157, 168, 99, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_XG8wrn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Esterili",
+            "image": "shopify://shop_images/para_gatos.png",
+            "background_color": "linear-gradient(0deg, rgba(163, 138, 168, 1), rgba(163, 138, 168, 0.8) 100%)",
+            "content": "",
+            "text_color": "rgba(0,0,0,0)",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_zkaKJW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Adultos",
+            "image": "shopify://shop_images/cat_gatos.png",
+            "background_color": "linear-gradient(180deg, rgba(55, 135, 149, 1), rgba(55, 135, 149, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        },
+        "featured_collection_HzpeyJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": "Mayores",
+            "image": "shopify://shop_images/para_gatos_9d4c060f-a80c-4d42-97ee-f207a01669c6.png",
+            "background_color": "linear-gradient(0deg, rgba(211, 96, 124, 1), rgba(215, 204, 250, 1) 100%, rgba(211, 96, 124, 0.8) 100%)",
+            "content": "",
+            "text_color": "#ffffff",
+            "text_position": "space-between"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_iftGWp",
+        "featured_collection_LF66XB",
+        "featured_collection_yMGYFM",
+        "featured_collection_rYVDG6",
+        "featured_collection_XG8wrn",
+        "featured_collection_zkaKJW",
+        "featured_collection_HzpeyJ"
+      ],
+      "settings": {
+        "title": "Para gatos",
+        "font_size_title": 36,
+        "font_size_title_mb": 24,
+        "title_position": "left",
+        "padding_top": 33,
+        "padding_bottom": 62,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "fresh_product_slider_y4ByB4": {
+      "type": "fresh-product-slider",
+      "settings": {
+        "title": "Todos los productos",
+        "title_position": "left",
+        "size_heading": 36,
+        "size_heading_mb": 24,
+        "margin_heading": 26,
+        "margin_heading_mb": 18,
+        "collection": "harper-bone",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 60
+      }
+    },
+    "fresh_slider_information_kcJDmj": {
+      "type": "fresh-slider-information",
+      "blocks": {
+        "block_gwrQpF": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/meat_and_fish_3x_7dfa3361-2a77-47b5-be66-46740aeb4a5a.png",
+            "title": "COMBINACIÓN EXCLUSIVA DE CARNES Y PESCADOS",
+            "description": "<p>En cada receta combinamos una proporción exclusiva de proteínas para extraer los mayores beneficios de cada tipo de carne o pescado, mejorando la salud y bienestar de nuestras mascotas.</p>"
+          }
+        },
+        "block_Vd4kQt": {
+          "type": "block",
+          "settings": {
+            "title": "COMBINACIÓN EXCLUSIVA DE CARNES Y PESCADOS",
+            "description": ""
+          }
+        },
+        "block_gAeAdH": {
+          "type": "block",
+          "settings": {
+            "title": "FRUTAS Y VERDURAS FRESCAS",
+            "description": "<p>Todas nuestras recetas incluyen frutas y verduras frescas, repletas de fibra y beneficios saludables para proporcionar una nutrición equilibrada.</p>"
+          }
+        },
+        "block_9qQxJr": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "description": ""
+          }
+        },
+        "block_m987UU": {
+          "type": "block",
+          "settings": {
+            "title": "SUPER-ALIMENTOS ESPECIALES",
+            "description": "<p>Incluimos algunos de los más excepcionales ingredientes de la naturaleza, como el alga kelp, las semillas de lino, la cúrcuma o el té verde, seleccionados por sus increíbles beneficios para la salud.</p>"
+          }
+        },
+        "block_XM6DyE": {
+          "type": "block",
+          "settings": {
+            "title": "VITAMINAS Y MINERALES ORGÁNICOS",
+            "description": "<p>Cada receta incluye vitaminas esenciales y minerales quelados, y al ser orgánicos, las mascotas las absorben en mayor medida favoreciendo una vida más larga, sana y feliz.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_gwrQpF",
+        "block_Vd4kQt",
+        "block_gAeAdH",
+        "block_9qQxJr",
+        "block_m987UU",
+        "block_XM6DyE"
+      ],
+      "disabled": true,
+      "settings": {
+        "horizontal_alignment": "center",
+        "horizontal_alignment_mobile": "center",
+        "heading": "It’s all about exceptional ingredients",
+        "heading_mobile": "",
+        "heading_color": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 52,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
+      }
+    },
+    "multicolumn_7C7DEh": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_X8eiJU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/meat_and_fish_3x_7dfa3361-2a77-47b5-be66-46740aeb4a5a.png",
+            "title": "COMBINACIÓN EXCLUSIVA DE CARNES Y PESCADOS",
+            "text": "<p>En cada receta combinamos una proporción exclusiva de proteínas para extraer los mayores beneficios de cada tipo de carne o pescado, mejorando la salud y bienestar de nuestras mascotas.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BKxW6p": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JNyKiD": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_X8eiJU",
+        "column_BKxW6p",
+        "column_JNyKiD"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_we3JMC",
+    "collection_list_Bzf3aJ",
+    "fresh_custom_banner_product_QHw6bx",
+    "fresh_custom_banner_product_8FUiXn",
+    "fresh_custom_banner_product_UYgwki",
+    "hero_banner_JFfCmw",
+    "fresh_hero_banner_DgkkC8",
+    "fresh_benefit_g6DJ9a",
+    "fresh_rich_text_ExGyER",
+    "fresh_slider_information_3EtybB",
+    "fresh_custom_banner_product_wgeVcc",
+    "fresh_key_points_xyk4aF",
+    "fresh_rich_text_6qC6K6",
+    "fresh_rich_text_QeXagm",
+    "fresh_slider_information_XAdP9z",
+    "fresh_key_points_kzRg8D",
+    "fresh_key_points_PnbXFg",
+    "collection_list_qpAA9B",
+    "collection_list_PAWP8b",
+    "fresh_product_slider_y4ByB4",
+    "fresh_slider_information_kcJDmj",
+    "multicolumn_7C7DEh"
+  ]
+}

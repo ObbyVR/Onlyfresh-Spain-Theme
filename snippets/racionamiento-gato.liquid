@@ -1,0 +1,275 @@
+<section id="tablesDogs" class="mb-5">
+  <div class="row d-flex">
+    <!-- /.col img -->
+    <div class="col">
+      <!-- /Intro text -->
+      <div id="tableCalc" class="mb-3">
+        <div id="age-size-food" class="d-flex age-size-food my-3">
+          <div class="box-option-racionamiento">
+            <label for="numer_eta">
+              <p class="text-over-racionamiento">Indica su edad:</p>
+            </label>
+            <select class="value-racionamiento" name="numer_eta" id="numer_eta"></select>
+          </div>
+          <div class="box-option-racionamiento">
+            <label for="numer_pesi">
+              <p class="text-over-racionamiento">Indica su peso:</p>
+            </label>
+            <select class="value-racionamiento" name="numer_pesi" id="numer_pesi"></select>
+          </div>
+          <div class="box-option-racionamiento">
+            <label for="numer_pasti">
+              <p class="text-over-racionamiento">N° comidas diarias:</p>
+            </label>
+            <select class="value-racionamiento" name="numer_pasti" id="numer_pasti"></select>
+          </div>
+        </div>
+        <!-- Get first values: age, size and food -->
+        <div id="objetivo-actividades-box">
+          <div id="objetivo-actividades" class="objetivo-actividades-group"><div id="obiettivo-riga"></div></div>
+        </div>
+        <div class="obiettivo-block d-flex flex-column rounded my-3">
+          <div id="title-objetivo" class=" p-3 ps-0 obiettivo-box fw-bold border-top-4 mb-1">¿Cuál es tu objetivo?</div>
+          <div id="objetivo" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="objetivo" value="adulto" id="adulto" checked>
+            <label class="btn box-option-racionamiento" for="adulto">
+              {{- 'products.product.adulto' | t -}}
+            </label>
+
+            <input type="radio" class="btn-check" name="objetivo" value="esterilizado" id="esterilizado">
+            <label class="btn box-option-racionamiento" for="esterilizado">
+              {{- 'products.product.esterilizado' | t -}}
+            </label>
+          </div>
+        </div>
+        <!-- /first-tables (objetivo) -->
+
+        <button
+          id="calculator"
+          class="btn shadow-none d-flex justify-content-center obiettivo-box border-0 rounded-5 py-4 px-5 my-3"
+        >
+          Calcular racionamiento
+        </button>
+        <!-- BTN - calcolator -->
+      </div>
+      <!-- /Table -->
+      <div id="tableResult" class="d-none shadow-none">
+        <h4 class="text-center p-3 obiettivo-box fw-bold border-top-4 mb-2 ps-0 fs-2">Racionamiento Diario</h4>
+        <row class="row-result d-flex w-100" style="max-width:700px">
+          <div id="cantidaddiaria" class="box-option-racionamiento resultados me-1 text-center py-4">
+            <div id="calcolo" class="value-racionamiento text-center fs-1"></div>
+            <div id="testo-razionamento" class="text-over-racionamiento"></div>
+          </div>
+          <div id="gPasto" class="box-option-racionamiento ms-1 text-center py-4 resultados">
+            <div id="grammi" class="value-racionamiento text-center fs-1"></div>
+            <div id="testo-grammi" class="text-over-racionamiento"></div>
+          </div>
+        </row>
+        <div id="resumen" class="mt-2 py-4">
+          <div class="fs-6"><span id="obiettivo-testo">Objetivo</span><span id="obiettivo" class="fs-6"></span></div>
+
+          <div id="attivita" class="text-over-racionamiento"></div>
+        </div>
+
+        <button
+          id="changes"
+          class="btn d-flex justify-content-center shadow-none obiettivo-box border-0 rounded-5 py-4 px-5 my-3"
+        >
+          Cambiar parametros
+        </button>
+        <!-- BTN - changes values -->
+      </div>
+    </div>
+    <!-- /.col tables -->
+  </div>
+  <div id="table_product"></div>
+</section>
+
+<!-- /#tablescats -->
+
+<script>// Bulding tables
+
+// TABLES PRODUCTS
+// 1. Age:
+let numeri_eta = [];
+
+for (let i = 1; i <= 20; i++) {
+  numero = i; // - numeri da 1 a 200.
+  numeri_eta.push(numero); // - Inserisco nell'array i numeri.
+}
+
+let age = document.getElementById("numer_eta");
+
+numeri_eta.forEach((numero) => {
+  const memberMarkup = ` 
+    <option value="${numero}">${numero}</option>
+    `;
+  age.insertAdjacentHTML("beforeend", memberMarkup);
+});
+
+// 2. Size:
+let numeri_pesi = [];
+
+numeri_pesi.push(0.5); // Aggiungo il primo valore 0.5 all'array.
+
+for (let i = 1; i <= 100; i++) {
+  const numero = i; // - numeri interi da 1 a 100.
+  numeri_pesi.push(numero); // - Inserisco nell'array i numeri.
+}
+
+
+let size = document.getElementById("numer_pesi");
+
+numeri_pesi.forEach((numero) => {
+  const memberMarkup = ` 
+    <option value="${numero}">${numero}</option>
+    `;
+  size.insertAdjacentHTML("beforeend", memberMarkup);
+});
+
+// 3. Food:
+let numeri_pasti = [];
+
+for (let i = 1; i <= 4; i++) {
+  numero = i; // - numeri da 1 a 100.
+  numeri_pasti.push(numero); // - Inserisco nell'array i numeri.
+}
+
+let food = document.getElementById("numer_pasti");
+
+numeri_pasti.forEach((numero) => {
+  const memberMarkup = ` 
+    <option value="${numero}">${numero}</option>
+    `;
+  food.insertAdjacentHTML("beforeend", memberMarkup);
+});
+
+// Take value
+//let age = divElement_eta.value; // - document.getElementById("numer_eta").value;
+//let size = divElement_pesi.value; // - document.getElementById("numer_pesi").value;
+//let food = divElement_pasti.value; // - document.getElementById("numer_pasti").value;
+//console.log(food.value);
+
+
+// Nascondi inizialmente la parte age-size-food
+document.getElementById("age-size-food").classList.add("d-none");
+
+// Gestione delle selezioni della prima domanda (Obiettivo)
+document.querySelectorAll('input[name="objetivo"]').forEach(option => {
+  option.addEventListener("change", function () {
+    // Nascondi i pulsanti di selezione
+    document.getElementById("objetivo").classList.add("d-none");
+
+    // Mostra solo il valore scelto come testo cliccabile
+    const selectedValue = this.id; // ID del radio button selezionato
+    const selectedLabel = document.querySelector(`label[for="${selectedValue}"]`).textContent;
+      document.getElementById("title-objetivo").classList.add("d-none")
+    let objetivoContainer = document.getElementById("obiettivo-riga");
+    objetivoContainer.innerHTML = `
+      <p class="objetivo-selected">
+        Objetivo: <span id="selected-objetivo" class="cliccabile valore-objetivo">${selectedLabel}</span>
+      </p>
+    `;
+
+    // Aggiungi evento per cambiare obiettivo
+    document.getElementById("selected-objetivo").addEventListener("click", () => {
+      // Mostra nuovamente i pulsanti di selezione
+      document.getElementById("objetivo").classList.remove("d-none");
+
+      // Rimuovi il testo cliccabile
+      objetivoContainer.innerHTML = "";
+    });
+
+    // Mostra la sezione age-size-food
+    document.getElementById("age-size-food").classList.remove("d-none");
+  });
+});
+
+// Funzione per resettare una selezione (non necessaria in questo caso, ma utile per estensioni future)
+function resetSelection(name) {
+  // Ripristina la selezione dei radio button
+  document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+    input.checked = false;
+    const label = document.querySelector(`label[for="${input.id}"]`);
+    if (label) label.classList.remove('d-none');
+  });
+
+  if (name === "objetivo") {
+    // Rimuovi la riga degli obiettivi
+    document.getElementById("obiettivo-riga")?.remove();
+    document.getElementById("title-objetivo").classList.remove("d-none")
+    document.getElementById("objetivo").classList.remove("d-none");
+  }
+}
+
+  
+// TABLES OBJECT
+
+// BTN - CALCULATION
+
+const btn_calculator = document.getElementById("calculator");
+
+btn_calculator.addEventListener("click", getValue);
+  
+function getValue() {
+    document.getElementById("tableCalc").classList.add("d-none");
+    document.getElementById("tableCalc").classList.remove("shadow");
+    document.getElementById("tableResult").classList.add("d-display");
+    document.getElementById("tableResult").classList.remove("d-none");
+
+  // Stuff
+  //console.log(age.value, size.value, food.value);
+  let kcal = {{ product.metafields.custom.kcal }};
+  //console.log(kcal);
+  let vrP = 100; // calculate parametr.
+  //console.log(vrP);
+  let objetivo = document.querySelector('input[name="objetivo"]:checked').value;
+  //console.log(objetivo);
+  
+
+  // Conditions
+  if (size.value <=4 && objetivo ==="adulto" ){ vrP = 100}
+         else if (size.value >4 && objetivo ==="adulto"){ vrP = 65}
+
+         else if (size.value <=4 && objetivo ==="esterilizado" ){ vrP = 75}
+         else if (size.value >4 && objetivo ==="esterilizado"){ vrP = 45} 
+
+  // Logic
+    let calcolateDiaria = Math.round((vrP * Math.pow(size.value, 0.67)) / kcal * 1000)
+    //console.log(vrP);
+    //console.log(calcolateDiaria);
+    //console.log(food);
+
+    let dividedPasti = parseInt(calcolateDiaria / food.value)
+    //console.log(dividedPasti);
+
+
+  // Front view
+  if (objetivo === "mantenimiento" ){
+    document.getElementById('cantidaddiaria').innerHTML = `RACIONES DIARIAS: ${calcolateDiaria})`;
+    document.getElementById('gPasto').innerHTML = `${food.value}, POR CADA RACIÓN: ${dividedPasti} gr` ;
+  }else {
+      document.getElementById('calcolo').innerHTML = `${calcolateDiaria}`;
+      document.getElementById('testo-razionamento').innerHTML = `{{- 'products.product.cantidad_diaria_recomendada' | t -}}`;
+      document.getElementById('grammi').innerHTML = `${dividedPasti} gr` ;
+      document.getElementById('testo-grammi').innerHTML = `{{- 'products.product.por_cada_racion' | t -}}` ;
+     if (objetivo === "adulto" ){ 
+      document.getElementById('obiettivo').innerHTML = ` dieta {{ 'products.product.adulto' | t }}` ;
+    } else if (objetivo === "esterilizado" ){ 
+      document.getElementById('obiettivo').innerHTML = ` dieta {{ 'products.product.esterilizado' | t }}` ;
+  } 
+  }
+}
+
+
+
+// BTN - CHANGES
+const btn_changes = document.getElementById("changes");
+
+btn_changes.addEventListener("click", getChanges);
+  
+function getChanges() {
+    document.getElementById("tableCalc").classList.remove("d-none");
+    document.getElementById("tableResult").classList.add("d-none");
+}
+</script>

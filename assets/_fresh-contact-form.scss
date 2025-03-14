@@ -1,0 +1,410 @@
+.contact-page {
+    .section-fresh-contact {
+        .fresh-contact {
+            .fresh-contact__inner {
+                .fresh-contact__main {
+                    .fresh-contact__heading {
+                        padding: 0 16px;
+
+                        @media (min-width: 960px) {
+                            padding: 0 0 0 56px;
+                        }
+    
+                        h2 {
+                            font-family: 'Baskerville';
+                            font-weight: 400;
+                            font-size: 32px;
+                            line-height: 44px;
+                            letter-spacing: 0.2px;
+    
+                            @media (min-width: 768px) {
+                                font-size: 36px;
+                                margin-top: 3px;
+                            }
+                        }
+                    }
+
+                    .fresh-contact__body {
+                        display: flex;
+                        margin-top: 24px;
+                        flex-direction: column;
+                        gap: 56px;
+
+                        @media (min-width: 960px) {
+                            padding-left: 32px;
+                            margin-top: 38px;
+                            flex-direction: row;
+                            gap: 0;
+                        }
+
+                        @media (min-width: 1280px) {
+                            padding-left: 56px;
+                        }
+
+                        .fresh-contact__form {
+                            width: 100%;
+                            padding: 0 24px 0 16px;
+
+                            @media (min-width: 960px) {
+                                padding: 0;
+                                width: calc(50vw - 32px);
+                                max-width: 436px;
+                                margin-right: auto;
+                            }
+
+                            @media (min-width: 1280px) {
+                                width: calc(50vw - 56px);
+                            }
+
+                            #ContactForm {
+                                .post_success {
+                                    align-items: flex-start;
+                                    color: #428445;
+                                    font-family: Poppins;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 22px;
+                                    margin: 0 0 32px 0;
+                                }
+                                .contact_form-title {
+                                    h5 {
+                                        display: none;
+
+                                        @media (min-width: 960px) {
+                                            display: block;
+                                            font-family: 'Baskerville';
+                                            font-weight: 600;
+                                            font-size: 18px;
+                                            line-height: 24px;
+                                            color: #191919;
+                                            letter-spacing: 1.2px;
+                                        }
+                                    }
+                                }
+                                .contact__fields {
+                                    margin-top: 0;
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    @media (min-width: 960px) {
+                                        margin-top: 16px;
+                                    }
+
+                                    .field {
+                                        &:first-child {
+                                            margin-top: 0;
+                                        }
+
+                                        .field__input {
+                                            margin-top: 12px;
+                                            padding: 0 0 0 10px;
+                                            height: 42px;
+                                            border-radius: 6px;
+                                            -webkit-border-radius: 6px;
+                                            -moz-border-radius: 6px;
+                                            -ms-border-radius: 6px;
+                                            -o-border-radius: 6px;
+                                            border: 0;
+                                            outline: 1px solid #191919;
+                                            outline-offset: -1px;
+                                            color: #191919;
+                                            font-family: Plain, Poppins;
+
+                                            &::placeholder {
+                                                font-family: Poppins;
+                                                font-weight: 300;
+                                                font-size: 14px;
+                                                line-height: 22px;
+                                                color: #86868B;
+                                                letter-spacing: 0;
+
+                                            }
+
+                                            &:-webkit-autofill {
+                                                background-color: transparent;
+                                            }
+
+                                            &:-internal-autofill-selected {
+                                                background-color: transparent;
+                                            }
+                                        }
+                                    }
+                                }
+                                .field {
+                                    margin-top: 16px;
+
+                                    .field__input {
+                                        color: #191919;
+                                    }
+                                    .select-area {
+                                        margin-top: 12px;
+                                        padding: 0 0 0 10px;
+                                        height: 42px;
+                                        border-radius: 6px;
+                                        -webkit-border-radius: 6px;
+                                        -moz-border-radius: 6px;
+                                        -ms-border-radius: 6px;
+                                        -o-border-radius: 6px;
+                                        border: 0;
+                                        outline: 1px solid #191919;
+                                        outline-offset: -1px;
+                                        font-family: Poppins;
+                                        font-weight: 300;
+                                        font-size: 14px;
+                                        line-height: 22px;
+                                        color: #86868B;
+                                        letter-spacing: 0;
+
+                                        &:has(option[value=""]:not(:checked)) {
+                                            color: var(--color-primary);
+                                        }
+
+                                        option {
+                                            &[disabled] {
+                                                font-family: Poppins;
+                                                font-weight: 300;
+                                                font-size: 14px;
+                                                line-height: 22px;
+                                                color: #86868B;
+                                            }
+
+                                            font-family: Poppins;
+                                            font-weight: 300;
+                                            font-size: 14px;
+                                            line-height: 22px;
+                                            color: #191919;
+                                        }
+                                    }
+                                    .text-area {
+                                        resize: none;
+                                        margin-top: 12px;
+                                        padding: 10px;;
+                                        border-radius: 6px;
+                                        -webkit-border-radius: 6px;
+                                        -moz-border-radius: 6px;
+                                        -ms-border-radius: 6px;
+                                        -o-border-radius: 6px;
+                                        border: 0;
+                                        outline: 1px solid #191919;
+                                        outline-offset: -1px;
+                                        font-family: Poppins;
+                                        font-weight: 300;
+                                        font-size: 14px;
+                                        line-height: 22px;
+                                        color: #191919;
+                                        height: 103px;
+                                        min-height: unset;
+
+                                        @media (min-width: 960px) {
+                                            height: 117px;
+                                        }
+
+                                        &::placeholder {
+                                            font-family: Poppins;
+                                            font-weight: 300;
+                                            font-size: 14px;
+                                            line-height: 22px;
+                                            color: #86868B;
+                                            letter-spacing: 0;
+                                        }
+                                    }
+                                    .field__label {
+                                        font-family: Poppins;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 22px;
+                                        color: #191919;
+                                        margin: 0;
+                                        letter-spacing: 0;
+                                    }
+                                }
+                                .field-policy {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    gap: 8px;
+                                    position: relative;
+                                    margin-top: 24px;
+
+                                    #ContactForm-policy {
+                                        width: 12px;
+                                        height: 12px;
+                                        border-radius: 300px;
+                                        margin: 0;
+                                        display: block;
+                                        opacity: 0;
+                                        z-index: -1;
+                                    }
+                                    #ContactForm-policy:checked + .fake__label {
+                                        background: #191919;
+                                    }
+                                    .fake__label {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 0;
+                                        width: 12px;
+                                        height: 12px;
+                                        border-radius: 300px;
+                                        margin: 0;
+                                        display: block;
+                                        z-index: 1;
+                                        border: 1px solid #191919;
+                                        cursor: pointer;
+                                        transform: translateY(-50%);
+                                        -webkit-transform: translateY(-50%);
+                                        -moz-transform: translateY(-50%);
+                                        -ms-transform: translateY(-50%);
+                                        -o-transform: translateY(-50%);
+                                    }
+                                    .radio__label {
+                                        margin: 0;
+                                        cursor: pointer;
+
+                                        p {
+                                            font-family: Poppins;
+                                            font-weight: 300;
+                                            font-size: 11px;
+                                            line-height: 18px;
+                                            color: #191919;
+                                            letter-spacing: 0px;
+
+                                            a {
+                                                font-family: Poppins;
+                                                font-weight: 500;
+                                                color: #191919;
+                                                letter-spacing: -0.1px;
+                                                font-size: 12px;
+                                                line-height: 22px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .contact__button {
+                                    margin-top: 16px;
+
+                                    .button {
+                                        width: 100%;
+                                        height: 54px;
+                                        font-family: Poppins;
+                                        font-weight: 400;
+                                        letter-spacing: 0;
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        border-radius: 300px;
+                                        -webkit-border-radius: 300px;
+                                        -moz-border-radius: 300px;
+                                        -ms-border-radius: 300px;
+                                        -o-border-radius: 300px;
+                                        transition: all 0.3s ease-in-out;
+                                        -webkit-transition: all 0.3s ease-in-out;
+                                        -moz-transition: all 0.3s ease-in-out;
+                                        -ms-transition: all 0.3s ease-in-out;
+                                        -o-transition: all 0.3s ease-in-out;
+                                        
+                                        &:hover {
+                                            background-color: #fff;
+                                            color: #111111;
+                                        }
+                                    }
+                                }
+                                .store-information {
+                                    margin-top: 40px;
+                                    flex-direction: column;
+                                    gap: 8px;
+
+                                    &.content-desktop {
+                                        display: none;
+        
+                                        @media (min-width: 960px) {
+                                            display: flex;
+                                        }
+                                    }
+                                    &.content-mobile {
+                                        display: flex;
+        
+                                        @media (min-width: 960px) {
+                                            display: none;
+                                        }
+                                    }
+
+                                    .store_information_title {
+                                        & * {
+                                            font-family: 'Baskerville';
+                                            font-weight: 600;
+                                            font-size: 18px;
+                                            line-height: 24px;
+                                            color: #191919;
+                                            letter-spacing: 1.1px;
+                                        }
+                                    }
+                                    .store_information_telephone {
+                                        & * {
+                                            font-family: Poppins;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 25px;
+                                            color: #191919;
+                                            text-decoration: unset;
+                                            letter-spacing: -1.3px;
+                                        }
+                                    }
+                                    .store_information_email {
+                                        & * {
+                                            font-family: Poppins;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 25px;
+                                            color: #191919;
+                                            text-decoration: unset;
+                                            letter-spacing: -1.3px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .fresh-contact__media {
+                            overflow: hidden;
+                            width: 100%;
+
+                            @media (min-width: 960px) {
+                                width: 50vw;
+                                border-radius: 16px 0px 0px 16px;
+                                -webkit-border-radius: 16px 0px 0px 16px;
+                                -moz-border-radius: 16px 0px 0px 16px;
+                                -ms-border-radius: 16px 0px 0px 16px;
+                                -o-border-radius: 16px 0px 0px 16px;
+                            }
+                        
+                            .content-desktop {
+                                display: none;
+
+                                @media (min-width: 960px) {
+                                    display: block;
+                                }
+                            }
+                            .content-mobile {
+                                display: block;
+
+                                @media (min-width: 960px) {
+                                    display: none;
+                                }
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                aspect-ratio: 375 / 458;
+
+                                @media (min-width: 960px) {
+                                    aspect-ratio: 720 / 898;;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

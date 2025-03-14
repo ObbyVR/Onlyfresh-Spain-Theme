@@ -1,0 +1,349 @@
+{% liquid
+  assign section_settings = section.settings
+
+  assign image_block_count = 0
+  for block in section.blocks
+    if block.type == 'image'
+      assign image_block_count = image_block_count | plus: 1
+    endif
+  endfor
+%}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+      padding-top: {{ section_settings.padding_top_mb }}px;
+      padding-bottom: {{ section_settings.padding_bottom_mb }}px;
+  }
+
+
+  @media (min-width: 768px) {
+      .section-{{ section.id }}-padding {
+          padding-top: {{ section_settings.padding_top }}px;
+          padding-bottom: {{ section_settings.padding_bottom }}px;
+      }
+  }
+{% endstyle %}
+{% liquid
+  if product.metafields.custom.product_banner.value == blank
+    assign product_banner = section.blocks
+  else
+    assign section_object = product.metafields.custom.product_banner.value
+    assign product_banner = section_object
+  endif
+%}
+{%- if product_banner != blank or product_banner.size > 0 -%}
+  <div class="section-{{ section.id }}-padding fresh-hero_banner custom-banner__product">
+    <div class="fresh-hero_banner--innner">
+      {% for block in product_banner %}
+        {%- liquid
+          if product.metafields.custom.product_banner.value == blank
+            assign image_full = block.settings.image_full
+            assign image = block.settings.image
+            assign image_mb = block.settings.image_mb
+            assign heading = block.settings.heading
+            assign description = block.settings.description
+            assign button_label = block.settings.button_label
+            assign url = block.settings.url
+            assign color_heading = block.settings.color_heading
+            assign color_content = block.settings.color_content
+            assign color_button = block.settings.color_button
+            assign background_button = block.settings.background_button
+            assign position_x = block.settings.content_position_x
+            assign position_y = block.settings.content_position_y
+            assign align_content = block.settings.align_content
+          else
+            assign image_full = block.image_full
+            assign image = block.image.value
+            assign image_mb = block.image_mobile.value
+            assign heading = block.heading.value
+            assign description = block.description | metafield_tag
+            assign button_label = block.button_label
+            assign url = block.url
+            assign color_heading = block.color_heading
+            assign color_content = block.color_content
+            assign color_button = block.color_button
+            assign background_button = block.background_button
+            assign position_x = block.content_position_x | handleize
+            assign position_y = block.content_position_y | handleize
+            assign align_content = block.align_content | handleize
+          endif
+        -%}
+        {% style %}
+          .section-{{ section.id }}-{{ forloop.index }} .heading {
+              color: {{ color_heading }};
+          }
+          .section-{{ section.id }}-{{ forloop.index }} .description {
+              color: {{ color_content }};
+          }
+          .section-{{ section.id }}-{{ forloop.index }} .button {
+              color: {{ color_button }};
+              border-color: {{ background_button }};
+              background-color: {{ background_button }};
+          }
+          .section-{{ section.id }}-{{ forloop.index }} .button:hover {
+            color: #111111;
+            background-color: #fff;
+            border-color: #111111;
+          }
+        {% endstyle %}
+        <div
+          class="
+            fresh-hero_banner--item
+            section-{{ section.id }}-{{ forloop.index }}
+            {% if image_full %} fresh-hero_banner-full{% endif %}
+            {% if position_x == 'right' and image_full == false %} reverse{% endif %}
+            align-position_x--{{ position_x }}
+            align-position_y--{{ position_y }}
+            align-content--{{ align_content }}
+          "
+        >
+          <div class="fresh-hero_banner--content">
+            <div class="fresh-hero_banner--text-wrapper">
+              {%- if description -%}
+                <div
+                  class="heading"
+                >
+                  {{- heading | escape -}}
+                </div>
+              {%- endif -%}
+              {%- if description -%}
+                <div class="description">
+                  {{ description }}
+                </div>
+              {%- endif -%}
+              {%- if button_label != blank -%}
+                <a
+                  {% if url == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="{{ url }}"
+                  {% endif %}
+                  class="button button--hollow"
+                >
+                  {{ button_label }}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="fresh-hero_banner--media">
+            {% if image != blank or image_mb != blank %}
+              <div class="fresh-banner-item--image">
+                {% if image != blank %}
+                  {%- if image_mb != blank -%}
+                    {%- assign class = 'fresh-hero_banner--img fresh-hero_banner--img_des' -%}
+                  {%- else -%}
+                    {%- assign class = 'fresh-hero_banner--img' -%}
+                  {%- endif -%}
+                  {{
+                    image
+                    | image_url: width: image.width, height: image.height
+                    | image_tag: width: image.width, height: image.height, loading: 'lazy', alt: heading, class: class
+                  }}
+                {% endif %}
+                {% if image_mb != blank %}
+                  {{
+                    image_mb
+                    | image_url: width: image_mb.width, height: image_mb.height
+                    | image_tag:
+                      width: image_mb.width,
+                      height: image_mb.height,
+                      loading: 'lazy',
+                      alt: heading,
+                      class: 'fresh-hero_banner--img fresh-hero_banner--img_mb'
+                  }}
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Custom Banner Product",
+  "tag": "section",
+  "class": "section section-fresh-custom-banner",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This section only for product metafield"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Top padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Bottom padding on Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "banner",
+      "type": "Banner",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "image_full",
+          "label": "Image full",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mb",
+          "label": "Image mobile"
+        },
+        {
+          "type": "select",
+          "id": "content_position_x",
+          "label": "Content position X",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "content_position_y",
+          "label": "Content position Y",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "select",
+          "id": "align_content",
+          "label": "Align content",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "color_heading",
+          "label": "Color heading",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "color_content",
+          "label": "Color content",
+          "default": "#000000"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "color",
+          "id": "color_button",
+          "label": "Color button",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "background_button",
+          "label": "Background button",
+          "default": "#000"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner Product page"
+    }
+  ]
+}
+{% endschema %}

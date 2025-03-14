@@ -1,0 +1,195 @@
+<div id="fresh-slider-content-{{ section.id }}" class="fresh-slider-content">
+  <div class="fresh-slider-content__inner page-container-width">
+    {% if settings.heading != blank %}
+      <h2 class="fresh-slider-content__heading">{{ settings.heading }}</h2>
+    {% endif %}
+
+    <div class="fresh-slider-content__body">
+      <div class="swiper fresh-slider-content__slider" data-id="{{ section.id }}">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide fresh-slider-content__item">
+              {% if block.settings.image != blank %}
+                <div class="fresh-slider-content__media">
+                  <img
+                    src="{{ block.settings.image | image_url }}"
+                    alt="{{ block.settings.title | escape }}"
+                    width="{{ block.settings.image.width}}"
+                    height="{{ block.settings.image.height}}"
+                    class="layout-media_image"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+              <div class="fresh-slider-content__content">
+                {% if block.settings.title != blank %}
+                  <div class="block-title-arrow">
+                    <h6 class="fresh-slider-content__content-title">{{ block.settings.title }}</h6>
+                    <span class="expand-icon">{% render 'icon-chervon-down' %}</span>
+                  </div>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                  <div class="fresh-slider-content__content-description">
+                    <p class="fresh-slider-content__description">{{ block.settings.description }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="swiper-button-prev fresh-slider-content__slider-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+            <rect width="31" height="31" rx="15.5" fill="white"/>
+            <path d="M18 10L13 15.5L18 21" stroke="#111010"/>
+          </svg>
+        </div>
+        <div class="swiper-button-next fresh-slider-content__slider-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+            <rect x="31" y="31" width="31" height="31" rx="15.5" transform="rotate(-180 31 31)" fill="white"/>
+            <path d="M13 21L18 15.5L13 10" stroke="#111010"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const swiperId = `#fresh-slider-content-{{ section.id }} .swiper`;
+
+  let swiperInstance = new Swiper(swiperId, {
+    spaceBetween: 20,
+    slidesPerView: 1.2, // Valore di default per mobile
+    slidesPerGroup: 1,
+    centeredSlides: false,
+    loop: true,
+    preloadImages: false,
+    lazy: {
+      loadOnTransitionStart: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    speed: 300,
+    breakpoints: {
+      768: {
+        slidesPerView: 2.5, // Mostra 2.5 slide per viewport >=768px
+        spaceBetween: 30
+      },
+      1025: {
+        slidesPerView: 4, // Mostra 4 slide per viewport >=1025px
+        spaceBetween: 40
+      },
+      1200: {
+        slidesPerView: 5, // Mostra 5 slide per viewport >=1200px
+        spaceBetween: 40
+      }
+    }
+  });
+});
+</script>
+<style>
+      .fresh-slider-content__slider {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .fresh-slider-content__media {
+      width: 100%;
+    }
+
+    .layout-media_image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .fresh-slider-content__title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .fresh-slider-content__description {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after, .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+      display:none;
+  }
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+</style>
+{% schema %}
+{
+  "name": "Fresh Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Slider Heading",
+      "default": "Fresh Slider"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slide Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Slide Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresh Slider",
+      "category": "Sliders"
+    }
+  ]
+}
+{% endschema %}

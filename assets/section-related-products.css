@@ -1,0 +1,232 @@
+.related-products__heading {
+  display: block;
+  padding: 0 23px;
+  margin-bottom: 16px;
+}
+product-recommendations {
+  display: block;
+}
+
+@media (min-width: 1921px) {
+  .product-slider.swiper.swiper-initialized.swiper-horizontal.swiper-android {
+    padding-left: 76px;
+  }
+}
+
+@media (min-width: 768px) {
+  .related-products__heading {
+    padding: 0 32.5px;
+    margin-bottom: 24px;
+  }
+}
+
+.related-products__heading h2 {
+  margin: 0;
+}
+.related-products [class*="related-products-button"]::after {
+  content: none;
+}
+.related-products [class*="related-products-button"] svg {
+  width: 6px;
+  height: 10px;
+}
+.cart-page-recommendations
+  .related-products
+  [class*="related-products-button"]
+  svg {
+  width: 5px;
+  height: 11px;
+}
+.related-products .product-slider .related-products-button-next {
+  right: 67px;
+}
+.related-products .product-slider .related-products-button-prev {
+  left: 67px;
+}
+.related-products .product-slider [class*="related-products-button"] {
+  top: 63%;
+}
+
+@media (max-width: 767px) {
+  .related-products .product-slider [class*="related-products-button"] {
+    top: calc(48% - 5px);
+  }
+  .related-products .product-slider [class*="related-products-button"] svg {
+    width: 8px;
+    height: 12px;
+  }
+  .related-products .product-slider .related-products-button-next {
+    right: 7px;
+  }
+  .related-products .product-slider .related-products-button-prev {
+    left: 6px;
+  }
+  .section-related-product .wrapper-price__color {
+    align-items: center;
+  }
+  .section-related-product .wrapper-price__color .mobile-color__custom {
+    gap: 4px;
+  }
+  .related-products .swiper-wrapper {
+    padding-left: 22px;
+  }
+}
+
+body
+  .section-related-product
+  .rocket-fresh-product-card
+  .card-information
+  .rocket-fresh-product-media-gallery__tag--text.tag-text {
+  margin-top: 4px;
+}
+.related-products .swiper-wrapper {
+  @media screen and (min-width: 768px) {
+    padding-left: 5%;
+    padding-right: 22px;
+  }
+}
+.related-products .product-slider .rocket-fresh-product-card__image {
+  aspect-ratio: 163 / 199;
+}
+.related-products .rocket-fresh-product-card__inner {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .related-products .product-slider .rocket-fresh-product-card__image {
+    aspect-ratio: 163 / 199;
+  }
+  body
+    .section-related-product
+    .rocket-fresh-product-card
+    .card-information
+    .rocket-fresh-product-media-gallery__tag--text.tag-text {
+    margin-top: 2px;
+  }
+  .section-related-product .card-information {
+    padding-top: 2px;
+  }
+}
+.is-empty .drawer__header .drawer__heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.is-empty .drawer__header {
+  border-bottom: none !important;
+}
+.is-empty .cart-drawer__inner-wrapper {
+  padding: 32px;
+}
+.is-empty product-recommendations {
+  padding: 16px 0 !important;
+}
+.is-empty .related-products .swiper-wrapper {
+  padding: 0 !important;
+}
+.is-empty product-recommendations .related-products__heading div {
+  font-family: "Baskerville";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 27.46px;
+  color: #111111;
+  text-align: left;
+  margin-left: 7px;
+  letter-spacing: -0.1px;
+}
+.is-empty product-recommendations {
+  margin-left: 0 !important;
+}
+.is-empty .cart-drawer__inner-wrapper {
+  padding: 16px !important;
+  @media screen and (min-width: 768px) {
+    padding: 32px !important;
+  }
+}
+.is-empty .drawer__close {
+  right: 0 !important;
+}
+.related-products-button-prev,
+.related-products-button-next {
+  width: 31px;
+  height: 31px;
+  background: black;
+  color: white;
+  border-radius: 999px;
+  top: 45% !important;
+  @media screen and (min-width: 768px) {
+    top: 50% !important;
+  }
+}
+.cart-page-recommendations .related-products-button-prev,
+.cart-page-recommendations .related-products-button-next {
+  width: 31px;
+  height: 31px;
+  background: black;
+  color: white;
+  border-radius: 999px;
+  top: 45% !important;
+  @media screen and (min-width: 768px) {
+    top: 55% !important;
+  }
+}
+.btn-add-cart-complete {
+  padding: 5.5px 0;
+  border: 1px solid black;
+  margin: 0 11.5px 15px 11.5px;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  display: none;
+}
+.btn-add-cart-complete:hover {
+  background: black;
+  color: white;
+}
+#CartDrawer .btn-add-cart-complete {
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+#CartDrawer .related-products-button-next,
+#CartDrawer .related-products-button-prev {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+#CartDrawer-Overlay {
+  @media screen and (max-width: 767px) {
+    background: black;
+    opacity: 0.5;
+  }
+  .related-products .swiper-wrapper {
+    padding-left: 22px;
+  }
+}
+
+/* Limit the slider wrapper to 1920px and center it */
+.slider-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adjust the swiper container to allow overflow on the right */
+.slider-wrapper .product-slider.swiper {
+  position: relative;
+  width: calc(100% + (100vw - 1920px) / 2);
+  margin-right: calc((100vw - 1920px) / -2);
+}
+
+/* Ensure the slides extend to the edge of the page on the right */
+.slider-wrapper .swiper-wrapper {
+  padding-right: calc((100vw - 1920px) / 2);
+  padding-left: 0; /* Start slides within the container on the left */
+}
+
+/* Optional: Adjust navigation buttons if necessary */
+.slider-wrapper .swiper-button-next,
+.slider-wrapper .swiper-button-prev {
+  /* Adjust positions if needed */
+}

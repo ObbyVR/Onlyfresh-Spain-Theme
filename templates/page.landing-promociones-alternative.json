@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hero_banner_NfzYPb": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_RFTCH3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bakcgroundHD_a239b05b-140c-4b97-9585-acc1ac0ff717.jpg",
+            "image_mb": "shopify://shop_images/heading_mobile_mini.jpg",
+            "desktop_content_position": "center",
+            "mobile_content_position": "center-mb",
+            "desktop_content_position_y": "middle",
+            "desktop_content_position_y_mb": "bottom-mb",
+            "content_alignment": "center",
+            "content_alignment_mb": "center-mb",
+            "color_overlay": "#000000",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h2",
+            "heading": "¡Descubre nuestras promociones!",
+            "color_text_title": "#111010",
+            "color_text_title_mobile": "#000000",
+            "font_weight_title": "600",
+            "font_size_title": 51,
+            "font_size_title_mb": 28,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 16,
+            "description": "<p>Explora nuestras exclusivas promociones y encuentra los mejores precios en nuestro sitio web. ¡Prepárate para emocionantes sorpresas!</p>",
+            "color_text_content": "#111010",
+            "color_text_content_mobile": "#000000",
+            "font_weight_content": "300",
+            "font_size_content": 16,
+            "font_size_content_mb": 12,
+            "description_margin_bottom": 8,
+            "description_margin_bottom_mb": 16,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "link-s",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "link-s"
+          }
+        }
+      },
+      "block_order": [
+        "image_RFTCH3"
+      ],
+      "custom_css": [
+        ".vis-hero_banner--innner .vis-hero_banner--media .vis-hero_banner--image {position: relative; max-height: 14rem;}"
+      ],
+      "settings": {
+        "enable_slider": false,
+        "enable_pagination": false,
+        "color_pagination_desktop": "#bdbdbd",
+        "color_pagination_mobile": "#f3f5f7",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 50,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 0,
+        "content_padding_bottom": 0,
+        "content_padding_top_mb": 0,
+        "content_padding_bottom_mb": 0,
+        "content_padding_left": 0,
+        "content_padding_right": 0,
+        "content_padding_left_mb": 0,
+        "content_padding_right_mb": 0
+      }
+    },
+    "fresh_image_text_PkRFRn": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_LcDJwh": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/faqs.jpg",
+            "image_mb": "shopify://shop_images/welcome_2x_2160x_2160x_14c358ff-db39-4af5-8ebf-bfe299977d60.jpg"
+          }
+        },
+        "title_aLiJbr": {
+          "type": "title",
+          "settings": {
+            "heading": "Cupón de bienvenida",
+            "font_weight_title": "400",
+            "font_size_title": 42,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_4fwqMq": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Añade el código <strong>WELCOME </strong>antes de realizar el pago de tu pedido en la casilla \"Código de descuento\" y podrás disfrutar del <strong>10% DE DESCUENTO </strong>en tu primera compra.*</p>",
+            "font_weight_content": "400",
+            "font_size_content": 16,
+            "font_size_content_mb": 14
+          }
+        },
+        "subtitle_hBLFtJ": {
+          "type": "subtitle",
+          "settings": {
+            "caption": "Recuerda que una vez realizado el pago, no es posible aplicar el descuento una vez finalizada la compra.",
+            "font_weight_subtitle": "400",
+            "font_size_subtitle": 12,
+            "font_size_subtitle_mb": 10
+          }
+        }
+      },
+      "block_order": [
+        "media_LcDJwh",
+        "title_aLiJbr",
+        "content_4fwqMq",
+        "subtitle_hBLFtJ"
+      ],
+      "custom_css": [
+        ".section-fresh-image-text {max-width: 1200px; margin: auto;}",
+        "p.rich-text__caption.fresh-image-text__caption.rte.inline-richtext.rocket-font-fgrotesk {line-height: 14px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "bottom",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#111010",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_NfzYPb",
+    "fresh_image_text_PkRFRn"
+  ]
+}

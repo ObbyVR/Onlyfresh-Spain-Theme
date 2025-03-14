@@ -1,0 +1,77 @@
+<div class="quick-order-list-container color-{{ section.settings.color_scheme }}{% unless is_modal %} gradient{% endunless %}">
+            <quick-order-list
+                class="quickorderpage-width section-{{ section.id }}-padding"
+                id="{{ section_id }}-{{ card_product.id }}"
+                data-section="{{ section_id }}"
+                data-product-id="{{ card_product.id }}"
+                data-url="{{ card_product.url }}"
+            >
+                <form
+                    action="{{ routes.cart_update_url }}"
+                    class="quick-order-list__contents critical-hidden"
+                    method="post"
+                    id="QuickOrderList"
+                >
+                    <div class="quick-order-list__container" id="main-variant-items">
+                        <div class="js-contents">
+                            <table class="quick-order-list__table">
+                                <caption class="visually-hidden">
+                                    {{ 'sections.cart.title' | t }}
+                                </caption>
+                                <thead>
+                                    <tr class="b2b-quick">
+                                        <th class="caption-with-letter-spacing quick-order-list__table-name" scope="col">
+                                            {%- if card_product.has_only_default_variant -%}
+                                                {{ 'sections.quick_order_list.product' | t }}
+                                            {%- else -%}
+                                                {{ 'sections.quick_order_list.variant' | t }}
+                                            {%- endif -%}
+                                        </th>
+                                        <th class="hidden-pc right caption-with-letter-spacing" scope="col">
+                                            {%- if card_product.has_only_default_variant -%}
+                                                {{ 'sections.quick_order_list.product_total' | t }}
+                                            {%- else -%}
+                                                {{ 'sections.quick_order_list.variant_total' | t }}
+                                            {%- endif -%}
+                                        </th>
+                                        <th class="quick-order-list__table-heading--wide hidden-mb caption-with-letter-spacing quick-order-list__table-quantity" scope="col">
+                                            {{ 'products.product.quantity.label' | t }}
+                                        </th>
+                                        <th class="quick-order-list__table-heading--wide hidden-mb caption-with-letter-spacing quick-order-list__table-price" scope="col">
+                                            {{ 'sections.cart.headings.price' | t }}
+                                        </th>
+                                        <th class="hidden-mb right caption-with-letter-spacing quick-order-list__table-total" scope="col">
+                                            {%- if card_product.has_only_default_variant -%}
+                                                {{ 'sections.quick_order_list.product_total' | t }}
+                                            {%- else -%}
+                                                {{ 'sections.quick_order_list.variant_total' | t }}
+                                            {%- endif -%}
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {%- if card_product.has_only_default_variant -%}
+                                    {%- render 'quick-order-list-row',
+                                        item: card_product,
+                                        image: card_product.featured_media,
+                                        sku: card_product.selected_or_first_available_variant.sku,
+                                        variant: card_product.selected_or_first_available_variant
+                                    -%}
+                                    {%- else -%}
+                                    {%- for variant in card_product.variants -%}
+                                    {%- render 'quick-order-list-row',
+                                        item: variant,
+                                        image: variant.image,
+                                        sku: variant.sku,
+                                        variant: variant
+                                    -%}
+                                    {%- endfor -%}
+                                    {%- endif -%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </quick-order-list>
+        </div>

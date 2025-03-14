@@ -1,0 +1,283 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{%- paginate blog.articles by section.settings.post_limit -%}
+  {%- liquid
+    assign count = blog.articles_count
+    assign size = blog.articles.size
+  -%}
+  <div class="main-blog page-width section-{{ section.id }}-padding">
+    <div class="blog-header center">
+      <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ blog.title | escape }}
+      </h1>
+
+      {%- if blog.metafields.custom.content != blank -%}
+        <div class="blog-header__content">
+          {{ blog.metafields.custom.content }}
+        </div>
+      {%- endif -%}
+
+      {%- if blog.metafields.custom.categories.value != blank -%}
+        <categories-slider class="swiper" data-id="{{ section.id }}">
+          <div class="blog-header__categories swiper-wrapper">
+            <a
+              href="{{ blog.url }}"
+              class="blog-item__category swiper-slide{% if current_tags == blank %} category_active{% endif %}"
+            >
+              {{ 'blogs.categories.view_all' | t }}
+            </a>
+            {%- for category in blog.metafields.custom.categories.value -%}
+              {%- liquid
+                assign tag = current_tags | handleize
+                assign cate_handle = category | handleize
+              -%}
+              <a
+                href="{{ blog.url }}/tagged/{{ category | handle }}"
+                class="blog-item__category swiper-slide{% if tag == cate_handle %} category_active{% endif %}"
+              >
+                {{ category }}
+              </a>
+            {%- endfor -%}
+          </div>
+        </categories-slider>
+      {%- endif -%}
+    </div>
+
+    {%- if blog.metafields.custom.feature_article.value != blank -%}
+      {%- liquid
+        assign banner = blog.metafields.custom.feature_article.value
+        assign color_tag = banner.color_tag
+        assign color_heading = banner.color_heading
+        assign color_content = banner.color_content
+      -%}
+      {%- style -%}
+        .feature-article .feature-article__category a {
+          color: {{ color_tag }};
+        }
+        .feature-article .feature-article__info h2.heading {
+          color: {{ color_heading }};
+        }
+        .feature-article .feature-article__info .rte {
+          color: {{ color_content }};
+        }
+      {%- endstyle -%}
+      <div class="feature-article">
+        <div class="feature-article__image">
+          <div class="feature-article__img{% if banner.image_mobile.value != blank %} feature-article__img--desktop{% endif %}">
+            {{ banner.image | metafield_tag }}
+          </div>
+          {% if banner.image_mobile.value != blank %}
+            <div class="feature-article__img feature-article__img--mobile">
+              {{ banner.image_mobile | metafield_tag }}
+            </div>
+          {% endif %}
+        </div>
+        <div
+          class="
+            feature-article__flex
+            flex__position-{{ banner.text_position | downcase }}
+            flex__position-{{ banner.text_position_mobile | downcase }}-mb
+            flex__align-{{ banner.text_align | downcase }}
+            {% if banner.enable_overlay %} has_overlay{% endif %}
+          "
+        >
+          <div class="feature-article__content">
+            <div class="feature-article__info">
+              <h2 class="heading">{{ banner.heading }}</h2>
+              <div class="rte">
+                {{ banner.content }}
+              </div>
+              <div class="feature-article__button">
+                <a href="{{ banner.url }}">{{ banner.button_text }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+      {%- for article in blog.articles -%}
+        <div
+          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          {%- render 'article-card',
+            article: article,
+            media_height: section.settings.image_height,
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: section.settings.show_image,
+            show_date: section.settings.show_date,
+            show_author: section.settings.show_author,
+            show_categories: section.settings.show_categories,
+            show_excerpt: false
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      {%- if paginate.next -%}
+        {%- assign size = paginate.current_page | times: section.settings.post_limit -%}
+      {%- else -%}
+        {%- assign size = count -%}
+      {%- endif -%}
+      {%- render 'pagination', paginate: paginate, count: count, size: size -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.main-blog.settings.layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 2,
+      "max": 100,
+      "step": 1,
+      "default": 12,
+      "label": "t:sections.featured-blog.settings.post_limit.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_categories",
+      "default": true,
+      "label": "Show categories"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

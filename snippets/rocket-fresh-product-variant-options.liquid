@@ -1,0 +1,82 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+
+
+  Usage:
+  {% render 'rocket-fresh-product-variant-options',
+    product: product,
+    option: option
+  %}
+{% endcomment %}
+{%- liquid
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+  assign variants_price_arr = product.variants | map: 'price'
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign option_disabled = true
+    assign variant_price = ""
+
+    for option1_name in variants_option1_arr
+      case option.position
+        when 1
+          if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+            assign variant_price = variants_price_arr[forloop.index0]
+          endif
+        when 2
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+            assign variant_price = variants_price_arr[forloop.index0]
+          endif
+        when 3
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+            assign variant_price = variants_price_arr[forloop.index0]
+          endif
+      endcase
+    endfor
+  -%}
+  {% assign option_downcase = option.name | downcase %}
+  {% assign option_handle = option.name | handleize %}
+  {% if option_downcase == 'talla' %}
+    {% assign option_downcase = 'size' %}
+  {% endif %}
+  <div class="variant">
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}{% if vendor %}-{{ vendor }}{% endif %}"
+      name="{{product.id}}-{{ option_handle }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value and option_downcase == 'color' %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+        disabled
+      {% endif %}
+    >
+    <label
+      class="variant-size-label {{ text_font_class }}"
+      for="{{ section.id }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 }}{% if vendor %}-{{ vendor }}{% endif %}"
+    >
+      {{ value }}
+      <br>
+      {% if option_disabled %}
+        <span class="variant-unavailable">Agotado</span>
+      {% else %}
+        <span>{{ variant_price | money }}</span>
+      {% endif %}
+    </label>
+</div>
+
+{%- endfor -%}

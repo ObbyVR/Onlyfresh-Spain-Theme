@@ -1,0 +1,140 @@
+<div class="onlyfresh-rocket-subscribe-email">
+  <div class="onlyfresh-rocket-subscribe-email__container">
+    <div class="onlyfresh-rocket-subscribe-email__content{% if section.settings.image != blank or section.settings.image_mb != blank %} have-banner{% endif %}">
+      <div class="onlyfresh-rocket-subscribe-email__content__wapper">
+        {% if section.settings.title != blank %}
+          <h2 class="onlyfresh-rocket-subscribe-email__title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="onlyfresh-rocket-subscribe-email__subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+
+        <div class="onlyfresh-rocket-subscribe-email__form klaviyo-form-YgMRLy">
+          {% form 'customer', id: 'rocket_newsletter_signup' %}
+            {% if form.posted_successfully? %}
+              <div class="onlyfresh-rocket-subscribe-email__response onlyfresh-rocket-subscribe-email__response--success">
+                <div>{{ 'newsletter.success' | t }}</div>
+              </div>
+            {% else %}
+
+              <div class="field">
+                <input
+                  type="email"
+                  placeholder="{{ 'newsletter.label' | t }}"
+                  value=""
+                  name="contact[email]"
+                  aria-label="{{ 'newsletter.label' | t | escape }}"
+                  required
+                >
+                <button type="submit">{% render 'icon-chevron-right' %}</button>
+              </div>
+              <div class="onlyfresh-rocket-subscribe-email__terms">
+                <div class="onlyfresh-rocket-subscribe-email__checkbox">
+                  <input type="checkbox" id="{{section.id}}-terms" name="terms" required>
+                  <label for="{{section.id}}-terms" class="onlyfresh-rocket-subscribe-email__terms-text">
+                    {{ section.settings.terms }}
+                  </label>
+                </div>
+              </div>
+              {% if section.settings.show_social != blank %}
+                <div class="onlyfresh-rocket-subscribe-email__socials">
+                  <span class="onlyfresh-rocket-subscribe-email__socials__title">{{ 'general.social.sharing' | t }}</span>
+                  {% if settings.social_instagram_link != blank %}
+                    <a href="{{ settings.social_instagram_link }}" class="onlyfresh-rocket-subscribe-email__socials__item">
+                      {% render 'icon-instagram' %}
+                      <span>{{ 'general.social.links.instagram' | t }}</span>
+                    </a>
+                  {% endif %}
+                  {% if settings.social_tiktok_link != blank %}
+                    <a href="{{ settings.social_tiktok_link }}" class="onlyfresh-rocket-subscribe-email__socials__item">
+                      {% render 'icon-tiktok' %}
+                      <span>{{ 'general.social.links.tiktok' | t }}</span>
+                    </a>
+                  {% endif %}
+                  {% if settings.social_facebook_link != blank %}
+                    <a href="{{ settings.social_facebook_link }}" class="onlyfresh-rocket-subscribe-email__socials__item">
+                      {% render 'icon-facebook' %}
+                      <span>{{ 'general.social.links.facebook' | t }}</span>
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endform %}
+        </div>
+      </div>
+    </div>
+    {% if section.settings.image != blank or section.settings.image_mb != blank %}
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image |  image_url: width: section.settings.image.width }}" 
+          alt="{{ section.settings.image.alt }}"
+          loading="lazy"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.width | times: 283 | divided_by: 720 }}"
+        {% if section.settings.image_mb != "blank" %} class="small-hide"{% endif %}
+        >
+      {% endif %}
+      {% if section.settings.image_mb != blank %}
+        <img src="{{ section.settings.image_mb |  image_url: width: section.settings.image_mb.width }}" 
+          alt="{{ section.settings.image_mb.alt }}"
+          loading="lazy"
+          width="{{ section.settings.image_mb.width }}"
+          height="{{ section.settings.image_mb.width | times: 241 | divided_by: 375 }}"
+        {% if section.settings.image != "blank" %} class="large-hide"{% endif %}
+        >
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Subscribe section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mb",
+      "label": "Image mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "¡Mantente informadode las últimas novedades!"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Title on mobile",
+      "default": "Puede darse de baja en cualquier momento. Para ello, consulte nuestra Política de Privacidad."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "terms",
+      "label": "Terms",
+      "default": "He leído y acepto la política de privacidad"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rocket newsletter section",
+      "category": "Rocket newsletter section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+<div id="{{ section.settings.section_id }}" class="fresh-faqs-item">
+    {% for block in section.blocks %}
+        {% assign item = block.settings %}
+        {% if item.title != blank %}
+            <faqs-item class="fresh-faqs__item">
+                <div class="accordion">
+                    {{ item.title }}
+
+                    <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 6L12 18" stroke="#111010" stroke-linecap="round"/>
+                        <path d="M6 12L18 12" stroke="#111010" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 12L18 12" stroke="#111010" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="panel">
+                    {{ item.description }}
+                </div>
+            </faqs-item>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Fresh - FAQs Item",
+        "class": "section-fresh-faqs-item",
+        "settings": [
+            {
+                "type": "text",
+                "id": "section_id",
+                "label": "ID"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "block",
+                "name": "FAQs",
+                "settings": [
+                    {
+                        "type": "richtext",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description",
+                        "label": "Description"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Fresh - FAQs Item"
+            }
+        ]
+    }
+{% endschema %}

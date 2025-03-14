@@ -1,0 +1,127 @@
+.section-fresh-benefits {
+	.hidden-mb {
+		display: none;
+		@media (min-width: 960px) {
+			display: block;
+		}
+	}
+	.hidden-pc {
+		display: block;
+		@media (min-width: 960px) {
+			display: none;
+		}
+	}
+	.fresh-benefits__heading {
+		font-family: 'Baskerville';
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 44px;
+		text-align: center;
+		margin-bottom: -5px;
+        color: #111111;
+        @media (min-width: 960px) {
+			font-size: 36px;
+            margin-bottom: 10px;
+		}
+	}
+	.fresh-benefits__list {
+		.fresh-benefits__item {
+            padding: 20px 8px;
+            .fresh-benefits__body {
+                text-align: center;
+                border-radius: 14px;
+                padding: 36px 24px 35px 25px;
+                padding: 25px 20px 23px 20px;
+                box-shadow: 0px 4px 20px 0px #0000000D;
+            }
+            &:not(.swiper-slide-active) {
+                .fresh-benefits__body {
+                    box-shadow: none;
+                }
+            }
+            @media (min-width: 768px) {
+                padding: 20px 50px;
+                .fresh-benefits__body {
+                    text-align: left;
+                    padding: 36px 24px 35px 25px;
+                }
+            }
+		}
+		.fresh-benefits__body-title {
+			font-family: Baskerville;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 27.46px;
+			margin: 0 0 8px;
+            color: #111111;
+            @media (min-width: 768px) {
+                line-height: 32px;
+            }
+		}
+        .fresh-benefits__body-content {
+            color: #8D8D8D;
+        }
+	}
+    benefit-slider {
+		position: relative;
+	}
+	.swiper-button {
+		min-width: auto;
+		width: 31px;
+		height: 31px;
+		border-radius: 50%;
+		padding: 0;
+		background: #111010;
+		border: 1px solid #111010;
+		color: #fff;
+		position: absolute;
+		top: calc(50% - 16px);
+		z-index: 1;
+		&.button-prev {
+			left: 26px;
+		}
+		&.button-next {
+			right: 26px;
+		}
+		&:hover {
+			background: #fff;
+			color: #111111;
+			border-color: #111010;
+		}
+        @media (min-width: 960px) {
+            &.button-prev {
+                left: 0;
+            }
+            &.button-next {
+                right: 0;
+            }
+        }
+	}
+    .fresh-benefits__inner {
+        padding-top: 24px;
+    }
+    @media (min-width: 960px) {
+        .fresh-benefits__media--img {
+            border-radius: 16px;
+        }
+        .fresh-benefits__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .fresh-benefits__media {
+            width: 49.5%;
+        }
+        .fresh-benefits__inner {
+            width: 50%;
+            max-width: 570px;
+            padding-top: 23px;
+        }
+    }
+    @media (min-width: 1560px) {
+        .fresh-benefits__inner {
+            max-width: 45%;
+        }
+    }
+}

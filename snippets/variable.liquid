@@ -1,0 +1,91 @@
+{% style %}
+  {% if settings.heading_type_font == 'default' %}
+    @font-face {
+      font-family: 'Baskerville';
+      font-style: normal;
+      font-weight: normal;
+      src: url({{ 'Baskerville.woff' | asset_url }}) format('woff');
+    }
+    @font-face {
+      font-family: 'Baskerville';
+      font-style: normal;
+      font-weight: normal;
+      src: url('{{ 'Baskerville-Bold.woff' | asset_url }}') format('woff');
+    }
+  {% elsif settings.heading_type_font == 'google' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family={{ settings.google_heading_font_type | strip | capitalize | replace: ' ', '+' }}:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {% else %}
+    {{ settings.shopify_heading_font_light | font_face: font_display: 'swap' }}
+    {{ settings.shopify_heading_font_normal | font_face: font_display: 'swap' }}
+    {{ settings.shopify_heading_font_medium | font_face: font_display: 'swap' }}
+    {{ settings.shopify_heading_font_semibold | font_face: font_display: 'swap' }}
+    {{ settings.shopify_heading_font_bold | font_face: font_display: 'swap' }}
+  {% endif %}
+
+  {% if settings.body_type_font == 'default' %}
+    {% if settings.heading_type_font != 'default' %}
+      @font-face {
+        font-family: 'Baskerville';
+        font-style: normal;
+        font-weight: normal;
+        src: url({{ 'Baskerville.woff' | asset_url }}) format('woff');
+      }
+      @font-face {
+        font-family: 'Baskerville';
+        font-style: normal;
+        font-weight: normal;
+        src: url('{{ 'Baskerville-Bold.woff' | asset_url }}') format('woff');
+      }
+    {% endif %}
+  {% elsif settings.body_type_font == 'google' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family={{ settings.google_body_font_type | strip | capitalize | replace: ' ', '+' }}:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {% else %}
+    {{ settings.shopify_body_font_light | font_face: font_display: 'swap' }}
+    {{ settings.shopify_body_font_normal | font_face: font_display: 'swap' }}
+    {{ settings.shopify_body_font_medium | font_face: font_display: 'swap' }}
+    {{ settings.shopify_body_font_semibold | font_face: font_display: 'swap' }}
+    {{ settings.shopify_body_font_bold | font_face: font_display: 'swap' }}
+  {% endif %}
+
+
+  :root {
+    {% if settings.heading_type_font == 'default' %}
+      --font-heading: 'Baskerville', 'sans-serif';
+    {% elsif settings.heading_type_font == 'google' %}
+      --font-heading: {{ settings.google_heading_font_type }};
+    {% else %}
+      --font-heading: {{ settings.shopify_heading_font_normal.family }};
+    {% endif %}
+    {% if settings.body_type_font == 'default' %}
+      --font-body: 'Baskerville', 'sans-serif';
+    {% elsif settings.body_type_font == 'google' %}
+      --font-body: {{ settings.google_body_font_type }};
+    {% else %}
+      --font-body: {{ settings.shopify_body_font_normal.family }};
+    {% endif %}
+    --color-primary: {{ settings.primary_color }};
+    --color-background: {{ settings.background_color }};
+    --color-secondary-dark: {{ settings.secondary_dark }};
+    --color-secondary-medium: {{ settings.secondary_medium }};
+    --color-secondary-bright: {{ settings.secondary_bright }};
+    --color-primary-button: {{ settings.button_label_color }};
+    --color-background-primary-button: {{ settings.button_background_color }};
+    --color-border-primary-button: {{ settings.button_border_color }};
+    --color-secondary-button: {{ settings.secondary_button_label_color }};
+    --color-background-secondary-button: {{ settings.secondary_button_background_color }};
+    --color-border-secondary-button: {{ settings.secondary_button_border_color }};
+    --color-disable-button: {{ settings.disable_button_label_color }};
+    --color-background-disable-button: {{ settings.disable_button_background_color }};
+    --color-success: {{ settings.success_color }};
+    --color-infor: {{ settings.infor_color }};
+    --color-hot: {{ settings.hot_color }};
+    --color-input-border: {{ settings.input_border_color }};
+    --color-input-error: {{ settings.input_error_color }};
+    --background-select: url("{{ 'backgroundselect.svg' | asset_url }}");
+    --page-width: {{ settings.page_width }}px;
+  }
+{% endstyle %}

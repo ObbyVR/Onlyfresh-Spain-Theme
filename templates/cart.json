@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_aBrVPR": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".cart-message {padding: 15px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; margin-top: 20px; text-align: center; font-size: 16px; max-width: 1200px; margin: auto; width: 90%;}",
+        ".progress-bar-container {background-color: #e0e0e0; border-radius: 10px; overflow: hidden; height: 20px; margin-top: 10px; position: relative;}",
+        ".progress-bar {background-color: black !important; /* Forza il colore nero */ height: 100%; width: 0%; /* Default */ border-radius: 10px; transition: width 0.3s ease, background-color 0.3s ease;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% assign minimum_order_amount = 4500 %}\n{% assign remaining_amount_cents = minimum_order_amount | minus: cart.total_price %}\n\n{% if cart.total_price < minimum_order_amount %}\n  <div class=\"cart-message\">\n    <p>\n      {% assign remaining_amount = remaining_amount_cents | divided_by: 1 %}\n      ¡Faltan solo <b>{{ remaining_amount | money }}</b> para obtener el envío gratuito! 🐾✨\n    </p>\n    \n    <div class=\"progress-bar-container\">\n      {% assign progress_percentage = cart.total_price | times: 100 | divided_by: minimum_order_amount %}\n      <div class=\"progress-bar\" style=\"width: {{ progress_percentage | round }}%;display: block;\"></div>\n    </div>\n  </div>\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "settings": {}
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_aBrVPR",
+    "cart-items",
+    "cart-footer",
+    "featured-collection"
+  ]
+}

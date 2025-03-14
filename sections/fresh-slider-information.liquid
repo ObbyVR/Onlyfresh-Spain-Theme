@@ -1,0 +1,747 @@
+{% liquid
+  if request.page_type contains 'collection'
+    assign template_mto = collection.metafields
+  elsif request.page_type contains 'product'
+    assign template_mto = product.metafields
+  elsif request.page_type contains 'blog'
+    assign template_mto = blog.metafields
+  endif
+
+  if template_mto.custom.slider_content != blank
+    assign section_object = template_mto.custom.slider_content.value
+
+    assign horizontal_alignment = section_object.horizontal_alignment
+    assign horizontal_alignment_mobile = section_object.horizontal_alignment_mobile
+
+    assign heading = section_object.heading
+    assign heading_mobile = section_object.heading_mobile
+    assign heading_color = section_object.heading_color
+
+    assign padding_top = section_object.padding_top
+    assign padding_bottom = section_object.padding_bottom
+    assign padding_top_mobile = section_object.padding_top_mobile
+    assign padding_bottom_mobile = section_object.padding_bottom_mobile
+
+    assign padding_left = section_object.padding_left
+    assign padding_right = section_object.padding_right
+    assign padding_left_mobile = section_object.padding_left_mobile
+    assign padding_right_mobile = section_object.padding_right_mobile
+  else
+    assign horizontal_alignment = section.settings.horizontal_alignment
+    assign horizontal_alignment_mobile = section.settings.horizontal_alignment_mobile
+
+    assign heading = section.settings.heading
+    assign heading_mobile = section.settings.heading_mobile
+    assign heading_color = section.settings.heading_color
+
+    assign padding_top = section.settings.padding_top
+    assign padding_bottom = section.settings.padding_bottom
+    assign padding_top_mobile = section.settings.padding_top_mobile
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+
+    assign padding_left = section.settings.padding_left
+    assign padding_right = section.settings.padding_right
+    assign padding_left_mobile = section.settings.padding_left_mobile
+    assign padding_right_mobile = section.settings.padding_right_mobile
+  endif
+%}
+
+{% style %}
+    #fresh-slider-content-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    #fresh-slider-content-{{ section.id }} .fresh-slider-content__inner {
+        padding-left: {{ section.settings.padding_left_mobile }}px;
+        padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+    #fresh-slider-content-{{ section.id }} .fresh-slider-content__heading {
+        color: {{ heading_color }};
+    }
+    @media screen and (min-width: 960px) {
+        #fresh-slider-content-{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+        #fresh-slider-content-{{ section.id }} .fresh-slider-content__inner {
+            padding-left: {{ section.settings.padding_left }}px;
+            padding-right: {{ section.settings.padding_right }}px;
+        }
+    }
+
+    /* Rendi le prime 4 slide con colore pieno */
+  .fresh-slider-content__wrapper .swiper-slide:nth-child(-n+5) {
+    opacity: 1!important; /* Opacità piena per le prime 5 slide */
+    filter: none; /* Rimuove qualsiasi filtro o overlay */
+  }
+
+  /* Applica un overlay a partire dalla quinta slide */
+  .fresh-slider-content__wrapper .swiper-slide:nth-child(n+5) {
+    opacity: 1; /* Riduce l’opacità per creare un effetto di overlay */
+    /*filter: grayscale(50%);  Opzionale: effetto grigio per l'overlay */
+    transition: opacity 0.3s ease; /* Transizione per un effetto graduale */
+  }
+
+  /* Rimuovi overlay quando la slide è attiva */
+  .fresh-slider-content__wrapper .swiper-slide-active {
+    opacity: 1;
+    filter: none;
+  }
+    .section-fresh-slider-content .fresh-slider-content .fresh-slider-content__inner .fresh-slider-content__body {
+          padding-left: 75px;
+      }
+    .swiper-slide {
+    opacity: 1; /* Overlay di base per tutte le slide */
+    transition: opacity 0.3s ease; /* Transizione per un effetto graduale */
+  }
+
+    @media only screen and (max-width: 600px) {.section-fresh-slider-content .fresh-slider-content .fresh-slider-content__inner .fresh-slider-content__body {
+      padding-left: 25px;
+  }}
+{% endstyle %}
+{% if product.metafields.custom.slider_content %}
+  <div id="fresh-slider-content-{{ section.id }}" class="fresh-slider-content">
+    <div class="fresh-slider-content__inner page-container-width h-align--{{ horizontal_alignment | downcase }} h-align--{{ horizontal_alignment_mobile | downcase }}--mobile">
+      <div class="fresh-slider-content__header">
+        {% if heading != blank %}
+          <h2 class="fresh-slider-content__heading">
+            {% if heading_mobile != blank %}
+              <span class="content-desktop">{{ heading }}</span>
+              <span class="content-mobile">{{ heading_mobile }}</span>
+            {% else %}
+              {{ heading }}
+            {% endif %}
+          </h2>
+        {% endif %}
+      </div>
+      <div
+        class="fresh-slider-content__body {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        <product-slider class="fresh-slider-content__slider swiper" data-id="{{ section.id }}">
+          <div class="fresh-slider-content__wrapper swiper-wrapper">
+            {% if template_mto.custom.slider_content != blank %}
+              {% assign blocks = section_object.blocks.value %}
+              {% assign numero_immagini = 0 %}
+
+              <!-- Conta le immagini presenti nei blocchi -->
+              {% for block in blocks %}
+                {% if block.image != blank %}
+                  {% assign numero_immagini = numero_immagini | plus: 1 %}
+                {% endif %}
+                {% if block.image_mobile != blank %}
+                  {% assign numero_immagini = numero_immagini | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+
+              {% if numero_immagini < 5 %}
+                <!-- Caso con più di 5 immagini -->
+                {% for item in blocks %}
+                  <div class="swiper-slide fresh-slider-content__item">
+                    <div class="fresh-slider-content__media">
+                      {% if item.image != blank %}
+                        <div class="fresh-slider-content__media-image {% if item.image_mobile != blank %}content-desktop{% endif %}">
+                          {{ item.image | metafield_tag }}
+                        </div>
+                      {% endif %}
+                      {% if item.image_mobile != blank %}
+                        <div class="fresh-slider-content__media-image content-mobile">
+                          {{ item.image_mobile | metafield_tag }}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="fresh-slider-content__content">
+                      {% if item.title != blank %}
+                        <div class="block-title-arrow">
+                          <h6 class="fresh-slider-content__content-title">{{ item.title }}</h6>
+                          <span class="expand-icon">{% render 'icon-chervon-down' %}</span>
+                        </div>
+                      {% endif %}
+                      {% if item.description != blank %}
+                        <div class="fresh-slider-content__content-description">
+                          {{ item.description | metafield_tag }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                {%- for i in (1..1) -%}
+                  {% for item in blocks %}
+                    <div class="swiper-slide fresh-slider-content__item">
+                      <div class="fresh-slider-content__media">
+                        {% if item.image != blank %}
+                          <div class="fresh-slider-content__media-image {% if item.image_mobile != blank %}content-desktop{% endif %}">
+                            {{ item.image | metafield_tag }}
+                          </div>
+                        {% endif %}
+                        {% if item.image_mobile != blank %}
+                          <div class="fresh-slider-content__media-image content-mobile">
+                            {{ item.image_mobile | metafield_tag }}
+                          </div>
+                        {% endif %}
+                      </div>
+                      <div class="fresh-slider-content__content">
+                        {% if item.title != blank %}
+                          <div class="block-title-arrow">
+                            <h6 class="fresh-slider-content__content-title">{{ item.title }}</h6>
+                            <span class="expand-icon">{% render 'icon-chervon-down' %}</span>
+                          </div>
+                        {% endif %}
+                        {% if item.description != blank %}
+                          <div class="fresh-slider-content__content-description">
+                            {{ item.description | metafield_tag }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                {%- endfor -%}
+              {% endif %}
+            {% else %}
+              {%- for i in (1..3) -%}
+                {% for block in section.blocks %}
+                  {% if section.blocks.size >= 1 -%}
+                    {% assign show_arrow = true %}
+                  {% endif %}
+                  {% assign item = block.settings %}
+                  <div class="swiper-slide fresh-slider-content__item">
+                    <div class="fresh-slider-content__media">
+                      {% if item.image != blank %}
+                        <div class="fresh-slider-content__media-image {% if item.image_mobile != blank %}content-desktop{% endif %}">
+                          {{
+                            item.image
+                            | image_url: width: item.image.width, height: item.image.height
+                            | image_tag:
+                              width: item.image.width,
+                              height: item.image.height,
+                              loading: 'lazy',
+                              alt: item.image.alt
+                          }}
+                        </div>
+                      {% endif %}
+                      {% if item.image_mobile != blank %}
+                        <div class="fresh-slider-content__media-image content-mobile">
+                          {{
+                            item.image_mobile
+                            | image_url: width: item.image_mobile.width, height: item.image_mobile.height
+                            | image_tag:
+                              width: item.image_mobile.width,
+                              height: item.image_mobile.height,
+                              loading: 'lazy',
+                              alt: item.image_mobile.alt
+                          }}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="fresh-slider-content__content">
+                      {% if item.title != blank %}
+                        <h6 class="fresh-slider-content__content-title">{{ item.title }}</h6>
+                      {% endif %}
+                      {% if item.description != blank %}
+                        <div class="fresh-slider-content__content-description">
+                          {{ item.description }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              {%- endfor -%}
+            {% endif %}
+          </div>
+
+          <div class="swiper-button-prev fresh-slider-content__slider-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+              <rect width="31" height="31" rx="15.5" fill="white"/>
+              <path d="M18 10L13 15.5L18 21" stroke="#111010"/>
+            </svg>
+          </div>
+          <div class="swiper-button-next fresh-slider-content__slider-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+              <rect x="31" y="31" width="31" height="31" rx="15.5" transform="rotate(-180 31 31)" fill="white"/>
+              <path d="M13 21L18 15.5L13 10" stroke="#111010"/>
+            </svg>
+          </div>
+        </product-slider>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      addEventListener('DOMContentLoaded', () => {
+        let swiper_{{ section.id | replace: " ", "_" | replace: "-", "_" }} = new Swiper('#fresh-slider-content-{{ section.id }} .swiper', {
+          spaceBetween: 20,
+          slidesPerView: 1.42, // Valore predefinito su mobile
+          slidesPerGroup: 1,
+          centeredSlides: false,
+          roundLengths: true,
+          autoHeight: true,
+          loop: false,
+          allowSlideNext: true,
+          allowSlidePrev: true,
+          preloadImages: false,
+          lazy: {
+            loadOnTransitionStart: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          },
+          speed: 300,
+          threshold: 10,
+
+          breakpoints: {
+            768: {
+              spaceBetween: 20,
+              slidesPerView: 3, // 3 slide visibili per schermi >=768px e <899px
+              slidesPerGroup: 1,
+              centeredSlides: false
+            },
+            900: {
+              spaceBetween: 20,
+              slidesPerView: 4, // 4 slide visibili per schermi >=900px e <1025px
+              slidesPerGroup: 1,
+              centeredSlides: false
+            },
+            1025: {
+              spaceBetween: 20,
+              slidesPerView: 4, // 5 slide visibili per schermi >=1025px
+              slidesPerGroup: 1,
+              centeredSlides: false
+            },
+            1200: {
+              spaceBetween: 20,
+              slidesPerView: 5, // 5 slide visibili per schermi >=1025px
+              slidesPerGroup: 1,
+              centeredSlides: false
+            }
+          },
+          on: {
+            slideChange: function () {
+              // Reset dell'opacità per tutte le slide
+              document.querySelectorAll('.swiper-slide').forEach(slide => {
+                slide.style.opacity = '1';
+              });
+
+              const activeIndex = swiper_{{ section.id | replace: " ", "_" | replace: "-", "_" }}.activeIndex;
+              for (let i = activeIndex; i < activeIndex + 4; i++) {
+                if (swiper_{{ section.id | replace: " ", "_" | replace: "-", "_" }}.slides[i]) {
+                  swiper_{{ section.id | replace: " ", "_" | replace: "-", "_" }}.slides[i].style.opacity = '1';
+                }
+              }
+            }
+          }
+        });
+
+        // Forza l'aggiornamento al caricamento della finestra
+        window.addEventListener('resize', () => {
+          swiper_{{ section.id | replace: " ", "_" | replace: "-", "_" }}.update();
+        });
+      })
+
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+      // Seleziona tutte le icone di espansione
+      var expandIcons = document.querySelectorAll('.expand-icon');
+
+      expandIcons.forEach(function(icon) {
+        icon.addEventListener('click', function() {
+          // Trova il contenitore del contenuto più vicino
+          var contentContainer = this.closest('.fresh-slider-content__content');
+          // Alterna la classe 'expanded'
+          contentContainer.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+
+  <style>
+          /* Contenitore principale */
+          .fresh-slider-content__item {
+            position: relative;
+            overflow: hidden;
+            height: clamp(18rem, 5vw + 18rem, 22rem); /* Altezza flessibile */
+            transition: height 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+          }
+
+          /* Contenitore dell'immagine */
+          .fresh-slider-content__media {
+            flex: 1;
+            overflow: hidden;
+          }
+
+          .block-title-arrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          @media (min-width:769px) {
+          .expand-icon {
+            display: none;
+          }
+
+          /* Contenitore dell'immagine */
+          .fresh-slider-content__media {
+            flex: 1;
+            overflow: hidden;
+          }
+
+          .fresh-slider-content__media-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* Effetto zoom */
+          }
+
+          /* Testo inizialmente visibile */
+          .fresh-slider-content__content {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 18.5px;
+            transition: max-height 0.3s ease;
+            max-height: 4.5em; /* Limita l'altezza iniziale per visualizzare solo il titolo */
+            overflow: hidden;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+          }
+
+          .fresh-slider-content__content-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px; /* Maggiore spazio sotto il titolo */
+            color: #333;
+          }
+
+          .fresh-slider-content__content-description {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #555;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+          }
+
+          /* Al passaggio del mouse */
+          .fresh-slider-content__item:hover .fresh-slider-content__media-image {
+            transform: scale(1.05); /* Zoom leggero sull'immagine */
+          }
+
+          .fresh-slider-content__item:hover .fresh-slider-content__content {
+            max-height: 15em; /* Espande il contenuto del testo per mostrare la descrizione */
+          }
+
+          .fresh-slider-content__item:hover .fresh-slider-content__content-description {
+            opacity: 1;
+            max-height: 100%; /* Consente di espandere la descrizione */
+          }
+          h6.fresh-slider-content__content-title {
+            font-weight: 500 !important;
+          }
+          .swiper-button-next.fresh-slider-content__slider-btn {
+              right:20px!important;
+          }
+          .swiper-button-prev.fresh-slider-content__slider-btn {
+              left:20px!important;
+          }
+
+          .section-fresh-slider-content .fresh-slider-content .fresh-slider-content__inner .fresh-slider-content__body {
+              padding-left:22px;
+          }
+          }
+          @media (max-width:1600px) {
+            h6.fresh-slider-content__content-title {
+                font-size: 20px !important;
+                line-height: 18px!important;
+            }
+          }
+
+          @media (max-width:1300px) {
+            h6.fresh-slider-content__content-title {
+                font-size: 1rem!important;
+                      line-height: 14px!important;
+            }
+          }
+
+          @media (max-width:1024px) {
+            h6.fresh-slider-content__content-title {
+                font-size: 1.2rem!important;
+                      line-height: 16px!important;
+            }
+          }
+
+          /* Stili per l'espansione solo su mobile */
+
+    @media (max-width: 768px) {
+      .fresh-slider-content__content {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 12px 18.5px;
+        transition: max-height 0.3s ease;
+        max-height: 4.5em; /* Altezza limitata per mostrare solo il titolo */
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Stato espanso del contenuto al clic */
+      .fresh-slider-content__content.expanded {
+        max-height: 15em; /* Espande il contenuto per mostrare la descrizione */
+      }
+
+      .fresh-slider-content__content-description {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+      }
+
+      /* Stato espanso della descrizione */
+      .fresh-slider-content__content.expanded .fresh-slider-content__content-description {
+        opacity: 1;
+        max-height: 100%; /* Mostra completamente la descrizione */
+      }
+
+      /* Stili per l'icona espandi/riduci */
+      .expand-icon {
+        cursor: pointer;
+        font-size: 1.2em;
+        margin-left: 8px;
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .fresh-slider-content__content.expanded .expand-icon {
+        transform: rotate(180deg); /* Ruota la freccia verso l'alto quando espanso */
+      }
+      /* Stili per la descrizione */
+    .fresh-slider-content__content-description {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    /* Stili per l'icona */
+    .expand-icon {
+      cursor: pointer;
+      font-size: 1.2em;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Stato espanso */
+    .fresh-slider-content__content.expanded .fresh-slider-content__content-description {
+      max-height: 1000px; /* Valore sufficientemente grande per mostrare il contenuto */
+    }
+
+    .fresh-slider-content__content.expanded .expand-icon {
+      transform: rotate(180deg); /* Ruota la freccia verso l'alto */
+    }
+      .section-fresh-slider-content .fresh-slider-content .fresh-slider-content__inner .fresh-slider-content__body {
+        padding-left: 22px;
+    }
+
+    }
+  </style>
+{% endif %}
+{% schema %}
+{
+  "name": "Fresh - Slider Content",
+  "tag": "section",
+  "class": "section-fresh-slider-content",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Alignment"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Desktop"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_mobile",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_mobile",
+      "label": "Heading mobile"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom mobile",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right mobile",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresh - Slider Content"
+    }
+  ]
+}
+{% endschema %}

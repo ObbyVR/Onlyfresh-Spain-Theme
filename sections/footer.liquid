@@ -1,0 +1,252 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
+  {{ 'component-localization-form.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- style -%}
+  .footer {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="footer rocket-footer section-{{ section.id }}-padding">
+  {% comment %}
+    {%- liquid
+      assign has_social_icons = true
+      if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank and settings.social_vmagazine_link == blank
+        assign has_social_icons = false
+      endif
+
+      if settings.brand_image == blank and settings.brand_headline == blank and settings.brand_description == blank
+        assign brand_empty = true
+      endif
+
+    -%}
+  {% endcomment %}
+  {%- if section.blocks.size > 0
+    or section.settings.newsletter_enable
+    or section.settings.show_social
+    or section.settings.enable_follow_on_shop
+  -%}
+    {%- assign brand_information = section.blocks | where: 'type', 'brand_information' -%}
+    {%- assign link_list = section.blocks | where: 'type', 'link_list' -%}
+    {%- assign payment_method_list = section.blocks | where: 'type', 'payment_method_list' -%}
+    <div class="rocket-footer__line"></div>
+    <div class="rocket-footer__top">
+      <div class="rocket-footer__footer-left">
+        {%- for block in brand_information -%}
+          {%- style -%}
+            .rocket-footer__brand-image {
+              width: {{ block.settings.image_width }}px
+            }
+          {%- endstyle -%}
+          {%- if block.settings.image != blank -%} 
+            <div class="rocket-footer__brand-image">
+              <div class="rocket-footer__brand-image-dsk">{{ block.settings.image | image_url: width: block.settings.image_width | image_tag: loading: 'lazy' }}</div>
+              <div class="rocket-footer__brand-image-mob">{{ block.settings.image-mobile | image_url: width: block.settings.image_width_mobile | image_tag: loading: 'lazy' }}</div>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.subtext != blank -%}
+            <div class="rocket-footer__brand-description">
+              {{ block.settings.subtext }}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.show_social -%}
+            <div class="rocket-footer__social-icons">
+              {%- render 'social-icons' -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="rocket-footer__footer-right">
+        {% render 'fresh-footer-menu' %}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="rocket-footer__bottom">
+    {%- if payment_method_list.size > 0 -%}
+      <div class="rocket-footer__payments">
+        {% for block in payment_method_list -%}
+          {% if block.settings.icon %}
+            {{
+              block.settings.icon
+              | image_url: width: block.settings.icon.width
+              | image_tag: loading: 'lazy', alt: block.settings.icon.alt
+            }}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {%- endif -%}
+    <div class="onlyfresh-footer__wrap">
+      <p class="text-s">
+        {{ section.settings.copyright_text }} 
+        {% for block in link_list -%}
+          <a href="{{ block.settings.url }}" class="text-s">{{ block.settings.heading }}</a>
+          {%- unless forloop.last %} - {% endunless -%}
+        {%- endfor %}
+      </p>
+    </div>
+  </div>
+</footer>
+
+{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
+  <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "payment_method_list",
+      "name": "Payment Method",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    },
+    {
+      "type": "link_list",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    },
+    {
+      "type": "brand_information",
+      "name": "t:sections.footer.blocks.brand_information.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "number",
+          "id": "image_width",
+          "label": "Image width",
+          "default": 100
+        },
+        {
+          "type": "number",
+          "id": "image_width_mobile",
+          "label": "Image width Mobile",
+          "default": 400
+        },
+
+        {
+          "type": "header",
+          "content": "t:sections.footer.blocks.brand_information.settings.header__1.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
+          "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer Menu"
+    },
+    {
+      "type": "header",
+      "content": "Footer copyright"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© 2024, Onlyfresh.com"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.footer.settings.margin_top.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

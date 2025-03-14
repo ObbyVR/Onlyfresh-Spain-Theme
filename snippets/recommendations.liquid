@@ -1,0 +1,57 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+
+{%- assign porduct_id = cart.items.first.product_id -%}
+{%- if cart == empty -%}
+  {%- assign porduct_id = collection.products.first.id -%}
+{% endif %}
+<div class=" no-js-hidden">
+  <product-recommendations
+    data-column-mobile="2"
+    data-column-desktop="3.25"
+    data-column-space="5"
+    class="related-products  isolate"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section_id }}&product_id={{ porduct_id}}&limit={{ products_to_show }}"
+  >
+    {%- if cart != empty -%}
+      {%- assign collection = recommendations -%}
+    {%- endif -%}
+    {% if recommendations.performed and collection.products_count > 0 %}
+      {%- if cart == empty -%}
+        {%- assign heading = 'sections.cart.recommended_products' | t -%}
+      {%- endif -%}
+
+      <div class="related-products__heading {% if cart == empty %} related-products__heading--cart-empty {% endif %}">
+        <div class="">
+          {{ heading }}
+        </div>
+      </div>
+      <div class="product-slider swiper">
+        <div class="swiper-wrapper">
+          {% for recommendation in collection.products %}
+            <div class="swiper-slide">
+              {% render 'rocket-fresh-card-product',
+                card_product: recommendation,
+                show_secondary_image: true,
+                show_quick_add: true,
+                section_id: section_id,
+                product_slider: true
+              %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="related-products-button-prev swiper-button-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="7" height="13" viewBox="0 0 7 13" fill="none">
+            <path d="M6 1L1 6.5L6 12" stroke="white"/>
+          </svg>
+        </div>
+        <div class="related-products-button-next swiper-button-next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="7" height="13" viewBox="0 0 7 13" fill="none">
+            <path d="M0.999998 12L6 6.5L1 1" stroke="white"/>
+          </svg>
+        </div>
+      </div>
+    {% endif %}
+  </product-recommendations>
+</div>

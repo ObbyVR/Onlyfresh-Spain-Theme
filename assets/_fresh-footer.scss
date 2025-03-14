@@ -1,0 +1,102 @@
+.rocket-footer{
+    &__line{
+      width: calc(100% - var(--container-padding) * 2 );
+      height: 1px;
+      background-color: var(--black);
+      margin: 0 auto;
+      &:empty{
+        display: block;
+      }
+    }
+    &__top{
+      @media(min-width: 768px){
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &__brand-description{
+      display: none;
+      @media(min-width: 768px){
+        display: block;
+        margin-top: 24px;
+      }
+    }
+    &__footer-left{
+      @media(min-width: 768px){
+        min-width: 343px;
+        padding-right: 0;;
+      }
+    }
+  
+    &__column{
+      order: var(--mobile-order);
+      @media(min-width: 1024px){
+        order: 0;
+      }
+    }
+    .footer-block__details-content{
+      a {
+        text-decoration: none;
+      }
+      li + li {
+        margin-top: 16px;
+      }
+    }
+    .list-social{
+      justify-content: flex-start;
+      gap: 8px;
+      margin-bottom: 16px;
+      &__link{
+        display: flex;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+      }
+      &__item {
+        &.auto-width {
+          .list-social__link {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+  .fresh-footer__menu {
+    width: 100%;
+    .list-menu {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      column-gap: 60px;
+      row-gap: 40px;
+      @media (min-width: 1024px) {
+        justify-content: space-between;
+      }
+      .footer__menu-heading {
+        color: var(--color-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 22px;
+      }
+      .footer__menu-item {
+        display: block;
+        color: var(--color-primary);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .footer__submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (min-width: 1024px) {
+          gap: 22px;
+        }
+      }
+    }
+  }

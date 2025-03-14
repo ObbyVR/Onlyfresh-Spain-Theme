@@ -1,0 +1,884 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "fresh_custom_banner_product_QHw6bx": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_ayAKwb": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/1_1b5355de-52a6-46b9-909e-01e30387de58.jpg",
+            "image_mb": "shopify://shop_images/portrait-of-a-young-finnish-lapphund-dog-sitting-a-2023-11-27-04-50-58-utc.jpg",
+            "content_position_x": "right",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "EXPERIENCIA ÚNICA",
+            "color_heading": "#000000",
+            "description": "<p><strong>Visán es la empresa que está detrás de la marca Trovetplus.En nuestra sede principal en Madrid, tenemos más de 30 años de experiencia en el desarrollo y la elaboración de alimentos súper premium y productos especializados para perros y gatos</strong></p>",
+            "color_content": "#111010",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_ayAKwb"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
+    },
+    "fresh_custom_banner_product_8FUiXn": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_c9nGUf": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/img-trovet_1024x_6c7aa879-03e1-4d3c-ae25-1e7c488d66c2.jpg",
+            "content_position_x": "left",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "MEJORA CONTINUA",
+            "color_heading": "#000000",
+            "description": "<p>El área de investigación y desarrollo está dirigida por un equipo altamente experimentado de científicos alimentarios, nutricionistas y veterinarios. Entre todos acumulan una gran experiencia y reconocimientos académicos en medicina veterinaria, nutrición animal, ciencia alimentaria y otras áreas relacionadas. Puedes estar seguro de que con Trovetplus la salud de tu mascota se encuentra en las mejores manos.</p>",
+            "color_content": "#000000",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_c9nGUf"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
+    },
+    "fresh_rich_text_6qC6K6": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "content_nkLNVb": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Nuestra gama de productos evoluciona continuamente para cubrir las necesidades del sector veterinario y los últimos avances en investigación nutricional.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 25,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "content_nkLNVb"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#b8dcf3",
+        "color_text": "#2b3d49",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50
+      }
+    },
+    "fresh_custom_banner_product_wgeVcc": {
+      "type": "fresh-custom-banner-product",
+      "blocks": {
+        "banner_Gj9Tt4": {
+          "type": "Banner",
+          "settings": {
+            "image_full": false,
+            "image": "shopify://shop_images/perros_gatos.jpg",
+            "image_mb": "shopify://shop_images/perros_gatos.jpg",
+            "content_position_x": "left",
+            "content_position_y": "middle",
+            "align_content": "left",
+            "heading": "Ethical Brand Award",
+            "color_heading": "#000000",
+            "description": "<p>Estamos orgullosos de haber conseguido la acreditación Ethical Brand Award. Esta acreditación, auditada y concedida por The Good Shopping Guide, reconoce el compromiso de Trovetplus con distintas normas sobre el medioambiente, el bienestar animal y los derechos humanos, como GMO-free, que certifica que nuestros productos no contienen transgénicos.</p>",
+            "color_content": "#8d8d8d",
+            "button_label": "",
+            "color_button": "#ffffff",
+            "background_button": "#000000",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_Gj9Tt4"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 600px) {.fresh-hero_banner--item {display: flex; flex-direction: column-reverse; } .fresh-hero_banner--text-wrapper {padding-top: 3rem; }}"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 21
+      }
+    },
+    "fresh_image_text_tKbyJH": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_p3EPgy": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/trpvetplus_descubre_d1b7c870-030f-4333-ba02-8aded4d02d91.jpg"
+          }
+        },
+        "title_bUzMUm": {
+          "type": "title",
+          "settings": {
+            "heading": "NUESTRA COCINA",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_rdazmF": {
+          "type": "content",
+          "settings": {
+            "text": "<p>En Visán, la casa de Trovetplus, llevamos haciendo alimentos excepcionales para animales de compañía desde 1990. Nuestra sede principal y la fábrica están en Madrid. Poseemos y operamos una de las cocinas para mascotas más avanzadas de Europa, en la que nuestro equipo de expertos desarrolla con mimo cada receta. Esto nos permite mantener un control total sobre la calidad de nuestros productos, lo que es de vital importancia para mantener intactos todos los beneficios en los alimentos que elaboramos.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_p3EPgy",
+        "title_bUzMUm",
+        "content_rdazmF"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_rich_text_nc9dzy": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "content_PfzYAD": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Usamos la tecnología de extrusión más innovadora de Europa, resultado de años de investigación e inversión, que nos permite inyectar carne fresca directamente en cada croqueta.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "content_PfzYAD"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#ceedeb",
+        "color_text": "#324948",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "image_banner_XTnBXq": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/img_Trovet.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "fresh_rich_text_WX9kDV": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "content_YTwdLV": {
+          "type": "content",
+          "settings": {
+            "text": "<p>También contamos con una planta de producción de alimentos húmedos ultra premium, donde adaptamos cada fórmula para lograr objetivos nutricionales óptimos y abordar desafíos de salud concretos.<br/>Nuestras fábricas están equipadas con tecnologías alimentarias exclusivas, lo que nos permite utilizar más ingredientes crudos y frescos, y producir alimentos secos sin harinas cárnicas ni carnes deshidratadas.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "content_YTwdLV"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "fresh_image_text_yJfCYt": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_eKR7NP": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/8_1efd6ba7-6b3c-4505-b219-4f418720e9bd.jpg"
+          }
+        },
+        "title_KKkVQC": {
+          "type": "title",
+          "settings": {
+            "heading": "NUESTRA FILOSOFÍA",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_9kaRNz": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Sabemos que la carne fresca es mucho más saludable para las mascotas y que a éstas, además, les encanta su sabor. Por eso, la mayoría de nuestras recetas están preparadas con las carnes y los pescados más frescos. Además, a diferencia de la gran mayoría de marcas veterinarias, no usamos harinas cárnicas en nuestras recetas</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_eKR7NP",
+        "title_KKkVQC",
+        "content_9kaRNz"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ee887f",
+        "color_text": "#ffffff",
+        "color_text_button": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 0,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_hwHGMd": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_MjPUc9": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/9_cf038167-4571-478a-b589-83ae44448084.jpg"
+          }
+        },
+        "title_fktyMj": {
+          "type": "title",
+          "settings": {
+            "heading": "NOSOTROS SÓLO USAMOSCARNE FRESCA",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_LTbyqQ": {
+          "type": "content",
+          "settings": {
+            "text": "<p>En nuestra cocina, carnes y pescados frescos de alta calidad se cocinan a fuego lento en sus propios jugos. Este método ofrece excelentes beneficios nutricionales y hace que los alimentos sean más fáciles de digerir y que tengan un sabor y un olor deliciosos.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_MjPUc9",
+        "title_fktyMj",
+        "content_LTbyqQ"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "image_banner_7F3aKR": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/Acquisizione_schermata_16.12.2024_alle_17.53.58.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_89mcmX": {
+      "type": "rich-text",
+      "blocks": {
+        "text_pEBGcD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La mayoría de marcas veterinarias hacen uso de harinas cárnicas, que son esencialmente un polvo en el que es imposible saber qué tipo de carne se utiliza. Las croquetas elaboradas con harinas cárnicas se cocinan dos veces, lo que no solo mata casi todo el sabor, si no que también elimina gran parte de su valor nutricional, reduciendo los beneficios para la salud.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_pEBGcD"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "fresh_image_text_9f7mFw": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_HLt4fC": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/sheep_banner_1024x_jpg.webp"
+          }
+        },
+        "title_JxFJ7x": {
+          "type": "title",
+          "settings": {
+            "heading": "PROTEÍNAS DE FUENTES SELECTAS",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_qdUVR6": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Nuestras recetas, científicamente desarrolladas, se preparan con proteínas de fuentes cuidadosamente seleccionadas por sus beneficios únicos para la salud. Sólo usamos proteínas de calidad superior y de las fuentes más selectas, puesto que nuestras investigaciones han demostrado que, cuanto mayor sea la calidad de las proteínas, mayores serán los beneficios nutricionales para las mascotas.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_HLt4fC",
+        "title_JxFJ7x",
+        "content_qdUVR6"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_JGLUe3": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_Czb4b6": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/13_1024x_b46c91bb-74c8-4341-a12b-edcfddccf77c.jpg"
+          }
+        },
+        "title_LPj6Tg": {
+          "type": "title",
+          "settings": {
+            "heading": "INGREDIENTES DE CALIDAD",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_EBr7KV": {
+          "type": "content",
+          "settings": {
+            "text": "<p><strong>Somos la única marca de alimentos veterinarios para animales de compañía que, además de contar con una experiencia médica y veterinaria, utiliza ingredientes frescos de altísima calidad. Hemos desarrollado cada una de nuestras recetas para aportar una dieta natural a las mascotas, resultando en alimentos mucho más sabrosos y a su vez beneficiosos para su salud.Nuestras investigaciones han demostrado que simplemente no existe ninguna dieta más saludable para nuestros animales que la natural.</strong></p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_Czb4b6",
+        "title_LPj6Tg",
+        "content_EBr7KV"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_Uc9iwF": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "title_3hgDMa": {
+          "type": "title",
+          "settings": {
+            "heading": "POSITIVO PARA LAS MASCOTAS Y EL PLANETA",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_tptn7J": {
+          "type": "content",
+          "settings": {
+            "text": "<p>La mayoría de nuestros envases son 100% reciclables y somos la única marca de alimentos dietéicos para mascotas que utiliza envases compostables. También utilizamos envases tipo pouch, en vez de latas, para nuestra gama de alimentos húmedos;<br/>esto evita el uso de bisfenol A, una sustancia química que puede resultar nociva para el medioambiente.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        },
+        "media_6wQiC9": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/Raggruppa_4549_1024x_4e9b244c-ca78-46b2-bb2d-309e404cf941.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "title_3hgDMa",
+        "content_tptn7J",
+        "media_6wQiC9"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_rich_text_FHFKwP": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_rNiqEL": {
+          "type": "title",
+          "settings": {
+            "heading": "CON LA MIRADA EN EL MAÑANA",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_UznzRP": {
+          "type": "content",
+          "settings": {
+            "text": "<p>stamos entusiasmados con las innovaciones en envases ecológicos que se están desarrollando actualmente y siempre estamos buscando nuevas formas de reducir nuestro impacto. Todos podemos contribuir a que la Tierra siga sien do un lugar hermoso y saludable para nuestros perros y gatos, y para todos nosotros, si tomamos decisiones positivas.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "title_rNiqEL",
+        "content_UznzRP"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#d3e6c3",
+        "color_text": "#343e2c",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "fresh_image_text_j6JYxR": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_WnztKA": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/Raggruppa_4551_1024x_jpg.webp"
+          }
+        },
+        "title_e4EGfH": {
+          "type": "title",
+          "settings": {
+            "heading": "¡ENVASE INTELIGENTE!",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_tLbA4i": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Para que nuestras croquetas se mantengan frescas, las envasamos enenvases elaborados con una combinación inteligente de papel certificado FSC y un material renovable conocido como PLA. Nuestro papel proviene de bosques gestionados de forma sostenible y el PLA está hecho de plantas; así que ambos materiales contribuyen a mejorar el planeta. Y lo que es mejor todavía, nuestras bolsas son biodegradables, así que puedes tirarlas con la basura normal, donde se irán descomponiendo sin generar subproductos nocivos.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_WnztKA",
+        "title_e4EGfH",
+        "content_tLbA4i"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_rich_text_WXqCBx": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_ybcFrK": {
+          "type": "title",
+          "settings": {
+            "heading": "CONTAMOS CON EL V-LABEL",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_8A7hMn": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Que es un simbolo reconocido internacionalmente para el etiquetado de produc- tos y servicios veganos y vegetarianos.Que es un símbolo para los consumidores, es una referencia sencilla y fiable, mientras que las empresas promueven la transparencia y la claridad. Los criterios estan- darizados aseguran que la V-Label sea un sello único de calidad para los productos veganos y vegetarianos en toda Europa.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "title_ybcFrK",
+        "content_8A7hMn"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#d3e6c3",
+        "color_text": "#36412d",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "fresh_image_text_waiYxV": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_hiJkmg": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/bodegon_vegetal2_1024x_jpg.webp"
+          }
+        },
+        "title_cFARkt": {
+          "type": "title",
+          "settings": {
+            "heading": "FUENTE DE PROTEÍNAS SOSTENIBLES",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "content_EEreRX": {
+          "type": "content",
+          "settings": {
+            "text": "<p>En trovetplus contamos con alternativas Plant-Based donde sustituimos a la proteina animal por la vegetal. En nuestra receta hipoalergénica vegetariana destacan ingredientes como el arroz integral, los guisantes verdes enteros, el aceite de girasol (protegido con tocoferoles naturales), la patata dulce, las semillas de lino o el alga Kelp.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_hiJkmg",
+        "title_cFARkt",
+        "content_EEreRX"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_image_text_Cp6kLR": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "title_K9KrNQ": {
+          "type": "title",
+          "settings": {
+            "heading": "FUENTE DE PROTEÍNAS SOSTENIBLES",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        },
+        "media_z3fqPQ": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/bodegon_insecto_1024x_jpg.webp"
+          }
+        },
+        "content_zMf4Ht": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Las larvas de mosca soldado se alimentan de materia vegetal en descomposición, lo que significa menos recursos medioambientales que el ganado productor de carne. Se trata de una proteína muy innovadora y de gran calidad.<br/>Contibuyen a la protección del medio ambiente y no tienen ingredientes dañinos ni artificiales. Dado que los insectos no tienen potencial alérgico, las utilizamos como materia prima para ofrecer una alternativa hipoalergénica para aquellas macotas con problemas de alergias.</p>",
+            "font_weight_content": "400",
+            "font_size_content": 14,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "title_K9KrNQ",
+        "media_z3fqPQ",
+        "content_zMf4Ht"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "top",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#FFFFFF",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "fresh_product_slider_pCEDQN": {
+      "type": "fresh-product-slider",
+      "settings": {
+        "title": "",
+        "title_position": "left",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 44,
+        "margin_heading_mb": 14,
+        "collection": "trovetplus-para-perros",
+        "products_to_show": 25,
+        "columns_desktop": 5,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "fresh_product_slider_tembne": {
+      "type": "fresh-product-slider",
+      "settings": {
+        "title": "",
+        "title_position": "left",
+        "size_heading": 28,
+        "size_heading_mb": 22,
+        "margin_heading": 44,
+        "margin_heading_mb": 14,
+        "collection": "trovetplus-para-gatos",
+        "products_to_show": 25,
+        "columns_desktop": 5,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fresh_custom_banner_product_QHw6bx",
+    "fresh_custom_banner_product_8FUiXn",
+    "fresh_rich_text_6qC6K6",
+    "fresh_custom_banner_product_wgeVcc",
+    "fresh_image_text_tKbyJH",
+    "fresh_rich_text_nc9dzy",
+    "image_banner_XTnBXq",
+    "fresh_rich_text_WX9kDV",
+    "fresh_image_text_yJfCYt",
+    "fresh_image_text_hwHGMd",
+    "image_banner_7F3aKR",
+    "rich_text_89mcmX",
+    "fresh_image_text_9f7mFw",
+    "fresh_image_text_JGLUe3",
+    "fresh_image_text_Uc9iwF",
+    "fresh_rich_text_FHFKwP",
+    "fresh_image_text_j6JYxR",
+    "fresh_rich_text_WXqCBx",
+    "fresh_image_text_waiYxV",
+    "fresh_image_text_Cp6kLR",
+    "fresh_product_slider_pCEDQN",
+    "fresh_product_slider_tembne"
+  ]
+}

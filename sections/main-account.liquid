@@ -1,0 +1,289 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="customer account section-{{ section.id }}-padding">
+  <div>
+    <h1 class="customer__title"></h1>
+    
+  </div>
+<div class="accountdx">
+      <h2>{{ 'customer.account.details' | t }}</h2>
+
+      {{ customer.default_address | format_address }}
+
+    <div class="direcciones">  <a href="{{ routes.account_addresses_url }}">
+        {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+      </a></div>
+        <div class="logout-account"><a href="{{ routes.account_logout_url }}">
+      {{ 'customer.log_out' | t }}
+    </a></div>
+    </div>
+  <div>
+    
+    <div class="accountsx"
+    <div>
+      <h2>{{ 'customer.orders.title' | t }}</h2>
+
+      {% paginate customer.orders by 20 %}
+        {%- if customer.orders.size > 0 -%}
+          <table role="table" class="order-history">
+            <caption class="visually-hidden">
+              {{ 'customer.orders.title' | t }}
+            </caption>
+            <thead role="rowgroup">
+              <tr role="row">
+                <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+                <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+                <th id="ColumnFulfillment" scope="col" role="columnheader">
+                  {{ 'customer.orders.fulfillment_status' | t }}
+                </th>
+                <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+              </tr>
+            </thead>
+            <tbody role="rowgroup">
+              {%- for order in customer.orders -%}
+                <tr role="row">
+                  <td
+                    id="RowOrder"
+                    role="cell"
+                    headers="ColumnOrder"
+                    data-label="{{ 'customer.orders.order_number' | t }}"
+                  >
+                    <a
+                      href="{{ order.customer_url }}"
+                      aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                    >
+                      {{ order.name }}
+                    </a>
+                  </td>
+                  <td headers="RowOrder ColumnDate" class="date-order" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                    {{ order.created_at | time_tag: '%d/%m/%Y' }}
+                  </td>
+                  <td
+                    headers="RowOrder ColumnPayment" class="payment-status"
+                    role="cell"
+                    data-label="{{ 'customer.orders.payment_status' | t }}"
+                  >
+                    {{ order.financial_status_label }}
+                  </td>
+                  <td
+                    headers="RowOrder ColumnFulfillment" class="order-status"
+                    role="cell"
+                    data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+                  >
+                    {{ order.fulfillment_status_label }}
+                  </td>
+                  <td headers="RowOrder ColumnTotal" class="total-payment" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                    {{ order.total_net_amount | money_with_currency }}
+                  </td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        {%- else -%}
+          <p>{{ 'customer.orders.none' | t }}</p>
+        {%- endif -%}
+
+        {%- if paginate.pages > 1 -%}
+          {%- if paginate.parts.size > 0 -%}
+            <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+              <ul role="list">
+                {%- if paginate.previous -%}
+                  <li>
+                    <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                      <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                      </svg>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- for part in paginate.parts -%}
+                  <li>
+                    {%- if part.is_link -%}
+                      <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                        {{- part.title -}}
+                      </a>
+                    {%- else -%}
+                      {%- if part.title == paginate.current_page -%}
+                        <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                          {{- part.title -}}
+                        </span>
+                      {%- else -%}
+                        <span>{{ part.title }}</span>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+
+                {%- if paginate.next -%}
+                  <li>
+                    <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                      <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                      </svg>
+                    </a>
+                  </li>
+                {%- endif -%}
+              </ul>
+            </nav>
+          {%- endif -%}
+        {%- endif -%}
+      {% endpaginate %}
+    </div></div>
+
+    
+</div>
+
+    <style>
+
+/* pagina account */
+      td#RowOrder {
+    font-weight: bold;
+}
+ .direcciones {
+    background: white;
+    padding: 1rem;
+    display: inline-flex
+;
+    justify-content: space-between;
+    width: 90%;
+    border-radius: 1rem;
+   margin:auto;
+   max-width: 300px;
+}
+.logout-account {
+    background: black;
+    width: fit-content;
+    margin: auto;
+    padding: .4rem 1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    color: white;
+}
+.customer a {
+    text-decoration: none!important;
+}
+
+:is(.account,.order) p {
+    margin: 0 0 2rem;
+    font-size: 1rem!important;
+}
+.link, .customer a {
+
+    font-size: .8rem!important;
+}
+.customer thead th {
+    font-size: .8rem!important;
+}
+.order-number, .date-order, .payment-status, .order-status, .total-payment {
+    font-size: .8rem!important;
+}
+tr {
+    border-bottom: 1px solid;
+}
+.account table td:first-of-type {
+        padding-top: 0.2rem!important;
+        padding-bottom: 0.2rem;
+    }
+:is(.account,.order) h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem!important;
+}
+.accountdx {
+    background: #f3f3f3;
+  text-align: center;
+  display: flex;
+        flex-direction: column;
+          padding: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
+}
+
+    .section-template--21985118060878__main-padding {
+        padding-top: 0px;
+
+    }
+     @media only screen and (max-width: 600px) {
+       :is(.account,.order) h2 {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+       .direcciones {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.customer td:before {
+        font-size: .8rem;
+    }
+       .order-number, .date-order, .payment-status, .order-status, .total-payment {
+    padding: .5rem 0rem !important;
+}
+       .customer tbody tr {
+
+    margin-bottom: 3rem;
+}
+       .customer .pagination {
+    margin-top: -2rem;
+    margin-bottom: 7rem;
+    display: flex
+;
+    justify-content: center;
+}
+       
+.accountdx h2 {
+    font-size: 1.2rem;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+       
+     }
+      
+    </style>                      
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

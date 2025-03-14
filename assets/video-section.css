@@ -1,0 +1,87 @@
+.video-section__media {
+  --ratio-percent: 56.25%;
+  position: relative;
+  padding-bottom: calc(var(--ratio-percent));
+}
+
+/* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
+.scroll-trigger:where(.gradient.video-section__media) {
+  background: transparent;
+}
+
+.video-section__media.global-media-settings--full-width {
+  padding-bottom: var(--ratio-percent);
+}
+
+.video-section__media.deferred-media {
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.video-section__media.deferred-media:after {
+  content: none;
+}
+
+.video-section__poster.deferred-media__poster:focus {
+  outline-offset: 0.3rem;
+}
+.video-section__poster.deferred-media__poster:hover {
+  border: unset;
+}
+
+.video-section__media iframe {
+  background-color: rgba(var(--color-foreground), 0.03);
+  border: 0;
+}
+
+.video-section__poster,
+.video-section__media iframe,
+.video-section__media video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.video-section__media video {
+  background: #000000;
+}
+
+.video-section__media.media-fit-cover video {
+  object-fit: cover;
+}
+.video-section__position-left {
+  margin-left: 0;
+}
+.video-section__position-right {
+  margin-right: 0;
+}
+.video-section h2.title {
+  font-family: Prata;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 16px;
+  color: #000;
+  letter-spacing: 0;
+}
+.video-section .heading__content {
+  color: #191919;
+  margin-bottom: 0;
+}
+.video-section .deferred-media__poster-button {
+  background-color: transparent;
+  border: 0;
+}
+@media screen and (min-width: 768px) {
+  .video-section h2.title {
+    line-height: 46px;
+  }
+  .video-section .heading__content {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .video-section .deferred-media__poster-button svg {
+    width: 25.5px;
+    height: 25.5px;
+  }
+}

@@ -1,0 +1,74 @@
+<div class="card__badge">
+  {%- if card_product.compare_at_price > card_product.price -%}
+    <span
+      id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+      class="badge badge--bottom-left "
+    >
+      {{- 'products.product.on_sale' | t -}}
+    </span>
+  {%- endif -%}
+</div>
+
+<div class="rocket-fresh-product-card__tag">
+  {% for tag in card_product.tags limit: 2 %}
+    {%- if tag contains 'label:' -%}
+      {%- assign tag_count = tag_count | plus: 1 -%}
+      {% assign tag_label = tag | split: ':' %}
+      {% assign tag_class = tag_label[1] | downcase %}
+      {%- assign tag_background = settings[tag_background] -%}
+      {%- for metaobject in shop.metaobjects.tags_color.values -%}
+        {%- if metaobject.label_name == tag_label[1] -%}
+          {%- assign color = metaobject.color_label -%}
+          {%- assign bg_color = metaobject.background_color_label -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      <span
+        class="rocket-fresh-product-media-gallery__tag--label tag-label"
+        style="--tag-color: {{ color }}; --tag-background: {{ bg_color }};"
+      >
+        {{- tag_class -}}
+      </span>
+    {%- endif -%}
+  {% endfor %}
+</div>
+{% if collection_page %}
+  <div class="rocket-product-changeImage">
+    {% if card_product.metafields.rocket.image_type_product != blank %}
+      {{
+        card_product.metafields.rocket.image_type_product
+        | image_url: width: card_product.metafields.rocket.image_type_product.width
+        | image_tag: class: 'image_product'
+      }}
+    {% else %}
+      {{
+        card_product.featured_media
+        | image_url: width: card_product.featured_media.width
+        | image_tag:
+          loading: 'lazy',
+          alt: card_product.title,
+          width: card_product.featured_media.width,
+          height: card_product.featured_media.height,
+          class: 'rocket-fresh-product-card__image motion-reduce image_product'
+      }}
+    {% endif %}
+    {% if card_product.metafields.rocket.image_type_model != blank %}
+      {{
+        card_product.metafields.rocket.image_type_model
+        | image_url: width: card_product.metafields.rocket.image_type_model.width
+        | image_tag: class: 'image_model'
+      }}
+    {% else %}
+      {{
+        card_product.featured_media
+        | image_url: width: card_product.featured_media.width
+        | image_tag:
+          loading: 'lazy',
+          alt: card_product.title,
+          width: card_product.featured_media.width,
+          height: card_product.featured_media.height,
+          class: 'rocket-fresh-product-card__image motion-reduce image_model'
+      }}
+    {% endif %}
+  </div>
+{% endif %}

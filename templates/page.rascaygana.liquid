@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasca y Gana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #popup {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            width: 340px;
+            height: fit-content;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-section {
+            flex: auto;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            min-height: 8rem;
+        }
+
+        .yellow-section {
+            flex: 45%;
+            background-color: #FECD50;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
+
+        #scratch-area {
+            position: relative;
+            margin-top: 10px;
+            width: 150px;
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        #rewardMessage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            background-color: white;
+            z-index: 1;
+        }
+
+        #rewardButton, .choose-buttons {
+            margin-top: 20px;
+            display: none; /* Nascondi i pulsanti finché non servono */
+        }
+
+        .choose-buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .choose-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    min-width: 48%;
+}
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        .title-rasca {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.6rem;
+        }
+
+        button#openPopup {
+            margin: 5rem auto;
+        }
+    </style>
+</head>
+<body>
+    <button id="openPopup">Apri il popup</button>
+
+    <div id="popup">
+        <div class="popup-content">
+            <button class="close-button" id="closePopup">X</button>
+            <div class="image-section">
+                <img src="https://cdn.shopify.com/s/files/1/0486/9396/9064/files/Screenshot_2024-12-06_alle_15.56.33.png" alt="Rasca y gana">
+            </div>
+            <div class="yellow-section">
+                <div class="title-rasca">Rasca y gana</div>
+                <div id="scratch-area">
+                    <div id="rewardMessage">
+                        <p id="rewardText"></p>
+                    </div>
+                    <canvas id="scratchCanvas"></canvas>
+                </div>
+              
+                <div class="choose-buttons">
+                    <button id="chooseDog">Perro</button>
+                    <button id="chooseCat">Gato</button>
+                </div>
+                <button id="rewardButton">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openPopupButton = document.getElementById("openPopup");
+        const closePopupButton = document.getElementById("closePopup");
+        const popup = document.getElementById("popup");
+
+        const rewardText = document.getElementById("rewardText");
+        const rewardButton = document.getElementById("rewardButton");
+        const chooseButtons = document.querySelector(".choose-buttons");
+        const chooseDogButton = document.getElementById("chooseDog");
+        const chooseCatButton = document.getElementById("chooseCat");
+
+        let selectedLink = "";
+
+        const rewardLinks = {
+            "1 Pouch cane o gatto": {
+                "Perro": "https://example.com/pouch-dog",
+                "Gato": "https://example.com/pouch-cat"
+            }
+        };
+
+        openPopupButton.addEventListener("click", () => {
+            popup.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Blocca lo scrolling
+            initializeScratchCard();
+        });
+
+        closePopupButton.addEventListener("click", () => {
+            popup.style.display = "none";
+            document.body.style.overflow = ""; // Riabilita lo scrolling
+        });
+
+        function initializeScratchCard() {
+            const canvas = document.getElementById("scratchCanvas");
+            const rewards = Object.keys(rewardLinks);
+            const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
+
+            rewardText.textContent = randomReward;
+            rewardButton.style.display = "none";
+            chooseButtons.style.display = "none";
+
+            canvas.width = 150;
+            canvas.height = 80;
+            const ctx = canvas.getContext("2d");
+
+            // Copertura grattabile
+            ctx.fillStyle = "#999";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            let isScratching = false;
+
+            canvas.addEventListener("mousedown", () => (isScratching = true));
+            canvas.addEventListener("mouseup", () => (isScratching = false));
+            canvas.addEventListener("mousemove", (e) => {
+                if (isScratching) scratch(e);
+            });
+
+            canvas.addEventListener("touchstart", (e) => {
+                e.preventDefault();
+                isScratching = true;
+            });
+            canvas.addEventListener("touchend", () => (isScratching = false));
+            canvas.addEventListener("touchmove", (e) => {
+                e.preventDefault();
+                if (isScratching) scratch(e.touches[0]);
+            });
+
+            function scratch(e) {
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.pageX) - rect.left;
+                const y = (e.clientY || e.pageY) - rect.top;
+
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.beginPath();
+                ctx.arc(x, y, 15, 0, Math.PI * 2, false);
+                ctx.fill();
+
+                if (checkScratchCompletion(ctx)) {
+                    canvas.style.pointerEvents = "none"; // Disattiva lo scratch
+                    if (randomReward === "1 Pouch cane o gatto") {
+                        chooseButtons.style.display = "flex";
+                    } else {
+                        rewardButton.style.display = "block";
+                        selectedLink = rewardLinks[randomReward];
+                    }
+                }
+            }
+
+            function checkScratchCompletion(ctx) {
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                let scratched = 0;
+                const total = imageData.data.length / 4;
+
+                for (let i = 3; i < imageData.data.length; i += 4) {
+                    if (imageData.data[i] === 0) {
+                        scratched++;
+                    }
+                }
+
+                return scratched / total > 0.9;
+            }
+
+            chooseDogButton.addEventListener("click", () => {
+                selectedLink = rewardLinks["1 Pouch cane o gatto"]["Perro"];
+                chooseButtons.style.display = "none";
+                rewardButton.style.display = "block";
+            });
+
+            chooseCatButton.addEventListener("click", () => {
+                selectedLink = rewardLinks["1 Pouch cane o gatto"]["Gato"];
+                chooseButtons.style.display = "none";
+                rewardButton.style.display = "block";
+            });
+
+            rewardButton.addEventListener("click", () => {
+                if (selectedLink) {
+                    window.open(selectedLink, "_blank");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

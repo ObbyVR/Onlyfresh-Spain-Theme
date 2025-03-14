@@ -1,0 +1,226 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+  - blocks:
+
+  Usage:
+  {% render 'header-drawer', blocks: blocks %}
+{% endcomment %}
+
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+  <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >
+      <span>
+        {% render 'icon-hamburger' %}
+        {% render 'icon-close' %}
+      </span>
+    </summary>
+    <div id="menu-drawer" class="gradient menu-drawer motion-reduce{% if shop.customer_accounts_enabled and customer %} change-text-login{% endif %}">
+      <div class="menu-drawer__inner-container">
+        <div class="menu-drawer__navigation-container">
+          <div class="menu-drawer__header-container">
+            <div class="header__heading">
+              <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                {%- if settings.logo != blank -%}
+                  <div class="header__heading-logo-wrapper">
+                    {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                    {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                    {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                    {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                    {{ settings.logo | image_url: width: 600 | image_tag:
+                      class: 'header__heading-logo motion-reduce',
+                      widths: widths,
+                      height: logo_height,
+                      width: settings.logo_width,
+                      alt: logo_alt,
+                      sizes: sizes,
+                      preload: true
+                    }}
+                  </div>
+                {%- else -%}
+                  <span class="h2">{{ shop.name }}</span>
+                {%- endif -%}
+              </a>
+            </div>
+            <div class="close-menu-drawer">{% render 'icon-close' %}</div>
+          </div>
+          <nav class="menu-drawer__navigation">
+            <ul class="menu-drawer__navigation-level-1 list-menu" role="list">
+              {%- for link in section.settings.menu.links -%}
+                <li>
+                  {%- if link.links != blank -%}
+                    <span
+                      class="list-menu__drawer-item {% if forloop.index == 1%} active{% endif %}"
+                      >
+                      {{ link.title | escape }}
+                    </span>
+                  {%- else -%}
+                    <a
+                      class="list-menu__drawer-item" href="{{ link.url }}"
+                      >
+                      {{ link.title | escape }}
+                    </a>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+            {%- for link in section.settings.menu.links -%}
+              {% assign counter = forloop.index %}
+              <div class="menu-drawer__navigation-level-2 {% if forloop.index == 1%} active{% endif %}">
+                <ul class="list-menu" role="list" tabindex="-1">
+                  {%- for childlink in link.links -%}
+                    {% if childlink.title contains '~' %}
+                      {% assign childs = childlink.title | split: '~' %}
+                      {% assign childlink_title = childs[0] %}
+                      {% assign hidden = childs[1] %}
+                    {% endif %}
+                    <li>
+                      {%- if childlink.links != blank -%}
+                        <span
+                          class="list-menu__drawer-item has-sub-menu"
+                        >
+                          <a
+                            href="{{ childlink.url }}"
+                            class="list-menu__drawer-item-link"
+                          >
+                            {% if childlink_title and childlink.title contains '~' %}
+                              {{ childlink_title | escape }}
+                            {% else %}
+                              {{ childlink.title | escape }}
+                            {% endif %}
+                          </a>
+                          {% render 'icon-vector-dropdown' %}
+                        </span>
+                      {%- else -%}
+                        <a
+                          href="{{ childlink.url }}"
+                          class="list-menu__drawer-item not-child"
+                        >
+                          {% if childlink_title and childlink.title contains '~' %}
+                            {{ childlink_title | escape }}
+                          {% else %}
+                            {{ childlink.title | escape }}
+                          {% endif %}
+                        </a>
+                      {%- endif -%}
+                      <div
+                        class="menu-drawer__navigation-level-3"
+                      >
+                        <ul
+                          class="list-menu"
+                          role="list"
+                          tabindex="-1"
+                        >
+                          {%- for grandchildlink in childlink.links -%}
+                            {% if grandchildlink.title contains '~color:' %}
+                              {% assign parts = grandchildlink.title | split: '~color:' %}
+                              {% assign split_title = parts[0] %}
+                              {% assign color = parts[1] %}
+                            {% endif %}
+                            {%- if grandchildTitle contains 'view-all' -%}
+                            {%- else -%}
+                              <li>
+                                <a
+                                  href="{{ grandchildlink.url }}"
+                                  class="menu-drawer__menu-item-level-3 list-menu__drawer-item"
+                                  {% if color and grandchildlink.title contains '~color:' %}
+                                    style="color: {{ color }};" 
+                                  {% endif %}
+                                >
+                                  {% if split_title and grandchildlink.title contains '~color:' %}
+                                    {{ split_title }}
+                                  {% else %}
+                                    {{ grandchildlink.title }}
+                                  {% endif %}
+                                </a>
+                              </li>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                <div class="menu-drawer__utility-links">
+                  {% for block in blocks %}
+                    {% if block.type == 'mobile_menu' %}
+                      {%- for link in block.settings.mobile_menu_bottom.links -%}
+                        <a
+                          href="{%- if link.url != blank -%}{{ link.url }}{%- else -%}#{%- endif -%}"
+                          class="list-menu__drawer-item"
+                        >
+                          {{- link.title | escape -}}
+                        </a>
+                      {%- endfor -%}
+                    {% endif %}
+                  {%- endfor -%}
+                </div>
+                <div class="drawer__content__container-image">
+                  {% for block in blocks %}
+                    {% assign image_count = block.type | split: '_' | last %}
+                      {% capture featured_image_position %}featured_image_position_{{ image_count }}{% endcapture %}
+                      {% assign style_width = 200 %}
+                      {% assign style_height = 250 %}
+                      {% if image_count == '1' %}
+                        {% assign style_width = 343 %}
+                        {% assign style_height = 338 %}
+                      {% elsif image_count == '2' %}
+                        {% assign style_width = 230 %}
+                      {% endif %}
+
+                      {% if block.settings[featured_image_position] == counter %}
+                        <slider-component class="slider-mobile-gutter">
+                          <ul
+                            class="mobile-image-container banner-x{{image_count}} list-unstyled slider slider--tablet"
+                            role="list"
+                          >
+                            {% for i in (1..image_count) %}
+                              {% capture image_id %}featured_image_mobile_{{ i }}{% endcapture %}
+                              {% capture image_link_id %}featured_image_link_{{ i }}{% endcapture %}
+                              {% capture image_text_id %}featured_image_text_{{ i }}{% endcapture %}
+                              <li
+                                class="swiper-slide"
+                                data-cascade
+                                style="--animation-order: {{ forloop.index }};"
+                               >
+                                {% if block.settings[image_link_id] != blank %}
+                                  <a href="{{ block.settings[image_link_id] }}" class="link">
+                                {% endif %}
+
+                                {% if block.settings[image_id] != blank %}
+                                  {{ block.settings[image_id] | image_url: width: auto, height: auto | image_tag: loading: 'lazy', alt: block.settings[image_text_id], class: 'mobile-image-container__image'}}
+                                {% else %}
+                                  {{ 'image' | placeholder_svg_tag: 'mobile-image-container__image' }}
+                                {% endif %}
+                                
+                                {% if block.settings[image_text_id] != blank %}
+                                  <span class="mobile-image-container__text">{{ block.settings[image_text_id] }}</span>
+                                {% endif %}
+
+                                <div class="menu-infor_right">
+                                  <div class="icon-arrow">
+                                    {% render 'icon-arrow-right' %}
+                                  </div>
+                                </div>
+
+                                {% if block.settings[image_link_id] != blank %}
+                                </a>
+                              {% endif %}
+                              </li>                          
+                            {% endfor %}
+                          </ul>
+                        </slider-component>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+              </div>
+            {%- endfor -%}
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="menu-overlay"></div>
+  </details>
+</header-drawer>

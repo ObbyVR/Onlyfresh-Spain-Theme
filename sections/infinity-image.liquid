@@ -1,0 +1,95 @@
+{% liquid
+  assign section_settings = section.settings
+  assign has_description = false
+  for block in section.blocks
+    if block.type == 'description'
+      assign has_description = true
+    endif
+  endfor
+  if section.blocks.size > 0 and has_description
+    assign des_class = 'has-description'
+  endif
+  assign image_block_count = 0
+  for block in section.blocks
+    if block.type == 'image'
+      assign image_block_count = image_block_count | plus: 1
+    endif
+  endfor
+  if section.blocks.size > 0
+    assign image_type_class = 'has-' | append: image_block_count | append: '-images'
+  endif
+%}
+
+<div class="section-{{ section.id }}--vis-padding custom-hero_banner">
+  <div class="vis-hero_banner--innner vis-hero_banner--innner-{{ section.id }}">
+    <div class="{% if section.settings.enable_slider %}swiper-wrapper{% endif %} vis-hero_banner--media {{ image_type_class }} {{ section.settings.type_of_media }} {{ mobileWidthSlider }} {{ desktopWidthSlider }}">
+      {% comment %} Case Banner Type Image {% endcomment %}
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank or block.settings.image_mb != blank %}
+          <div class="{% if section.settings.enable_slider %}swiper-slide{% endif %} {{ mobileWidth }} {{ desktopWidth }} vis-hero_banner--image vis-hero_banner--image-{{ block.id }}">
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: block.settings.image.width
+                | default: height: block.settings.image.height
+                | default
+                | image_tag:
+                  width: block.settings.image.width,
+                  height: block.settings.image.height,
+                  loading: 'lazy',
+                  alt: 'image-banner',
+                  class: 'vis-hero_banner--img vis-hero_banner--img_des'
+              }}
+            {% endif %}
+            {% if block.settings.image_mb != blank %}
+              {{
+                block.settings.image_mb
+                | image_url: width: block.settings.image_mb.width, height: block.settings.image_mb.height
+                | image_tag:
+                  width: block.settings.image_mb.width,
+                  height: block.settings.image_mb.height,
+                  loading: 'lazy',
+                  alt: 'image-banner-mb',
+                  class: 'vis-hero_banner--img vis-hero_banner--img_mb'
+              }}
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Infinity Images",
+  "tag": "section",
+  "class": "section section-fresh-hero-banner",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Banner Type Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mb",
+          "label": "Image on mobile"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Infinity Images "
+    }
+  ]
+}
+{% endschema %}

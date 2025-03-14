@@ -1,0 +1,283 @@
+{% comment %}
+  Variant List Row
+
+  Accepts:
+  - item: {Object} Variant or Product object
+  - sku: {String} Sku of Product or Variant (optional)
+  - image: {Object} Product or Variant image (optional)
+  Usage:
+  {% render 'quick-order-list-row' variant: variant %}
+{% endcomment %}
+
+{% # theme-check-disable %}
+{% assign cart_qty = cart | item_count_for_variant: variant.id %}
+{% # theme-check-enable %}
+
+<tr
+  class="variant-item{% unless show_image %} variant-item--no-media{% endunless %}{% if item.available and item.unit_price_measurement %} variant-item--unit-price{% endif %}"
+  id="Variant-{{ variant.id }}"
+  data-variant-id="{{ variant.id }}"
+  data-cart-qty="{{ cart_qty }}"
+>
+  <td class="variant-item__inner{% unless sku and show_sku %} variant-item__inner--no-sku{% endunless %}">
+    {%- if show_image -%}
+      <div class="variant-item__media">
+        <div class="variant-item__image-container global-media-settings{% unless is_modal %} gradient{% endunless %}{% unless image %} variant-item__image-container--no-img{% endunless %}">
+          {% if image %}
+            {%- assign img_height = 43 | divided_by: image.aspect_ratio | ceil -%}
+            {{
+              image
+              | image_url: width: 86
+              | image_tag:
+                loading: 'lazy',
+                fetchpriority: 'low',
+                decoding: 'async',
+                class: 'variant-item__image',
+                width: 43,
+                height: img_height,
+                widths: '86',
+                alt: image.alt
+              | escape
+            }}
+          {% endif %}
+        </div>
+      </div>
+    {%- endif -%}
+    <div class="small-hide medium-hide">
+      <span class="variant-item__name h4 break">{{ item.title | escape }}</span>
+      {%- if show_sku -%}
+        <span class="variant-item__sku break">{{ sku | escape }}</span>
+      {%- endif -%}
+    </div>
+  </td>
+
+  <td class="variant-item__details large-up-hide">
+    <div class="variant-item__info">
+      <span class="variant-item__name h4 break">{{ item.title | escape }}</span>
+      {%- if show_sku -%}
+        <span class="variant-item__sku break">{{ sku | escape }}</span>
+      {%- endif -%}
+    </div>
+
+    {%- assign item_price = item.price | money -%}
+    {%- if variant.quantity_price_breaks.size > 0 -%}
+      {%- liquid
+        assign volume_pricing_array = variant.quantity_price_breaks | sort: 'quantity' | reverse
+      -%}
+      <price-per-item
+        class="variant-item__price-per-item"
+        id="Price-Per-Item-{{ variant.id }}"
+        data-variant-id="{{ variant.id }}"
+      >
+        <div class="price-per-item">
+          {%- if cart_qty < volume_pricing_array.last.minimum_quantity -%}
+            {%- assign variant_price = variant.price | money -%}
+            <span class="price-per-item--current price">
+              {{- 'sections.quick_order_list.each' | t: money: variant_price -}}
+            </span>
+          {%- else -%}
+            {%- for price_break in volume_pricing_array -%}
+              {%- if cart_qty >= price_break.minimum_quantity -%}
+                {%- assign price_break_price = price_break.price | money -%}
+                <span class="price-per-item--current price">
+                  {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
+                </span>
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </price-per-item>
+    {%- else -%}
+      <span class="price">
+        {{- 'sections.quick_order_list.each' | t: money: item_price -}}
+      </span>
+    {%- endif -%}
+
+    {%- if item.available and item.unit_price_measurement -%}
+      <div class="unit-price caption">
+        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+        {{ item.unit_price | money }}
+        <span aria-hidden="true">/</span>
+        <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+        {%- if item.unit_price_measurement.reference_value != 1 -%}
+          {{- item.unit_price_measurement.reference_value -}}
+        {%- endif -%}
+        {{ item.unit_price_measurement.reference_unit }}
+      </div>
+    {%- endif -%}
+  </td>
+
+  <td class="variant-item__totals right large-up-hide">
+    {%- render 'loading-spinner' -%}
+    {% comment %} TODO: enable theme-check once `line_items_for` is accepted as valid filter {% endcomment %}
+    {% # theme-check-disable %}
+    <span class="price">{{ cart | line_items_for: item | sum: 'original_line_price' | money }}</span>
+    {% # theme-check-enable %}
+  </td>
+
+  <td class="variant-item__quantity">
+    {%- liquid
+      assign check_against_inventory = true
+      if variant.inventory_management != 'shopify' or variant.inventory_policy == 'continue'
+        assign check_against_inventory = false
+      endif
+      if variant.quantity_rule.min > variant.inventory_quantity and check_against_inventory
+        assign quantity_rule_soldout = true
+      endif
+
+      assign has_qty_rules = false
+      if variant.quantity_rule.increment > 1 or variant.quantity_rule.min > 1 or variant.quantity_rule.max != null
+        assign has_qty_rules = true
+      endif
+
+      assign has_vol_pricing = false
+      if variant.quantity_price_breaks.size > 0
+        assign has_vol_pricing = true
+      endif
+
+      assign is_available = false
+      assign has_popover = false
+      unless variant.available == false or quantity_rule_soldout
+        assign is_available = true
+      endunless
+      if has_qty_rules or has_vol_pricing
+        assign has_popover = true
+      endif
+    -%}
+    <quantity-popover>
+      <div class="variant-item__quantity-wrapper quantity-popover-wrapper{% unless has_popover %} variant-item__quantity-wrapper--no-info{% endunless %}">
+        <label class="visually-hidden" for="Quantity-{{ variant.id }}">
+          {{ 'products.product.quantity.label' | t }}
+        </label>
+        <div class="quantity-popover-container{% if is_available and has_popover %} quantity-popover-container--hover{% endif %}{% if cart_qty == 0 %} quantity-popover-container--empty{% endif %}">
+          {%- if variant.available == false or quantity_rule_soldout -%}
+            <span class="variant-item__sold-out"> {{ 'products.product.inventory_out_of_stock' | t }} </span>
+          {%- else -%}
+            {% comment %} TODO: Remove theme check {% endcomment %}
+            {% # theme-check-disable %}
+            {% assign cart_qty = cart | item_count_for_variant: variant.id %}
+            {% # theme-check-enable %}
+            {% render 'quantity-input', variant: variant, min: 0 %}
+          {%- endif -%}
+        </div>
+        {% if cart_qty > 0 %}
+          <quick-order-list-remove-button
+            id="Remove-{{ variant.id }}"
+            data-index="{{ variant.id }}"
+          >
+            <a
+              href="{{ item.url_to_remove }}"
+              class="button button--tertiary"
+              aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+            >
+              <span class="svg-wrapper">
+                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.6562 3.42969H10.1953V2.84375C10.1953 2.50187 10.0595 2.17399 9.81775 1.93225C9.57601 1.6905 9.24813 1.55469 8.90625 1.55469H6.09375C5.75187 1.55469 5.42399 1.6905 5.18225 1.93225C4.9405 2.17399 4.80469 2.50187 4.80469 2.84375V3.42969H2.34375C2.25051 3.42969 2.16109 3.46673 2.09516 3.53266C2.02923 3.59859 1.99219 3.68801 1.99219 3.78125C1.99219 3.87449 2.02923 3.96391 2.09516 4.02984C2.16109 4.09577 2.25051 4.13281 2.34375 4.13281H2.92969V12.6875C2.92969 12.9051 3.01611 13.1137 3.16995 13.2675C3.32379 13.4214 3.53244 13.5078 3.75 13.5078H11.25C11.4676 13.5078 11.6762 13.4214 11.83 13.2675C11.9839 13.1137 12.0703 12.9051 12.0703 12.6875V4.13281H12.6562C12.7495 4.13281 12.8389 4.09577 12.9048 4.02984C12.9708 3.96391 13.0078 3.87449 13.0078 3.78125C13.0078 3.68801 12.9708 3.59859 12.9048 3.53266C12.8389 3.46673 12.7495 3.42969 12.6562 3.42969ZM5.50781 2.84375C5.50781 2.68835 5.56955 2.53931 5.67943 2.42943C5.78931 2.31955 5.93835 2.25781 6.09375 2.25781H8.90625C9.06165 2.25781 9.21069 2.31955 9.32057 2.42943C9.43046 2.53931 9.49219 2.68835 9.49219 2.84375V3.42969H5.50781V2.84375ZM11.3672 12.6875C11.3672 12.7186 11.3548 12.7484 11.3329 12.7704C11.3109 12.7923 11.2811 12.8047 11.25 12.8047H3.75C3.71892 12.8047 3.68911 12.7923 3.66714 12.7704C3.64516 12.7484 3.63281 12.7186 3.63281 12.6875V4.13281H11.3672V12.6875ZM6.44531 6.59375V10.3438C6.44531 10.437 6.40827 10.5264 6.34234 10.5923C6.27641 10.6583 6.18699 10.6953 6.09375 10.6953C6.00051 10.6953 5.91109 10.6583 5.84516 10.5923C5.77923 10.5264 5.74219 10.437 5.74219 10.3438V6.59375C5.74219 6.50051 5.77923 6.41109 5.84516 6.34516C5.91109 6.27923 6.00051 6.24219 6.09375 6.24219C6.18699 6.24219 6.27641 6.27923 6.34234 6.34516C6.40827 6.41109 6.44531 6.50051 6.44531 6.59375ZM9.25781 6.59375V10.3438C9.25781 10.437 9.22077 10.5264 9.15484 10.5923C9.08891 10.6583 8.99949 10.6953 8.90625 10.6953C8.81301 10.6953 8.72359 10.6583 8.65766 10.5923C8.59173 10.5264 8.55469 10.437 8.55469 10.3438V6.59375C8.55469 6.50051 8.59173 6.41109 8.65766 6.34516C8.72359 6.27923 8.81301 6.24219 8.90625 6.24219C8.99949 6.24219 9.08891 6.27923 9.15484 6.34516C9.22077 6.41109 9.25781 6.50051 9.25781 6.59375Z" fill="black"></path>
+                </svg>
+              </span>
+            </a>
+          </quick-order-list-remove-button>
+        {% endif %}
+      </div>
+      <div
+        class="variant-item__error large-up-hide"
+        id="Quick-order-list-item-error-mobile-{{ variant.id }}"
+        role="alert"
+      >
+        <small class="variant-item__error-text"></small>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+      </div>
+    </quantity-popover>
+  </td>
+  {%- assign item_price = item.price | money -%}
+  <td class="variant-item__price hidden-mb">
+    {%- if variant.quantity_price_breaks.size > 0 -%}
+      {%- liquid
+        assign volume_pricing_array = variant.quantity_price_breaks | sort: 'quantity' | reverse
+      -%}
+      <price-per-item
+        class="variant-item__price-per-item"
+        id="Price-Per-Item-{{ variant.id }}"
+        data-variant-id="{{ variant.id }}"
+      >
+        <div class="price-per-item">
+          {%- if cart_qty < volume_pricing_array.last.minimum_quantity -%}
+            {%- assign variant_price = variant.price | money -%}
+            <span class="price-per-item--current price">
+              {{- 'sections.quick_order_list.each' | t: money: variant_price -}}
+            </span>
+          {%- else -%}
+            {%- for price_break in volume_pricing_array -%}
+              {%- if cart_qty >= price_break.minimum_quantity -%}
+                {%- assign price_break_price = price_break.price | money -%}
+                <span class="price-per-item--current price">
+                  {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
+                </span>
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </price-per-item>
+    {%- else -%}
+      <span class="price">
+        {{- 'sections.quick_order_list.each' | t: money: item_price -}}
+      </span>
+    {%- endif -%}
+
+    {%- if item.available and item.unit_price_measurement -%}
+      <div class="unit-price caption">
+        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+        {{ item.unit_price | money }}
+        <span aria-hidden="true">/</span>
+        <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+        {%- if item.unit_price_measurement.reference_value != 1 -%}
+          {{- item.unit_price_measurement.reference_value -}}
+        {%- endif -%}
+        {{ item.unit_price_measurement.reference_unit }}
+      </div>
+    {%- endif -%}
+  </td>
+  <td class="variant-item__totals right small-hide medium-hide hidden-mb">
+    {%- render 'loading-spinner' -%}
+    {% comment %} TODO: enable theme-check once `line_items_for` is accepted as valid filter {% endcomment %}
+    {% # theme-check-disable %}
+    <span class="price">{{ cart | line_items_for: item | sum: 'original_line_price' | money }}</span>
+    {% # theme-check-enable %}
+  </td>
+</tr>
+<tr class="small-hide medium-hide hidden desktop-row-error">
+  <td></td>
+  <td>
+    <div class="variant-item__error" id="Quick-order-list-item-error-desktop-{{ variant.id }}" role="alert">
+      <small class="variant-item__error-text"></small>
+      <span class="svg-wrapper">{{ 'icon-error.svg' | inline_asset_content }}</span>
+    </div>
+  </td>
+  <td></td>
+  <td></td>
+</tr>
+
+{%- if product.quantity_price_breaks_configured? -%}
+  <volume-pricing class="hidden" id="Volume-{{ variant.id }}">
+    <ul>
+      <li>
+        <span>{{ variant.quantity_rule.min }}</span>
+        {%- assign price = variant.price | money -%}
+        <span data-text="{{ price }}">{{ price }}</span>
+      </li>
+      {%- for price_break in variant.quantity_price_breaks -%}
+        {%- assign price_break_price = price_break.price | money -%}
+        <li>
+          <span>
+            {{- price_break.minimum_quantity -}}
+          </span>
+          <span data-text="{{ price_break_price }}">{{- price_break.price | money }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </volume-pricing>
+{%- endif -%}

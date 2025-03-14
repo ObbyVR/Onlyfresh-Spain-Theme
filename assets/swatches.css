@@ -1,0 +1,8 @@
+[data-swatch] {
+    background-color: rgba(var(--text-color) / 0.08);
+  }
+  
+
+  [data-swatch="klein-ref"] { background-color: #000}[data-swatch="multicolor-ref"] { background-color: #507567}[data-swatch="negro-ref"] { background-color: #8C4414}
+  
+  

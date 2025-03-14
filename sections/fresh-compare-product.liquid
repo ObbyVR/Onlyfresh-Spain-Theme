@@ -1,0 +1,408 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+      position: relative;
+  }
+  @media screen and (min-width: 960px) {
+      .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+  }
+{%- endstyle -%}
+{% liquid
+  assign section_object = product.metafields.custom.compare_product.value
+  assign size = 0
+  for block in section_object
+    if forloop.last
+      assign size = forloop.index
+    endif
+  endfor
+  assign first = section_object | first
+%}
+
+{%- if section_object != blank -%}
+  <compare-product class="fresh-compare section-{{ section.id }}-padding">
+    <div class="fresh-compare__wrapper">
+      {%- if section.settings.title != blank -%}
+        <div class="fresh-compare__heading">
+          <h3>{{ section.settings.title | escape }}</h3>
+        </div>
+      {%- endif -%}
+      <div class="fresh-compare__inner">
+        <div class="fresh-compare__item-header">
+          <div class="fresh-compare__item-heading">
+            <h4 class="fresh-compare__item-title">
+              {{ section.settings.heading }}
+            </h4>
+          </div>
+          {%- if size > 2 -%}
+            {%- if first.product != blank -%}
+              <div class="fresh-compare__item-heading">
+                <h4 class="fresh-compare__item-title">
+                  {{ first.product.value.title }}
+                </h4>
+                {%- if first.brand.value != blank -%}
+                  <div class="fresh-compare__item-brand">{{ first.brand.value }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            <details id="Details-{{ section.id }}" class="fresh-compare__item-heading">
+              <summary
+                class="fresh-compare__item-btn"
+                role="button"
+                aria-expanded="false"
+                aria-controls="compare-{{ section.id }}"
+              >
+                {%- for block in section_object offset: 1 limit: 1 -%}
+                  {% assign nome = block.nome_prodotto.value %}
+                  <h4 class="fresh-compare__item-title">{{ nome }}</h4>
+                  <div class="fresh-compare__item-brand">{{ block.brand.value }}</div>
+                {%- endfor -%}
+              </summary>
+              <div
+                id="compare-{{ section.id }}"
+                class="fresh-compare__item--info"
+                tabindex="-1"
+              >
+                <ul class="fresh-compare__item--info-list">
+                  {%- for block in section_object offset: 1 -%}
+                    {%- liquid
+                      assign p = block.product
+                      assign nome = block.nome_prodotto.value
+                      assign brand = block.brand.value
+                      assign value_1 = block.value_1.value
+                      assign value_1_alt = block.value_1_alt.value
+                      assign value_2 = block.value_2.value
+                      assign value_2_alt = block.value_2_alt.value
+                      assign value_3 = block.value_3.value
+                      assign value_3_alt = block.value_3_alt.value
+                      assign value_4 = block.value_4.value
+                      assign value_4_alt = block.value_4_alt.value
+                      assign value_5 = block.value_5.value
+                      assign value_5_alt = block.value_5_alt.value
+                      assign value_6 = block.value_6.value
+                      assign value_6_alt = block.value_6_alt.value
+                    -%}
+
+                    <li
+                      class="fresh-compare__item--info-item{% if forloop.first %} active{% endif %}"
+                      data-title="{{ nome }}"
+                      data-brand="{{ brand }}"
+                      data-value1="{% if value_1_alt != blank %}{{ value_1_alt }}{% else %}{{ value_1 }}{% endif %}"
+                      data-value2="{% if value_2_alt != blank %}{{ value_2_alt }}{% else %}{{ value_2 | append: '%' }}{% endif %}"
+                      data-value3="{% if value_3_alt != blank %}{{ value_3_alt }}{% else %}{{ value_3 | append: '%' }}{% endif %}"
+                      data-value4="{% if value_4_alt != blank %}{{ value_4_alt }}{% else %}{{ value_4 }}{% endif %}"
+                      data-value5="{% if value_5_alt != blank %}{{ value_5_alt }}{% else %}{{ value_5 }}{% endif %}"
+                      data-value6="{% if value_6_alt != blank %}{{ value_6_alt }}{% else %}{{ value_6 }}{% endif %}"
+                    >
+                      <span class="key">{{ nome }}</span>
+                      <span class="value">{{ brand }}</span>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </details>
+          {%- else -%}
+            {%- for block in section_object offset: 1 -%}
+              {%- liquid
+                assign p = block.product
+                assign nome = block.nome_prodotto.value
+                assign brand = block.brand.value
+              -%}
+              {%- if nome != blank -%}
+                <div class="fresh-compare__item-heading">
+                  <h4 class="fresh-compare__item-title">{{ nome }}</h4>
+                  {%- if brand != blank -%}
+                    <div class="fresh-compare__item-brand">{{ brand }}</div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+        <ul class="fresh-compare__list">
+          <li class="fresh-compare__item">
+            <div class="fresh-compare__values">
+              <div class="fresh-compare__value">
+                {% if product.vendor == 'Amanova' -%}
+                  {{- section.settings.value_1 -}}
+                {%- else -%}
+                  {{- section.settings.value_1_1 -}}
+                {%- endif %}
+              </div>
+              <div class="fresh-compare__value">
+                {% if product.vendor == 'Amanova' -%}
+                  {{- section.settings.value_2 -}}
+                {%- else -%}
+                  {{- section.settings.value_2_1 -}}
+                {%- endif %}
+              </div>
+              <div class="fresh-compare__value">
+                {% if product.vendor == 'Amanova' -%}
+                  {{- section.settings.value_3 -}}
+                {%- else -%}
+                  {{- section.settings.value_3_1 -}}
+                {%- endif %}
+              </div>
+              <div class="fresh-compare__value">
+                {% if product.vendor == 'Amanova' -%}
+                  {{- section.settings.value_4 -}}
+                {%- else -%}
+                  {{- section.settings.value_4_1 -}}
+                {%- endif %}
+              </div>
+              <div class="fresh-compare__value">
+                {% if product.vendor == 'Amanova' -%}
+                  {{- section.settings.value_5 -}}
+                {%- else -%}
+                  {{- section.settings.value_5_1 -}}
+                {%- endif %}
+              </div>
+              {% if product.vendor == 'Harper & Bone' %}
+                <div class="fresh-compare__value">
+                  {{- section.settings.value_6_1 -}}
+                </div>
+              {% endif %}
+            </div>
+          </li>
+          {%- for block in section_object limit: 2 -%}
+            {%- liquid
+              assign value_1 = block.value_1.value
+              assign value_1_alt = block.value_1_alt.value
+              assign value_2 = block.value_2.value
+              assign value_2_alt = block.value_2_alt.value
+              assign value_3 = block.value_3.value
+              assign value_3_alt = block.value_3_alt.value
+              assign value_4 = block.value_4.value
+              assign value_4_alt = block.value_4_alt.value
+              assign value_5 = block.value_5.value
+              assign value_5_alt = block.value_5_alt.value
+              assign value_6 = block.value_6.value
+              assign value_6_alt = block.value_6_alt.value
+            -%}
+
+            <li class="fresh-compare__item center{% if forloop.last %} append__value{% endif %}">
+              <div class="fresh-compare__values">
+                <div class="fresh-compare__text-mb hidden-pc">{{ section.settings.value_1 }}</div>
+                <div class="fresh-compare__value fresh-compare__value-check {{ value_1 }}">
+                  <span class="icon"></span>
+                </div>
+                <div class="fresh-compare__text-mb hidden-pc">{{ section.settings.value_2 }}</div>
+                <div class="fresh-compare__value {% if value_2_alt == 'Si' %}fresh-compare__value-check true{% elsif value_2_alt == 'No' %}fresh-compare__value-check false{% endif %}">
+                  {% if value_2_alt == 'Si' or value_2_alt == 'No' %}
+                    <span class="icon"></span>
+                  {% else %}
+                    {% if value_2_alt != blank -%}
+                      {{- value_2_alt }}
+                    {% else %}
+                      {{ value_2 | append: '%' }}
+                    {% endif %}
+                  {% endif %}
+                </div>
+                <div class="fresh-compare__text-mb hidden-pc">{{ section.settings.value_3 }}</div>
+                <div class="fresh-compare__value {% if value_3_alt == 'Si' %}fresh-compare__value-check true{% elsif value_3_alt == 'No' %}fresh-compare__value-check false{% endif %}">
+                  {% if value_3_alt == 'Si' or value_3_alt == 'No' %}
+                    <span class="icon"></span>
+                  {% else %}
+                    {% if value_3_alt != blank -%}
+                      {{- value_3_alt }}
+                    {% else %}
+                      {{ value_3 | append: '%' }}
+                    {% endif %}
+                  {% endif %}
+                </div>
+                <div class="fresh-compare__text-mb hidden-pc">{{ section.settings.value_4 }}</div>
+                <div class="fresh-compare__value {% if value_4_alt == blank %}fresh-compare__value-check {{ value_4 }}{% endif %}">
+                  {% if value_4_alt == blank %}
+                    <span class="icon"></span>
+                  {% elsif value_4_alt == 'N/D' %}
+                    N/D
+                  {% else %}
+                    {{- value_4_alt -}}
+                  {% endif %}
+                </div>
+                <div class="fresh-compare__text-mb hidden-pc">{{ section.settings.value_5 }}</div>
+                <div class="fresh-compare__value {% if value_5_alt == blank %}fresh-compare__value-check {{ value_5 }}{% endif %}">
+                  {% if value_5_alt == blank %}
+                    <span class="icon"></span>
+                  {% elsif value_5_alt == 'N/D' %}
+                    N/D
+                  {% else %}
+                    {{- value_5_alt -}}
+                  {% endif %}
+                </div>
+                <div class="fresh-compare__value {% if value_6_alt == blank %}fresh-compare__value-check {{ value_6 }}{% endif %}">
+                  {% if value_6_alt == blank %}
+                    <span class="icon"></span>
+                  {% elsif value_6_alt == 'N/D' %}
+                    N/D
+                  {% else %}
+                    {{- value_6_alt -}}
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </compare-product>
+{%- endif -%}
+
+<style>
+    .fresh-compare__wrapper {
+      padding-left: 40px;
+      padding-right: 40px;
+      max-width: 1920px;
+      margin: auto;
+  }
+  @media only screen and (max-width: 600px) {
+    .fresh-compare__wrapper {
+    padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Fresh - Compare Product",
+  "class": "section-fresh-compare-product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Comparador de productos"
+    },
+    {
+      "type": "header",
+      "content": "Values"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Principales beneficios"
+    },
+    {
+      "type": "text",
+      "id": "value_1",
+      "label": "Value 1",
+      "default": "Elaborado únicamente con carne fresca"
+    },
+    {
+      "type": "text",
+      "id": "value_1_1",
+      "label": "Value 1 Differente",
+      "default": "Libre de ingredientes alérgenos (soja, maíz o trigo)"
+    },
+    {
+      "type": "text",
+      "id": "value_2",
+      "label": "Value 2",
+      "default": "Contenido de Carne Fresca "
+    },
+    {
+      "type": "text",
+      "id": "value_2_1",
+      "label": "Value 2 Differente",
+      "default": "Contiene frutas y verduras 100% frescas"
+    },
+    {
+      "type": "text",
+      "id": "value_3",
+      "label": "Value 3",
+      "default": "Contenido de  Harinas cárnicas o proteína deshidratada"
+    },
+    {
+      "type": "text",
+      "id": "value_3_1",
+      "label": "Value 3 Differente",
+      "default": "Contiene probióticos"
+    },
+    {
+      "type": "text",
+      "id": "value_4",
+      "label": "Value 4",
+      "default": "Contiene una sola fuente de proteína animal"
+    },
+    {
+      "type": "text",
+      "id": "value_4_1",
+      "label": "Value 4 Differente",
+      "default": "Contiene minerales orgánicos"
+    },
+    {
+      "type": "text",
+      "id": "value_5",
+      "label": "Value 5",
+      "default": "Libre de soja, maíz o trigo"
+    },
+    {
+      "type": "text",
+      "id": "value_5_1",
+      "label": "Value 5 Differente",
+      "default": "Contiene una sola fuente de Proteína Animal"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom mobile",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresh - Compare Product"
+    }
+  ]
+}
+{% endschema %}

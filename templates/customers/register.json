@@ -1,0 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "heading": "Crear cuenta",
+        "heading_color": "#191919",
+        "image": "shopify://shop_images/gato_filtro_1.jpg",
+        "image_mobile": "shopify://shop_images/gato_filtro_1_30683083-a138-4d02-80c2-96cfb4a1456c.jpg",
+        "policy": true,
+        "policy_content": "<p>He leído y acepto la <a href=\"/pages/faq\" title=\"FAQs\">política de privacidad</a></p>",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,282 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hero_banner_we3JMC": {
+      "type": "hero-banner",
+      "blocks": {
+        "image_6GgWBM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rewards_page.jpg",
+            "image_mb": "shopify://shop_images/rewards_mobile.jpg",
+            "desktop_content_position": "center",
+            "mobile_content_position": "center-mb",
+            "desktop_content_position_y": "bottom",
+            "desktop_content_position_y_mb": "bottom-mb",
+            "content_alignment": "center",
+            "content_alignment_mb": "center-mb",
+            "color_overlay": "#ffffff",
+            "overlay_desktop": 0,
+            "overlay_mobile": 0,
+            "heading_size": "h1",
+            "heading": "",
+            "color_text_title": "#ffffff",
+            "color_text_title_mobile": "#ffffff",
+            "font_weight_title": "400",
+            "font_size_title": 50,
+            "font_size_title_mb": 36,
+            "title_margin_bottom": 8,
+            "title_margin_bottom_mb": 8,
+            "description": "",
+            "color_text_content": "#ffffff",
+            "color_text_content_mobile": "#ffffff",
+            "font_weight_content": "300",
+            "font_size_content": 20,
+            "font_size_content_mb": 11,
+            "description_margin_bottom": 32,
+            "description_margin_bottom_mb": 24,
+            "button_url": "",
+            "button_label": "",
+            "button_style": "btn btn-primary",
+            "button_url_2": "",
+            "button_label_2": "",
+            "button_style_2": "btn btn-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "image_6GgWBM"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "enable_pagination": true,
+        "color_pagination_desktop": "#ffffff",
+        "color_pagination_mobile": "#ffffff",
+        "color_pagination_active": "#111010",
+        "column_desktop": 1,
+        "column_mobile": 1,
+        "mobile_slider": false,
+        "content_width_mobile": 100,
+        "content_width": 100,
+        "trustpilot": "",
+        "desktop_trustpilot_position": "center",
+        "mobile_trustpilot_position": "center-mb",
+        "desktop_trustpilot_position_y": "bottom",
+        "desktop_trustpilot_position_y_mb": "bottom-mb",
+        "trustpilot_alignment": "center",
+        "trustpilot_alignment_mb": "center-mb",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_left_mb": 0,
+        "padding_right_mb": 0,
+        "content_padding_top": 71,
+        "content_padding_bottom": 69,
+        "content_padding_top_mb": 40,
+        "content_padding_bottom_mb": 25,
+        "content_padding_left": 78,
+        "content_padding_right": 78,
+        "content_padding_left_mb": 24,
+        "content_padding_right_mb": 24
+      }
+    },
+    "fresh_rich_text_qPkr4k": {
+      "type": "fresh-rich-text",
+      "blocks": {
+        "title_zBfQC8": {
+          "type": "title",
+          "settings": {
+            "heading": "¿Como Obtener tus puntos?",
+            "font_weight_title": "400",
+            "font_size_title": 32,
+            "font_size_title_mb": 27
+          }
+        }
+      },
+      "block_order": [
+        "title_zBfQC8"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "bg_color_button": "#111010",
+        "max_width": 100,
+        "max_width_mb": 100,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 16,
+        "padding_bottom_mb": 0
+      }
+    },
+    "fresh_icon_with_text_he7GJA": {
+      "type": "fresh-icon-with-text",
+      "blocks": {
+        "icon_text_KQBDFj": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/5cf73b00-5d24-4cbd-b6c0-4407328f6185.png",
+            "title": "REGÍSTRATE",
+            "description": "en nuestra pagina web oficial o en tienda física para crear tu perfil."
+          }
+        },
+        "icon_text_KPVfxA": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/f1c1b271-0692-4de7-8824-8bf68627b9e4.png",
+            "title": "Gana",
+            "description": "por cada 1€ de compra en nuestra página web o tiendas propias Onlyfresh."
+          }
+        },
+        "icon_text_p76zFL": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/https-_d3k81ch9hvuctc.cloudfront.net_company_Tqjd7j_images_f1c1b271-0692-4de7-8824-8bf68627b9e4.png",
+            "title": "Canjea",
+            "description": "online o en tienda física (a partir de 500 puntos) durante el proceso de pago."
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_KQBDFj",
+        "icon_text_KPVfxA",
+        "icon_text_p76zFL"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".rocket-icon-text__icon {max-width: 8rem !important; max-height: 8rem !important;}"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "fresh_image_text_FLUtx9": {
+      "type": "fresh-image-text",
+      "blocks": {
+        "media_AMphmm": {
+          "type": "media",
+          "settings": {
+            "type_of_media": "type_image",
+            "image": "shopify://shop_images/image-fidelity_4x-100_2160x_jpg.webp",
+            "image_mb": "shopify://shop_images/image-fidelity_4x-100_2160x_jpg.webp"
+          }
+        },
+        "content_ndMaYB": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Obtén lo mejor de Onlyfresh® Rewards directamente en tus manos. <a href=\"https://es.onlyfresh.com/account\"><strong>Descarga tu Tarjeta</strong></a>Onlyfresh para acumular y canjear tus puntos. Haz login para descargarla</p>",
+            "font_weight_content": "400",
+            "font_size_content": 25,
+            "font_size_content_mb": 14
+          }
+        }
+      },
+      "block_order": [
+        "media_AMphmm",
+        "content_ndMaYB"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "left",
+        "mobile_content_position": "bottom",
+        "enable_swiper": false,
+        "use_border_top": false,
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_text_button": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 52,
+        "padding_left": 40,
+        "padding_right": 52,
+        "padding_left_mb": 40,
+        "padding_right_mb": 52
+      }
+    },
+    "custom_liquid_FCERNy": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"562692\"></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_WxgRqd": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"562690\"></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_4WMJgm": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'tarjeta' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_WQeeUk": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"562693\"></div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_7Jm7eD": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_we3JMC",
+    "fresh_rich_text_qPkr4k",
+    "fresh_icon_with_text_he7GJA",
+    "fresh_image_text_FLUtx9",
+    "custom_liquid_FCERNy",
+    "custom_liquid_WxgRqd",
+    "custom_liquid_4WMJgm",
+    "custom_liquid_WQeeUk",
+    "custom_liquid_7Jm7eD"
+  ]
+}
